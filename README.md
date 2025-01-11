@@ -20,26 +20,27 @@ Key functionalities include:
 
 ## Project Structure
 
-project-root/
-├── data/
-│   ├── feature_extracted_data/
-│   │   ├── unigram_features_with_labels.csv
-│   │   ├── bigram_features_with_labels.csv
-│   │   ├── empath_features_with_labels.csv
-│   │   ├── lda_topic_distributions_with_labels.csv
-│   ├── preprocessed/
-│   │   ├── preprocessed_depression_posts/
-│   │   ├── preprocessed_breastcancer_posts/
-│   ├── raw/
-│       ├── depression_diagnosed_posts/
-│       ├── breastcancer_diagnosed_posts/
-├── data_preprocessing.ipynb
-├── feature_analysis.ipynb
-├── feature_extraction.ipynb
-├── model_training.ipynb
-├── README.md
-└── requirements.txt
+### Folders
+- `data/`
+  - `feature_extracted_data/`
+    - `unigram_features_with_labels.csv`
+    - `bigram_features_with_labels.csv`
+    - `empath_features_with_labels.csv`
+    - `lda_topic_distributions_with_labels.csv`
+  - `preprocessed/`
+    - `preprocessed_depression_posts/`
+    - `preprocessed_breastcancer_posts/`
+  - `raw/`
+    - `depression_diagnosed_posts/`
+    - `breastcancer_diagnosed_posts/`
 
+### Files
+- `data_preprocessing.ipynb`
+- `feature_analysis.ipynb`
+- `feature_extraction.ipynb`
+- `model_training.ipynb`
+- `README.md`
+- `requirements.txt`
 ## Setup
 
 ### Prerequisites
