@@ -43,25 +43,12 @@ Key functionalities include:
 - `requirements.txt`
 ## Setup
 
-### Prerequisites
-- Python 3.7+
-- Recommended: A virtual environment
 
 ### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/depression-detection-ngram.git
    cd depression-detection-ngram
-Install dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-Required Libraries
-pandas
-numpy
-scikit-learn
-matplotlib
-nltk
 
 ### Usage
 1. Feature Extraction
@@ -84,17 +71,4 @@ Run the feature_analysis.ipynb notebook to:
 Analyze the extracted features (e.g., top unigrams and bigrams).
 
 
-### All workflows are demonstrated in the Jupyter notebooks:
-
-data_preprocessing.ipynb: Preprocess raw text data.
-feature_extraction.ipynb: Extract features from text data.
-model_training.ipynb: Train and evaluate machine learning models.
-Results
-Model Accuracy: Achieved XX% accuracy on test data using [model name].
-Feature Importance: Identified key unigrams and bigrams associated with depression vs. non-depression posts.
-Key Files
-unigram_features_with_labels.csv: Contains unigram TF-IDF features and labels.
-bigram_features_with_labels.csv: Contains bigram TF-IDF features and labels.
-empath_features_with_labels.csv: Contains psycholinguistic features and labels.
-lda_topic_distributions_with_labels.csv: Contains LDA topic distributions and labels.
 
