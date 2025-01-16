@@ -1,0 +1,51 @@
+Subreddit: AskDocs
+Title: Chronic cardiac LV electrical irregularities in young person
+Author: TinyHeartSyndrome
+Score: 1
+Created UTC: 2025-01-09 22:32:02
+URL: https://www.reddit.com/r/AskDocs/comments/1hxp8dv/chronic_cardiac_lv_electrical_irregularities_in/
+
+Cardiac Notes
+
+36F
+
+Common EKG notes from teenage years through adulthood:
+-Abnormal EKG: non-specific t-wave abnormality (including flattened or inverted t-waves)
+-Abnormal EKG: non-specific st-wave abnormality
+-Borderline EKG: low QRS voltage
+
+Echos:
+-Normal as adult, LVEF ~50-60%
+-History of reduced LVEF ~45% and some LV non-compaction as a teenager
+
+Stress Test:
+-Normal with low number of PVCs
+
+2-week Holter test in early 20s:
+-multifocal PVCs
+-ventricular couplets 
+-5-beat and 9-beat runs of NSVT
+
+-Murmur: Grade 1, generally missed except by cardiologists, often only heard in a reclining position 
+
+-Cardiac MRI: no significant findings
+
+-Structural irregularities: pediatric cardiologist told me I had a prominent false tendon and a small, extra flap of tissue, presumably in LV? 
+
+Electolyte abnormalities: 
+-must take potassium supplement daily or K gets low and get symptoms such as lip tingling
+-Had incident of low K as teenager where hands cramped into fists, could not open fingers, high dose K pill at ER fixed issue 
+
+Other notes:
+-extended heat stress and intense physical exertion during military service field training exercises increased number of arrhythmias throughout day
+-Used to frequently notice increase of arrhythmias when lying down for bed in 20s
+-Had an incident in early 20s when I woke up with PVC every 4th beat or so for many hours. Received IV magnesium, which eliminated arrhythmia. 
+-The few times I tried Sativa THC edible, I had what felt like extended, dangerous arrhythmia. If I stick only to Indica, no problems. 
+
+Medications:
+-Tried calcium channel blocker in early 20s: increased arrhythmias, had what felt like extended dangerous arrhythmias during 12-mile military ruck march 
+-Beta blocker: I take 25mg metoprolol succinate extended release twice a day. I did not used to take meds. But when I started a psych med (Strattera), early 30s, I experienced high resting heart rate (~100), high heart rate during exercise (regularly up to 200), and feeling of sustained arrhythmia during exercise (flip flopping sensation). Also must have been getting a lot of arrhythmias at night- I dreamt every single night of choking, suffocating, drowning, etc. Beta blocker brought all symptoms back down to baseline. Had tried low dose of an ADHD stimulant, but EKG showed inverted t-waves, so psychiatrist said I was not a candidate for stimulants. 
+
+What do I have? Is it harmful? I never really get a diagnosis of anything. 
+
+Thank you. 

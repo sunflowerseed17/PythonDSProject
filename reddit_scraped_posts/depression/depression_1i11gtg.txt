@@ -1,0 +1,24 @@
+Subreddit: pcmasterrace
+Title: Any way to test a gpu without a PSU?
+Author: DavoMcBones
+Score: 1
+Created UTC: 2025-01-14 08:19:51
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i11gtg/any_way_to_test_a_gpu_without_a_psu/
+
+(Please excuse me, I am a professional yapper, pls skip to paragraph 5 if you don't like reading)
+
+Last year back when I was a noob at PC components i bought an Asus GTX 760 gpu for a heckin deal of 15 dollars. Now not only did my lack of knowledge led me to buy an ancient gpu, it doesnt even work for my PC!
+
+My PC is an HP office pc, it is a sff so the gpu wont fit the case, and it uses a stupid proprietary psu with no pcie cables so I cant even use the dam thing since my gpu needs an 8pin.
+
+
+Well I have up my hope of using it, the cost of a riser cable and a new power supply is not worth it for the sheer age of the gpu, so for months it sat on a shelf collecting dust.
+
+
+Fast forward to this year, my friend wants to get into pc building, with my better knowledge and understanding of pc building I helped him out in picking the components so he doesnt make the same mistakes I made. Now all he needs is a GPU, my 760 is a little old, but since I'm not using it anyway I thought of giving it away to him so he can use it temporarily until he saves up for a better gpu.
+
+
+ He says he wants me to test it first as that will determine if he is buying a cpu with integrated graphics or not. But without a fully compatible PC in my possession I have no way to actually test it. If I remove the cpu cooler of my hp oem, it lights up and the fans move, however it does not boot since there is no 8pin cable (plus, booting without a cpu cooler is pretty dangerous anyway)
+
+
+Is there anyway I can test if a gpu is working without its needed 8 pin cable? Or maybe I can wait for my friend's pc parts to arrive and we can try to test it without a cpu?

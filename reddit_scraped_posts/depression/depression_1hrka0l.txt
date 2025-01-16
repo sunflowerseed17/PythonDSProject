@@ -1,0 +1,12 @@
+Subreddit: SaaS
+Title: Netcup setup 
+Author: 5_Dollar_Gigs
+Score: 1
+Created UTC: 2025-01-02 03:16:43
+URL: https://www.reddit.com/r/SaaS/comments/1hrka0l/netcup_setup/
+
+Hi everyone! I'm planning to start using NetCup for their VPS hosting, but I'm not familiar with the interface and setup process. Could anyone clarify what kind of interface is used for managing the VPS there? For example, do they offer something like cPanel or a pre-configured OS (e.g., Ubuntu 20.04), or is it a custom interface?
+
+Additionally, I'm wondering if the setup process and data upload on NetCup VPS is similar to AWS EC2. Are there any significant differences I should be aware of before getting started?
+
+Thanks in advance for your help!

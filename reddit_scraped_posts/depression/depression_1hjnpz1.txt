@@ -1,0 +1,8 @@
+Subreddit: AndroidQuestions
+Title: App that locks apps/games into RAM?
+Author: Venus259jaded
+Score: 1
+Created UTC: 2024-12-22 01:00:24
+URL: https://www.reddit.com/r/AndroidQuestions/comments/1hjnpz1/app_that_locks_appsgames_into_ram/
+
+I am rooted and have used an app before to successfully lock an app/game into RAM and it never leaving until I close it myself. However, trying to search for that app and alternatives have left me empty-handed. My device does not have a native app lock feature

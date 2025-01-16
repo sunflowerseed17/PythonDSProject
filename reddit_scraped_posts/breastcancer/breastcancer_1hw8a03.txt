@@ -1,0 +1,36 @@
+Subreddit: breastcancer
+Title: Keto diet in breast cancer
+Author: noctifery
+Score: 4
+Created UTC: 2025-01-08 01:46:41
+URL: https://www.reddit.com/r/breastcancer/comments/1hw8a03/keto_diet_in_breast_cancer/
+
+I'm copy pasting the info I got from My Cancer Navigator people. My question was "**Is there any research regarding the benefits of ketogenic diet for breast cancer?**".  
+
+
+A ketogenic diet (KD) is a high-fat low-carbohydrate adequate-protein diet. Preclinical research has shown a link between the KD and slowed growth of tumours in mice. However, the evidence in humans is limited and weak. Data in humans indicate that KD might be considered as **supportive care** but due to a **lack of bigger sample studies**, **no conclusion can be made (yet) on the efficacy of KD as cancer treatment**. Researchers are conducting more clinical trials with cancer patients, looking at how the diet affects patients, along with chemotherapy and radiation. Next, the feasibility of and adherence to the KD among cancer patients is important, so more suitable dietary patterns are investigated too.
+
+Adhering strictly to a KD might be a dramatic change in eating habits that can lead to gastrointestinal symptoms in addition to unintentional weight loss and increased risk of malnutrition. Maintaining a normal body weight and preserving a lean body mass through adequate nutrition is beneficial in cancer patients. You could schedule an appointment with a doctor or (onco-)dietician to help you. As a **doctor or dietitian can help manage the diet** to minimize side effects and cope with any new food sensitivities.
+
+Sources:  
+1. Weber DD. Ketogenic diet in cancer therapy. Aging (Albany NY). 2018;10(2).  
+2. Klement RJ. Beneficial effects of ketogenic diets for cancer patients: a realist review with focus on evidence and confirmation. Med Oncol. 2017;34(8):1–15.  
+3. KELLIE BRAMLET BLACKBURN. The keto diet and cancer: What patients should know \[Internet\]. 2018. Available from: [https://www.mdanderson.org/publications/cancerwise/the-keto-diet-and-cancer--what-patients-should-know.h00-159223356.html](https://www.mdanderson.org/publications/cancerwise/the-keto-diet-and-cancer--what-patients-should-know.h00-159223356.html)  
+4. Lv M, Zhu X, Wang H, Wang F, Guan W. Roles of caloric restriction, ketogenic diet and intermittent fasting during initiation, progression and metastasis of cancer in animal models: a systematic review and meta-analysis. PLoS One \[Internet\]. 2014 Dec 11;9(12):e115147–e115147. Available from: [https://www.ncbi.nlm.nih.gov/pubmed/25502434](https://www.ncbi.nlm.nih.gov/pubmed/25502434)  
+
+
+Specific data in breast cancer:
+
+1. PROTOCOL PAPER 2021: Results of the ongoing DREAM study will be highly interesting. This is a phase II, randomized controlled trial of a short-term, calorie-restricted, and ketogenic diet during intravenous chemotherapy versus usual care. [https://bmccancer.biomedcentral.com/articles/10.1186/s12885-021-08808-2](https://bmccancer.biomedcentral.com/articles/10.1186/s12885-021-08808-2)
+
+2. TRIAL 2021: 80 patients with locally advanced and metastatic breast cancer receiving chemotherapy assigned to KD or control. **KD in breast cancer patients might exert beneficial effects through decreasing TNF-α and insulin and increasing IL-10.** KD may result in **a better response through reductions in tumour size and downstaging in patients with locally advanced disease**; however, more studies are needed to elucidate the potential beneficial effects of KD in patients with metastases. [https://pubmed.ncbi.nlm.nih.gov/32703721/](https://pubmed.ncbi.nlm.nih.gov/32703721/)  
+  
+3. TRIAL 2021: 59 patients with early-stage breast cancer undergoing radiotherapy, 29 with KD and 30 control. KD resulted in **significant improvement in emotional functioning, social functioning, sleep quality, future perspectives, systemic therapy side effects and biomarkers of metabolic health**. Consuming a KD during radiotherapy is safe for women with breast cancer and has the **potential to improve Quality of Life (QoL) and metabolic health.** [https://pubmed.ncbi.nlm.nih.gov/33551218/](https://pubmed.ncbi.nlm.nih.gov/33551218/)
+
+4. TRIAL 2020: 80 patients with locally advanced or metastatic breast cancer were randomly assigned to KD or control. Besides a **higher global QoL and physical activity scores** compared to the control group at 6 weeks, KD diet combined to chemotherapy in patients with breast cancer does not bring additional benefit about QoL and physical activity at 12 weeks. However, **decreases** seen **in levels of lactate and ALP** in the KD group suggest that a KD may benefit patients with breast cancer. [https://pubmed.ncbi.nlm.nih.gov/32828130/](https://pubmed.ncbi.nlm.nih.gov/32828130/)
+
+5. TRIAL 2020: 59 patients with non-metastasized breast cancer, 29 allocated to KD and 30 received standard diet. In breast cancer patients undergoing curative radiotherapy, a KD based on natural foods is feasible. After initial water losses, the **KD tends to reduce body weight and fat mass while preserving fat free and skeletal muscle mass**. [https://pubmed.ncbi.nlm.nih.gov/32819413/](https://pubmed.ncbi.nlm.nih.gov/32819413/)
+
+6. TRIAL 2020: 60 patients with locally advanced or metastatic breast cancer and planned chemotherapy, 30 receiving KD and 30 in control group for 3 months. **OS was higher in KD group**. **Chemotherapy combined with KD can improve the biochemical parameters, body composition, and OS with no substantial side effects in patients with breast cancer.** [https://pubmed.ncbi.nlm.nih.gov/31496287/](https://pubmed.ncbi.nlm.nih.gov/31496287/)
+
+7. CASE REPORT 2015: In the three weeks between diagnosis and surgery, a breast cancer patient self-administered high doses of oral vitamin D3 (10,000 IU/day), and followed a strict KD. Analysis of the surgical specimen showed no positivity for HER2 expression (while biopsy had shown HER2+), and significant increase in positivity of PgR (while biopsy had shown only weak positivity). The authors conclude that a **combination of high-dose vitamin D3 and ketogenic diet leads to changes in some biological markers of breast cancer**. [https://ar.iiarjournals.org/content/35/10/5525.abstract](https://ar.iiarjournals.org/content/35/10/5525.abstract) *Comment: In about 3-10% of cases, however, HER2 and PgR status differ between core needle biopsy and surgical specimen analysis, indicating vitamin D3 and KD might have not influenced the biological markers at all.* [https://pubmed.ncbi.nlm.nih.gov/27029805/](https://pubmed.ncbi.nlm.nih.gov/27029805/)

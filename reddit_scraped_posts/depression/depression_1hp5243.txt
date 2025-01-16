@@ -1,0 +1,54 @@
+Subreddit: StableDiffusion
+Title: Recreating the Original Denoising Diffusion Model
+Author: DiabloSpear
+Score: 13
+Created UTC: 2024-12-29 20:31:24
+URL: https://www.reddit.com/r/StableDiffusion/comments/1hp5243/recreating_the_original_denoising_diffusion_model/
+
+Hi guys, I have recently got into diffusion model. 
+
+I have tried to recreate CIFAR10, but I seem to not be able to do it after countless tries. 
+
+I tried to follow most of the hyperparameters and what not - currently I have MX150 (My desktop is shipping overseas...so I will not have access to my GTX1060, which is still kinda small but should be sufficient for CIFAR10). 
+
+Here is the U-net architecture that I am using. 
+
+bn =  batch norm. gn = group norm mp = max pool r.b = res block and self attention is q,v,k attention. 
+
+https://preview.redd.it/j9ihoiwgju9e1.png?width=641&format=png&auto=webp&s=a2b04a3a85624f660ce6eb5d77275533b6a2c3d4
+
+1. Instead of 1000 steps, I did 250 steps. 
+
+2. Beta linear scheduler (except for spacing), Learning rate, time embedding dimension, grad clipping, dropout are the same. 
+
+3. The first normalization (the one after the CNN that goes from 3 channels to 64 channels), is batch normalization - just because how I set it up - others are all Group Normalization. However, because I set up batch = 64, which is sufficiently large, I do not see an issue here, unless any insight will be great. 
+
+4. Batch = 64 instead of 128.
+
+5. I did self attention at the second and third layer of Unet (the first one is the output from 3 RGB to 64, so the self attention is applied after the CNN goes from 64 channels to 128 channels + goes from 128 to 256 channels).
+
+6. I normalized the image input with mean = 0 and var = 1. 
+
+7. It seems like the authors create t = batch size of different t, but I do the same t for all data in one batch. As long as the embedding is done correctly, I do not see the issue, but maybe I am wrong. my reasoning is that epsilon is something you generate and something you try to predict. So as long as t is embedded corrected into U-net, then whether you create the same t for all data in the batch or different t should not matter for the training. 
+
+here is my image of CIFAR10 after 57 epochs. You can see some blobs but nothing more. 
+
+https://preview.redd.it/ay218nwyhu9e1.png?width=590&format=png&auto=webp&s=48df8b430ea282f2e8e84bcde7d3383fd7911cfc
+
+After a lot of training cycle I am getting about 0.2 error per pixel (NOT MSE. I took sqrt of MSE, so absolute value. MSE was be about 0.01\~0.05 depending on the batch). 
+
+My github is here: [https://github.com/zjzjrjr1/CIFAR10-Diffusion](https://github.com/zjzjrjr1/CIFAR10-Diffusion)
+
+I am not so sure what I am doing wrong. I do have some suspicious ones. 
+
+1. Steps is too small? Should be about 500 at least? 
+
+2. From #7 different point, is that the issue? Should I change so that t is different for each sample in the batch? 
+
+3. When you guys train, what is the typical loss for pixel? either MSE or absolute is fine. 
+
+3. Or do I need to run a lot more epochs? I see some recreations be able to get something meaningful after 50 epochs and some say it took 200 epochs at least...
+
+4. Anything that is wrong with my code or my assumptions that are wrong? 
+
+I really want to break into the diffusion world, so any help is appreciated. 

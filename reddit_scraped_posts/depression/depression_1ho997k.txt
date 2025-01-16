@@ -1,0 +1,8 @@
+Subreddit: hoi4
+Title: Generally is it better for you to divide your army groups by type of troops?
+Author: Reivaz88
+Score: 72
+Created UTC: 2024-12-28 16:31:58
+URL: https://www.reddit.com/r/hoi4/comments/1ho997k/generally_is_it_better_for_you_to_divide_your/
+
+Like 3 groups entirely comprised of infantry, 1 group of only light tanks, one for medium, one for cavalry, one for mountainous troops, etc you get the point. But what if you then want to have medium tanks on 2 different fronts? Then do you just seperate them into 2 different armies? How do you set up your army groups besides just dividing everything relatively evenly and randomly?

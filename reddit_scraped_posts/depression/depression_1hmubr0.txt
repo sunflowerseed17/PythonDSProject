@@ -1,0 +1,10 @@
+Subreddit: steamsupport
+Title: Steam won't recognize my games 
+Author: Little-Particular450
+Score: 0
+Created UTC: 2024-12-26 18:18:55
+URL: https://www.reddit.com/r/steamsupport/comments/1hmubr0/steam_wont_recognize_my_games/
+
+I had to reinstall steam. Now even after adding my library folder to steam the installed games show as installed in steam. I installed fallout 4 to where it is on my drive. It verifies the files and proceeds to redownload all 90gb of game files. I check the folder on my PC fallout 4 is now 400mb.
+
+Can someone explain what's going on  and how to fix it please

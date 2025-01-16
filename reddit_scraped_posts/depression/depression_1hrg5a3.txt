@@ -1,0 +1,14 @@
+Subreddit: Magisk
+Title: [Discussion] For those who want to disable the proximity sensor
+Author: Venus259jaded
+Score: 3
+Created UTC: 2025-01-01 23:51:03
+URL: https://www.reddit.com/r/Magisk/comments/1hrg5a3/discussion_for_those_who_want_to_disable_the/
+
+The proximity sensor was incredibly annoying for me. I would be on call playing a game with a friend and my screen would constantly turn off. I tried to use the Sensor Disabler app and while it did work, it wasn't consistent, and it seems to have stopped working on newer LSPosed versions
+
+You can disable the sensor manually if you have a RW system. Go to /vendor/etc/sensors and find the specific file that has proximity in it (Different file for every device)
+
+Under proximity you will see data you can edit. Look for data 1 under proximity, it should be the first or second line for most devices. Change data 1 to data 0
+
+This will freeze your phone and restart but that's normal but after that, your proximity sensor should be disabled! If you want the sensor enabled, you can change the data back to 1. Hope this helps somebody!

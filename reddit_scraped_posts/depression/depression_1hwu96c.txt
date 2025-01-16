@@ -1,0 +1,10 @@
+Subreddit: developersIndia
+Title: I have absolutely no clue how to prepare for a Google interview. 
+Author: bluesteel-one
+Score: 3
+Created UTC: 2025-01-08 20:37:23
+URL: https://www.reddit.com/r/developersIndia/comments/1hwu96c/i_have_absolutely_no_clue_how_to_prepare_for_a/
+
+I got approached on LinkedIn by a Google recruiter for a SE role. I am excited and freaked out. I can only define my lc skills as mid. Ive solved around 250LC mostly from Neetcode's list mostly medium and ive not solved anything for the past 4 months.
+
+I managed to secure 6 weeks of prep time. Frankly my confidence is low i dont know hows ill prepare, my day job is pretty exhausting. If Anyone who has been through the process can suggest how to prepare I would be extremely greatful. 

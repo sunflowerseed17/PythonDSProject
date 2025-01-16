@@ -1,0 +1,22 @@
+Subreddit: breastcancer
+Title: Houston
+Author: These-Two-5512
+Score: 3
+Created UTC: 2024-12-26 15:56:49
+URL: https://www.reddit.com/r/breastcancer/comments/1hmr6s9/houston/
+
+diagnosed Christmas Eve with the following: I have a call with Dr Lee at southwest surgical already per a referral from a friend of the family. I know MD Anderson is what everyone would say but would love opinions on surgeons and radiologist/oncologists at memorial Hermann memorial city? It’s closer to me and I’m thinking not being as large as MDA might be a bit more personal and less wait times? New to all of this. I’m terrified. I have two young children and I just want the best care possible! Thank you so much! 
+
+Left breast, .9cm mass, 2:00, 4 cm from nipple, ultrasound-guided core needle biopsy:
+      -INVASIVE DUCTAL CARCINOMA, GRADE 2.
+      -ASSOCIATED DUCTAL CARCINOMA IN SITU, NUCLEAR GRADE 2, SOLID PATTERN.
+ 
+      -Immunohistochemical stains:
+           -Estrogen receptor: Positive (strong intensity in 95% of tumor cell nuclei).
+              (Intensity score: 3/3; Proportion score: 5/5; Total Allred score: 8/8).
+           -Progesterone receptor: Positive (strong intensity in 95% of tumor cell nuclei).
+              (Intensity score: 3/3; Proportion score: 5/5; Total Allred score: 8/8).
+           -Ki-67 proliferative rate: 20%.
+           -HER-2: Pending - addendum to follow.
+           -E-Cadherin: Positive.
+           -SMM, p63: Performed.

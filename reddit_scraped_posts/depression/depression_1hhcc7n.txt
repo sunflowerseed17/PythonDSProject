@@ -1,0 +1,18 @@
+Subreddit: OMSA
+Title: Taking Database design to "learn" SQL
+Author: DiabloSpear
+Score: 10
+Created UTC: 2024-12-18 21:30:36
+URL: https://www.reddit.com/r/OMSA/comments/1hhcc7n/taking_database_design_to_learn_sql/
+
+So, I know SQL from doing practice questions and using them at work a bit. 
+
+I am very familiar with window functions and what not. 
+
+But I still think learning the theory is very important. 
+
+If I take the database design class, will I feel a significant "leap" in my SQL knowledge? 
+
+Especially from two perspectives - theory and practical view points separately evaluated.
+
+I am debating if I should take the class or not. 

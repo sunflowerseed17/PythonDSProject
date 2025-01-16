@@ -1,0 +1,16 @@
+Subreddit: FacebookMarketplace
+Title: No option to mark a listing as SOLD
+Author: 1095966
+Score: 0
+Created UTC: 2024-12-15 22:16:24
+URL: https://www.reddit.com/r/FacebookMarketplace/comments/1hf3x10/no_option_to_mark_a_listing_as_sold/
+
+Sold something today, only options available are:
+
+Boost, Mark as Pending, View Listing, List in More Places, Edit Listing, Delete Listing, View Messages.
+
+I clicked everywhere, can't find the mark as sold button.  I marked as paid within facebook messenger, thinking that would then present me with the button to mark as sold.  Nope.  Logged out of Facebook, logged back in, same issue.  Same issue happened over the summer, I thought it was a one time issue.
+
+I have other active listings, some have the button to mark as sold, some only have the option to list as out of stock.
+
+Any advice on what's happening?  Does it have to do with the age of the listing, did I delete and relist too many times, is there a limit to do this?  

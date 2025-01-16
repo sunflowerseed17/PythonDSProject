@@ -1,0 +1,12 @@
+Subreddit: GTAV
+Title: There's No Sound [Please send help😭]
+Author: Minimum-Security6181
+Score: 1
+Created UTC: 2024-12-23 11:48:09
+URL: https://www.reddit.com/r/GTAV/comments/1hkm3ye/theres_no_sound_please_send_help/
+
+So I literally searched Youtube, Google and fuck even Microsoft community for damn near a day now and nothing worked, so I'm asking ya'll to help me out on this.
+
+Things I've done:
+
+Reinstall/ Checked sound mixer if it's muted/  Turned off mute audio on focus loss/  Updated drivers/ Verified the integrity/ Updated DirectX/ I messed with the output but nothing/ Tried without any apps running in the background

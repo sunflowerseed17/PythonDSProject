@@ -1,0 +1,10 @@
+Subreddit: Rivian
+Title: NEMA 6-20 in garage, use Tesla mobile charger?
+Author: Shezaam
+Score: 3
+Created UTC: 2024-12-26 15:02:39
+URL: https://www.reddit.com/r/Rivian/comments/1hmq2oi/nema_620_in_garage_use_tesla_mobile_charger/
+
+Hello! I’ll be placing an order for an R1T in a couple weeks. I have an outlet that fits a NEMA 6-20 outlet in my garage (former owner used it for an air compressor). Will I be able to safely charge an r1t with a 6-20 adapter and a Tesla mobile charger?
+
+Edit: I’m also 5 minutes from a new EA charger and 20 minutes from a Tesla L3 supercharger.

@@ -1,0 +1,24 @@
+Subreddit: breastcancer
+Title: 'Predict' tool and endocrine therapy outcomes
+Author: Ok_Day_70
+Score: 11
+Created UTC: 2025-01-08 01:31:31
+URL: https://www.reddit.com/r/breastcancer/comments/1hw7ywe/predict_tool_and_endocrine_therapy_outcomes/
+
+Age 40, I had a 14mm invasive lobular carcinoma (++-) removed by unilateral mastectomy a few weeks ago. I am currently waiting on the oncotype findings.   
+I used the UCambrige/ Cedars Sinai "Predict" tool ( [https://breast.v3.predict.cam/](https://breast.v3.predict.cam/) ) to model my outcomes, and I'm confused about the predicted usefulness of AI/endocrine therapy. When I plug in all my stats (Age 40, nonsmoker, ++-,14mm, grade 1, detected by screening, no lymph nodes, no metastasis) the tool says: 
+
+**15-year WITHOUT Hormone Therapy:**  
+96 out of 100 women treated with surgery only are alive at least 15 years from surgery  
+96 out of 100 women would survive at least 15 years with all selected treatments.  
+Of the women who would not survive, 2 would die from breast cancer, and 2 would die due to causes not related to breast cancer.
+
+**15-year WITH 5-Year Hormone Therapy:**  
+96 out of 100 women treated with surgery only are alive at least 15 years from surgery  
+97 out of 100 women would survive at least 15 years with all selected treatments.  
+Of the women who would not survive, 1 would die from breast cancer, and 2 would die due to causes not related to breast cancer.
+
+I'm confused about this, because - though I won't meet with my medical onc for a few weeks - my surgical onc makes it sound like AI is a given, based on my E/Pr hormone positivity. Right now, this treatment is the thing I'm having the hardest time reconciling. Headaches, brain fog, hair loss, dry eyes, weight gain, joint pain, osteoporosis, vaginal dryness, decreased libido, inability to orgasm, insomnia, fatigue, hot flashes, AND a possible increased risk of OTHER FUCKING CANCERS. 
+
+Am I using this tool wrong, or am I really supposed to endure all these side effects (until I succumb to my genetic early-onset Alzheimer's) for this tiny statistical advantage? Tell me what I'm not getting. 
+

@@ -1,0 +1,9 @@
+Subreddit: AndroidTV
+Title: SVI studio- Yogurt Tv 
+Author: No-Intention-9439
+Score: 5
+Created UTC: 2024-12-10 19:19:13
+URL: https://www.reddit.com/r/AndroidTV/comments/1hb9rdt/svi_studio_yogurt_tv/
+
+**Tech challenged ** Dad bought me an Android TV Box (SVI studio). It was working perfectly until it didn’t. Yogurt TV kept kicking me out to the main page when I watch a show. Or screen turns blue and tv restarts and goes to the main page. 
+Help ! 

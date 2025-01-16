@@ -1,0 +1,12 @@
+Subreddit: Infinity_For_Reddit
+Title: Is there a way to filter all subreddits with the word "Meme" in the title?
+Author: momplaysbass
+Score: 3
+Created UTC: 2024-12-17 23:06:07
+URL: https://www.reddit.com/r/Infinity_For_Reddit/comments/1hgnipe/is_there_a_way_to_filter_all_subreddits_with_the/
+
+If there is a way to do this, could someone point me in the right direction? I've tried to figure it out on my own, but I have not been successful.  
+
+Edit: I do have, in my filters, to exclude titles that contain the word meme, but it isn't working like I expect it to: I still get meme posts.  
+
+Thanks!

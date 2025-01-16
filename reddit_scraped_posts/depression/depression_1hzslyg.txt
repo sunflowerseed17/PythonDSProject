@@ -1,0 +1,8 @@
+Subreddit: leetcode
+Title: What's a good prep strategy for Google ? 
+Author: bluesteel-one
+Score: 14
+Created UTC: 2025-01-12 18:02:19
+URL: https://www.reddit.com/r/leetcode/comments/1hzslyg/whats_a_good_prep_strategy_for_google/
+
+Ive been off practice but ive mostly solved neetcode 150 and blind 75 with some practice questions sprinkled in between. I have about 30 days to prepare. Its my first FAANG interview and im kinda stuck in a negative spiral. Any suggestions to ya'll whove been through this ? 

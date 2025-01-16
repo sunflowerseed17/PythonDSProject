@@ -1,0 +1,8 @@
+Subreddit: teenagers
+Title: My PC broke after a power outage
+Author: DavoMcBones
+Score: 1
+Created UTC: 2024-12-20 01:40:23
+URL: https://i.redd.it/8hqz9mw9rw7e1.jpeg
+
+Restarting and running diagnostic tools does nothing. I can reinstall windows but it's such a hassle to setup everything all over again (I didnt back up my stuff)

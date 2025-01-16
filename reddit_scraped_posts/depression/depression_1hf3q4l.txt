@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: What is a good remote streaming software that my friends can use on my pc?
+Author: DavoMcBones
+Score: 1
+Created UTC: 2024-12-15 22:07:34
+URL: https://www.reddit.com/r/pcmasterrace/comments/1hf3q4l/what_is_a_good_remote_streaming_software_that_my/
+
+I recently gotten myself a new (for me) PC, with pretty decent specs that's way better than my laptop with integrated graphics. I feel bad though that when I'm not using it it's just sitting around being useless. And I got friends that still run on integrated graphics. I was feeling generous and I wanted to let my freinds experience gaming with more than 20 fps so I wanted to create a dualboot on my pc that has something installed so that when its sitting idle my friends can connect to it so they can game on my pc when I'm not using it. I need one that is both low latency and can be accessed from different networks. Is there such thing as a streaming software like this?

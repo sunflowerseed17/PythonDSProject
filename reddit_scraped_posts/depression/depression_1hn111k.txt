@@ -1,0 +1,10 @@
+Subreddit: hoi4
+Title: Is there any way I could run the game better?
+Author: Reivaz88
+Score: 1
+Created UTC: 2024-12-26 23:24:40
+URL: https://www.reddit.com/r/hoi4/comments/1hn111k/is_there_any_way_i_could_run_the_game_better/
+
+So I've been playing for a while, still a beginner  and I always start lagging a lot around 1941. I know this is normal and all but is there any solution? Maybe any mods that improve how well the game runs? At the start it's acceptable at around 4-6 seconds per day but after a few years pass it's so much slower, not unplayable but pretty bad.
+
+I also want to try playing on ironman for achievements but without debug_smooth it's pretty impossible for me to reasonably play without losing my mind. I already have everything at the lowest setting. And at 1936 without the command it's nearly 8 seconds per day.

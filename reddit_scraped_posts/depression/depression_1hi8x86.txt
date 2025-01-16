@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: Can a power outage break a pc?
+Author: DavoMcBones
+Score: 1
+Created UTC: 2024-12-20 01:44:51
+URL: https://i.redd.it/v0n4aap2sw7e1.jpeg
+
+There was a power outage and when the powr came back I was greeted with this message. Restarting and running diagnostics does nothing. Dont worry ill just reinstall windows but it's still an annoying hassle having to setup everything all over again. But I wonder, how exactly did a power cut manage to brick my pc? I never seen this happen before, and shoudnt the PSU be responsible for preventing a surge in the components. Even if the SSD somehow got affected woudnt it fail to boot at all?

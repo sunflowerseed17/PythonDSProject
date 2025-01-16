@@ -1,0 +1,8 @@
+Subreddit: SonyHeadphones
+Title: WF-1000XM5 battery issues?
+Author: Venus259jaded
+Score: 2
+Created UTC: 2024-12-25 20:59:24
+URL: https://www.reddit.com/r/SonyHeadphones/comments/1hm8wo5/wf1000xm5_battery_issues/
+
+I tried testing the battery and it seems like the right drains 6% every 10 minutes and the left drains 5% every 10 minutes with LDAC on, playing music at 60% volume, that's it, nothing else on. Is this good battery life? If we do the math, it'll only last about 2-3 hours. I literally just got them too, didn't update

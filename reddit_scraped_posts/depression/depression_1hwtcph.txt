@@ -1,0 +1,8 @@
+Subreddit: hoi4
+Title: Can you use debug_smooth on ironman?
+Author: Reivaz88
+Score: 2
+Created UTC: 2025-01-08 19:59:54
+URL: https://www.reddit.com/r/hoi4/comments/1hwtcph/can_you_use_debug_smooth_on_ironman/
+
+So I'm a new player and I wanna start going for achievements, but without debug_smooth the game is pretty unplayable. I tried the trick where you go from a normal game with the command to an ironman one and that didn't work. Is there anything I can do?

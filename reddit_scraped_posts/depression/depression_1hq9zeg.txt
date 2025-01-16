@@ -1,0 +1,13 @@
+Subreddit: sffpc
+Title: Is the Lenovo P330 tiny a good PC for my needs?
+Author: DavoMcBones
+Score: 1
+Created UTC: 2024-12-31 07:52:25
+URL: https://www.reddit.com/r/sffpc/comments/1hq9zeg/is_the_lenovo_p330_tiny_a_good_pc_for_my_needs/
+
+I'm in need of an upgrade, and I thought a p330 is nice because of the power it has for such a small size. It's got an i5-9500T, and a nvidia quadro P620. Now I dont need the most powerful pc in the world. I mostly just play lightweight games like team fortress 2, CS 2, roblox, and other esports titles. And I also do the occasional tinkering with blender from time to time, not in depth tho, just basic stuff. 
+
+And really I'm just buying it for the form factor, so I dont mind if price to performance isnt the best, just enough to run my stuff smoothly.
+
+
+My school used to have this as school PCs and they were suprisingly very powerful, but that was a couple years ago back in 2020 so I'm not sure how well they hold up now. Is it still a good buy for 2024?
