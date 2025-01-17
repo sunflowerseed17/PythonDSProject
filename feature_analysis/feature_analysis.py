@@ -1,48 +1,24 @@
-import numpy as np
-from sklearn.decomposition import LatentDirichletAllocation
-from feature_analysis_func import EmpathFeatureAnalyzer, NGramFeatureAnalyzer, LDAFeatureAnalyzer
 
-# Initialize and run Empath feature analysis
-print("Running Empath Feature Analysis...")
-empath_analyzer = EmpathFeatureAnalyzer()
-empath_analyzer.extract_empath_features()
-empath_analyzer.analyze_correlation()
-print("Empath Analysis Results:")
-print(empath_analyzer.correlation_results.head())
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../feature_extraction"))
+from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor, EmpathFeatureExtractor
 
-# Initialize and run N-Gram feature analysis
-print("\nRunning N-Gram Feature Analysis...")
-ngram_analyzer = NGramFeatureAnalyzer()
-ngram_analyzer.extract_ngrams()
-ngram_analyzer.generate_wordclouds()
+output_folder = "data/feature_analysis_output"
+os.makedirs(output_folder, exist_ok=True)
 
-<<<<<<< Updated upstream
-def load_documents_and_labels(preprocessed_folder):
-    documents = []
-    labels = []
-    for label, subfolder in enumerate(["depression", "standard", "breastcancer"]): 
-        folder_path = os.path.join(preprocessed_folder, subfolder)
-        for file_name in os.listdir(folder_path):
-            file_path = os.path.join(folder_path, file_name)
-            if os.path.isfile(file_path):
-                with open(file_path, 'r', encoding='utf-8') as file:
-                    documents.append(file.read())
-                    labels.append(label)
-    return documents, labels
-=======
-# Initialize and run LDA analysis
-print("\nRunning LDA Analysis...")
->>>>>>> Stashed changes
+# N-Gram Analysis
+ngram_extractor = NGramFeatureExtractor()
+ngram_extractor.extract_features()
+ngram_extractor.save_wordclouds(output_folder)
 
-# Mock LDA data for demonstration purposes
-lda_model = LatentDirichletAllocation(n_components=5, random_state=42)
-topic_matrix = lda_model.fit_transform(np.random.rand(len(ngram_analyzer.documents), 100))  # Random topic matrix for demo
+# Empath Analysis
+empath_extractor = EmpathFeatureExtractor()
+empath_extractor.extract_empath_features()
+empath_extractor.analyze_correlation()
+empath_extractor.save_correlation_table(output_folder)
 
-lda_analyzer = LDAFeatureAnalyzer(lda_model, topic_matrix)
-tsne_results = lda_analyzer.run_tsne()
-cluster_labels = lda_analyzer.cluster_topics()
-
-# Print t-SNE and clustering results
-print("t-SNE and Clustering Results:")
-print("t-SNE Results Shape:", tsne_results.shape)
-print("Cluster Labels:", np.unique(cluster_labels))
+# LDA Analysis
+lda_extractor = LDAFeatureExtractor(num_topics=20)
+lda_extractor.run_analysis_pipeline()
+lda_extractor.save_tsne_visualization(output_folder)

@@ -1,7 +1,11 @@
 import os
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.manifold import TSNE
+from sklearn.cluster import KMeans
 from empath import Empath
 from gensim import corpora
 from gensim.models import LdaModel
@@ -12,20 +16,31 @@ from scipy.stats import pearsonr
 from statsmodels.stats.multitest import multipletests
 from collections import defaultdict
 
-
-
-
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 
 # Base Class
 class FeatureExtractor:
-    def __init__(self, documents, labels, output_folder="data/feature_extracted_data"):
-        self.documents = documents
-        self.labels = labels
+    def __init__(self, output_folder="data/feature_extracted_data"):
+        self.documents, self.labels = self.load_documents_and_labels()
         self.output_folder = output_folder
         os.makedirs(self.output_folder, exist_ok=True)
+
+    def load_documents_and_labels(self):
+        folders = {
+            "depression": {"path": "data/preprocessed_posts/depression", "label": 1},
+            "standard": {"path": "data/preprocessed_posts/standard", "label": 0},
+        }
+        documents, labels = [], []
+        for category, data in folders.items():
+            for file_name in os.listdir(data["path"]):
+                file_path = os.path.join(data["path"], file_name)
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    documents.append(file.read())
+                    labels.append(data["label"])
+        print(f"Loaded {len(documents)} documents.")
+        return documents, labels
         
 
     def preprocess_text(self, text):
@@ -62,8 +77,8 @@ class FeatureExtractor:
 
 # N-Gram Feature Extractor
 class NGramFeatureExtractor(FeatureExtractor):
-    def __init__(self, documents, labels, output_folder="data/feature_extracted_data"):
-        super().__init__(documents, labels, output_folder)
+    def __init__(self, output_folder="data/feature_extracted_data"):
+        super().__init__(output_folder)
         self.vectorizer_unigram = TfidfVectorizer(ngram_range=(1, 1), stop_words='english')
         self.vectorizer_bigram = TfidfVectorizer(ngram_range=(2, 2), stop_words='english')
         self.vectorizer_combined = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
@@ -161,18 +176,61 @@ class NGramFeatureExtractor(FeatureExtractor):
         standard_freqs = {feature_names[i]: standard_sums[i] for i in range(len(feature_names))}
 
         return depression_freqs, breastcancer_freqs, standard_freqs
+    
+    def generate_wordclouds(self):
+        depression_unigrams, _, non_depression_unigrams = self.compute_frequencies(feature_type="unigram")
+        depression_bigrams, _, non_depression_bigrams = self.compute_frequencies(feature_type="bigram")
+
+        wordcloud_data = {
+            "Depression - Unigrams": depression_unigrams,
+            "Non-Depression - Unigrams": non_depression_unigrams,
+            "Depression - Bigrams": depression_bigrams,
+            "Non-Depression - Bigrams": non_depression_bigrams,
+        }
+
+        generated_wordclouds = {}
+
+        for title, frequencies in wordcloud_data.items():
+            # Clean up frequencies by removing invalid entries
+            cleaned_frequencies = {word: freq for word, freq in frequencies.items() if not pd.isna(freq) and freq > 0}
+            if not cleaned_frequencies:
+                print(f"Skipping {title} due to empty or invalid frequency data.")
+                continue
+
+            # Generate word cloud
+            wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(cleaned_frequencies)
+            generated_wordclouds[title] = wordcloud  # Store the word cloud object
+
+        return generated_wordclouds
+    
+    def save_wordclouds(self, output_folder):
+        wordcloud_data = self.generate_wordclouds()
+        os.makedirs(output_folder, exist_ok=True)
+        for title, wordcloud in wordcloud_data.items():
+            file_name = f"{title.replace(' ', '_').lower()}.png"
+            file_path = os.path.join(output_folder, file_name)
+
+            # Save the word cloud image
+            plt.figure(figsize=(10, 6))
+            plt.imshow(wordcloud, interpolation='bilinear')
+            plt.axis('off')
+            plt.title(title, fontsize=16)
+            plt.savefig(file_path, bbox_inches='tight', dpi=300)
+            plt.close()  # Close the figure to avoid overlapping
+            print(f"Saved word cloud: {file_path}")
         
 # Empath Feature Extractor
 class EmpathFeatureExtractor(FeatureExtractor):
-    def __init__(self, documents, labels, output_folder="data/feature_extracted_data"):
-        super().__init__(documents, labels, output_folder)
+    def __init__(self, output_folder="data/feature_extracted_data"):
+        super().__init__(output_folder)
         self.lexicon = Empath()
         self.features = None
         self.correlation_results = None
         self.significant_results = None
+
         # Categories to focus on based on the origin paper. 
-# The categories are divided into linguistic features, psychological processes, personal concerns, and time orientations.
-# Since we cannot use the LIWC tool, we will use the Empath tool and define similar categorical features. 
+        # The categories are divided into linguistic features, psychological processes, personal concerns, and time orientations.
+        # Since we cannot use the LIWC tool, we will use the Empath tool and define similar categorical features. 
 
         self.categories = {
             "linguistic_features": [
@@ -325,6 +383,40 @@ class EmpathFeatureExtractor(FeatureExtractor):
             "Corrected P-Value": corrected_p_values
         }).sort_values(by="Correlation", key=abs, ascending=False)
 
+    def generate_correlation_table(self):
+        if self.correlation_results is None:
+            raise ValueError("Correlation results must be calculated before generating the table.")
+
+        results = []
+
+        for _, row in self.correlation_results.iterrows():
+            feature = row["Feature"]
+            correlation = row["Correlation"]
+            p_value = row["P-Value"]
+
+            for category, features in self.categories.items():
+                if isinstance(features, dict):
+                    for subcategory, subfeatures in features.items():
+                        if feature in subfeatures:
+                            results.append((f"{category} - {subcategory}", feature, correlation, p_value))
+                elif feature in features:
+                    results.append((category, feature, correlation, p_value))
+
+        correlation_table = pd.DataFrame(results, columns=["Empath Category", "Example Word", "Correlation", "P-Value"])
+        return correlation_table
+    
+    def save_correlation_table(self, output_folder):
+        """
+        Save the correlation table to the specified output folder.
+        """
+        if self.correlation_results is None:
+            raise ValueError("Correlation results must be calculated before saving.")
+        
+        correlation_table = self.generate_correlation_table()
+        file_path = os.path.join(output_folder, "Empath_Correlation_Table.csv")
+        correlation_table.to_csv(file_path, index=False)
+        print(f"Saved Empath correlation table: {file_path}")
+
     def save_features_and_results(self, overwrite=False):
         if self.features is not None:
             feature_file = os.path.join(self.output_folder, "empath_features_with_labels.csv")
@@ -342,12 +434,10 @@ class EmpathFeatureExtractor(FeatureExtractor):
             else:
                 print(f"Correlation results file already exists at {correlation_file}.")
 
-
-
 # LDA Feature Extractor
 class LDAFeatureExtractor(FeatureExtractor):
-    def __init__(self, documents, labels, num_topics=70, passes=15, output_folder="data/feature_extracted_data", random_state=42):
-        super().__init__(documents, labels, output_folder)
+    def __init__(self, num_topics=70, passes=15, output_folder="data/feature_extracted_data", random_state=42):
+        super().__init__(output_folder)
         self.num_topics = num_topics
         self.passes = passes
         self.random_state = random_state
@@ -407,6 +497,31 @@ class LDAFeatureExtractor(FeatureExtractor):
             dict(self.lda_model.get_document_topics(doc, minimum_probability=0))
             for doc in self.corpus
         ]
+    
+    def run_tsne(self):
+        tsne = TSNE(n_components=2, random_state=42)
+        tsne_results = tsne.fit_transform(self.topic_matrix)
+        return tsne_results
+
+    def visualize_tsne(self, tsne_results):
+        clusters = KMeans(n_clusters=self.num_topics, random_state=42).fit_predict(self.topic_matrix)
+
+        plt.figure(figsize=(10, 8))
+        for i in range(self.num_topics):
+            indices = np.where(clusters == i)
+            plt.scatter(tsne_results[indices, 0], tsne_results[indices, 1], label=f"Topic {i}", alpha=0.6)
+
+        for i, topic in enumerate(self.lda_model.print_topics(num_topics=self.num_topics, num_words=1)):
+            plt.annotate(f"Topic {i}: {topic[1]}", (np.mean(tsne_results[clusters == i, 0]), np.mean(tsne_results[clusters == i, 1])), 
+                         fontsize=8, bbox=dict(boxstyle="round,pad=0.3", edgecolor='gray', facecolor='white', alpha=0.7))
+
+        plt.title("t-SNE Visualization of LDA Topics")
+        plt.xlabel("t-SNE Dimension 1")
+        plt.ylabel("t-SNE Dimension 2")
+        plt.legend()
+        plt.grid(True)
+        plt.show()
+
 
     def topic_distribution_to_matrix(self):
         """
@@ -436,6 +551,20 @@ class LDAFeatureExtractor(FeatureExtractor):
 
         # Call the base class method for saving
         self.save_to_csv(lda_features_df, lda_features_file)
+
+    def save_tsne_visualization(self, output_folder):
+        """
+        Save the t-SNE visualization as a PNG file.
+        """
+        if self.tsne_results is None:
+            raise ValueError("t-SNE results must be computed before saving.")
+        
+        file_path = os.path.join(output_folder, "LDA_tSNE_Visualization.png")
+        plt.figure(figsize=(10, 8))
+        self.visualize_tsne(self.tsne_results)  # Generates the plot
+        plt.savefig(file_path)
+        plt.close()
+        print(f"Saved LDA t-SNE visualization: {file_path}")
         
     def run_pipeline(self):
         """
@@ -455,4 +584,42 @@ class LDAFeatureExtractor(FeatureExtractor):
         self.save_features()
 
         print("LDA pipeline complete.")
+
+    def run_analysis_pipeline(self):
+        """
+        Complete LDA analysis pipeline with t-SNE visualization.
+
+        This method preprocesses the documents, trains the LDA model,
+        extracts topic distributions, applies t-SNE for dimensionality reduction,
+        and visualizes the results.
+        """
+        print("Starting LDA analysis pipeline...")
+
+        # Preprocess the documents
+        print("Preprocessing documents...")
+        processed_docs = self.preprocess_documents()
+        filtered_docs = self.filter_docs_by_word_count(processed_docs)
+
+        # Train the LDA model
+        print("Training LDA model...")
+        self.train_lda(filtered_docs)
+
+        # Extract topic distributions
+        print("Extracting topic distributions...")
+        self.extract_topic_distributions()
+
+        # Convert topic distributions to matrix format
+        print("Converting topic distributions to matrix format...")
+        self.topic_matrix = self.topic_distribution_to_matrix()
+
+        # Apply t-SNE for dimensionality reduction
+        print("Applying t-SNE for visualization...")
+        self.tsne_results = self.run_tsne()
+
+        # Visualize the t-SNE results
+        print("Visualizing t-SNE...")
+        self.visualize_tsne(self.tsne_results)
+
+        print("LDA analysis pipeline complete.")
+
 
