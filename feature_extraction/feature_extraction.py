@@ -27,11 +27,13 @@ ngram_extractor.extract_features()
 # Save features
 ngram_extractor.save_features()
 
-# Initialize Empath Feature Extractor
+#Initializing Empath Feature Extractor
 empath_extractor = EmpathFeatureExtractor(documents, labels)
 # Extract features
 empath_extractor.extract_empath_features()
-# Save features and results
+# Analyze correlations
+empath_extractor.analyze_correlation()
+# Save results
 empath_extractor.save_features_and_results()
 
 # Initializing LDA Feature Extractor

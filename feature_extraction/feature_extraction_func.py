@@ -120,7 +120,42 @@ class NGramFeatureExtractor(FeatureExtractor):
         else:
             print(f"Bigram features file already exists at {bigram_file}.")
 
+    def compute_frequencies(self, feature_type="unigram"):
+            """
+            Compute frequencies of unigrams or bigrams for depression and non-depression posts.
+            
+            Parameters:
+            feature_type (str): Specify 'unigram' or 'bigram' to compute respective frequencies.
+            
+            Returns:
+            tuple: Two dictionaries containing frequencies for depression and non-depression posts.
+            """
+            if feature_type == "unigram":
+                matrix = self.unigram_matrix
+                feature_names = self.unigram_feature_names
+            elif feature_type == "bigram":
+                matrix = self.bigram_matrix
+                feature_names = self.bigram_feature_names
+            else:
+                raise ValueError("Invalid feature_type. Choose 'unigram' or 'bigram'.")
 
+            # Separate indices for depression and non-depression posts
+            depression_indices = [i for i, label in enumerate(self.labels) if label == 1]
+            non_depression_indices = [i for i, label in enumerate(self.labels) if label == 0]
+
+            # Subset the matrix
+            depression_matrix = matrix[depression_indices]
+            non_depression_matrix = matrix[non_depression_indices]
+
+            # Sum the frequencies for each feature
+            depression_sums = depression_matrix.sum(axis=0).A1
+            non_depression_sums = non_depression_matrix.sum(axis=0).A1
+
+            # Create frequency dictionaries
+            depression_freqs = {feature_names[i]: depression_sums[i] for i in range(len(feature_names))}
+            non_depression_freqs = {feature_names[i]: non_depression_sums[i] for i in range(len(feature_names))}
+
+            return depression_freqs, non_depression_freqs
 
    
 
@@ -287,10 +322,10 @@ class EmpathFeatureExtractor(FeatureExtractor):
             "Corrected P-Value": corrected_p_values
         }).sort_values(by="Correlation", key=abs, ascending=False)
 
-    def save_features_and_results(self):
+    def save_features_and_results(self, overwrite=False):
         if self.features is not None:
             feature_file = os.path.join(self.output_folder, "empath_features_with_labels.csv")
-            if not os.path.exists(feature_file):
+            if overwrite or not os.path.exists(feature_file):
                 self.features.to_csv(feature_file, index=False)
                 print(f"Saved empath features with labels to {feature_file}.")
             else:
@@ -298,7 +333,7 @@ class EmpathFeatureExtractor(FeatureExtractor):
 
         if self.correlation_results is not None:
             correlation_file = os.path.join(self.output_folder, "empath_correlation_results.csv")
-            if not os.path.exists(correlation_file):
+            if overwrite or not os.path.exists(correlation_file):
                 self.correlation_results.to_csv(correlation_file, index=False)
                 print(f"Saved correlation results to {correlation_file}.")
             else:
