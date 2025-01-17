@@ -66,7 +66,8 @@ class NGramFeatureExtractor(FeatureExtractor):
         super().__init__(documents, labels, output_folder)
         self.vectorizer_unigram = TfidfVectorizer(ngram_range=(1, 1), stop_words='english')
         self.vectorizer_bigram = TfidfVectorizer(ngram_range=(2, 2), stop_words='english')
-        self.vectorizer_combined = TfidfVectorizer(ngram_range=(1, 2), stop_words='english') 
+        self.vectorizer_combined = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
+        
         self.unigram_matrix = None
         self.bigram_matrix = None
         self.unigram_feature_names = None
@@ -96,7 +97,7 @@ class NGramFeatureExtractor(FeatureExtractor):
         print(f"Number of combined unigram and bigram features: {len(self.combined_feature_names)}")
 
         return self.unigram_matrix, self.bigram_matrix, self.combined_matrix
-    
+
     def save_features(self):
         """
         Save unigram and bigram features with labels as CSV files.
@@ -121,44 +122,46 @@ class NGramFeatureExtractor(FeatureExtractor):
             print(f"Bigram features file already exists at {bigram_file}.")
 
     def compute_frequencies(self, feature_type="unigram"):
-            """
-            Compute frequencies of unigrams or bigrams for depression and non-depression posts.
-            
-            Parameters:
-            feature_type (str): Specify 'unigram' or 'bigram' to compute respective frequencies.
-            
-            Returns:
-            tuple: Two dictionaries containing frequencies for depression and non-depression posts.
-            """
-            if feature_type == "unigram":
-                matrix = self.unigram_matrix
-                feature_names = self.unigram_feature_names
-            elif feature_type == "bigram":
-                matrix = self.bigram_matrix
-                feature_names = self.bigram_feature_names
-            else:
-                raise ValueError("Invalid feature_type. Choose 'unigram' or 'bigram'.")
+        """
+        Compute frequencies of unigrams or bigrams for depression, breastcancer, and standard posts.
 
-            # Separate indices for depression and non-depression posts
-            depression_indices = [i for i, label in enumerate(self.labels) if label == 1]
-            non_depression_indices = [i for i, label in enumerate(self.labels) if label == 0]
+        Parameters:
+        feature_type (str): Specify 'unigram' or 'bigram' to compute respective frequencies.
 
-            # Subset the matrix
-            depression_matrix = matrix[depression_indices]
-            non_depression_matrix = matrix[non_depression_indices]
+        Returns:
+        tuple: Three dictionaries containing frequencies for depression, breastcancer, and standard posts.
+        """
+        if feature_type == "unigram":
+            matrix = self.unigram_matrix
+            feature_names = self.unigram_feature_names
+        elif feature_type == "bigram":
+            matrix = self.bigram_matrix
+            feature_names = self.bigram_feature_names
+        else:
+            raise ValueError("Invalid feature_type. Choose 'unigram' or 'bigram'.")
 
-            # Sum the frequencies for each feature
-            depression_sums = depression_matrix.sum(axis=0).A1
-            non_depression_sums = non_depression_matrix.sum(axis=0).A1
+        # Separate indices for depression, breastcancer, and standard posts
+        depression_indices = [i for i, label in enumerate(self.labels) if label == 1]
+        breastcancer_indices = [i for i, label in enumerate(self.labels) if label == 2]
+        standard_indices = [i for i, label in enumerate(self.labels) if label == 0]
 
-            # Create frequency dictionaries
-            depression_freqs = {feature_names[i]: depression_sums[i] for i in range(len(feature_names))}
-            non_depression_freqs = {feature_names[i]: non_depression_sums[i] for i in range(len(feature_names))}
+        # Subset the matrix for each category
+        depression_matrix = matrix[depression_indices]
+        breastcancer_matrix = matrix[breastcancer_indices]
+        standard_matrix = matrix[standard_indices]
 
-            return depression_freqs, non_depression_freqs
+        # Sum the frequencies for each feature
+        depression_sums = depression_matrix.sum(axis=0).A1
+        breastcancer_sums = breastcancer_matrix.sum(axis=0).A1
+        standard_sums = standard_matrix.sum(axis=0).A1
 
-   
+        # Create frequency dictionaries
+        depression_freqs = {feature_names[i]: depression_sums[i] for i in range(len(feature_names))}
+        breastcancer_freqs = {feature_names[i]: breastcancer_sums[i] for i in range(len(feature_names))}
+        standard_freqs = {feature_names[i]: standard_sums[i] for i in range(len(feature_names))}
 
+        return depression_freqs, breastcancer_freqs, standard_freqs
+        
 # Empath Feature Extractor
 class EmpathFeatureExtractor(FeatureExtractor):
     def __init__(self, documents, labels, output_folder="data/feature_extracted_data"):

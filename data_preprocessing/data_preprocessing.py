@@ -83,7 +83,7 @@ def fetch_posts_from_subreddit(subreddit_name):
     """Fetch posts from a specific subreddit."""
     print(f"\nFetching posts from r/{subreddit_name}...\n")
     subreddit = reddit.subreddit(subreddit_name)
-    output_folder = f"reddit_scraped_posts/{subreddit_name}"
+    output_folder = f"data/reddit_scraped_posts/{subreddit_name}"
     create_folder(output_folder)
 
     try:
@@ -159,6 +159,10 @@ folders = {
     "breastcancer": {
         "input": "data/reddit_scraped_posts/breastcancer",
         "output": "data/preprocessed_posts/breastcancer"
+    },
+    "standard": {
+        "input": "data/reddit_scraped_posts/standard",
+        "output": "data/preprocessed_posts/standard"
     }
 }
 
