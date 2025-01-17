@@ -1,11 +1,22 @@
-import os
-import sys
-from feature_analysis_func import NGramFeatureAnalyzer, LDAFeatureAnalyzer
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../feature_extraction"))
-from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor
+import numpy as np
+from sklearn.decomposition import LatentDirichletAllocation
+from feature_analysis_func import EmpathFeatureAnalyzer, NGramFeatureAnalyzer, LDAFeatureAnalyzer
 
+# Initialize and run Empath feature analysis
+print("Running Empath Feature Analysis...")
+empath_analyzer = EmpathFeatureAnalyzer()
+empath_analyzer.extract_empath_features()
+empath_analyzer.analyze_correlation()
+print("Empath Analysis Results:")
+print(empath_analyzer.correlation_results.head())
 
+# Initialize and run N-Gram feature analysis
+print("\nRunning N-Gram Feature Analysis...")
+ngram_analyzer = NGramFeatureAnalyzer()
+ngram_analyzer.extract_ngrams()
+ngram_analyzer.generate_wordclouds()
 
+<<<<<<< Updated upstream
 def load_documents_and_labels(preprocessed_folder):
     documents = []
     labels = []
@@ -18,32 +29,20 @@ def load_documents_and_labels(preprocessed_folder):
                     documents.append(file.read())
                     labels.append(label)
     return documents, labels
+=======
+# Initialize and run LDA analysis
+print("\nRunning LDA Analysis...")
+>>>>>>> Stashed changes
 
-# Example usage
-preprocessed_folder = "data/preprocessed_posts"
-documents, labels = load_documents_and_labels(preprocessed_folder)
-print(f"Loaded {len(documents)} documents with labels: {set(labels)}")
+# Mock LDA data for demonstration purposes
+lda_model = LatentDirichletAllocation(n_components=5, random_state=42)
+topic_matrix = lda_model.fit_transform(np.random.rand(len(ngram_analyzer.documents), 100))  # Random topic matrix for demo
 
-# Initialize the N-gram feature extractor
-ngram_extractor = NGramFeatureExtractor(documents, labels)
-ngram_extractor.extract_features()
+lda_analyzer = LDAFeatureAnalyzer(lda_model, topic_matrix)
+tsne_results = lda_analyzer.run_tsne()
+cluster_labels = lda_analyzer.cluster_topics()
 
-# Get unigram and bigram frequencies
-unigram_freqs, bigram_freqs = ngram_extractor.compute_frequencies(feature_type="unigram"), ngram_extractor.compute_frequencies(feature_type="bigram")
-
-# Initialize the LDA feature extractor
-lda_extractor = LDAFeatureExtractor(documents, labels, num_topics=20, passes=15)
-lda_extractor.run_pipeline()
-
-# Extract LDA model and topic matrix
-lda_model = lda_extractor.lda_model
-topic_matrix = lda_extractor.topic_distribution_to_matrix()
-# Assuming you have already loaded unigram and bigram frequencies, LDA model, topic matrix, and labels.
-ngram_analyzer = NGramFeatureAnalyzer(unigram_freqs, bigram_freqs)
-ngram_analyzer.visualize_wordclouds()
-
-lda_analyzer = LDAFeatureAnalyzer(lda_model, topic_matrix, labels)
-tsne_results = lda_analyzer.run_tsne(perplexity=50, n_iter=500)
-cluster_labels = lda_analyzer.cluster_topics(n_clusters=10)
-topic_words = lda_analyzer.get_topic_words(top_n=5)
-lda_analyzer.visualize_tsne_clusters(tsne_results, cluster_labels, topic_words)
+# Print t-SNE and clustering results
+print("t-SNE and Clustering Results:")
+print("t-SNE Results Shape:", tsne_results.shape)
+print("Cluster Labels:", np.unique(cluster_labels))
