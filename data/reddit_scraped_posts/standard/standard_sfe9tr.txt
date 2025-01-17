@@ -1,0 +1,19 @@
+Subreddit: excel
+Title: Looking for WBmerge - no longer available?
+Author: tartanthing
+Score: 1
+Created UTC: 2022-01-29 09:06:56
+URL: https://www.reddit.com/r/excel/comments/sfe9tr/looking_for_wbmerge_no_longer_available/
+
+I'm trying to split several Excel work sheets in to separate workbooks, the columns requiring split are variable depending on info needed.  
+I've tried various VBA's without much success, mainly because I'm not that clever with such things. (my attempts end up with syntax errors, compile errors, refusing to run etc etc)
+
+I've come across loads of add ins which will split into sheets on the same workbook, but the numbers of results mean that creating new copies in a new workbook is very time consuming.
+
+I was watching a [Mr Excel video](https://www.youtube.com/watch?v=X8gV30MeZwM) which mentioned an add-in called WBmerge. This looks like the answer to my problems. The download is for a set up file, but it would appear the host website no longer exists, and searches only come back to links for the set up exe.
+
+Does anyone know if the add in still exists or where it can be downloaded?
+
+If not can someone point me to an easy to understand and modify VBA script to split sheets into workbooks?
+
+Thanks for your assistance!

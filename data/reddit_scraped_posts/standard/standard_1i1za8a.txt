@@ -1,0 +1,16 @@
+Subreddit: RedditJobBoard
+Title: Hiring: Business Central Technical Consultant at AFON IT PTE LTD
+Author: josylad
+Score: 1
+Created UTC: 2025-01-15 15:01:45
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i1za8a/hiring_business_central_technical_consultant_at/
+
+**AFON IT PTE LTD is hiring a Business Central Technical Consultant** 
+ 
+**Location:** Queenstown, Singapore 
+ 
+**Description:** 
+
+ AFON is an award-winning provider of global ERP solutions SAP Business One, Microsoft Dynamics NAV, Oracle NetSuite & Sage 300. It also provides managed IT services.Job Title: Business Central M365 Technical ConsultantJob Description:· Collaborate with functional consultants to develop add-on solutions for customers.· Develop programs in Dynamics NAV and Dynamics 365 Business Central (on-premise or online).· Participate in business requirement study.· Develop Power BI Report and Dashboard.· Develop Apps for Business Central using Power App.· Manage & review team of outsource employees’ projects.Requirements:· Skill in NAV C/AL, Business Central AL, JSON, .Net programming.· Business Central Reports design.· Webservices & API programming.· Possess minimum a Diploma / Degree in IT.& 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/business-central-technical-consultant-57757/

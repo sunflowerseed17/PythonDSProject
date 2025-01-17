@@ -1,0 +1,10 @@
+Subreddit: excel
+Title: Conditional (?) Formatting, changing cell colours according to multiple previous sheets data
+Author: tartanthing
+Score: 1
+Created UTC: 2019-11-10 08:15:49
+URL: https://www.reddit.com/r/excel/comments/du8ur9/conditional_formatting_changing_cell_colours/
+
+Office 365 user, I have a workbook with three sheets. If I enter any kind of data in sheet one, I want the correlating cells in the subsequent 2 sheets to change a specific colour, there is no need to copy the data itself. Likewise when I enter data in sheet 2, I want sheet 3 to change correlating cell a different colour, but not interfere with cells coloured by sheet 1's data. Should add that my sheet is 20+ columns and 12 rows, which is why I need colours for quick & easy identification. Tried a few sources but cant the find specific solution to this.
+
+Any suggestions from anyone?

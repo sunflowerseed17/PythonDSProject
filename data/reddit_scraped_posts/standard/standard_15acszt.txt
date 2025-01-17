@@ -1,0 +1,12 @@
+Subreddit: excel
+Title: Sorting out an address data field
+Author: tartanthing
+Score: 1
+Created UTC: 2023-07-26 17:56:43
+URL: https://www.reddit.com/r/excel/comments/15acszt/sorting_out_an_address_data_field/
+
+Hello r/excel,I get a list of addresses every month in the formatted in the way shown in the picture - tab Sheet 1 - I'm trying to find ways to clean up the data so I end up with the result in Sheet 3 (at the bottom on the pic)Sheet 2 is where I am at just now and I am looking for some helpful advice/tips to sort this out. I added some comments about process and goals on the Sheet 2 part in the pic.
+
+Can anyone give me some ideas please?
+
+https://preview.redd.it/or0fubfxlceb1.png?width=1574&format=png&auto=webp&s=df5da2d05c36d9f71a876a87574ecdbb5becd0ef

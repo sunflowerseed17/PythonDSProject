@@ -1,0 +1,11 @@
+Subreddit: diabetes_t2
+Title: mmol
+Author: tartanthing
+Score: 8
+Created UTC: 2024-11-19 18:04:37
+URL: https://www.reddit.com/r/diabetes_t2/comments/1gv3kyh/mmol/
+
+For the mods - is there an automagic conversion bot for this sub that can interpret US Freedom Units of a1c to mmol for those of us elsewhere to understand where we are at?
+At my GP today and asked them about conversion mentioning this sub and its seems that at least in the UK mmol is the standard. 
+I think we would all benefit from greater understanding.
+(FWIW, I grew up during a time when we had to know Imperial, Whitworth and Metric but its a real pain) 

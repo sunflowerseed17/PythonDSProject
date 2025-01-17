@@ -1,0 +1,24 @@
+Subreddit: RedditJobBoard
+Title: Hiring: Firmware Engineering Intern at Intel Corporation
+Author: josylad
+Score: 1
+Created UTC: 2025-01-17 03:00:19
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i36s3y/hiring_firmware_engineering_intern_at_intel/
+
+**Intel Corporation is hiring a Firmware Engineering Intern** 
+ 
+**Location:** Az, United States of America 
+ 
+**Description:** 
+
+ Job Description
+Do Something Wonderful!
+Intel put the Silicon in Silicon Valley. No one else is this obsessed with engineering a brighter future. Every day, we create world changing technology that enriches the lives of every person on earth. So, if you have a big idea, let's do something wonderful together. Join us, because at Intel, we are building a better tomorrow.
+Who We Are
+Prime code Server Firmware (PSFW) team is looking for a Firmware Validation Engineer to join our team for current and next generation Server SOC Products.
+Who You Are
+Your responsibilities are as follows but not limited to:
+Creating test environments, checker strategies, and test generators for validating embedded power management firmware in the SOC
+Learning the FW architecture and related SOC architecture by debugging test failures to the root cause</li 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/firmware-engineering-intern-57929/

@@ -1,0 +1,22 @@
+Subreddit: RedditJobBoard
+Title: Hiring: PhD position in AI and Medical Imaging - Collaboration with Stanford University at Helse Møre og Romsdal
+Author: josylad
+Score: 1
+Created UTC: 2025-01-16 19:02:42
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i2wgws/hiring_phd_position_in_ai_and_medical_imaging/
+
+**Helse Møre og Romsdal is hiring a PhD position in AI and Medical Imaging - Collaboration with Stanford University** 
+ 
+**Location:** Ålesund, Norway 
+ 
+**Description:** 
+
+ (i ny fane)
+
+Om stillinga
+Exciting PhD Opportunity in AI and Medical Imaging: Collaborate with Stanford University
+Are you passionate about revolutionizing cancer diagnosis and treatment through cutting-edge artificial intelligence and medical imaging technologies? Join the SynthiCare Project, an ambitious international research initiative with established collaborations across Norway's leading institutions and Stanford University.
+This fully funded 3-year PhD position, financed by Samarbeidsorganet at the Central Norway Regional Health Authority, offers the opportunity to explore advanced methods for generating synthetic MRI data using state-of-the-art AI technologies, including diffusion models, GANs, and VAEs. The project aims to tackle critical challenges in medical imaging and oncology, driving advancements in precision cancer treatment.
+Wha 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/phd-position-in-ai-and-medical-imaging-collaboration-with-stanford-university-57896/

@@ -1,0 +1,17 @@
+Subreddit: RedditJobBoard
+Title: Hiring: Administrateur(trice) Senior de Bases de Données SQL/ MongoDB at Enova Consulting Sàrl
+Author: josylad
+Score: 1
+Created UTC: 2025-01-15 21:00:20
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i27nof/hiring_administrateurtrice_senior_de_bases_de/
+
+**Enova Consulting Sàrl is hiring a Administrateur(trice) Senior de Bases de Données SQL/ MongoDB** 
+ 
+**Location:** Luxembourg, Luxembourg 
+ 
+**Description:** 
+
+ En tant qu'Administrateur(trice) Senior de Bases de Données, vous jouerez un rôle essentiel dans la conception, la mise en œuvre et la maintenance de l'infrastructure de bases de données. Vous serez responsable de garantir la sécurité, la scalabilité, la disponibilité et la stabilité des bases de données, tout en assurant l’intégrité et l’efficacité des systèmes d’information soutenant les fonctions organisationnelles et la croissance. Cela inclut la documentation précise, les schémas architecturaux, la surveillance, les alertes et les optimisations. Le candidat idéal possède une solide expertise technique, d'excellentes compétences en résolution de problèmes, et un engagement à rester à jour avec les avancées du secteur.
+Administration et gestion des bases de données : 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/administrateurtrice-senior-de-bases-de-donn%C3%A9es-sql-mongodb-57678/

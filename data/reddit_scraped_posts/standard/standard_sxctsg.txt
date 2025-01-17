@@ -1,0 +1,14 @@
+Subreddit: Maps
+Title: Map frustration
+Author: tartanthing
+Score: 3
+Created UTC: 2022-02-20 22:09:35
+URL: https://www.reddit.com/r/Maps/comments/sxctsg/map_frustration/
+
+Can the good people of this subreddit help at all?
+
+As a simple person I've been using Google Maps to visualise spreadsheet data, but I have finally reached the limit of the 10 Layers / 2000 data points.
+
+Can anyone here recommend an easy to learn Map Making software to overcome these limitations so it's still accessible for people even more simple than me? Lots of colour is important as is the ability to show/hide layers. It's for teaching political boundaries in the UK if that's any use, so lots of small layers (around 500 data points) build up into Regional areas - around 250,000 data points.
+
+Any help would be most appreciated or point me in the direction of a subreddit that could assist. Unfortunately I don't code. :-(

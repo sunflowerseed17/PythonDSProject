@@ -1,0 +1,19 @@
+Subreddit: RedditJobBoard
+Title: Hiring: System Architect at Douane
+Author: josylad
+Score: 1
+Created UTC: 2025-01-16 18:02:45
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i2v1mt/hiring_system_architect_at_douane/
+
+**Douane is hiring a System Architect** 
+ 
+**Location:** Apeldoorn, Netherlands 
+ 
+**Description:** 
+
+ Ben jij klaar om te pionieren en maatschappelijke impact te maken? Als system architect voor de Agile Release Train Data werk je mee aan het nieuwe Azure-dataplatform binnen een ambitieuze omgeving die zich richt op veilig, slim en verantwoord datagedreven werken. Reageer snel en maak het verschil!
+Dit doe je bij de Douane
+Jij helpt ons om onze kerntaken sneller, beter en efficiënter uit te voeren. Hiervoor willen we beschikbare data optimaal gebruiken en data uit eigen en externe bronnen beter combineren en analyseren. Zo kunnen we de handhaving sturen op basis van risico’s. Waarom deze ambities? Omdat we de komende jaren voor een grote opgave staan door de enorme groei van goederenstromen.
+Als system architect werk je in samenwerking met de enterprise of domein architect, zorg je voor een doorvertaling van de kaders en principes naar eisen aan de te bouwen oplossing. Denk hierbij aan eisen op het gebied van afbakening, s 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/system-architect-57821/

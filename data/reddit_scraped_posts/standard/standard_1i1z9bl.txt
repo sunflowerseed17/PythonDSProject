@@ -1,0 +1,26 @@
+Subreddit: RedditJobBoard
+Title: Hiring: Frontend Developer at Northstar Earth and Space
+Author: josylad
+Score: 1
+Created UTC: 2025-01-15 15:00:44
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i1z9bl/hiring_frontend_developer_at_northstar_earth_and/
+
+**Northstar Earth and Space is hiring a Frontend Developer** 
+ 
+**Location:** Luxembourg, Luxembourg 
+ 
+**Description:** 
+
+ Who we are and what we do
+NorthStar Earth & Space uses optical telescope data as the building blocks to create information services tailored to the needs and requirements of clients from both government and industry. Our extensive development portfolio includes orbit dynamics and machine learning algorithms for a variety of applications for space domain awareness and space traffic management. With headquarters in Montreal, Canada, European headquarters in Luxembourg and a wholly owned subsidiary in McLean, Virginia, the company is solving the ever-increasing threat of space collisions and empowering humanity to preserve our planet.
+
+
+To support the growth of our Luxembourg office, we are looking for a DevOps.
+
+
+Who you'll work with
+
+
+The Luxembourg software development team, Starlux, is responsible for building customer facing applications, leveraging the data generated or ingested by Nort 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/frontend-developer-57674/

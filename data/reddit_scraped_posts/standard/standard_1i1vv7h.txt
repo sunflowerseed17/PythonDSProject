@@ -1,0 +1,24 @@
+Subreddit: RedditJobBoard
+Title: Hiring: Internship DevOps Programmer - M/W H/F/X at Société Générale
+Author: josylad
+Score: 1
+Created UTC: 2025-01-15 12:00:27
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i1vv7h/hiring_internship_devops_programmer_mw_hfx_at/
+
+**Société Générale is hiring a Internship DevOps Programmer - M/W H/F/X** 
+ 
+**Location:** Luxembourg, Luxembourg 
+ 
+**Description:** 
+
+ Responsibilities
+Database team is responsible for Operations Database counting with technologies like Oracle, MSSQL, PostgreSQL and Sybase.
+Students will acquire not only high-quality technical knowledge and hands on abilities but also key career skills in areas including leadership, behavioral understanding, change management, and project management.
+Will be part of an important project for Private Cloud, mainly Database as a Service.
+Tasks and responsibilities:
+As part of the DBaaS Strategy, we have an internal tool (ULISS) which is, in charge of all automations for Database Team. Your mission will be focused on:
+ULISS Development for Oracle Database Automations – (BackEnd / FrontEnd)
+ULISS Development for PostgreSQL Database Automations – (BackEnd / FrontEnd)
+As part of Windows Security Options, some improvements on automation must be performed: 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/internship-devops-programmer-mw-hfx-57688/

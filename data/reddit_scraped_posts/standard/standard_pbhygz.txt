@@ -1,0 +1,18 @@
+Subreddit: googlesheets
+Title: Merging Data with Different Headers from Different Sheets/Workbooks
+Author: tartanthing
+Score: 2
+Created UTC: 2021-08-25 19:04:20
+URL: https://www.reddit.com/r/googlesheets/comments/pbhygz/merging_data_with_different_headers_from/
+
+Hello all,
+
+I've previously posted this elsewhere but am getting nowhere and have watched hours of Youtube without being able to find a specific answer so am hoping for some help here.
+
+I have the following data (example) [My Data](https://docs.google.com/spreadsheets/d/1Q7UlE5RnKEzGY4WlnpzQ0pwyV06U7GVZBpxQk-G6v-Y/edit?usp=sharing)
+
+I have a Master sheet with a list of a few thousand names including a unique id number and other data
+
+I need to merge these sheets, matching then names and ID numbers from a series of different years so the final sheet (named Merged Results on the example) shows only the names on the master sheet with entries for every year showing the person as Y, N or Blank. Names not appearing on the master sheet are to be excluded. The names in the yearly sheets are rarely in the same order as they appear on the master sheet so an entry onto the merged sheet is conditional on a match of unique id, first name and last name.
+
+My skill level on Gsheets/Excel is slightly above Imbecile and I'm finding this task a bit beyond me, so any help explained at ELI10 would be most welcome!

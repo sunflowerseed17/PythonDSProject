@@ -1,0 +1,25 @@
+Subreddit: RedditJobBoard
+Title: Hiring: Ingénieur Système Windows at Enova Consulting Sàrl
+Author: josylad
+Score: 1
+Created UTC: 2025-01-15 21:02:09
+URL: https://www.reddit.com/r/RedditJobBoard/comments/1i27pbp/hiring_ingénieur_système_windows_at_enova/
+
+**Enova Consulting Sàrl is hiring a Ingénieur Système Windows** 
+ 
+**Location:** Luxembourg, Luxembourg 
+ 
+**Description:** 
+
+ Nous recherchons un Ingénieur Système (niveau intermédiaire à senior) pour rejoindre une équipe dynamique et travailler sur un projet d'intégration stratégique suite à une acquisition.
+Ce poste offre une opportunité de contribuer à des initiatives technologiques clés au sein d'une organisation en pleine croissance.
+Responsabilités principales :
+Gérer et administrer les systèmes Windows et Linux.
+Superviser et maintenir les bases de données SQL
+Gérer les solutions de stockage, notamment HP et NAS.
+Assurer la mise en œuvre et l'administration des solutions de sauvegarde Veeam.
+Compétences requises :
+Solides connaissances des environnements Windows ( et Linux)
+Maîtrise des bases d 
+ 
+**Learn More and Apply:** https://app.resumeset.com/jobs/ing%C3%A9nieur-syst%C3%A8me-windows-57677/

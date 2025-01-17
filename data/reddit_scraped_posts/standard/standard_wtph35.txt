@@ -1,0 +1,16 @@
+Subreddit: audacity
+Title: Noob needing help with Podcast editing and recording!
+Author: tartanthing
+Score: 3
+Created UTC: 2022-08-21 03:31:29
+URL: https://www.reddit.com/r/audacity/comments/wtph35/noob_needing_help_with_podcast_editing_and/
+
+I've started a podcast with a work colleague which is in a conversational style. I've recorded 3 episodes so far, 2 are up on YouTube for testing before we start using proper hosting with BuzzSprout. The problem I have is my voice projects more and is deeper, my colleague is quite softly spoken. When I import files into Audacity the waveforms are taking forever to edit to try and normalise. I've followed a few tutorials online, but I cant get an even output. Episode 1 & 2 was done on a Zoom H1N, 3 was done on H1N using 2 lav mics using a splitter. I've attached the waveform screenshot. You can see that both mics pick up both of us speaking. There's no way to prevent that with the facilities we have. My voice is the one that's peaking, my colleague is the quiet voice in the middle. There's a lot of limitations on what we can do as far as spending money is concerned. The H1N, the 2 lavs (AGPTEK) and my laptop are all we have, there's no money to buy a mixer and a couple of samson q2u's, we have no space to make a permanent set up and unlikely to be any spend until the new financial year.
+
+So a couple of questions, can anyone recommend a way to record straight to Audacity using the mics either directly or via a software mixer but being able to adjust the inputs? I saw a vid [https://www.youtube.com/watch?v=lAwtXlmPokI&ab\_channel=MusicRepo](https://www.youtube.com/watch?v=lAwtXlmPokI&ab_channel=MusicRepo[/url]) using Voicemeeter, ASIO and Reaper, however as mentioned, there's no money for a Reaper licence.
+
+How can I rectify my already recorded and edited episodes to sort the sound out? I've tried a few tutorials, but can't get the results I'm after. BuzzSprout has a facility called Magic Master which levels all voices and sorts out other issues, is there a macro or any recommended plugins that could do a similar job? I don't get a lot of time to edit, so want to avoid as much as possible by getting better recordings, there is no facilities for isolation during recording and I often have a lot of background noise to filter with on location recording.
+
+Any help would be really appreciated!
+
+[section of waveform from latest recording](https://preview.redd.it/cjncmj14kzi91.png?width=1804&format=png&auto=webp&s=367ae8d4d42bc480a8889b3aa21fac535a36d9c0)

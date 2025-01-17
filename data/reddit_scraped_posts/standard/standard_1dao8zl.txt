@@ -1,0 +1,13 @@
+Subreddit: LenovoLegion
+Title: Disaster!
+Author: tartanthing
+Score: 2
+Created UTC: 2024-06-07 22:54:24
+URL: https://www.reddit.com/r/LenovoLegion/comments/1dao8zl/disaster/
+
+Hi folks, Legion 5 17ach6h, was working absolutely fine last night, get home and plug in, power light comes on for a few seconds then goes out.
+No sounds of fans, boot up or anything.
+Tried the disconnect from power brick, press power button for 60 seconds and reconnect. Exactly the same. 
+Any ideas? I can't begin to explain how having my laptop working is absolutely essential for my work and need a very quick fix. It can't wait 2-4 weeks for repairs.
+It's a personal laptop.
+UK/Glasgow if anyone has any suggestions for a repair shop.
