@@ -9,7 +9,7 @@ from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor
 def load_documents_and_labels(preprocessed_folder):
     documents = []
     labels = []
-    for label, subfolder in enumerate(["depression", "standard"]):  # Adjust folder names if necessary
+    for label, subfolder in enumerate(["depression", "standard", "breastcancer"]): 
         folder_path = os.path.join(preprocessed_folder, subfolder)
         for file_name in os.listdir(folder_path):
             file_path = os.path.join(folder_path, file_name)
