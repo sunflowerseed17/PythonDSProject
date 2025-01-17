@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import numpy as np
-import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from empath import Empath
 from gensim import corpora
@@ -10,16 +9,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from scipy.stats import pearsonr
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, accuracy_score
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.manifold import TSNE
-from matplotlib import pyplot as plt
-from wordcloud import WordCloud
 from statsmodels.stats.multitest import multipletests
-import pyLDAvis
-import pyLDAvis.gensim_models as gensimvis
 from collections import defaultdict
+
+
 
 
 import nltk
@@ -127,119 +120,301 @@ class NGramFeatureExtractor(FeatureExtractor):
         else:
             print(f"Bigram features file already exists at {bigram_file}.")
 
-    def get_top_features(self, feature_type="unigram", top_n=10):
-        """
-        Get the top N most common features for unigrams or bigrams based on TF-IDF scores.
-        """
-        if feature_type == "unigram":
-            tfidf_sums = np.array(self.unigram_matrix.sum(axis=0)).flatten()
-            feature_names = self.unigram_feature_names
-        elif feature_type == "bigram":
-            tfidf_sums = np.array(self.bigram_matrix.sum(axis=0)).flatten()
-            feature_names = self.bigram_feature_names
-        else:
-            raise ValueError("Invalid feature_type. Choose 'unigram' or 'bigram'.")
 
-        top_indices = np.argsort(tfidf_sums)[-top_n:]
-        print(f"Top {top_n} Most Common {feature_type.capitalize()} Features:")
-        for i in reversed(top_indices):
-            print(f"{feature_names[i]}: {tfidf_sums[i]:.4f}")
 
-    def train_model(self, feature_type="unigram"):
-        """
-        Train a Logistic Regression model using unigrams or bigrams.
-        """
-        if feature_type == "unigram":
-            X = self.unigram_matrix
-        elif feature_type == "bigram":
-            X = self.bigram_matrix
-        else:
-            raise ValueError("Invalid feature_type. Choose 'unigram' or 'bigram'.")
+   
 
-        X_train, X_test, y_train, y_test = train_test_split(X, self.labels, test_size=0.2, random_state=42)
-        print(f"Training set size: {X_train.shape}")
-        print(f"Testing set size: {X_test.shape}")
+# Empath Feature Extractor
+class EmpathFeatureExtractor(FeatureExtractor):
+    def __init__(self, documents, labels, output_folder="data/feature_extracted_data"):
+        super().__init__(documents, labels, output_folder)
+        self.lexicon = Empath()
+        self.features = None
+        self.correlation_results = None
+        self.significant_results = None
+        # Categories to focus on based on the origin paper. 
+# The categories are divided into linguistic features, psychological processes, personal concerns, and time orientations.
+# Since we cannot use the LIWC tool, we will use the Empath tool and define similar categorical features. 
 
-        param_grid = {
-            'C': [0.1, 1, 10, 100],
-            'penalty': ['l2'],
-            'solver': ['liblinear']
-        }
-        grid_search = GridSearchCV(LogisticRegression(max_iter=500), param_grid, cv=5, scoring='accuracy')
-        grid_search.fit(X_train, y_train)
-
-        print("\nBest Hyperparameters:")
-        print(grid_search.best_params_)
-
-        classifier = grid_search.best_estimator_
-        classifier.fit(X_train, y_train)
-        y_pred = classifier.predict(X_test)
-
-        print("\nClassification Report:")
-        print(classification_report(y_test, y_pred))
-        print(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
-
-        return classifier
-
-    def compute_frequencies(self, feature_type="unigram"):
-        """
-        Compute frequencies of unigrams or bigrams for depression and non-depression posts.
-        """
-        if feature_type == "unigram":
-            matrix = self.unigram_matrix
-            feature_names = self.unigram_feature_names
-        elif feature_type == "bigram":
-            matrix = self.bigram_matrix
-            feature_names = self.bigram_feature_names
-        else:
-            raise ValueError("Invalid feature_type. Choose 'unigram' or 'bigram'.")
-
-        depression_indices = [i for i, label in enumerate(self.labels) if label == 1]
-        non_depression_indices = [i for i, label in enumerate(self.labels) if label == 0]
-
-        depression_matrix = matrix[depression_indices]
-        non_depression_matrix = matrix[non_depression_indices]
-
-        depression_sums = depression_matrix.sum(axis=0).A1
-        non_depression_sums = non_depression_matrix.sum(axis=0).A1
-
-        depression_freqs = {feature_names[i]: depression_sums[i] for i in range(len(feature_names))}
-        non_depression_freqs = {feature_names[i]: non_depression_sums[i] for i in range(len(feature_names))}
-
-        return depression_freqs, non_depression_freqs
-
-    def get_top_n_features(self, frequencies, top_n=100):
-        """
-        Get the top N most frequent features from the computed frequencies.
-        """
-        sorted_features = sorted(frequencies.items(), key=lambda x: x[1], reverse=True)
-        return sorted_features[:top_n]
-
-    def generate_wordclouds(self):
-        """
-        Generate 4 word clouds:
-        - Unigrams for depression
-        - Bigrams for depression
-        - Unigrams for non-depression
-        - Bigrams for non-depression
-        """
-        # Compute frequencies for depression and non-depression for unigrams and bigrams
-        depression_unigrams, non_depression_unigrams = self.compute_frequencies(feature_type="unigram")
-        depression_bigrams, non_depression_bigrams = self.compute_frequencies(feature_type="bigram")
-
-        # Combine word clouds into a dictionary for iteration
-        wordcloud_data = {
-            "Depression - Unigrams": depression_unigrams,
-            "Depression - Bigrams": depression_bigrams,
-            "Non-Depression - Unigrams": non_depression_unigrams,
-            "Non-Depression - Bigrams": non_depression_bigrams
+        self.categories = {
+            "linguistic_features": [
+                "articles", "auxiliary_verbs", "adverbs", "conjunctions", 
+                "personal_pronouns", "impersonal_pronouns", "negations", 
+                "prepositions", "verbs", "nouns", "adjectives", 
+                "comparatives", "superlatives", "modifiers", "function_words", 
+                "filler_words", "verb_tense", "slang", "jargon", 
+                "formal_language", "casual_language", "exclamations", 
+                "contractions", "word_complexity", "sentiment_words"
+            ],
+                "psychological_processes": {
+                "affective": [
+                    "positive_emotion", "negative_emotion", "joy", "anger", 
+                    "sadness", "anxiety", "fear", "disgust", "love", 
+                    "hope", "trust", "excitement", "anticipation", 
+                    "relief", "sympathy", "gratitude", "shame", 
+                    "guilt", "envy", "pride", "contentment", "confusion",
+                    "boredom", "embarrassment", "longing", "nostalgia", 
+                    "embarrassment", "frustration", "surprise", "melancholy"
+                ],
+                "biological": [
+                    "body", "health", "illness", "pain", "hygiene", 
+                    "fitness", "exercise", "nutrition", "ingestion", 
+                    "physical_state", "medicine", "sleep", "sexual", 
+                    "aging", "disease", "injury", "hospital", "recovery", 
+                    "dieting", "mental_health", "drug_use", "headache", 
+                    "fatigue", "hormones", "appetite"
+                ],
+                "social": [
+                    "family", "friends", "relationships", "group_behavior", 
+                    "teamwork", "social_media", "communication", "community", 
+                    "peer_pressure", "leadership", "parenting", "mentorship", 
+                    "marriage", "divorce", "gender_roles", "social_identity", 
+                    "cultural_rituals", "networking", "altruism", "conflict", 
+                    "social_support", "dominance", "affiliation", "intimacy", 
+                    "supportiveness", "competition", "conflict_resolution", 
+                    "collaboration", "in-group", "out-group", "prejudice"
+                ],
+                "cognitive": [
+                    "certainty", "doubt", "insight", "cause", "discrepancy", 
+                    "problem_solving", "creativity", "self_reflection", "planning", 
+                    "memory", "perception", "attention", "reasoning", "thought_process", 
+                    "decision_making", "confusion", "learning", "metacognition", "adaptability", 
+                    "focus", "perspective", "problem_analysis", "evaluation", "interpretation",
+                    "logic", "intelligence", "rational_thought", "intuition", "conceptualization"
+                ],
+                "drives": [
+                    "achievement", "dominance", "affiliation", "control", 
+                    "self-esteem", "autonomy", "self-assertion", "power", 
+                    "ambition", "conformity", "subordination", "dependence", 
+                    "submission", "accomplishment", "independence", "order", 
+                    "control_seeking", "status", "prosocial_behavior"
+                ],
+                "spiritual": [
+                    "spirituality", "faith", "beliefs", "sacred", "religion", 
+                    "prayer", "meditation", "afterlife", "soul", "divine", 
+                    "god", "higher_power", "inspiration", "transcendence", 
+                    "morality", "ethics", "rituals", "holiness", "mindfulness"
+                ]
+            },
+            "personal_concerns": [
+                "work", "money", "wealth", "shopping", "career", "travel", 
+                "home", "school", "education", "violence", "death", 
+                "retirement", "spirituality", "family_life", "hobbies", 
+                "volunteering", "pets", "entertainment", "parenting", 
+                "sports", "adventure", "politics", "environment", 
+                "safety", "technology", "materialism", "status", 
+                "self_improvement", "learning", "self_growth", "happiness", 
+                "life_purpose", "work_life_balance", "stress", "coping", 
+                "job_satisfaction", "ambition", "legacy", "job_search", 
+                "unemployment", "retirement_plans", "mental_health", "dating", 
+                "romantic_relationships", "divorce", "life_stressors", "transitions"
+            ],
+            "time_orientations": [
+                "present", "past", "future", "morning", 
+                "afternoon", "evening", "day", "night", 
+                "weekdays", "weekends", "seasons", "holidays", 
+                "lifespan", "long_term", "short_term", 
+                "routine", "historical", "epoch", "momentary", 
+                "timeliness", "timelessness", "urgency", 
+                "progression", "nostalgia", "anticipation"
+            ]
         }
 
-        # Generate and display each word cloud
-        for title, frequencies in wordcloud_data.items():
-            wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(frequencies)
-            plt.figure(figsize=(10, 6))
-            plt.imshow(wordcloud, interpolation='bilinear')
-            plt.axis('off')
-            plt.title(title, fontsize=16)
-            plt.show()
+    def extract_empath_features(self):
+        features = []
+        for doc in self.documents:
+            doc_features = {}
+
+            # Linguistic features
+            for category in self.categories.get("linguistic_features", []):
+                doc_features[category] = self.lexicon.analyze(doc, categories=[category])[category]
+
+            # Psychological processes
+            for subcategory, subcategories in self.categories.get("psychological_processes", {}).items():
+                for category in subcategories:
+                    doc_features[category] = self.lexicon.analyze(doc, categories=[category])[category]
+
+            # Personal concerns
+            for category in self.categories.get("personal_concerns", []):
+                doc_features[category] = self.lexicon.analyze(doc, categories=[category])[category]
+
+            # Time orientations
+            for category in self.categories.get("time_orientations", []):
+                doc_features[category] = self.lexicon.analyze(doc, categories=[category])[category]
+
+            features.append(doc_features)
+
+        # Convert to a DataFrame
+        self.features = pd.DataFrame(features)
+
+        # Add labels to the features DataFrame
+        if len(self.features) == len(self.labels):
+            self.features['label'] = self.labels
+            print("Added label column to the extracted features.")
+        else:
+            raise ValueError("Mismatch between the number of features and labels.")
+
+        print(f"Extracted Empath features with shape: {self.features.shape}")
+
+    def analyze_correlation(self):
+        if self.features is None:
+            raise ValueError("Features must be extracted before analyzing correlations.")
+
+        # Remove constant columns
+        constant_columns = self.features.columns[self.features.nunique() == 1]
+        self.features.drop(columns=constant_columns, inplace=True, errors='ignore')
+        print(f"Removed constant columns: {list(constant_columns)}")
+
+        # Validate labels
+        if len(set(self.labels)) == 1:
+            raise ValueError("Labels array is constant; cannot compute correlation.")
+
+        correlations, p_values = [], []
+
+        for column in self.features.columns.drop("label"):
+            correlation, p_value = pearsonr(self.features[column], self.labels)
+            correlations.append(correlation)
+            p_values.append(p_value)
+
+        correction_results = multipletests(p_values, alpha=0.05, method="fdr_bh")
+        _, corrected_p_values, _, _ = correction_results
+
+        # Create a correlation DataFrame
+        self.correlation_results = pd.DataFrame({
+            "Feature": self.features.columns.drop("label"),
+            "Correlation": correlations,
+            "P-Value": p_values,
+            "Corrected P-Value": corrected_p_values
+        }).sort_values(by="Correlation", key=abs, ascending=False)
+
+    def save_features_and_results(self):
+        if self.features is not None:
+            feature_file = os.path.join(self.output_folder, "empath_features_with_labels.csv")
+            if not os.path.exists(feature_file):
+                self.features.to_csv(feature_file, index=False)
+                print(f"Saved empath features with labels to {feature_file}.")
+            else:
+                print(f"Empath features file already exists at {feature_file}.")
+
+        if self.correlation_results is not None:
+            correlation_file = os.path.join(self.output_folder, "empath_correlation_results.csv")
+            if not os.path.exists(correlation_file):
+                self.correlation_results.to_csv(correlation_file, index=False)
+                print(f"Saved correlation results to {correlation_file}.")
+            else:
+                print(f"Correlation results file already exists at {correlation_file}.")
+
+
+
+# LDA Feature Extractor
+class LDAFeatureExtractor(FeatureExtractor):
+    def __init__(self, documents, labels, num_topics=70, passes=15, output_folder="data/feature_extracted_data", random_state=42):
+        super().__init__(documents, labels, output_folder)
+        self.num_topics = num_topics
+        self.passes = passes
+        self.random_state = random_state
+        self.dictionary = None
+        self.corpus = None
+        self.lda_model = None
+        self.topic_distributions = None
+        self.tsne_results = None
+
+    def preprocess_documents(self):
+        """
+        Preprocess documents: tokenize, remove stopwords, and stem.
+        """
+        stop_words = set(stopwords.words('english'))
+        stemmer = PorterStemmer()
+        processed_docs = [
+            [
+                stemmer.stem(word) for word in word_tokenize(doc.lower())
+                if word.isalpha() and word not in stop_words
+            ]
+            for doc in self.documents
+        ]
+        return processed_docs
+
+    def filter_docs_by_word_count(self, processed_docs, min_documents=10):
+        """
+        Filter words that appear in more than 10 documents.
+        """
+        word_doc_count = defaultdict(int)
+        for doc in processed_docs:
+            unique_words = set(doc)
+            for word in unique_words:
+                word_doc_count[word] += 1
+
+        filtered_docs = [
+            [word for word in doc if word_doc_count[word] > min_documents]
+            for doc in processed_docs
+        ]
+        return filtered_docs
+
+    def train_lda(self, processed_docs):
+        """
+        Train the LDA model.
+        """
+        self.dictionary = corpora.Dictionary(processed_docs)
+        self.corpus = [self.dictionary.doc2bow(doc) for doc in processed_docs]
+        self.lda_model = LdaModel(
+            self.corpus, num_topics=self.num_topics, id2word=self.dictionary, passes=self.passes,
+            random_state=self.random_state
+        )
+
+    def extract_topic_distributions(self):
+        """
+        Extract topic distributions for each document.
+        """
+        self.topic_distributions = [
+            dict(self.lda_model.get_document_topics(doc, minimum_probability=0))
+            for doc in self.corpus
+        ]
+
+    def topic_distribution_to_matrix(self):
+        """
+        Convert topic distributions to a matrix format.
+        """
+        matrix = np.zeros((len(self.topic_distributions), self.num_topics))
+        for i, distribution in enumerate(self.topic_distributions):
+            for topic_id, prob in distribution.items():
+                matrix[i, topic_id] = prob
+        return matrix
+
+    def save_features(self):
+        """
+        Save LDA topic distributions with labels to a CSV file.
+        """
+        if not self.topic_distributions:
+            raise ValueError("Topic distributions are not extracted.")
+
+        # Prepare the LDA features data
+        topic_matrix = self.topic_distribution_to_matrix()
+        labels_array = np.array(self.labels)
+        lda_features_df = pd.DataFrame(topic_matrix)
+        lda_features_df['label'] = labels_array
+
+        # Define the filename
+        lda_features_file = "lda_topic_distributions_with_labels.csv"
+
+        # Call the base class method for saving
+        self.save_to_csv(lda_features_df, lda_features_file)
+        
+    def run_pipeline(self):
+        """
+        Complete LDA pipeline: preprocess, train, extract, visualize, and save.
+        """
+        print("Preprocessing documents...")
+        processed_docs = self.preprocess_documents()
+        filtered_docs = self.filter_docs_by_word_count(processed_docs)
+
+        print("Training LDA model...")
+        self.train_lda(filtered_docs)
+
+        print("Extracting topic distributions...")
+        self.extract_topic_distributions()
+
+        print("Saving features...")
+        self.save_features()
+
+        print("LDA pipeline complete.")
+
