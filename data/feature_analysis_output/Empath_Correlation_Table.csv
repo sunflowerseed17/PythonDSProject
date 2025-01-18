@@ -1,0 +1,50 @@
+Empath Category,Example Word,Correlation,P-Value
+personal_concerns,work,-0.4469231150106189,1.5861671737303945e-145
+psychological_processes - biological,body,0.304826705113469,8.999989431549924e-65
+personal_concerns,school,-0.28941817844817375,2.733188360833608e-58
+psychological_processes - biological,health,0.26714206441143024,1.3064114399924216e-49
+personal_concerns,shopping,-0.2512987916134676,6.403104041795447e-44
+personal_concerns,technology,-0.25055895173492293,1.1548296091658943e-43
+psychological_processes - biological,pain,0.2419329667164131,9.692360068858081e-41
+psychological_processes - biological,injury,0.2392716007727501,7.336747481684044e-40
+psychological_processes - affective,fear,0.22818989058219352,2.5728522466890753e-36
+psychological_processes - affective,anger,0.22716794034933332,5.345815694670213e-36
+psychological_processes - affective,shame,0.220457332766083,5.95407404729131e-34
+psychological_processes - affective,sadness,0.21593662307166409,1.3062330011643733e-32
+psychological_processes - affective,negative_emotion,0.19669725082799458,3.0878610880328483e-27
+personal_concerns,death,0.19265607033591708,3.5515276841726243e-26
+personal_concerns,politics,-0.18107073179707925,2.901144616354183e-23
+personal_concerns,violence,0.17936559531037718,7.501833956114235e-23
+psychological_processes - drives,power,-0.1688026044534162,2.1899145323911645e-20
+psychological_processes - affective,confusion,0.1659250700767883,9.662580934780896e-20
+psychological_processes - cognitive,confusion,0.1659250700767883,9.662580934780896e-20
+psychological_processes - affective,sympathy,0.16488208049164907,1.6441026043864278e-19
+personal_concerns,money,-0.15332509676638084,4.715794821501215e-17
+psychological_processes - affective,contentment,0.1491847383884958,3.232783780224776e-16
+psychological_processes - biological,exercise,0.14358284496242402,4.0149914398657184e-15
+psychological_processes - affective,love,0.14123083083627513,1.1231030366565581e-14
+psychological_processes - affective,pride,-0.13961364484350522,2.25559851175216e-14
+psychological_processes - affective,positive_emotion,0.13718914257174913,6.319802991437604e-14
+psychological_processes - social,communication,0.1336952874654972,2.701721691870349e-13
+psychological_processes - drives,independence,-0.11891445831306267,8.339837411353034e-11
+psychological_processes - biological,sexual,-0.11502023936310227,3.381038664873468e-10
+time_orientations,night,0.1134319824831745,5.905699262938309e-10
+psychological_processes - affective,disgust,0.10809727979576256,3.6369416615257036e-09
+psychological_processes - affective,surprise,0.1037332584200873,1.510160887441628e-08
+psychological_processes - drives,achievement,-0.08455616455879045,4.031042415099103e-06
+psychological_processes - biological,sleep,0.08212192475532018,7.583745921329789e-06
+psychological_processes - social,family,0.07583383842465491,3.5836427648514244e-05
+psychological_processes - social,friends,0.06677614331952185,0.0002747673511366928
+time_orientations,morning,0.05853654993854959,0.0014312509954266235
+psychological_processes - social,social_media,0.05814206920556425,0.001541522479294386
+psychological_processes - spiritual,divine,0.053613848862684055,0.0035031483927474532
+personal_concerns,sports,-0.05328914692677151,0.0037074167625217834
+psychological_processes - affective,joy,0.048077168203103995,0.008848381619293126
+psychological_processes - spiritual,religion,-0.03231044568316901,0.07861440044191383
+psychological_processes - affective,envy,-0.032090407909910926,0.08067218627679454
+personal_concerns,home,0.031905624835569524,0.08243385534441353
+psychological_processes - affective,anticipation,0.024932622512236505,0.17476979494269385
+time_orientations,anticipation,0.024932622512236505,0.17476979494269385
+psychological_processes - drives,order,0.023033797743979657,0.20996637883984978
+psychological_processes - affective,trust,0.013593264932923234,0.4594364623166486
+psychological_processes - biological,hygiene,-0.006725706997274318,0.7143539816118606

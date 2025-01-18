@@ -31,6 +31,7 @@ class FeatureExtractor:
         folders = {
             "depression": {"path": "data/preprocessed_posts/depression", "label": 1},
             "standard": {"path": "data/preprocessed_posts/standard", "label": 0},
+            "breastcancer": {"path": "data/preprocessed_posts/breastcancer", "label": 2},
         }
         documents, labels = [], []
         for category, data in folders.items():
@@ -178,20 +179,28 @@ class NGramFeatureExtractor(FeatureExtractor):
         return depression_freqs, breastcancer_freqs, standard_freqs
     
     def generate_wordclouds(self):
-        depression_unigrams, _, non_depression_unigrams = self.compute_frequencies(feature_type="unigram")
-        depression_bigrams, _, non_depression_bigrams = self.compute_frequencies(feature_type="bigram")
+        """
+        Generate word clouds for depression, breastcancer, and standard groups based on unigrams and bigrams.
+        """
+        # Get unigram and bigram frequencies for all groups
+        depression_unigrams, breastcancer_unigrams, standard_unigrams = self.compute_frequencies(feature_type="unigram")
+        depression_bigrams, breastcancer_bigrams, standard_bigrams = self.compute_frequencies(feature_type="bigram")
 
+        # Prepare word cloud data for each group and n-gram type
         wordcloud_data = {
             "Depression - Unigrams": depression_unigrams,
-            "Non-Depression - Unigrams": non_depression_unigrams,
+            "Breast Cancer - Unigrams": breastcancer_unigrams,
+            "Standard - Unigrams": standard_unigrams,
             "Depression - Bigrams": depression_bigrams,
-            "Non-Depression - Bigrams": non_depression_bigrams,
+            "Breast Cancer - Bigrams": breastcancer_bigrams,
+            "Standard - Bigrams": standard_bigrams,
         }
 
+        # Dictionary to store generated word clouds
         generated_wordclouds = {}
 
         for title, frequencies in wordcloud_data.items():
-            # Clean up frequencies by removing invalid entries
+            # Clean up frequencies by removing invalid or zero entries
             cleaned_frequencies = {word: freq for word, freq in frequencies.items() if not pd.isna(freq) and freq > 0}
             if not cleaned_frequencies:
                 print(f"Skipping {title} due to empty or invalid frequency data.")
