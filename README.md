@@ -22,25 +22,43 @@ Key functionalities include:
 
 ### Folders
 - `data/`
+  - `feature_analysis_outputs/`
+    - `breast_cancer_-_bigrams.png`
+    - `breast_cancer_-_unigrams.png`
+    - `depression_-_bigrams.png`
+    - `depression_-_unigrams.png`
+    - `Empath_Correlation_Table.csv`
+    - `standard_-_bigrams.png`
+    - `standard_-_unigrams.png`
   - `feature_extracted_data/`
-    - `unigram_features_with_labels.csv`
-    - `bigram_features_with_labels.csv`
-    - `empath_features_with_labels.csv`
-    - `lda_topic_distributions_with_labels.csv`
-  - `preprocessed/`
-    - `preprocessed_depression_posts/`
-    - `preprocessed_breastcancer_posts/`
-  - `raw/`
-    - `depression_diagnosed_posts/`
-    - `breastcancer_diagnosed_posts/`
+    - **Run feature_extraction.py to output the necessary files here**
+  - `preprocessed_posts/`
+    - `breastcancer/`
+    - `depression/`
+    - `standard/`
+  - `reddit_scraped_posts/`
+    - `breastcancer/`
+    - `depression/`
+    - `standard/`
+- `feature_analysis/`
+  - `feature_analysis.py`
+- `feature_extraction/`
+  - `feature_extraction_func.py`
+  - `feature_extraction.py`
+- `model_training/`
+  - `model_training_func.py`
+  - `model_training.py`
+- `notebooks/`
+  - `data_preprocessing.ipynb`
+  - `feature_analysis.ipynb`
+  - `feature_extraction.ipynb`
+  - `model_training.ipynb`
+-`README.md`
 
-### Files
-- `data_preprocessing.ipynb`
-- `feature_analysis.ipynb`
-- `feature_extraction.ipynb`
-- `model_training.ipynb`
-- `README.md`
-- `requirements.txt`
+### Files 
+
+**ADD LIST OF THE IMPORTANT FILES AND WHAT THEY DO HERE**
+
 ## Setup
 
 ### Prerequisites
@@ -48,6 +66,9 @@ Key functionalities include:
 - Recommended: A virtual environment
 
 ### Installation
+
+**INCLUDE WHAT THE DIFFERENT PROJECT FILES DO IN ORDER + ESTABLISHMENT OF VIRTUAL ENVIRONMENT**
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/depression-detection-ngram.git
