@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from math import log
 from wordcloud import WordCloud
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.manifold import TSNE
@@ -14,7 +15,8 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from scipy.stats import pearsonr
 from statsmodels.stats.multitest import multipletests
-from collections import defaultdict
+from collections import defaultdict, Counter
+from tabulate import tabulate
 
 import nltk
 nltk.download('punkt')
@@ -80,9 +82,9 @@ class FeatureExtractor:
 class NGramFeatureExtractor(FeatureExtractor):
     def __init__(self, output_folder="data/feature_extracted_data"):
         super().__init__(output_folder)
-        self.vectorizer_unigram = TfidfVectorizer(ngram_range=(1, 1), stop_words='english')
-        self.vectorizer_bigram = TfidfVectorizer(ngram_range=(2, 2), stop_words='english')
-        self.vectorizer_combined = TfidfVectorizer(ngram_range=(1, 2), stop_words='english')
+        self.vectorizer_unigram = TfidfVectorizer(ngram_range=(1, 1), stop_words='english', max_features=5000)
+        self.vectorizer_bigram = TfidfVectorizer(ngram_range=(2, 2), stop_words='english', max_features=5000)
+        self.vectorizer_combined = TfidfVectorizer(ngram_range=(1, 2), stop_words='english', max_features=5000)
         
         self.unigram_matrix = None
         self.bigram_matrix = None
@@ -114,6 +116,32 @@ class NGramFeatureExtractor(FeatureExtractor):
 
         return self.unigram_matrix, self.bigram_matrix, self.combined_matrix
 
+    def compute_pmi(self, bigram, unigram_counts, total_bigrams, total_unigrams):
+        word1,word2 = bigram.split()
+        p_bigram = total_bigrams[bigram] / sum(total_bigrams.values())
+        p_word1 = unigram_counts[word1] / sum(total_unigrams.values())
+        p_word2 = unigram_counts[word2] / sum(total_unigrams.values())
+        return log(p_bigram / (p_word1 * p_word2), 2)
+
+    def filter_bigrams_by_pmi(self, threshold=2.0):
+        unigram_counts = Counter(word for doc in self.documents for word in doc.split())
+        bigram_counts = Counter(f"{doc[i]}{doc[i+1]}" 
+                                for doc in [d.split() for d in self.documents]
+                                for i in range(len(doc)-1))
+        valid_bigrams = {
+            bigram: self.compute_pmi(bigram, unigram_counts, bigram_counts, unigram_counts)
+            for bigram in self.bigram_feature_names
+            if bigram in bigram_counts
+        }
+        self.bigram_feature_names = [
+            bigram for bigram,pmi in valid_bigrams.items() if pmi >= threshold
+        ]
+        bigram_indices = [
+            i for i, bigram in enumerate(self.vectorizer_bigram.get_feature_names_out())
+            if bigram in self.bigram_feature_names
+        ]
+        self.bigram_matrix = self.bigram_matrix[:, bigram_indices]
+    
     def save_features(self):
         """
         Save unigram and bigram features with labels as CSV files.
@@ -561,21 +589,8 @@ class LDAFeatureExtractor(FeatureExtractor):
         # Call the base class method for saving
         self.save_to_csv(lda_features_df, lda_features_file)
 
-    def save_tsne_visualization(self, output_folder):
-        """
-        Save the t-SNE visualization as a PNG file.
-        """
-        if self.tsne_results is None:
-            raise ValueError("t-SNE results must be computed before saving.")
         
-        file_path = os.path.join(output_folder, "LDA_tSNE_Visualization.png")
-        plt.figure(figsize=(10, 8))
-        self.visualize_tsne(self.tsne_results)  # Generates the plot
-        plt.savefig(file_path)
-        plt.close()
-        print(f"Saved LDA t-SNE visualization: {file_path}")
-        
-    def run_pipeline(self):
+    def run_extraction_pipeline(self):
         """
         Complete LDA pipeline: preprocess, train, extract, visualize, and save.
         """
@@ -593,6 +608,7 @@ class LDAFeatureExtractor(FeatureExtractor):
         self.save_features()
 
         print("LDA pipeline complete.")
+
 
     def run_analysis_pipeline(self):
         """
@@ -631,4 +647,77 @@ class LDAFeatureExtractor(FeatureExtractor):
 
         print("LDA analysis pipeline complete.")
 
+
+# Creating a summary table for the number of features extracted
+def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, output_file="summary_table.png"):
+    """
+    Generate a summary table of selected features for different methods and save it as a PNG file.
+
+    Parameters:
+    - ngram_extractor: Instance of NGramFeatureExtractor
+    - empath_extractor: Instance of EmpathFeatureExtractor
+    - lda_extractor: Instance of LDAFeatureExtractor
+    - output_file: File path to save the table as a PNG.
+
+    Returns:
+    - summary_table: DataFrame with feature type, method, and number of selected features.
+    """
+    # Extract the number of features from each extractor
+    unigram_count = len(ngram_extractor.unigram_feature_names)
+    bigram_count = len(ngram_extractor.bigram_feature_names)
+    empath_feature_count = empath_extractor.features.shape[1] - 1  # Exclude label column
+    lda_feature_count = lda_extractor.num_topics  # Number of topics in LDA
+
+    # Build the summary data
+    summary_data = [
+        ["N-grams", "Unigram", unigram_count],
+        ["N-grams", "Bigram", bigram_count],
+        ["Empath Features", "Empath", empath_feature_count],
+        ["Topic Modeling", "LDA", lda_feature_count]
+    ]
+
+    # Convert to a DataFrame
+    summary_table = pd.DataFrame(summary_data, columns=["Feature Type", "Methods", "Number of Selected Features"])
+
+    # Print the table to the terminal
+    print(tabulate(summary_table, headers="keys", tablefmt="fancy_grid", showindex=False))
+
+    # Save the table as an image
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.axis('tight')
+    ax.axis('off')
+    table = ax.table(cellText=summary_table.values, colLabels=summary_table.columns, cellLoc='center', loc='center')
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.auto_set_column_width(col=list(range(len(summary_table.columns))))
+    plt.show()
+
+    return summary_table
+
+def generate_empath_table(input_csv, output_file="empath_table.png"):
+    # Load the Empath_Correlation_Table.csv file
+    empath_df = pd.read_csv(input_csv)
+
+    # Sort by P-Value (ascending) and filter the top features for display
+    empath_df = empath_df.sort_values(by="P-Value")
+    empath_df = empath_df.head(10)  # Adjust this to include more or fewer features as needed
+
+    # Generate a styled figure
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.axis('tight')
+    ax.axis('off')
+
+    # Format the table as per your image example
+    table = ax.table(
+        cellText=empath_df.values,
+        colLabels=empath_df.columns,
+        cellLoc='center',
+        loc='center'
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.auto_set_column_width(col=list(range(len(empath_df.columns))))
+
+    #  the table as a PNG
+    plt.show()
 
