@@ -12,26 +12,33 @@ import matplotlib.pyplot as plt
 #   - Trains a chosen ML model, evaluates, and can compare multiple models.
 ###############################################################################
 class ModelTrainer:
-
-    def __init__(self, csv_files, model, model_name, model_params=None, random_state=42):
+    def __init__(self, csv_files, model, model_name, model_params=None,
+                 random_state=42, use_stratify=True):
         """
-        csv_files: List of CSV paths (first CSV must have 'label').
-        model: scikit-learn estimator class, e.g. RandomForestClassifier.
-        model_name: String name for reporting.
-        model_params: Dict of hyperparameters (optional).
-        random_state: For reproducible splits.
+        Initialize the ModelTrainer.
+
+        Args:
+            csv_files (list[str]): Paths to CSV files (first must have 'label').
+            model (class): A scikit-learn estimator class (e.g., RandomForestClassifier).
+            model_name (str): Name/identifier for reporting.
+            model_params (dict, optional): Hyperparameters for the estimator.
+            random_state (int): Seed for reproducibility.
+            use_stratify (bool): Whether to stratify the train/test split by label.
         """
         self.csv_files = csv_files
         self.model_name = model_name
         self.model_class = model
         self.model_params = model_params if model_params else {}
+        self.random_state = random_state
+        self.use_stratify = use_stratify
+
+        # Internal placeholders
         self.data = None
         self.model = None
         self.X_train = None
         self.X_test = None
         self.y_train = None
         self.y_test = None
-        self.random_state = random_state
         self.metrics = {}
         self.scaler = StandardScaler()
         self.pca = None
@@ -39,13 +46,23 @@ class ModelTrainer:
     ###############################################################################
     # 1) Load & Combine Data
     #    - Merges features from multiple CSVs side by side
-    #    - Uses 'label' from first CSV (drops 'label' in others)
+    #    - Uses 'label' from the first CSV (drops 'label' from subsequent ones)
     ###############################################################################
     def load_and_combine_data(self):
+        """
+        Loads CSV files, extracting labels from the first CSV, then merges
+        all feature columns side-by-side. Ensures row counts are consistent.
+        """
         data_frames = [pd.read_csv(file) for file in self.csv_files]
-        labels = data_frames[0]['label']  # This is our primary label column
 
-        # Remove label column from subsequent DataFrames
+        # Ensure first CSV has label
+        if 'label' not in data_frames[0].columns:
+            raise ValueError("The first CSV must contain a 'label' column.")
+
+        # Extract label from the first CSV
+        labels = data_frames[0]['label']
+
+        # Remove 'label' from subsequent CSVs
         for df in data_frames[1:]:
             if 'label' in df.columns:
                 df.drop(columns=['label'], inplace=True)
@@ -53,11 +70,11 @@ class ModelTrainer:
         # Concatenate side-by-side
         combined_data = pd.concat(data_frames, axis=1)
 
-        # Check size match
+        # Sanity check
         if len(labels) != len(combined_data):
-            raise ValueError("Mismatch between features and labels.")
+            raise ValueError("Mismatch between features and labels row counts.")
 
-        # Final combined set with label appended at end
+        # Store final combined data with label appended
         self.data = combined_data
         self.data['label'] = labels
 
@@ -68,21 +85,34 @@ class ModelTrainer:
     #    - Optionally applies PCA for dimensionality reduction
     ###############################################################################
     def preprocess_data(self, test_size=0.2, pca_components=50):
-        X = self.data.iloc[:, :-1]  # all cols except 'label'
-        y = self.data['label']      # the 'label' column
+        """
+        Splits data into train/test sets, then applies scaling and optional PCA.
 
-        # Train/test split
+        Args:
+            test_size (float): Fraction of data to use for testing.
+            pca_components (int): Number of PCA components; if 0 or None, skip PCA.
+        """
+        X = self.data.iloc[:, :-1]  # All columns except the last ('label')
+        y = self.data['label']
+
+        # If requested, stratify by label so class distribution remains consistent
+        stratify_target = y if self.use_stratify else None
+
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
-            X, y, test_size=test_size, random_state=self.random_state
+            X,
+            y,
+            test_size=test_size,
+            random_state=self.random_state,
+            stratify=stratify_target
         )
 
-        # Scale features to mean=0, std=1
+        # Scale features
         self.X_train = self.scaler.fit_transform(self.X_train)
         self.X_test = self.scaler.transform(self.X_test)
 
-        # Apply PCA if requested
-        if pca_components:
-            self.pca = PCA(n_components=pca_components)
+        # PCA dimensionality reduction if desired
+        if pca_components and pca_components > 0:
+            self.pca = PCA(n_components=pca_components, random_state=self.random_state)
             self.X_train = self.pca.fit_transform(self.X_train)
             self.X_test = self.pca.transform(self.X_test)
 
@@ -90,6 +120,9 @@ class ModelTrainer:
     # 3) Train the Model
     ###############################################################################
     def train_model(self):
+        """
+        Instantiate and train the scikit-learn model on the training set.
+        """
         self.model = self.model_class(**self.model_params)
         self.model.fit(self.X_train, self.y_train)
 
@@ -99,13 +132,29 @@ class ModelTrainer:
     #    - Also compute 10-fold CV accuracy on the training set
     ###############################################################################
     def evaluate_model(self):
+        """
+        Predict on the test set, compute classification metrics, and
+        perform 10-fold cross-validation on the training set.
+        """
         y_pred = self.model.predict(self.X_test)
+
+        # Compute standard metrics
         accuracy = accuracy_score(self.y_test, y_pred)
         f1 = f1_score(self.y_test, y_pred, average='weighted')
         precision = precision_score(self.y_test, y_pred, average='weighted')
         recall = recall_score(self.y_test, y_pred, average='weighted')
-        cv_scores = cross_val_score(self.model, self.X_train, self.y_train, cv=10, scoring='accuracy')
 
+        # 10-fold cross-validation (in parallel if possible)
+        cv_scores = cross_val_score(
+            self.model,
+            self.X_train,
+            self.y_train,
+            cv=10,
+            scoring='accuracy',
+            n_jobs=-1
+        )
+
+        # Store all results
         self.metrics = {
             "Model": self.model_name,
             "Test Accuracy": accuracy,
@@ -122,6 +171,15 @@ class ModelTrainer:
     #    - Returns main metrics in %
     ###############################################################################
     def run_pipeline(self, pca_components=None):
+        """
+        High-level method to load data, preprocess, train, and evaluate in sequence.
+
+        Args:
+            pca_components (int or None): If provided, apply PCA to reduce feature dims.
+
+        Returns:
+            dict: Contains main metrics in percentage form for quick viewing.
+        """
         self.load_and_combine_data()
         self.preprocess_data(pca_components=pca_components)
         self.train_model()
@@ -140,6 +198,13 @@ class ModelTrainer:
     ###############################################################################
     @staticmethod
     def save_results_as_image(results, filename):
+        """
+        Render a list of dicts (rows) as a matplotlib table and save to a .png.
+
+        Args:
+            results (list[dict]): Each dict is one row of data to display.
+            filename (str): Where to save the table image.
+        """
         df = pd.DataFrame(results)
         fig, ax = plt.subplots(figsize=(10, 5))
         ax.axis('tight')
@@ -164,25 +229,39 @@ class ModelTrainer:
     #    - All results displayed & saved as a table image
     ###############################################################################
     @staticmethod
-    def run_and_save_results(feature_combinations, models_config, output_filename, pca_components=None):
+    def run_and_save_results(feature_combinations, models_config, output_filename,
+                             pca_components=None, use_stratify=True):
+        """
+        Iterate over multiple feature sets and models, run the pipeline,
+        then save all results to a single table image.
+
+        Args:
+            feature_combinations (dict): 
+                Keys = feature set names, Values = list of CSV file paths.
+            models_config (dict):
+                Keys = model names, Values = {"model_class":..., "params":...}.
+            output_filename (str): Path of the .png file to store results table.
+            pca_components (int or None): If not None, apply PCA with that many components.
+            use_stratify (bool): Whether to stratify the train/test split for each run.
+        """
         results = []
 
-        # For each named feature set
         for feature_name, feature_files in feature_combinations.items():
             print(f"\nTraining models for feature set: {feature_name}")
             feature_results = {"Feature": feature_name}
 
-            # For each model in the config
             for model_name, config in models_config.items():
                 print(f"  Training {model_name}...")
                 trainer = ModelTrainer(
                     csv_files=feature_files,
                     model=config["model_class"],
                     model_name=model_name,
-                    model_params=config["params"]
+                    model_params=config["params"],
+                    use_stratify=use_stratify
                 )
                 metrics = trainer.run_pipeline(pca_components=pca_components)
-                # Combine Acc, F1, Precision, and Recall into a single string
+
+                # Concatenate Accuracy/F1/Precision/Recall in one string
                 feature_results[model_name] = (
                     f"{metrics['Accuracy']}%/"
                     f"{metrics['F1']}%/"
@@ -190,9 +269,7 @@ class ModelTrainer:
                     f"{metrics['Recall']}%"
                 )
 
-            # Append row of results for this feature set
             results.append(feature_results)
 
-        # Finally, save results as an image
         ModelTrainer.save_results_as_image(results, output_filename)
-        print(f"\nResults table saved as {output_filename}")
+        print(f"\nResults table saved as '{output_filename}'")
