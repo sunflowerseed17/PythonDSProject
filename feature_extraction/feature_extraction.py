@@ -13,5 +13,5 @@ empath_extractor.save_features_and_results()
 
 # Initialize LDA Feature Extractor
 lda_extractor = LDAFeatureExtractor()
-lda_extractor.run_extraction_pipeline()
+lda_extractor.run_feature_extraction()
 

@@ -22,7 +22,7 @@ empath_extractor.save_correlation_table(output_folder)
 
 # LDA Analysis
 lda_extractor = LDAFeatureExtractor(num_topics=20)
-lda_extractor.run_analysis_pipeline()
+lda_extractor.run_feature_analysis()
 
 # Getting the output table for number of features found in every extraction
 generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, f"{output_folder}/summary_table")
