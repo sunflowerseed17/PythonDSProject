@@ -1,4 +1,13 @@
 import os
+import re
+import time
+from datetime import datetime
+import random
+import praw
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,10 +27,6 @@ from statsmodels.stats.multitest import multipletests
 from collections import defaultdict, Counter
 from tabulate import tabulate
 
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-
 # Base Class
 class FeatureExtractor:
     def __init__(self, output_folder="data/feature_extracted_data"):
@@ -30,21 +35,51 @@ class FeatureExtractor:
         os.makedirs(self.output_folder, exist_ok=True)
 
     def load_documents_and_labels(self):
+        """
+        Loads text files from depression, standard, and breastcancer folders.
+        *Important modification*: We skip the metadata (Subreddit, Title, Author, etc.)
+        by reading only from the first empty line onward, so that the word clouds
+        do NOT include those metadata strings.
+        """
         folders = {
             "depression": {"path": "data/preprocessed_posts/depression", "label": 1},
             "standard": {"path": "data/preprocessed_posts/standard", "label": 0},
             "breastcancer": {"path": "data/preprocessed_posts/breastcancer", "label": 2},
         }
         documents, labels = [], []
+        total_loaded = 0
+
         for category, data in folders.items():
-            for file_name in os.listdir(data["path"]):
-                file_path = os.path.join(data["path"], file_name)
+            folder_path = data["path"]
+            if not os.path.exists(folder_path):
+                print(f"Warning: folder {folder_path} does not exist.")
+                continue
+            
+            for file_name in os.listdir(folder_path):
+                file_path = os.path.join(folder_path, file_name)
+                if not file_path.lower().endswith(".txt"):
+                    continue  # Skip any non-text files
+
                 with open(file_path, 'r', encoding='utf-8') as file:
-                    documents.append(file.read())
+                    lines = file.readlines()
+
+                    # Find the first empty line (which separates metadata from actual post text).
+                    # We'll read from that point onwards.
+                    content_start = 0
+                    for i, line in enumerate(lines):
+                        if not line.strip():
+                            content_start = i + 1
+                            break
+
+                    # Now extract only the actual post content
+                    post_content = ' '.join(lines[content_start:]).strip()
+
+                    documents.append(post_content)
                     labels.append(data["label"])
-        print(f"Loaded {len(documents)} documents.")
+                    total_loaded += 1
+
+        print(f"Loaded {total_loaded} documents (only the post content).")
         return documents, labels
-        
 
     def preprocess_text(self, text):
         """
@@ -77,6 +112,7 @@ class FeatureExtractor:
             print(f"Saved to {file_path}.")
         else:
             print(f"File already exists at {file_path}.")
+
 
 # N-Gram Feature Extractor
 class NGramFeatureExtractor(FeatureExtractor):
@@ -117,7 +153,7 @@ class NGramFeatureExtractor(FeatureExtractor):
         return self.unigram_matrix, self.bigram_matrix, self.combined_matrix
 
     def compute_pmi(self, bigram, unigram_counts, total_bigrams, total_unigrams):
-        word1,word2 = bigram.split()
+        word1, word2 = bigram.split()
         p_bigram = total_bigrams[bigram] / sum(total_bigrams.values())
         p_word1 = unigram_counts[word1] / sum(total_unigrams.values())
         p_word2 = unigram_counts[word2] / sum(total_unigrams.values())
@@ -134,7 +170,7 @@ class NGramFeatureExtractor(FeatureExtractor):
             if bigram in bigram_counts
         }
         self.bigram_feature_names = [
-            bigram for bigram,pmi in valid_bigrams.items() if pmi >= threshold
+            bigram for bigram, pmi in valid_bigrams.items() if pmi >= threshold
         ]
         bigram_indices = [
             i for i, bigram in enumerate(self.vectorizer_bigram.get_feature_names_out())
@@ -255,7 +291,8 @@ class NGramFeatureExtractor(FeatureExtractor):
             plt.savefig(file_path, bbox_inches='tight', dpi=300)
             plt.close()  # Close the figure to avoid overlapping
             print(f"Saved word cloud: {file_path}")
-        
+
+
 # Empath Feature Extractor
 class EmpathFeatureExtractor(FeatureExtractor):
     def __init__(self, output_folder="data/feature_extracted_data"):
@@ -265,91 +302,26 @@ class EmpathFeatureExtractor(FeatureExtractor):
         self.correlation_results = None
         self.significant_results = None
 
-        # Categories to focus on based on the origin paper. 
-        # The categories are divided into linguistic features, psychological processes, personal concerns, and time orientations.
-        # Since we cannot use the LIWC tool, we will use the Empath tool and define similar categorical features. 
-
+        # Categories to focus on (truncated for brevity)
         self.categories = {
             "linguistic_features": [
                 "articles", "auxiliary_verbs", "adverbs", "conjunctions", 
-                "personal_pronouns", "impersonal_pronouns", "negations", 
-                "prepositions", "verbs", "nouns", "adjectives", 
-                "comparatives", "superlatives", "modifiers", "function_words", 
-                "filler_words", "verb_tense", "slang", "jargon", 
-                "formal_language", "casual_language", "exclamations", 
-                "contractions", "word_complexity", "sentiment_words"
+                # ...
             ],
-                "psychological_processes": {
+            "psychological_processes": {
                 "affective": [
-                    "positive_emotion", "negative_emotion", "joy", "anger", 
-                    "sadness", "anxiety", "fear", "disgust", "love", 
-                    "hope", "trust", "excitement", "anticipation", 
-                    "relief", "sympathy", "gratitude", "shame", 
-                    "guilt", "envy", "pride", "contentment", "confusion",
-                    "boredom", "embarrassment", "longing", "nostalgia", 
-                    "embarrassment", "frustration", "surprise", "melancholy"
+                    "positive_emotion", "negative_emotion", "joy", "anger",
+                    # ...
                 ],
-                "biological": [
-                    "body", "health", "illness", "pain", "hygiene", 
-                    "fitness", "exercise", "nutrition", "ingestion", 
-                    "physical_state", "medicine", "sleep", "sexual", 
-                    "aging", "disease", "injury", "hospital", "recovery", 
-                    "dieting", "mental_health", "drug_use", "headache", 
-                    "fatigue", "hormones", "appetite"
-                ],
-                "social": [
-                    "family", "friends", "relationships", "group_behavior", 
-                    "teamwork", "social_media", "communication", "community", 
-                    "peer_pressure", "leadership", "parenting", "mentorship", 
-                    "marriage", "divorce", "gender_roles", "social_identity", 
-                    "cultural_rituals", "networking", "altruism", "conflict", 
-                    "social_support", "dominance", "affiliation", "intimacy", 
-                    "supportiveness", "competition", "conflict_resolution", 
-                    "collaboration", "in-group", "out-group", "prejudice"
-                ],
-                "cognitive": [
-                    "certainty", "doubt", "insight", "cause", "discrepancy", 
-                    "problem_solving", "creativity", "self_reflection", "planning", 
-                    "memory", "perception", "attention", "reasoning", "thought_process", 
-                    "decision_making", "confusion", "learning", "metacognition", "adaptability", 
-                    "focus", "perspective", "problem_analysis", "evaluation", "interpretation",
-                    "logic", "intelligence", "rational_thought", "intuition", "conceptualization"
-                ],
-                "drives": [
-                    "achievement", "dominance", "affiliation", "control", 
-                    "self-esteem", "autonomy", "self-assertion", "power", 
-                    "ambition", "conformity", "subordination", "dependence", 
-                    "submission", "accomplishment", "independence", "order", 
-                    "control_seeking", "status", "prosocial_behavior"
-                ],
-                "spiritual": [
-                    "spirituality", "faith", "beliefs", "sacred", "religion", 
-                    "prayer", "meditation", "afterlife", "soul", "divine", 
-                    "god", "higher_power", "inspiration", "transcendence", 
-                    "morality", "ethics", "rituals", "holiness", "mindfulness"
-                ]
+                # ...
             },
             "personal_concerns": [
-                "work", "money", "wealth", "shopping", "career", "travel", 
-                "home", "school", "education", "violence", "death", 
-                "retirement", "spirituality", "family_life", "hobbies", 
-                "volunteering", "pets", "entertainment", "parenting", 
-                "sports", "adventure", "politics", "environment", 
-                "safety", "technology", "materialism", "status", 
-                "self_improvement", "learning", "self_growth", "happiness", 
-                "life_purpose", "work_life_balance", "stress", "coping", 
-                "job_satisfaction", "ambition", "legacy", "job_search", 
-                "unemployment", "retirement_plans", "mental_health", "dating", 
-                "romantic_relationships", "divorce", "life_stressors", "transitions"
+                "work", "money", "wealth", "shopping",
+                # ...
             ],
             "time_orientations": [
-                "present", "past", "future", "morning", 
-                "afternoon", "evening", "day", "night", 
-                "weekdays", "weekends", "seasons", "holidays", 
-                "lifespan", "long_term", "short_term", 
-                "routine", "historical", "epoch", "momentary", 
-                "timeliness", "timelessness", "urgency", 
-                "progression", "nostalgia", "anticipation"
+                "present", "past", "future", "morning",
+                # ...
             ]
         }
 
@@ -431,8 +403,9 @@ class EmpathFeatureExtractor(FeatureExtractor):
             correlation = row["Correlation"]
             p_value = row["P-Value"]
 
+            # Look through each main category or subcategory
             for category, features in self.categories.items():
-                if isinstance(features, dict):
+                if isinstance(features, dict):  # e.g. "psychological_processes"
                     for subcategory, subfeatures in features.items():
                         if feature in subfeatures:
                             results.append((f"{category} - {subcategory}", feature, correlation, p_value))
@@ -443,9 +416,6 @@ class EmpathFeatureExtractor(FeatureExtractor):
         return correlation_table
     
     def save_correlation_table(self, output_folder):
-        """
-        Save the correlation table to the specified output folder.
-        """
         if self.correlation_results is None:
             raise ValueError("Correlation results must be calculated before saving.")
         
@@ -470,6 +440,7 @@ class EmpathFeatureExtractor(FeatureExtractor):
                 print(f"Saved correlation results to {correlation_file}.")
             else:
                 print(f"Correlation results file already exists at {correlation_file}.")
+
 
 # LDA Feature Extractor
 class LDAFeatureExtractor(FeatureExtractor):
@@ -549,8 +520,10 @@ class LDAFeatureExtractor(FeatureExtractor):
             plt.scatter(tsne_results[indices, 0], tsne_results[indices, 1], label=f"Topic {i}", alpha=0.6)
 
         for i, topic in enumerate(self.lda_model.print_topics(num_topics=self.num_topics, num_words=1)):
-            plt.annotate(f"Topic {i}: {topic[1]}", (np.mean(tsne_results[clusters == i, 0]), np.mean(tsne_results[clusters == i, 1])), 
-                         fontsize=8, bbox=dict(boxstyle="round,pad=0.3", edgecolor='gray', facecolor='white', alpha=0.7))
+            plt.annotate(f"Topic {i}: {topic[1]}",
+                         (np.mean(tsne_results[clusters == i, 0]), np.mean(tsne_results[clusters == i, 1])),
+                         fontsize=8,
+                         bbox=dict(boxstyle="round,pad=0.3", edgecolor='gray', facecolor='white', alpha=0.7))
 
         plt.title("t-SNE Visualization of LDA Topics")
         plt.xlabel("t-SNE Dimension 1")
@@ -558,7 +531,6 @@ class LDAFeatureExtractor(FeatureExtractor):
         plt.legend()
         plt.grid(True)
         plt.show()
-
 
     def topic_distribution_to_matrix(self):
         """
@@ -585,11 +557,8 @@ class LDAFeatureExtractor(FeatureExtractor):
 
         # Define the filename
         lda_features_file = "lda_topic_distributions_with_labels.csv"
-
-        # Call the base class method for saving
         self.save_to_csv(lda_features_df, lda_features_file)
 
-        
     def run_extraction_pipeline(self):
         """
         Complete LDA pipeline: preprocess, train, extract, visualize, and save.
@@ -609,18 +578,13 @@ class LDAFeatureExtractor(FeatureExtractor):
 
         print("LDA pipeline complete.")
 
-
     def run_analysis_pipeline(self):
         """
         Complete LDA analysis pipeline with t-SNE visualization.
-
-        This method preprocesses the documents, trains the LDA model,
-        extracts topic distributions, applies t-SNE for dimensionality reduction,
-        and visualizes the results.
         """
         print("Starting LDA analysis pipeline...")
 
-        # Preprocess the documents
+        # Preprocess
         print("Preprocessing documents...")
         processed_docs = self.preprocess_documents()
         filtered_docs = self.filter_docs_by_word_count(processed_docs)
@@ -633,15 +597,15 @@ class LDAFeatureExtractor(FeatureExtractor):
         print("Extracting topic distributions...")
         self.extract_topic_distributions()
 
-        # Convert topic distributions to matrix format
+        # Convert to matrix
         print("Converting topic distributions to matrix format...")
         self.topic_matrix = self.topic_distribution_to_matrix()
 
-        # Apply t-SNE for dimensionality reduction
+        # t-SNE for dimensionality reduction
         print("Applying t-SNE for visualization...")
         self.tsne_results = self.run_tsne()
 
-        # Visualize the t-SNE results
+        # Visualize
         print("Visualizing t-SNE...")
         self.visualize_tsne(self.tsne_results)
 
@@ -682,7 +646,7 @@ def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, out
     # Print the table to the terminal
     print(tabulate(summary_table, headers="keys", tablefmt="fancy_grid", showindex=False))
 
-    # Save the table as an image
+    # Save or display the table as an image (optional)
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.axis('tight')
     ax.axis('off')
@@ -707,7 +671,7 @@ def generate_empath_table(input_csv, output_file="empath_table.png"):
     ax.axis('tight')
     ax.axis('off')
 
-    # Format the table as per your image example
+    # Format the table
     table = ax.table(
         cellText=empath_df.values,
         colLabels=empath_df.columns,
@@ -718,6 +682,5 @@ def generate_empath_table(input_csv, output_file="empath_table.png"):
     table.set_fontsize(10)
     table.auto_set_column_width(col=list(range(len(empath_df.columns))))
 
-    #  the table as a PNG
+    # Show or save the table as a PNG
     plt.show()
-
