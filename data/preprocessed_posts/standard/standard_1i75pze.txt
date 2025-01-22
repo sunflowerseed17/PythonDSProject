@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: 4080 super and 12VHPWR connector
+Author: no_va_det_mye
+Score: 1
+Created UTC: 2025-01-22 07:22:19
+URL: https://www.reddit.com/r/buildapc/comments/1i75pze/4080_super_and_12vhpwr_connector/
+
+recent bought super see singl pin connect box came pin adapt nvidia use adapt cabl singl cabl work well

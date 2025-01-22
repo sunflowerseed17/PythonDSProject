@@ -1,0 +1,14 @@
+Subreddit: buildapc
+Title: CPU upgrade for RTX3080 10GB
+Author: Candid_Ad_7443
+Score: 1
+Created UTC: 2025-01-22 09:07:58
+URL: https://www.reddit.com/r/buildapc/comments/1i7742e/cpu_upgrade_for_rtx3080_10gb/
+
+Hi guys, I have a quick question for you. I am looking to upgrade my PC and mainly futureproof it. I have Ryzen 3600X and RTX3080 10GB and I would like to uprade CPU. I am gaming on 4K.
+
+The issue however is that my motherboard has AM4 socket and quite frankly I dont want to buy another MB RAM AND also CPU.   
+  
+So I just wanted to know if Ryzen 7 5700X3D is a good idea since its the last AM4 high end cpu from AMD. Will it last me for the next \~7 years? Or is it just better to buy all new socket? I would like to upgrade my GPU in the next few years to RTX 60xx or 70xx.
+
+Thanks

@@ -1,0 +1,49 @@
+Subreddit: buildapc
+Title: Build Work/Gaming in 1440p - Budget: 2000€
+Author: dipa996
+Score: 1
+Created UTC: 2025-01-22 09:54:54
+URL: https://www.reddit.com/r/buildapc/comments/1i77pku/build_workgaming_in_1440p_budget_2000/
+
+**Hi everyone!**  
+I’m planning to build a new PC and would love some advice to make the most of my budget. 
+
+Here are my requirements and preferences:
+
+# Usage:
+
+1. **Work-related tasks:**
+   * Running 1-2 Virtual Machines (Windows and/or Linux) using VMware/VirtualBox.
+   * Light Docker usage (1-2 containers).
+   * Specific work software that consumes **5-6GB of RAM**.
+   * I need an **NVIDIA GPU** for tasks like cracking/AI workloads.
+   * Dual boot (Windows + Linux).
+   * Coding (XCode, Android Studio with Emulator, VSCode plugin, etc)
+
+I will not use everything at the same time XD
+
+1. **Gaming:**
+   * I play games like **Apex Legends**, **Counter-Strike 2**, and **Sea of Thieves** on a **1440p 144Hz monitor** that I already own.
+
+# Preferences:
+
+* **GPU:** I’ve been advised to focus on an **NVIDIA 4070 Super or 4070 Ti Super**. Do you agree with this choice?
+* **CPU:** I’m leaning towards **AMD Ryzen** (likely a Ryzen 5 or 7), but I’m a bit lost among all the versions. Any specific recommendations that pair well with the GPU?
+* **Storage:** 1TB is enough for me.
+* **Aesthetics:** I don’t care much about flashy designs. I prefer a **minimalist look**.
+
+# Budget:
+
+I’m aiming for around **€2000**, but I’m willing to go slightly higher if the improvements are worth it.
+
+# Example Build:
+
+Here’s an example I’ve made that seems to fit my needs:  
+[https://it.pcpartpicker.com/list/TLrZ2x](https://it.pcpartpicker.com/list/TLrZ2x)
+
+Would this be a good choice?  
+Are there better configurations I should consider?   
+Could I spend less on one side to improve CPU and/or GPU?  
+Do you see products that are not compatible? or overpriced?
+
+Thank you in advance! 😊

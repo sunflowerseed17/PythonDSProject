@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Installed a new motherboard and can’t use ethernet or connect to wifi
+Author: StayWideAwake-
+Score: 1
+Created UTC: 2025-01-22 08:09:26
+URL: https://www.reddit.com/r/buildapc/comments/1i76cy8/installed_a_new_motherboard_and_cant_use_ethernet/
+
+long stori short bought asu maximu dark hero whatev reason connect ethernet wifi never encount issu like went bio check onboard devic configur made sure intel lan disabl wasnt went network set window see sign ethernet connect never issu past motherboard instal connect ethernet work like charm look everywher find anyth help hope someon give insight

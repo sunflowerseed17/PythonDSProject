@@ -1,0 +1,23 @@
+Subreddit: OutOfTheLoop
+Title: What is going on with Web 3.0, and why isn’t a mainstream topic anymore?
+Author: gnarlyboarder
+Score: 0
+Created UTC: 2025-01-22 04:17:11
+URL: https://www.reddit.com/r/OutOfTheLoop/comments/1i72s6l/what_is_going_on_with_web_30_and_why_isnt_a/
+
+I remember when Web 3.0 was all the rage, with discussions about decentralized applications, blockchain technology, smart contracts, and the promise of a more user-controlled internet. It was pitched as the next big thing that would revolutionize how we interact online.
+
+But lately, I feel like the hype has fizzled out. I don’t see it discussed as much in mainstream tech circles or media, and it seems like the focus has shifted to things like AI and Gen AI.
+
+So, I’m out of the loop—
+
+1. What’s the current state of Web 3.0? Are there any significant developments happening in this space?
+
+2. Why isn’t it as much of a mainstream topic anymore? Was it overhyped, or were there technical, regulatory, or adoption barriers that caused interest to wane?
+
+3. Will Web 3.0 ever come into fruition in the future? Is it still a realistic vision for a decentralized internet, or has the dream faded for good?
+
+I’d love to hear thoughts from people who are more in tune with the Web 3.0 ecosystem. Are there still promising projects out there, or has it been largely overshadowed by other tech trends?
+
+Wouldn’t let me post without link.
+https://aws.amazon.com/what-is/web3/ 

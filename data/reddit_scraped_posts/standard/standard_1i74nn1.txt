@@ -1,0 +1,14 @@
+Subreddit: leagueoflegends
+Title: Latency issues?
+Author: I_hate_this321
+Score: 3
+Created UTC: 2025-01-22 06:08:37
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i74nn1/latency_issues/
+
+I'm not exactly sure what has happened, but since about yesterday (or maybe even longer), I've had trouble with League's in game servers. Every time I load in, I sit at a constant 173 ms/ping/latency/whatever you wanna call it.   
+  
+Now the issue here is that for months, even years, I have always sat at a constant 40-60 ping when playing League of legends. Sure, sometimes that has spiked for whatever reason, but never has it remained consistently at 173 ping. 
+
+I've tried multiple ways to fix this (IE: updating hardware related stuff, restarting my PC, rebooting my internet, etc etc). I've even tried playing other games and they've turned out just fine! This is strictly a league issue, and I am unsure of what's going on with it.
+
+If anyone has any info that could maybe help me troubleshoot this issue, it would be deeply appreciated. Also, I play in the Oceania server, just for some extra context.

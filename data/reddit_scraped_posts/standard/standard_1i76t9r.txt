@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Asus z790 gaming WiFi 7 bios update question?
+Author: ManyPhase1036
+Score: 3
+Created UTC: 2025-01-22 08:45:29
+URL: https://www.reddit.com/r/buildapc/comments/1i76t9r/asus_z790_gaming_wifi_7_bios_update_question/
+
+I updated my bios to version 1666. Am I supposed to reset my bios settings to default after updating the bios?

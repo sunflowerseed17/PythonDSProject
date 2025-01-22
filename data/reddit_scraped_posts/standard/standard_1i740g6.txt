@@ -1,0 +1,8 @@
+Subreddit: leagueoflegends
+Title: Can no longer cast when holding scoreboard
+Author: Im-a-stegosaurus
+Score: 3
+Created UTC: 2025-01-22 05:28:05
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i740g6/can_no_longer_cast_when_holding_scoreboard/
+
+basically the title. I remember before the patch, i was able to at least cast while viewing the scoreboard, did they change that? it keeps throwing me off since I'm used to just checking while clearing the jg

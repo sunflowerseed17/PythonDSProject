@@ -1,0 +1,21 @@
+Subreddit: Steam
+Title: View instantly common steam games you have with friends
+Author: Thick_Station8340
+Score: 0
+Created UTC: 2025-01-22 07:43:12
+URL: https://www.reddit.com/r/Steam/comments/1i7606w/view_instantly_common_steam_games_you_have_with/
+
+Hey
+
+So with a group of 4 we wanted to play something on Steam and quickly realized when 4 people have 100 games, it takes a long time to go one by one over them and see if everyone has them.
+
+So instead, I coded a simple app.
+
+Input your steamid (or sign in with steam) - select friends from the list --> view all common games
+
+It's not monetized. I just thought other people may use it. Please share your feedbacks!
+
+[https://commonsteamgames.com/](https://commonsteamgames.com/)
+
+https://preview.redd.it/1429mrjx1iee1.png?width=1481&format=png&auto=webp&s=90f3fc460365ab6c5740f579dfa039c70d988ca3
+

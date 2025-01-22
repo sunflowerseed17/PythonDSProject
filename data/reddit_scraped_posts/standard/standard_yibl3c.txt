@@ -1,8 +1,0 @@
-Subreddit: audacity
-Title: Filler words removal
-Author: tartanthing
-Score: 2
-Created UTC: 2022-10-31 13:05:47
-URL: https://www.reddit.com/r/audacity/comments/yibl3c/filler_words_removal/
-
-Hi All,  I'm doing a podcast with a colleague. My colleague and I have a wide range of filler words that I need to get rid of in post production, he is mostly 'ummms' and I have a lot of 'yes' and 'absolutely'. It's a lot easier to see the wave forms of my 'yes' and 'absolutely' and delete them, however my colleague's 'ummms' are quite low volume but are fairly consistent in wave forms and occur without any other noise interruption. Any ideas on how to automagically delete these and save me hours of my life?

@@ -1,0 +1,17 @@
+Subreddit: MapPorn
+Title: The most commonly used language at home in Taiwan, 2020 Census.
+Author: ElectricalPeninsula
+Score: 10
+Created UTC: 2025-01-21 21:06:08
+URL: https://www.reddit.com/gallery/1i6tb8p
+
+pic 1: 2020 Census
+pic 2: 2010 Census
+
+legend:
+Blue: Mandarin
+Green: Hokkien (Min-Nan / Taiwanese)
+Pink: Hakka
+Brown: Indigenous language
+
+Most Han Taiwanese are proficient in more than one Sinic language. The percentage reflects the dominance of the primary household language compared to the second most common language. 

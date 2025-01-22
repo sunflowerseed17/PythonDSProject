@@ -1,0 +1,8 @@
+Subreddit: Piracy
+Title: Free Spotify IOS
+Author: Frankly785
+Score: 0
+Created UTC: 2025-01-21 22:58:03
+URL: https://www.reddit.com/r/Piracy/comments/1i6vzgh/free_spotify_ios/
+
+From reading this sub my understanding is that the only way to get free Spotify on IOS is to sideload from an app like altstore and will have to refresh every week by connecting to laptop, is that correct ? What about jailbreaking the phone, i’m IOS 18.1.1.

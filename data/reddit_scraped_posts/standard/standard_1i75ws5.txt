@@ -1,0 +1,10 @@
+Subreddit: Minecraft
+Title: How to find a stronghold with 2 eyes of Ender
+Author: sorelsi
+Score: 1
+Created UTC: 2025-01-22 07:36:12
+URL: https://www.reddit.com/r/Minecraft/comments/1i75ws5/how_to_find_a_stronghold_with_2_eyes_of_ender/
+
+I saw some posts on Reddit about the same topic, but they are all archived and don’t have any explanations. I’m talking about the method where you throw an eye of ender, record its coordinates and angle, move a couple of hundred blocks, and do the same thing. Then, somehow, you calculate the intersection point where the stronghold is located.  
+I know there are websites that can do all the math, but I want to understand how it works.  
+So, could someone explain how to do that kind o math

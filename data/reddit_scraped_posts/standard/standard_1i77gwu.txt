@@ -1,0 +1,10 @@
+Subreddit: leagueoflegends
+Title: Very Strange Issue With Draft Pick
+Author: littybird69
+Score: 3
+Created UTC: 2025-01-22 09:36:15
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i77gwu/very_strange_issue_with_draft_pick/
+
+I've been having and incredibly odd issue with the game recently where every time I load into specifically a draft pick match, my pc soft reboots (with the fans and lights still on). Once its rebooted I can always reconnect to the match with no issues whatsoever. I just find this exceedingly odd as loading into private, ARAM, and quickplay matches is completely fine with no problems. I just wanted to see if anyone had seen an issue like this before and potentially a way to resolve it? 
+
+Also wanted to add before people start suggesting it that I am 100% confident that it is not a hardware issue, i have a pretty high-end PC and never drop below the 240fps in LOL. I've monitored my system temps at the times of the crashes and they're completely fine too. Nothing like this has ever happened to me in any other game including significantly more demanding ones.

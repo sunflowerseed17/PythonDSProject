@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Should I buy 990 pro with heatsink for X870 steel legend?
+Author: june20th123
+Score: 1
+Created UTC: 2025-01-22 08:47:10
+URL: https://www.reddit.com/r/buildapc/comments/1i76u14/should_i_buy_990_pro_with_heatsink_for_x870_steel/
+
+990 pro 4tb with and without heatsink are exactly the same price on samsung website so I was planning to buy the heatsink version, until I found out that X870 steel legend has its own m2 heatsink. Would it be better to use the mobo heatsink instead? It will be used as the first and only m2 for a while. 

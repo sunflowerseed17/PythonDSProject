@@ -1,0 +1,12 @@
+Subreddit: BaldursGate3
+Title: Script Extender for Mac
+Author: fumeurwriter
+Score: 2
+Created UTC: 2025-01-22 08:10:56
+URL: https://www.reddit.com/r/BaldursGate3/comments/1i76dnb/script_extender_for_mac/
+
+[https://github.com/vishwamartur/bg3se/commit/2b7602b14210686806b0ce782386b7d70227f1d6](https://github.com/vishwamartur/bg3se/commit/2b7602b14210686806b0ce782386b7d70227f1d6)
+
+
+
+I have no idea how to install it but he did something...

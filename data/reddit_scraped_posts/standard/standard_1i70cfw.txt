@@ -1,0 +1,10 @@
+Subreddit: Piracy
+Title: Analysis of Denuvo by Connor Jay
+Author: rastr1sr
+Score: 22
+Created UTC: 2025-01-22 02:21:37
+URL: https://www.reddit.com/r/Piracy/comments/1i70cfw/analysis_of_denuvo_by_connor_jay/
+
+I found a great analysis of Denuvo DRM (while browsing sizeof.cat) that I think will interest anyone curious about how it works. I didn’t write it, it’s by Connor Jay, but it’s worth reading
+
+[https://connorjaydunn.github.io/blog/posts/denuvo-analysis/](https://connorjaydunn.github.io/blog/posts/denuvo-analysis/)

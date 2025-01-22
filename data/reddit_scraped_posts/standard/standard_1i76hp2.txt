@@ -1,0 +1,14 @@
+Subreddit: NoStupidQuestions
+Title: Why are apps / websites pushing AI so hard?
+Author: 44loko
+Score: 2
+Created UTC: 2025-01-22 08:19:54
+URL: https://www.reddit.com/r/NoStupidQuestions/comments/1i76hp2/why_are_apps_websites_pushing_ai_so_hard/
+
+Feels like every app, website, etc. has some type of AI function at this point. Reddit recently added the “Answers” tile at the bottom of the app. Twitter has been pushing Grok hard for the past few months. More often than not it ends up being just an annoyance and doesn’t actually help me with anything.
+
+I guess for large companies like Twitter I could see them wanting to be a leader in AI eventually and trying to get more people using it, but even small no-name companies are using it.
+
+One big example, I use a chrome extension for keyboard shortcuts on my computer. The extension recently came out with an AI feature that tries to auto-fill fields in programs I use at work and it just becomes a headache having to delete the auto-filled into. There is an option to “snooze” the AI autofill for 2 weeks at a time but no way to permanently disable it. Why would they not allow me to permanently turn it off? Is there some benefit to forcing me into keeping AI enabled?
+
+ I get that companies want to “keep up with the times” and want to make sure users are aware that the features exist. But it kind of feels like they are aggressively trying to force you to use AI now?

@@ -1,0 +1,11 @@
+Subreddit: buildapc
+Title: RGB fan light goes crazy when i start up
+Author: cristimm
+Score: 1
+Created UTC: 2025-01-22 08:01:51
+URL: https://www.reddit.com/r/buildapc/comments/1i769gx/rgb_fan_light_goes_crazy_when_i_start_up/
+
+https://imgur.com/a/flicker-rgb-KwG5kZc
+
+Hi guys, does anyone know if it s ok for my pc to start like this? It obly does this lightshow when i start it, everytime, after post, works fine.
+I was wondering if it will be a problem in the future or aomething to worry about..

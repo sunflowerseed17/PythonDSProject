@@ -1,0 +1,12 @@
+Subreddit: NoStupidQuestions
+Title: What systems exist in the US for real-time electricity consumption tracking?
+Author: mrtpontpont
+Score: 1
+Created UTC: 2025-01-22 08:02:58
+URL: https://www.reddit.com/r/NoStupidQuestions/comments/1i76a1e/what_systems_exist_in_the_us_for_realtime/
+
+ Hello everyone, I’m working on a concept for a service that tracks household electricity consumption in the US. The idea is to show real-time usage, its environmental impact, and provide insights. In France, we have standardized smart meters for this—do similar systems exist in the US, where i could take the data from :)
+
+This is a fictional project, I would just like to see if the idea could work ! 
+
+Thanks a lot ! 

@@ -1,0 +1,37 @@
+Subreddit: buildapc
+Title: Building Gaming and Design PC
+Author: eastgalaxy
+Score: 1
+Created UTC: 2025-01-22 08:04:21
+URL: https://www.reddit.com/r/buildapc/comments/1i76aor/building_gaming_and_design_pc/
+
+I am a gamer and graphic designer, but I would also like to use the basics of Adobe Animate and Premier Pro occasionally.
+
+Option 1:
+
+Ryzen 7 5700
+
+MSI B550 Gaming Gen3 Motherboard
+
+RTX 3050 6GB
+
+16GB RAM
+
+
+Option 2:
+
+Ryzen 5 5500
+
+MSI B550 Gaming Gen3 Motherboard
+
+ARC A580 8GB
+
+16GB RAM
+
+
+My question is whether I should go for the 6core or 8core processor. I'm on a budget, so is the 8core 16x threads worth it for gaming and design? If I can save money I would like to.
+
+I also see the ARC is generally better than the RTX, but is the ARC I've chosen okay for Adobe software?
+
+
+Thank you in advance :)

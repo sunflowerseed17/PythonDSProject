@@ -1,0 +1,8 @@
+Subreddit: Piracy
+Title: Vimu Media Player
+Author: Fuschnickens99
+Score: 0
+Created UTC: 2025-01-22 01:26:17
+URL: https://www.reddit.com/r/Piracy/comments/1i6z7zf/vimu_media_player/
+
+Hey is anyone out there using Vimu Media Player for TV MOD APK 10.83 for playing Dolby Vision movies? It's recognizing my Plex & NFS Servers fine but will not play the movies in DV. In settings I have Dolby Vision (DV Priority for HDR+DV Containers) but it's still playing in HDR. My DV only files are playing in that green/purple. Yes my TV is DV ready. In Kodi DV plays but not in Vimu. Just trying to get a good media player that plays DV better than Kodi and reads reads my servers. Just Player plays fine but it's not network capable.

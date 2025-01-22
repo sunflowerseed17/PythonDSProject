@@ -1,0 +1,13 @@
+Subreddit: buildapc
+Title: Is 16GB ram in dual channel better than 32GB none quad-channel? (for gaming)
+Author: Burgundy_Channel
+Score: 0
+Created UTC: 2025-01-22 08:54:20
+URL: https://www.reddit.com/r/buildapc/comments/1i76xee/is_16gb_ram_in_dual_channel_better_than_32gb_none/
+
+Would i benefit from using only 2 of my 4 8GB ram sticks in dual-channel, since my MB does not support quad-channel?  
+Specs:  
+X570-F Gaming  
+Ryzen 7 5700X3D  
+RTX 3080  
+32GB DDR4 3600Mhz CL18

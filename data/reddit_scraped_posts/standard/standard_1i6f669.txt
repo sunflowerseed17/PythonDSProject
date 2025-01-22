@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5: How does a dimmer regulate the brightness of a light?
+Author: Immediate-Risk-7569
+Score: 10
+Created UTC: 2025-01-21 09:50:44
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i6f669/eli5_how_does_a_dimmer_regulate_the_brightness_of/
+
+When I measure the output voltage of a dimmer it stays constant (237V) no matter on what brightness I set it. But when I plug in a 100w incandescent light I can regulate it's brightness without issue. The dimmer also says it needs minimum 25w otherwise it doesn't work, does this explain why the voltage doesn't change without a load?

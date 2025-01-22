@@ -1,0 +1,8 @@
+Subreddit: Minecraft
+Title: is there a way for worldedit to replace slabs/stairs with the correct rotation?
+Author: ohthemisery__
+Score: 3
+Created UTC: 2025-01-22 08:20:28
+URL: https://www.reddit.com/r/Minecraft/comments/1i76hyw/is_there_a_way_for_worldedit_to_replace/
+
+like if i want to replace a top slab of stone with a top slab of diorite, is it possible?

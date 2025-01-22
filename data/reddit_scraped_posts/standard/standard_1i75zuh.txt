@@ -1,0 +1,11 @@
+Subreddit: pcmasterrace
+Title: Flickering RGB fan light when startup
+Author: cristimm
+Score: 2
+Created UTC: 2025-01-22 07:42:28
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i75zuh/flickering_rgb_fan_light_when_startup/
+
+Hi guys! Does anyone know why my lights goes crazy when i start up the pc?
+Is this a problem or it will be a problem in the future??
+
+https://imgur.com/a/flicker-rgb-KwG5kZc

@@ -1,0 +1,38 @@
+Subreddit: soccer
+Title: State of the CL top 8 race
+Author: tsub
+Score: 16
+Created UTC: 2025-01-22 07:46:13
+URL: https://www.reddit.com/r/soccer/comments/1i761oo/state_of_the_cl_top_8_race/
+
+Team | Max Points | Current Points | Games Remaining | Opponent 1 | Opponent 2
+:--:|:--:|:--:|:--:|:--:|:--:
+Liverpool | 24 | 21 | 1 | --------- | PSV Eindhoven (A)
+Barcelona | 21 | 18 | 1 | --------- | Atalanta (H)
+Arsenal | 19 | 13 | 2 | Dinamo Zagreb (H) | Girona (A)**
+Inter | 19 | 13 | 2 | Sparta Praha (A)** | Monaco (H)
+Brest	 | 19 | 13 | 2 | Shakhtar Donetsk (A)** | Real Madrid (H)
+Bayern Munich | 18 | 12 | 2 | Feyenoord (A) | Slovan Bratislava (H)*
+Atlético Madrid | 18 | 15 | 1 | ---------- | RB Salzburg (H)**
+AC Milan | 18 | 12 | 2 | Girona (H)** | Dinamo Zagreb (A)
+Atalanta | 17 | 14 | 1 | ---------- | Barcelona (A)
+Aston Villa | 16 | 13 | 1 | ---------- | Celtic (H)
+Bayer Leverkusen | 16 | 13 | 1 | ---------- | Sparta Praha (H)**
+LOSC Lille | 16 | 13 | 1 | ---------- | Feyenoord (H)
+Monaco | 16 | 13 | 1 | ---------- | Inter (A)
+Sporting | 16 | 10 | 2 | RB Leipzig (A)* | Bologna (H)*
+Feyenoord | 16 | 10 | 2 | Bayern Munich (H) | LOSC Lille (A)
+
+One asterisk after an opponent's name means that the opponent is already eliminated; two asterisks means that the opponent is not mathematically eliminated but has 4 points or fewer and is very unlikely to advance or commit much effort to the game. All teams not shown in the table can get no more than 15 points and are thus effectively out of the top 8 race already.
+
+**Liverpool** and **Barcelona** have already secured top 8.
+
+**Arsenal**, **Inter**, and **Brest** can all reach 19 points. Arsenal have a favorable run-in, with a home game against Zagreb who are in the lower reaches of the table but still chasing a playoff place followed by an away game against an almost certainly eliminated Girona. Inter have a tougher schedule - they'll be confident of beating Sparta, but the final game against Monaco could be fierce with both teams chasing top 8. Brest will fancy themselves against Shakhtar but nobody likes facing Real Madrid in the CL, especially not a wounded Madrid out for blood.
+
+**Bayern**, **Atlético**, and **Milan** can all reach 18 points and are likely to do so given their remaining opponents: Bayern will heavily fancy themselves to thump Feyenoord and Slovan Bratislava, Atléti similarly should be very confident of beating Salzburg, while Milan face an almost-dead Girona and a spirited but limited Zagreb side that have just replaced their manager.
+
+**Atalanta** can reach 17 points. Their sole remaining game is against Barca, who have already secured top 8, so their fate depends heavily on how much Flick feels like rotating his squad; if he decides to spare his best XI from a game against a very physical and highly motivated opponent then they could win comfortably.
+
+**Villa**, **Leverkusen**, **Lille**, **Monaco**, **Sporting**, and **Feyenoord** can all reach 16 points. Villa and Leverkusen will be heavily favored to do so given that they play home games against weak-to-middling opposition. Lille, Feyenoord, and Monaco will all be facing nominally stronger opponents who are themselves competing for top 8, so are likely to lose at least one of their remaining games and finish in the playoff places. Sporting are perhaps the most likely surprise package for the top 8: both of their remaining games are against teams that are already out of the competition, so they should be looking to win comfortably and pump up their goal difference.
+
+My predicted top 8: Liverpool, Barcelona, Arsenal, Inter, Bayern, Atléti, Milan, and then either Atalanta or Leverkusen.

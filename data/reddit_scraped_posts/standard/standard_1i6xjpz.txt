@@ -1,0 +1,10 @@
+Subreddit: Steam
+Title: How to delete updates that are in the queue
+Author: jfontoura
+Score: 0
+Created UTC: 2025-01-22 00:08:24
+URL: https://www.reddit.com/r/Steam/comments/1i6xjpz/how_to_delete_updates_that_are_in_the_queue/
+
+Hi. First of all I'm sad to be writing this, since Steam should have an easy way of doing this. 
+
+So I have like 4 games I'm not playing atm but they are all like 20..30% downloaded. I just want to remove them from the queue. Is there no way to do this? Are my only two options-> finish downloading update or deleting the game??

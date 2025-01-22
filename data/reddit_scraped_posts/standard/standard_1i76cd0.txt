@@ -1,0 +1,8 @@
+Subreddit: NoStupidQuestions
+Title: How does respiration work?
+Author: idkwhatidek
+Score: 1
+Created UTC: 2025-01-22 08:08:08
+URL: https://www.reddit.com/r/NoStupidQuestions/comments/1i76cd0/how_does_respiration_work/
+
+Your lungs take in air, the alveoli transfer oxygen into the blood and then the blood carries this oxygen to the cells. That's my understanding of it. But what do the cells do with the oxygen and why is it specifically oxygen they need to keep us alive? Why couldn't it be nitrogen or carbon?

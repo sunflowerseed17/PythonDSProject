@@ -1,0 +1,21 @@
+Subreddit: wallstreetbets
+Title: MARA yolo
+Author: nielzzz
+Score: 5
+Created UTC: 2025-01-22 08:26:19
+URL: https://i.redd.it/tve49ics9iee1.jpeg
+
+So I have been buying up a decent position in MARA for the past couple of weeks. So why mara over mstr?
+
+MSTR has quite high premiums on the option chain, so the roi will be lower in comparison with MARA. 
+
+Why i am I so bullish on MARA? Because they have a really innovative way to mine bitcoin. They go to places that have excess energy and use that energy to mine bitcoin at a really low price. They started using the mstr approach, buying btc with capital.
+
+They mine and average of 28.7 BTC each day and have a total of 44,893 BTC (on 12/31/24). The amount of btc they have is the largest of any BTC mining company. 
+
+The shares of MARA reached a high of 83.45 usd in the 2021 bull cycle of btc. And my guess is this cycle they will go even higher, worst case I see them hit 50 usd this year. Which is a 250% gain!
+
+Now what are my positions. I have 2 strategies on MARA going at the moment, leap calls and leap debit spreads. The leap debit spreads are front heavy with the strikes of 40 and 47, I have 250 of them which will result in about 150,000 usd or a 1000% gain. These i will close when MARA gets above 50. My long calls are at the 30 strike price. Which I will sell poor man's covered calls on in the meantime for extra income. The leap calls and leap debit spreads expire 16 Jan 2026
+
+In my opinion this is a solid play, but I am open for feedback if you have any.
+

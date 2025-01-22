@@ -1,0 +1,10 @@
+Subreddit: buildapc
+Title: Stuck between GPU/CPU combo for 1440p 240hz gaming
+Author: xXxXCaptainXxXx
+Score: 1
+Created UTC: 2025-01-22 07:55:02
+URL: https://www.reddit.com/r/buildapc/comments/1i765zx/stuck_between_gpucpu_combo_for_1440p_240hz_gaming/
+
+Combos: 7700x-7800xt (800$) originally 900$
+Combos:7800x3d-7900xt(1160$)
+Combos:7800x3d-7800xt(930$)

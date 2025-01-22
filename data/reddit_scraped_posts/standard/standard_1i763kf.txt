@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: How much could i upgrade my gpu on my current mother board?
+Author: gainsornogains
+Score: 1
+Created UTC: 2025-01-22 07:50:00
+URL: https://www.reddit.com/r/buildapc/comments/1i763kf/how_much_could_i_upgrade_my_gpu_on_my_current/
+
+current build is an asus prime z370-p ii motherboard with a intel i7 9700k cpu and a rtx 2070. was thinking about buying a new pc but if i could get away with slapping a newer card in and getting another cpu down the road that'd be alot easier on my wallet. was looking at going to a 4060 ti or a 4070

@@ -1,0 +1,8 @@
+Subreddit: Palworld
+Title: Shared storage between bases
+Author: desperia
+Score: 0
+Created UTC: 2025-01-22 09:42:32
+URL: https://www.reddit.com/r/Palworld/comments/1i77jt6/shared_storage_between_bases/
+
+As the title says I think it's something missing in the game at the moment the shared storage/resources, I wonder is there any working mod atm for this end I've tried unified bases but it crashes the game my guess is that's not updated for nearly 1 year any other options? 

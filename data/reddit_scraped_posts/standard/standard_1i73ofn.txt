@@ -1,0 +1,17 @@
+Subreddit: Steam
+Title: game library issue
+Author: DH-jacklynn
+Score: 0
+Created UTC: 2025-01-22 05:07:54
+URL: https://www.reddit.com/r/Steam/comments/1i73ofn/game_library_issue/
+
+my friend is having trouble right now as all his games have been removed from his computer steam says they are still there and nothing is updating or installing. fixes we have tried
+
+deleting steam
+
+deleting steam folder
+
+deleting game library in 2nd and 3rd drive
+
+ reinstalling steam a second time
+

@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Is it fine to have two GPUS in a build?
+Author: SIVADensityCritical
+Score: 0
+Created UTC: 2025-01-22 09:20:45
+URL: https://www.reddit.com/r/buildapc/comments/1i779wj/is_it_fine_to_have_two_gpus_in_a_build/
+
+I wondering if it was fine to have one GPU for strictly gaming and the other one for everything else.

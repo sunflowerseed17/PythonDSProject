@@ -1,0 +1,14 @@
+Subreddit: pcmasterrace
+Title: Parts Question for PC Upgrade
+Author: MrCharles_
+Score: 1
+Created UTC: 2025-01-22 09:14:18
+URL: https://www.reddit.com/gallery/1i77728
+
+I am fairly new to PCs, at least the hardware side of things, and I need to install more storage. My PC is a PowerSpec G366 that I bought about 2 years ago at a discount and I have loved it, especially as a push to start option. 
+
+It only came with 1TB which has been plenty for me, but I would like to upgrade. I'm looking at a “2TB SAMSUNG 990 PRO SSD NVMe M.2 PCIe Gen4” to add in addition to what I have already, but want to make sure it will fit within my PC. Also, if I should buy the heatsink version or the normal version and what the difference is. I have added a photo of my motherboard in hopes it will help as my main concerns are if I'm purchasing a compatible SSD that can actually fit in the current build.
+
+I am also attaching my PC’s current specs with the hopes that you guys could guide me in the direction of further upgrades down the road. My main concern is currently making sure my purchases will actually fit into my PC as to not cause myself further headaches.
+
+All advice and support is greatly appreciated <3

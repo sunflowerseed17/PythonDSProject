@@ -1,0 +1,8 @@
+Subreddit: DIY
+Title: Goodman heat pump outside unit not running GSZ14
+Author: bigpanda87
+Score: 1
+Created UTC: 2025-01-21 22:11:01
+URL: https://www.reddit.com/r/DIY/comments/1i6uvm1/goodman_heat_pump_outside_unit_not_running_gsz14/
+
+Hello, my heat pump has not been running correctly since around Christmas. I was able to change the defrost control board because it appeared to be the culprit but that did not fix the issue. I'm getting line voltage to the unit but the control circuit is not closing the contactor. You can physically close the contactor and the system will run but as soon as you let off pressure it turns off. I checked the defrost thermostat but I'm unsure if it's supposed to be open or closed. I jumped the terminals and tried to see if closed would work and did not get any response from the unit.

@@ -1,0 +1,10 @@
+Subreddit: pcmasterrace
+Title: Death stalker v2 pro battery life issues (lasts 7 days with just 2-3 hours use a day.) 2.4ghz and 10% brightness spectrum cycling
+Author: TeaSipper007
+Score: 1
+Created UTC: 2025-01-22 09:50:25
+URL: https://i.redd.it/hmzov8esoiee1.jpeg
+
+I've bought a new keyboard and the battery life seems disappointing. The website according to these stats shows it should last roughly 51 days with the settings above. Has anyone got this issue too?
+Am I supposed to manually switch off the keyboard after every use? I assumed it would switch off on its own completely as l set the idle timers to low setting.
+Should I return it?

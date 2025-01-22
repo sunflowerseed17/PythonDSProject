@@ -1,0 +1,21 @@
+Subreddit: buildapc
+Title: 450 eu upgrade (CPU/MOBO/RAM)
+Author: MelodicEmu9817
+Score: 1
+Created UTC: 2025-01-22 08:14:22
+URL: https://www.reddit.com/r/buildapc/comments/1i76f5i/450_eu_upgrade_cpumoboram/
+
+Hello guys, and thanks for your help. 
+
+ I would like you to know my specs:
+
+MOBO: MSI MAG X570 TOMAHAWK WIFI (PROBLEMATIC ?)
+CPU: AMD 7 5800x  
+GPU: Radeon RX 6700 XT
+PSU : Corsair 750xm (i think or something very similar, i will double check tonight)
+RAM (irrelevant but its very high end)
+M.2 and SATA SSD
+
+I have a 450/500 MAX MAX euro budget to change whatever needs to be changed. What would you recommend I do to get the best value for the money? i would like to upgrade to the AM5 socket with a brand-new CPU, MOBO, and RAM.  i do not wish to change the GPU for now as it works just fine.
+
+Bear in mind, please, that I will most likely sell the whole PC in 3 years to build a new one from scratch.

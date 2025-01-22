@@ -1,0 +1,8 @@
+Subreddit: Palworld
+Title: Pak files not working?
+Author: Numerous_Balance7979
+Score: 0
+Created UTC: 2025-01-22 04:11:15
+URL: https://i.redd.it/b2k1q65a0hee1.jpeg
+
+(Image not related)For some reason when I try to mod my game the pak files never work.I make sure to put them in the (~mods) folder but they never work can someone help?

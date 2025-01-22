@@ -1,0 +1,29 @@
+Subreddit: HonkaiStarRail
+Title: Does anyone dislike how Mem's kit works
+Author: somababe
+Score: 0
+Created UTC: 2025-01-22 02:30:26
+URL: https://www.reddit.com/r/HonkaiStarRail/comments/1i70itd/does_anyone_dislike_how_mems_kit_works/
+
+Her ability to 100% adv forward is really good and important but she auto use it when her energy full ruining rotation setup. You dont have complete control of it cause theres alot of things gives energy
+
+1.any char action gives energy unless they're full or Acheron/Fei
+
+2.enemy atks esp multiple AoE atks gives alot, u dont have control how many char got hit esp blast atk.
+
+3.char that has ERR stats on them gives different value of energy, or any items that gives energy like RM LC,QPQ etc. Theres instance where Mem's energy at 97% so i do basic on char which should gives only 2% but it went to 100% on Mem cause it doesnt show decimal pts.
+
+4. Fua attacks that u cant expect how many can happen eg. smol Herta Yunli clara
+
+5. Enemy dies or not .
+
+tldr its alot of things to keep in mind to manage Mem's energy properly.
+
+and it just feels bad when u see/plan ur dps u turn is coming next but enemies hit ur chars enough or theres some FuA happened in between and Mem's energy filled and instantly bypass your dps turn and wasted the adv forward. I experienced this many times and it feels frustrating, also that ability takes significant time to refill aswell . I feel like this design is just some artificial rng inconvenience they put in the game so player spend more time or to sell future char that dont have this inconvenience. Also RMC true dmg buff just hard to pass by, literally x1.5 dmg like THerta.
+
+Hunt7th kit actually similar to Mem's, when stacks at 7/7 she got free turn and bypass anyones turn but its just an extra atk and u can get it again real fast.
+
+one example i tried RMC on Firefly team and when FF use her skill and instantly ult, Mem's actually bypass Firefly adv forwarded turn and get her turn 1st and wasted the adv forward. Same with The Herta adv forward from her ult, she just bypass anyone when energy full.
+
+https://reddit.com/link/1i70itd/video/hjo1f1crigee1/player
+

@@ -1,0 +1,37 @@
+Subreddit: leagueoflegends
+Title: Cash Back Is A Bad Rune
+Author: TheMajesticPrincess
+Score: 0
+Created UTC: 2025-01-22 04:51:16
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i73ds2/cash_back_is_a_bad_rune/
+
+(Manual analysis only)
+
+The findings of this graph rely on the League Wiki Assessment of Magical Boots Value, and various practice tool purchases for the Item Gold Return with Cash Back.
+
+In situations where the gold number is round and clean in a way that can't easily be purchased in game, I've used 6% of Number (the Cash Back return) to calculate how much value it would be giving for the gold spent.
+
+With this in mind, I'm very strongly confident that you need four items (two legendaries, boots, another legendary) for Cash Back to be MORE worthwhile than Magical Boots in gold value.  
+The dead on BreakEven is 7K legendary gold.
+
+Gold Value aside, my underlying analysis is that front-loaded strength is far better than something which may take the majority of the game to be stronger than it's main rival. 
+
+On champions, for example supports, who buy cheap items only the return is objectively lower than on champions who buy more expensive items.  
+This is because it's 6% of legendary item gold, so Deathcap returns far more than Ardent.  
+  
+I ran calculations based on the U GG recommended builds for Leona and Janna on the last patch of Season 14 and found that at six items they're only getting around 550 gold total from Cash Back.   
+Considering supports almost never hit six items, I think they should just always take a different rune.  
+(the specific builds are in my video)
+
+I ran similar calculations for other lanes and champions for example Yasuo, Ornn, Gwen and found their numbers were in the 800-900+ range at six items of their U GG build with Cash Back.  
+This is obviously much better than the support numbers, but still takes ages to happen.  
+(specific builds in the video also)
+
+I have a video elaborating on all my findings, my opinions on why this rune is badly designed (it requires too much maths, works badly on low-gold champions etc), and breaking down some specific lane related criticisms (junglers do early objective fights, early gold matters more, therefore go Magical Footwear)  
+  
+This video includes some AI citations for how much gold a player may earn in a game, how much gold they may earn per-minute, and how long a game may be (I couldn't be bothered doing a deep dive and thought the numbers looked believable), however they are a small portion and shouldn't detract from the main concept that CB is just too slow at spiking which is backed up by buying items and watching how small the reward is each time.  
+I'm happy to acknowledge these slides hold less weight than the verifiable numbers of eg buying items in practice tool.
+
+If you're interested that longer video is here: [https://youtu.be/voQ6rP\_3gis?si=4h\_H1XtUUOZwomF\_](https://youtu.be/voQ6rP_3gis?si=4h_H1XtUUOZwomF_)
+
+[Gold Return from Cash Back Vs Flat Wiki Value of Magical Boots](https://preview.redd.it/6fisx6k44hee1.png?width=1032&format=png&auto=webp&s=963aa4dd1547e6a96fe36f99b30826231144bcb9)

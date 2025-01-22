@@ -1,0 +1,29 @@
+Subreddit: buildapc
+Title: FPS drops with external monitor
+Author: RamPc
+Score: 0
+Created UTC: 2025-01-22 07:55:10
+URL: https://www.reddit.com/r/buildapc/comments/1i7662k/fps_drops_with_external_monitor/
+
+I have an issue with my Laptop (Acer Predator PH315-54) and my External monitor (Gigabyte G34WQC A) where FPS drops through display port 1.4 or HDMI between 30fps to 50fps and display get stuck/lag during game play.
+
+I am getting 144fps when I use my laptop screen or another external Monitor, example an Asus monitor VG24VQ.
+
+Some things I have done:
+
+\-          I used different cables (Mini Display port and HDMI)
+
+\-          I connected a different laptop to my Gigabyte Monitor and it provided from 120 fps to 144 fps.
+
+\-          I connected my PC in another monitor using same cables and I was able to get normal FPS.
+
+\-          I uninstalled my laptop drivers and reinstalled them with no changes.  
+NVIDIA Cleanup Tool (CleanupTool.exe) from link [https://developer.nvidia.com/cleanup-tool](https://developer.nvidia.com/cleanup-tool)
+
+Above test were done with Fortnite and Marvel Rivals.
+
+So it has to be something in my Laptop with this Gigabyte monitor that is causing the problems and I haven't been able to get it fix.
+
+I’m looking for any ideas on how to fix it.
+
+Thanks!

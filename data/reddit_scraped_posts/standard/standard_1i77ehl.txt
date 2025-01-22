@@ -1,0 +1,14 @@
+Subreddit: buildapc
+Title: Recommendation for MOBO and RAM
+Author: MelodicEmu9817
+Score: 1
+Created UTC: 2025-01-22 09:30:52
+URL: https://www.reddit.com/r/buildapc/comments/1i77ehl/recommendation_for_mobo_and_ram/
+
+Any MOBO and RAM recommendation for a AM5 socket? 
+CPU: AMD 5 7600x  
+GPU: Radeon RX 6700 XT
+PSU : Corsair 750xm (i think or something very similar, i will double check tonight)
+
+
+WiFi please

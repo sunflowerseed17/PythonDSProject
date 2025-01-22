@@ -1,0 +1,10 @@
+Subreddit: buildapc
+Title: Installed a new motherboard and can’t use ethernet or connect to wifi
+Author: StayWideAwake-
+Score: 1
+Created UTC: 2025-01-22 08:09:26
+URL: https://www.reddit.com/r/buildapc/comments/1i76cy8/installed_a_new_motherboard_and_cant_use_ethernet/
+
+So, long story short. I bought the ASUS maximus z790 dark hero and for whatever reason I can’t connect to ethernet or wifi. Never encountered an issue like this before. I went to my bios and checked my onboard device configuration and made sure my intel LAN wasn’t disabled which it wasnt. And I went to my network settings on windows and I see no sign of a ethernet connection..
+
+I never had this issue with past motherboards. I install them, connect them to my Ethernet and work like a charm. I looked everywhere and can’t find anything to help with this. I’m hoping someone here can give some insight. 

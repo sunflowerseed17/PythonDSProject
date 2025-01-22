@@ -1,0 +1,8 @@
+Subreddit: Minecraft
+Title: [SUGGESTION] Fumigator Block
+Author: etaithespeedcuber
+Score: 1
+Created UTC: 2025-01-22 08:38:28
+URL: https://www.reddit.com/r/Minecraft/comments/1i76q42/suggestion_fumigator_block/
+
+Simple and small idea - throw some coal and a potion into the fumigator block and within a certain radius everyone will get the effect of that potion through a gas. visually, there would be fume particles that look just like potion particles that spread throughout the room.

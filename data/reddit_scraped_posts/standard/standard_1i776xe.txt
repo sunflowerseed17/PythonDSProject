@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: How long are your boot times?
+Author: Omnomnom2478
+Score: 0
+Created UTC: 2025-01-22 09:14:01
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i776xe/how_long_are_your_boot_times/
+
+I'm running off a 7600x, 7800xt and kingston KC3000 2tb and my boot from button press is \~30 seconds.

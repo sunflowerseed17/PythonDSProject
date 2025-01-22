@@ -1,0 +1,23 @@
+Subreddit: buildapc
+Title: Rate my combo
+Author: Round_Staff8012
+Score: 4
+Created UTC: 2025-01-22 08:30:33
+URL: https://www.reddit.com/r/buildapc/comments/1i76mhg/rate_my_combo/
+
+Focusing on gaming, never had a experience of building PC 
+CPU
+AMD Ryzen 5 7600X
+GPU
+AMD Radeon RX 7700 XT (12GB GDDR6) or RX 7800 XT (16GB)
+Motherboard 
+MSI B650 TOMAHAWK WIFI or ASUS TUF Gaming B650-Plus
+Memory
+ Kingston Fury Beast DDR5 2x16
+SSD
+Samsung 980 Pro 1TB NVMe SSD
+Corsair RM750x or Seasonic Focus GX-750.
+Case
+DeepCool CK560 or NZXT H5 Flow
+Cooler
+DeepCool AK620

@@ -1,0 +1,8 @@
+Subreddit: Piracy
+Title: SpeedApp.io, a private torrent website, is down
+Author: PermanentlyMC
+Score: 2
+Created UTC: 2025-01-21 20:06:16
+URL: https://www.reddit.com/r/Piracy/comments/1i6rv0r/speedappio_a_private_torrent_website_is_down/
+
+Private torrenting website SpeedApp.io, known for both English and Romanian torrents, is currently down. Spotted this earlier today on my machine, but thought it was a network issue until I looked into it just now. Not sure if anyone's heard any news relating to the website?

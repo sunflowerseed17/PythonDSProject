@@ -1,0 +1,10 @@
+Subreddit: pcmasterrace
+Title: Fortron/FSP Blue Storm 500 Bronze on a build that needs about 390W of power
+Author: Hrublko_OFF
+Score: 1
+Created UTC: 2025-01-22 06:50:53
+URL: https://www.reddit.com/gallery/1i75a0f
+
+I will be building a new PC soon and I already have this PSU so I was wondering if I can use it to power my next PC (7700x, 4060 (or potentially 5060 when it comes out), 32gb ddr5 ram, 2x nvme ssd)
+On PSU calculator by Xtreme vision (iirc) it said I needed around 440W PSU minimum.
+Also I put the specs kinda overkill (such as USB devices, fans, a GPU overclock)

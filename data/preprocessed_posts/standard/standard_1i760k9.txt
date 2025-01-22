@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5: Why in USA there is an ISP Router often/always installed ?
+Author: No-Morning-8951
+Score: 5
+Created UTC: 2025-01-22 07:43:58
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i760k9/eli5_why_in_usa_there_is_an_isp_router/
+
+live anoth countri fiber connect common isp instal onu termin fiber cabl connect connect router tell config wan need appli appli configur isp even swap onu termin devic termin sfp onu need replac router take minut isp need replac mac address link account lot case us ca replac isp router devic

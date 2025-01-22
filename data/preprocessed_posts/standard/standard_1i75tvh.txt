@@ -1,0 +1,8 @@
+Subreddit: Overwatch
+Title: Game is Stuttering and laggin like crazy in Fullscreen mode
+Author: ArdaOneUi
+Score: 2
+Created UTC: 2025-01-22 07:30:13
+URL: https://www.reddit.com/r/Overwatch/comments/1i75tvh/game_is_stuttering_and_laggin_like_crazy_in/
+
+updat brought new chang choos api gpu set believ broken thing window window fullscreen work normal fullscreen make game stutter like crazi includ sound basic unplay also becom slow constant restar game appli chang banner bottom set reboot mani time never issu anyon solut battlenet launcher

@@ -1,0 +1,10 @@
+Subreddit: OutOfTheLoop
+Title: What's the deal with Trump shutting down the CBP One app?
+Author: whatsAIDS
+Score: 1772
+Created UTC: 2025-01-21 16:03:22
+URL: https://www.reddit.com/r/OutOfTheLoop/comments/1i6lxdg/whats_the_deal_with_trump_shutting_down_the_cbp/
+
+I'm not really understanding the logic behind [President Trump's decision yesterday to shut down the CBP one app](https://www.nytimes.com/2025/01/20/us/politics/trump-shuts-down-migrant-entry-app-cbp-one.html?campaign_id=51&emc=edit_mbe_20250121&instance_id=145317&nl=morning-briefing:-europe-edition&regi_id=265815372&segment_id=188823&smid=url-share&user_id=1a742bf7aabc915beee0d1d80a2c3555), so it would be great if someone could explain. From what I understand, the CBP One app allowed any migrant to schedule an appointment to *seek* asylum through a US immigration court. To me, it seems like nothing about the app promoted any additional illegal immigration, right? It just enabled greater access to seek migration, but it didn't make it any easier for someone without a strong case to make it into the country. So how is this being framed as a move against illegal immigration?
+
+I'd appreciate it if someone could explain A) what Trump says his reasoning for this is and B) what the underlying reason and/or future implications of this may be. Thank you!

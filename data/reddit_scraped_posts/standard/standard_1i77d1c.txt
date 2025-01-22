@@ -1,0 +1,22 @@
+Subreddit: pcmasterrace
+Title: 7800xt Underperforming. I cpu the issue?
+Author: Epiquist
+Score: 1
+Created UTC: 2025-01-22 09:27:41
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i77d1c/7800xt_underperforming_i_cpu_the_issue/
+
+My rx 7800xt has been underperforming for some time now, usually experiencing roughly 20% -30% less fps in games than benchmarks and other users with the same card have experienced. I was under the impression that my Cpu is an intel i7-11700 would pair alright with my card but i could be wrong. ill greatly appreciate anyone letting me know if cpu is the issue or maybe there is something im missing.
+
+  
+Specs:
+
+Rx 7800xt
+
+i7-11700
+
+32gb 3600MHz ram
+
+b560m asus tuf gaming motherboard
+
+750Watt Gold psu
+

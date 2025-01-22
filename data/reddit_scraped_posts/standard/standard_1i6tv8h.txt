@@ -1,0 +1,12 @@
+Subreddit: OutOfTheLoop
+Title: What is up with the U.S. preparing to spending billions on “AI Infrastructure” and how is it going to benefit people?
+Author: Night_Manager
+Score: 740
+Created UTC: 2025-01-21 21:28:52
+URL: https://www.reddit.com/r/OutOfTheLoop/comments/1i6tv8h/what_is_up_with_the_us_preparing_to_spending/
+
+
+I don’t really understand what purpose this AI infrastructure serves and why we need to spend so much money on it.  Maybe someone here knows more about what’s going on?  Thank you!
+
+Here is example article: https://www.cnn.com/2025/01/21/tech/openai-oracle-softbank-trump-ai-investment/index.html
+

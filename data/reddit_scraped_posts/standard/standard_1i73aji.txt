@@ -1,0 +1,8 @@
+Subreddit: gaming
+Title: Does spatial sound make games better or worse?
+Author: iloveeeeemycat
+Score: 0
+Created UTC: 2025-01-22 04:45:50
+URL: https://www.reddit.com/r/gaming/comments/1i73aji/does_spatial_sound_make_games_better_or_worse/
+
+I've played lots of games with spatial sound, like TW3, RDR2, Bully, multiple GTAs, multiple REs and they all sounded great, but while playing through Assassin's Creed Odyssey the sound just felt terrible, some sounds were ridiculously louder than others, some were ridiculously low, it just felt terribly imbalanced, but when I turned spatial sound everything sounded great, the audio was balanced and everything sounded the way you'd expect it to sound. This makes me wonder why all those other games I played sounded great with spatial sound but AC Odyssey sounded horrendous, does anyone know why such a thing happens?

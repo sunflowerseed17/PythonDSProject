@@ -1,0 +1,10 @@
+Subreddit: Minecraft
+Title: Mac registers spam left click as right
+Author: Agreeable-Sense-4882
+Score: 1
+Created UTC: 2025-01-22 06:20:03
+URL: https://www.reddit.com/r/Minecraft/comments/1i74tqj/mac_registers_spam_left_click_as_right/
+
+Anytime I play games on my MacBook that require a spam left click (with an external mouse) my MacBook Air m2 registers it as a right click. Is there a fix for this?
+
+Any help would be appreciated!

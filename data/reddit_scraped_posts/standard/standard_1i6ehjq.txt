@@ -1,0 +1,9 @@
+Subreddit: Piracy
+Title: Does the download speed decrease when I set a 2 KiB/s limit on the upload speed in qBittorrent?
+Author: eymo-1
+Score: 0
+Created UTC: 2025-01-21 08:57:24
+URL: https://www.reddit.com/r/Piracy/comments/1i6ehjq/does_the_download_speed_decrease_when_i_set_a_2/
+
+ I have a 250 GB/month internet quota,  
+ and please don't criticize me.

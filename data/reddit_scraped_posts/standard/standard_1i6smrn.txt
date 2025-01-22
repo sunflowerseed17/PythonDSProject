@@ -1,0 +1,24 @@
+Subreddit: DIY
+Title: Framing in garage
+Author: u11db6
+Score: 3
+Created UTC: 2025-01-21 20:38:21
+URL: https://www.reddit.com/r/DIY/comments/1i6smrn/framing_in_garage/
+
+Hi, looking for advice on a garage project.
+
+TL;DR -  what are the layers recommended when framing and insulating?
+
+It's a single skin brick building with a concrete floor that I basically want to frame up and insulate floor to ceiling.  It's cold but not too damp.  I want it to be a decent space for woodworking etc, so I'm planning on essentially building an insulated timber frame wooden box inside it!
+
+I have a plan for the floor (damp-proof sheet on existing concrete, floor joists (on little feet to give an air gap), Kingspan insulation in the floor joists, and OSB floor finish).
+
+The walls...I've got the existing masonry obviously, going leave an air gap, build the wall frames (planning to sit the wall frames on the edge of the new floor so that nothing is touching the existing concrete or masonry in case of damp ingress).
+
+Can someone please advise where a breathable membrane or some sort of thermal layer comes in?  Do the wall frames require an OSB layer on the masonry side?  Depending on costs, I'll put soft insulation or Kingspan in the wall joists, but if I need a breathable membrane or some other layer, could someone please advise on the layering order?
+
+Whatever I do for the walls, I'll probably do the same for the ceiling, assuming that's the right thing to do.
+
+Hope that all makes sense.  Sorry for long post.  Thanks in advance.
+
+p.s. Is C16 timber 45 x 95 mm a reasonable choice for the frame work?  Thanks!

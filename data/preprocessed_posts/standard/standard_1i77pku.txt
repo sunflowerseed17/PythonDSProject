@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Build Work/Gaming in 1440p - Budget: 2000€
+Author: dipa996
+Score: 1
+Created UTC: 2025-01-22 09:54:54
+URL: https://www.reddit.com/r/buildapc/comments/1i77pku/build_workgaming_in_1440p_budget_2000/
+
+hi everyon plan build new pc would love advic make budget requir prefer usag task run virtual machin window linux use light docker usag contain specif work softwar consum ram need nvidia gpu task like workload dual boot window linux code xcode android studio emul vscode plugin etc use everyth time xd game play game like apex legend sea thiev monitor alreadi prefer gpu advis focu nvidia super ti super agre choic cpu lean toward amd ryzen like ryzen bit lost among version specif recommend pair well gpu storag enough aesthet care much flashi design prefer minimalist look budget aim around will go slightli higher improv worth exampl build exampl made seem fit need would good choic better configur consid could spend less one side improv cpu gpu see product compat overpr thank advanc

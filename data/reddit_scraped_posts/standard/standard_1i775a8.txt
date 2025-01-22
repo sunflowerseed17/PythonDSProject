@@ -1,0 +1,13 @@
+Subreddit: buildapc
+Title: feedback before I pull the trigger
+Author: HungryAssociation604
+Score: 1
+Created UTC: 2025-01-22 09:10:32
+URL: https://www.reddit.com/r/buildapc/comments/1i775a8/feedback_before_i_pull_the_trigger/
+
+I'm planning to build a PC for a friend, and this will be my second time building a PC. I'm nervous about building this one because it's a mATX micro-tower build and I wasn't sure if these parts would correspond with each other. PC part picker says everything is compatible, but I'd like to know what you guys think and if the price is right. The budget for this build is $1000 and below. Feedback is appreciated!
+
+  
+Here is the build:
+
+[https://pcpartpicker.com/list/YwXTrM](https://pcpartpicker.com/list/YwXTrM)

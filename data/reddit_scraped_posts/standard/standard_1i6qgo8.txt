@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5: Why is GPS dependent on knowing magnetic north?
+Author: _sumizome_
+Score: 88
+Created UTC: 2025-01-21 19:09:31
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i6qgo8/eli5_why_is_gps_dependent_on_knowing_magnetic/
+
+According to [this article](https://www.bgs.ac.uk/news/airlines-shipping-companies-and-sleigh-drivers-rush-to-update-crucial-navigation-systems-ahead-of-christmas-rush/) from the British Geological Survey, British and US earth scientists recently released a new version of the World Magnetic Model, which predicts the location of the (constantly drifting) magnetic North Pole. However, both the press release and [related news stories](https://www.cnn.com/2025/01/21/science/magnetic-north-pole-new-position/index.html) suggest that the updated model is somehow related to the accuracy of GPS positioning. This makes no sense to me; why would positions derived from satellite locations and timing data have any relationship to magnetic north?

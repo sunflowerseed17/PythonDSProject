@@ -1,0 +1,21 @@
+Subreddit: pcmasterrace
+Title: Is HWinfo right about my NVMe abaout to fail?
+Author: MrRad_YT
+Score: 0
+Created UTC: 2025-01-22 09:09:28
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i774rj/is_hwinfo_right_about_my_nvme_abaout_to_fail/
+
+Hi everyone. I would like your opinion on something.
+
+I opened up HWInfo and saw that my main NVMe drive (Toshiba 240GB. Boot, Windows OS, files etc) was at 11% health, but also under available spare, it said 100%, even though its like 90% full. 
+
+I'm not sure weather to trust this, as it says for my secondary SSD (Crucial BX500 1TB), it has 0% health left and apparently failed, but I still run all my games and software aswell as OBS recordings fine. It also says I've only written 8.2GB when its a 1TB drive and there's over 900GB used, or written.
+
+I was wondering if this is true, and if I should trust HWInfo's readings and backup my files. Other software such as the HP PC diagnostics and Crucial Storage Executive both said the same, but they all read SMART data, so it should be the same
+
+Thanks!
+
+Laptop Model: HP Pavillion Gaming 15 (R5 3500H/GTX 1050)
+
+https://preview.redd.it/9gak6igvgiee1.png?width=732&format=png&auto=webp&s=31b672820274c8dbf0f327ac925b400d918e2641
+

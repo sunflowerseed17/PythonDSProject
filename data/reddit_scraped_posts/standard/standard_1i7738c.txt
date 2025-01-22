@@ -1,0 +1,20 @@
+Subreddit: buildapc
+Title: Should I Replace my Quadro m6000 or my entire PC?
+Author: Afraid-Homework8419
+Score: 0
+Created UTC: 2025-01-22 09:06:12
+URL: https://www.reddit.com/r/buildapc/comments/1i7738c/should_i_replace_my_quadro_m6000_or_my_entire_pc/
+
+I bought a workstation at the end of 2022 for about 330 AUD (205 USD).  
+The specs are:
+
+Xeon e5 1650 v3  
+Quadro m6000 12GB  
+32gb ddr4 2133mhz  
+240 GB SATA SSD (I think it was intel but I forgot)
+
+this is all in an HP z640 workstation
+
+I was originally only considering selling the gpu to upgrade it. But now I'm not sure whether I'd be bottlenecking with the CPU that I have. For context, I barely use this workstation for any workstation-like activities, I have a 1080p 165hz monitor, and I play a lot of PCVR. So, should I sell the GPU, or would I be better off selling the entire PC and then building/buying one?
+
+TLDR - Am I better off selling my GPU or entire PC? I play pcvr and am worried that my CPU could bottleneck my future GPU.

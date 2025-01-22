@@ -1,0 +1,14 @@
+Subreddit: wallstreetbets
+Title: Meta Plans Oakley-Branded Glasses, Explores Watches and Earbuds
+Author: s1n0d3utscht3k
+Score: 0
+Created UTC: 2025-01-21 20:21:09
+URL: https://www.bloomberg.com/news/articles/2025-01-21/meta-hardware-plans-oakley-and-ar-like-glasses-apple-watch-and-airpods-rivals
+
+> Meta Platforms Inc. is working on upgrades to its popular smart glasses and is exploring new wearable devices such as watches and camera-equipped earbuds, aiming to embed its artificial intelligence features into more products.
+
+> The effort includes developing Oakley-branded smart glasses for athletes this year, according to people with knowledge of the matter. Meta’s devices group, Reality Labs, also plans to release new high-end glasses with a built-in display in 2025, said the people, who asked not to be identified because the initiatives haven’t been announced.
+
+> Other products underway would compete with Apple Inc.’s smartwatch and AirPods, the people said. And the company is making headway on its first true augmented reality product — a holy grail for the tech industry — for release around 2027. A representative for Meta, which owns Facebook, Instagram and WhatsApp, declined to comment on the company’s plans.
+
+> The flurry of products is part of a bid to reposition Meta as an AI innovator, with a focus on hardware that can usher in the next era of computing. The social media company has spent tens of billions on augmented and virtual reality development and launched multiple versions of headsets and glasses, but broad consumer acceptance has remained elusive.

@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Help choose a GPU
+Author: Disastrous-Try8907
+Score: 1
+Created UTC: 2025-01-22 08:05:18
+URL: https://www.reddit.com/r/buildapc/comments/1i76b4m/help_choose_a_gpu/
+
+Everything is built/wired together except a GPU which I haven’t bought yet. Originally was going to go with the RX 7800 XT but can anyone recommend me a cheaper GPU to go with this budget/mid build. I have gone with the Ryzen 5 7600X CPU, 32gb DDR5 RAM for context, Gaming Pc will be used for gaming (not exceptionally heavy gaming but daily), games such as COD WZ/Fortnite and generally anything. Help appreciated :)

@@ -1,0 +1,12 @@
+Subreddit: BaldursGate3
+Title: Help finding mods
+Author: larrydcarter
+Score: 1
+Created UTC: 2025-01-22 03:44:08
+URL: https://www.reddit.com/r/BaldursGate3/comments/1i724j3/help_finding_mods/
+
+I played BG3 quite heavily over a year ago and had an assortment of mods to play character builds I wanted to try in real life, but never got a chance. Once I returned, I realized the modding has changed significantly and nothing that I had still worked. Mods I’m trying to find include the following and it would be greatly appreciated if someone could point me in the right direction.
+
+- Orc as a player race from Volo’s Guide to Monsters
+- Brute Fighter subclass from Unearthed Aracana
+- Path of the Totem Warrior Barbarian subclass

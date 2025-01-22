@@ -1,0 +1,10 @@
+Subreddit: buildapc
+Title: 24inch 1080p vertical LCD for coding in terminal
+Author: inouthack
+Score: 1
+Created UTC: 2025-01-22 08:16:00
+URL: https://www.reddit.com/r/buildapc/comments/1i76fxb/24inch_1080p_vertical_lcd_for_coding_in_terminal/
+
+Does anyone have a recommendation based on their experience using a 24inch 1080p vertical LCD monitor?
+
+This is exclusively for coding in terminal on ArchLinux sans X-window.

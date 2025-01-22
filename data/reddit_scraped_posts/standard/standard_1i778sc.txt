@@ -1,0 +1,10 @@
+Subreddit: pcmasterrace
+Title: Help the motherboard does not recognize the ram in the 3rd and 4th slot
+Author: Accomplished_Win7727
+Score: 1
+Created UTC: 2025-01-22 09:18:17
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i778sc/help_the_motherboard_does_not_recognize_the_ram/
+
+Hi I have problem my specs are rx 6650xt,ryzen 5500,x 570 gaming x,32gb ram 2x16 Kingston fury beast.
+my motherboard has 4 slots and in the manual it tells me to put the ram in the second and forth  slot but the motherboard only recognizes the ram memory if it is in the first or second slot 
+Sorry cuz I didn't have time to screen shot from pc and I know that 5500 isn't that good for rx 6650xt.Bios version f 37a

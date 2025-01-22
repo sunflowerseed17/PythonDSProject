@@ -1,0 +1,8 @@
+Subreddit: Minecraft
+Title: How can I build something similar to solar panels on Minecraft bedrock? (no mods)
+Author: daninator4456
+Score: 1
+Created UTC: 2025-01-22 08:51:25
+URL: https://www.reddit.com/r/Minecraft/comments/1i76w3q/how_can_i_build_something_similar_to_solar_panels/
+
+I'm trying to work on a project on minecraft bedrock of a Smartcity, and I don't really know how to replicate real life solar panels. I've tried using the daylight detector, but it doesn't convince me. I just want to replicate like the structure, it doesn't have to be functional. Hope somebody can help me :).

@@ -1,0 +1,8 @@
+Subreddit: Home
+Title: No heating but the furnace seems working ok
+Author: Wise-Requirement-104
+Score: 2
+Created UTC: 2025-01-22 05:45:04
+URL: https://www.reddit.com/r/Home/comments/1i74a6o/no_heating_but_the_furnace_seems_working_ok/
+
+Only slightly warm air is coming from my vents, keeps temp. at around 64F. I have a Goodman electric furnace, model no. aruf363616ba and Nest thermostat. I did reset everything - no change. Any idea what could be wrong?

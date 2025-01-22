@@ -1,0 +1,80 @@
+Subreddit: nba
+Title: [Post Game Thread] The Los Angeles Lakers (23-18) defeat the Washington Wizards (6-36), 111-88.
+Author: MrBuckBuck
+Score: 50
+Created UTC: 2025-01-22 06:00:08
+URL: https://www.reddit.com/r/nba/comments/1i74ins/post_game_thread_the_los_angeles_lakers_2318/
+
+||
+|:-:|
+|[](/WAS) **88 -  111** [](/LAL)|
+|**Box Scores: [NBA](http://www.nba.com/game/WAS-vs-LAL-0022400610/box-score) - [Yahoo](https://sports.yahoo.com/nba/scoreboard/)**|
+
+||
+|:-:|
+|&nbsp;|
+|**GAME SUMMARY**|
+|**Location:** Crypto.com Arena (18672), **Clock:** Final|
+|**Officials:** Sean Wright, Ray Acosta, and Simone Jelks|
+
+|**Team**|**Q1**|**Q2**|**Q3**|**Q4**|**Total**|
+|:---|:--|:--|:--|:--|:--|
+|Washington Wizards|23|26|28|11|88|
+|Los Angeles Lakers|29|30|30|22|111|
+
+||
+|:-:|
+|&nbsp;|
+|**TEAM STATS**|
+
+|**Team**|**PTS**|**FG**|**FG%**|**3P**|**3P%**|**FT**|**FT%**|**OREB**|**TREB**|**AST**|**PF**|**STL**|**TO**|**BLK**|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+|Washington Wizards|88|34-95|35.8%|11-43|25.6%|9-13|69.2%|9|57|25|18|8|11|8|
+|Los Angeles Lakers|111|43-90|47.8%|11-34|32.4%|14-18|77.8%|7|59|30|11|6|10|10|
+
+
+||
+|:-:|
+|&nbsp;|
+|**PLAYER STATS**|
+
+||||||||||||||||
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+**[](/WAS) Washington Wizards**|**MIN**|**PTS**|**FGM-A**|**3PM-A**|**FTM-A**|**ORB**|**DRB**|**REB**|**AST**|**STL**|**BLK**|**TO**|**PF**|**±**|
+|Bilal Coulibaly^SF|32:25|17|7-15|1-5|2-2|3|3|6|4|1|2|1|4|-14|
+|Kyle Kuzma^PF|27:38|12|5-13|1-4|1-4|2|7|9|5|0|0|2|0|-18|
+|Alex Sarr^C|27:10|10|5-14|0-3|0-0|1|5|6|2|1|5|1|1|-15|
+|Jordan Poole^SG|34:28|15|5-18|4-12|1-1|1|6|7|3|2|0|2|3|-11|
+|Bub Carrington^PG|28:58|3|1-8|1-4|0-0|0|4|4|2|2|0|2|2|-14|
+|Corey Kispert|31:24|15|5-11|3-7|2-2|1|3|4|2|1|0|0|2|-10|
+|Jonas Valančiūnas|19:14|8|4-6|0-0|0-0|1|6|7|2|0|0|0|2|-4|
+|Kyshawn George|31:07|8|2-7|1-6|3-4|0|2|2|5|1|1|3|3|-11|
+|Justin Champagnie|02:47|0|0-0|0-0|0-0|0|1|1|0|0|0|0|0|-6|
+|Tristan Vukcevic|01:36|0|0-2|0-1|0-0|0|0|0|0|0|0|0|0|-4|
+|Johnny Davis|01:36|0|0-1|0-1|0-0|0|0|0|0|0|0|0|0|-4|
+|Anthony Gill|01:36|0|0-0|0-0|0-0|0|0|0|0|0|0|0|1|-4|
+|Richaun Holmes|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Marvin Bagley III|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Patrick Baldwin Jr.|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Saddiq Bey|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Malcolm Brogdon|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Jared Butler|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+**[](/LAL) Los Angeles Lakers**|**MIN**|**PTS**|**FGM-A**|**3PM-A**|**FTM-A**|**ORB**|**DRB**|**REB**|**AST**|**STL**|**BLK**|**TO**|**PF**|**±**|
+|Rui Hachimura^SF|26:21|9|4-10|0-2|1-2|0|5|5|0|1|0|0|2|13|
+|LeBron James^PF|35:38|21|8-18|2-6|3-3|0|10|10|13|2|1|5|0|19|
+|Anthony Davis^C|32:28|29|14-22|1-3|0-1|4|12|16|5|1|4|1|3|20|
+|Max Christie^SG|30:41|5|2-7|1-5|0-0|0|5|5|1|0|3|2|1|22|
+|Austin Reaves^PG|36:04|16|4-15|1-8|7-7|1|1|2|8|1|0|2|1|18|
+|Gabe Vincent|25:07|3|1-2|1-2|0-0|0|2|2|3|0|0|0|3|1|
+|Dorian Finney-Smith|22:12|16|6-8|4-6|0-0|1|1|2|0|0|0|0|0|3|
+|Jaxson Hayes|19:26|8|3-3|0-0|2-3|0|3|3|0|0|2|0|1|3|
+|Dalton Knecht|08:04|3|1-4|1-2|0-0|0|2|2|0|0|0|0|0|8|
+|Bronny James|01:59|0|0-1|0-0|0-0|0|1|1|0|1|0|0|0|4|
+|Trey Jemison III|01:59|1|0-0|0-0|1-2|1|1|2|0|0|0|0|0|4|
+|Shake Milton|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Cam Reddish|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Jalen Hood-Schifino|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Christian Koloko|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Armel Traoré|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Jarred Vanderbilt|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|
+|Christian Wood|00:00|0|0-0|0-0|0-0|0|0|0|0|0|0|0|0|0|

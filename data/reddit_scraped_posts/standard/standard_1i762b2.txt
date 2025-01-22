@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Need help with my first PC
+Author: Aman040613
+Score: 1
+Created UTC: 2025-01-22 07:47:29
+URL: https://www.reddit.com/r/buildapc/comments/1i762b2/need_help_with_my_first_pc/
+
+So i have been wanting to build a PC for several months now, and i have planned out every component i need but one problem. I dont know if the Gigabyte B550 AOURUS ELITE V2 can support PCIe 5.0 NVMe storage. Can someone help me?

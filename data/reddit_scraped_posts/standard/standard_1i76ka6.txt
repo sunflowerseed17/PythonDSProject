@@ -1,0 +1,8 @@
+Subreddit: Minecraft
+Title: Should I pass 1.21.1 to 1.21.4? Is it safe?
+Author: Atmosferik_Yarrak
+Score: 6
+Created UTC: 2025-01-22 08:25:42
+URL: https://i.redd.it/vep96o6o9iee1.jpeg
+
+I have a 2 month old hardcore survival save in 1.21.1. Can I pass to 1.21.4 safely? Could it be a world generation problems or other bugs? New biome will be generate? Thanks in advance. 

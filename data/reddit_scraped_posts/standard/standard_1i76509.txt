@@ -1,0 +1,21 @@
+Subreddit: pcmasterrace
+Title: 50k budget editing, 3d, illustrator/artist (some 1080p gaming) 1st student build, help
+Author: chicheeee34
+Score: 0
+Created UTC: 2025-01-22 07:52:55
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i76509/50k_budget_editing_3d_illustratorartist_some/
+
+I've been saving my whole life, this is my first pc, and for college so pls help. I'm mostly into performance but aesthetic is welcome. Idk what is a heatsink & vrm. My main problems on deciding are cpu, mobo, psu, & monitor, help. Also, windows 10 or 11? can i also do that without paying? Btw I'm from Philippines (₱). Thank you so much this means a lot
+
+|type|my own research products|notes/questions|
+|:-|:-|:-|
+|cpu|Intel Core i5 14600KF 14th Gen 24M Cache up to 5.30 GHz LGA 1700 Desktop Processor BX8071514600KF|This is cheap ₱13,595, the known issue is now fix too, i can just ask to update bios, should i still go for it?|
+|cpu cooler|Thermalright Peerless Assassin PA 120 Black SE ARGB CPU Air Cooler TL-C12C-S|is it enough?or theres something better? cheaper or higher?|
+|mobo|Gigabyte B760M DS3H AX WIFI DDR5 Micro ATX LGA 1700 Intel Motherboard|is ddr5 worth it for performance? Also i dont oc cuz of the issue. Is undervolt needed? if so pls ur thoughts (also i saw something about vrm compatibility but idk whats vrm, ur thoughts?)|
+|ram|(2x) Crucial 8GB DDR5-5600 UDIMM Desktop Memory|Someone say about heatsink problem, but idk whats that. Also is it good to just buy a single 16gb ram or 2 ram for dual channel?|
+|gpu|Colorful GeForce RTX 3060 NB DUO 12G V2 L-V Video Card|i need nvdia for 3d, & i think this is best gpu that's not 8 vram|
+|ssd|MSI Spatium M450 1TB PCIE 4.0 NVME M.2 SSD Solid State Drive|is pcie4 worth it for performance? someone recommend me Lexar NM610 Pro, but it's pcie3, so ur thoughts? also recommend if there's better storage capacity.|
+|psu|FSP HV PRO 85+ 650W Bronze Power Supply Unit|is 550w enough? also is this good product, im scared about psu. someone recommend MSI MAG A550BN/A650BN 80+ 650w bronze|
+|case|Doss 1905 Storm Mesh Mid Tower with Tempered Glass Gaming Case|someone say 6 fans isn't possible in this cheap case, is that true? they then recommend Tecware Nexus Air M2 Ultra Black High Airflow mATX Case.       Your recommendations & thoughts?|
+|case fans|(6x) Inplay ICE Tower Case Fan Dual Sync Mode 6 Pin ARGB 120MM 41CFM With Hub Remote Control|is 6 fans overkill? i dont know. Also if bad, pls recommend|
+|monitor|AOC 24B30H2/BW 23.8″ 1920 × 1080 FHD IPS 1MS 120Hz White Monitor|im not sure 1080 or 1440 for artist? Also hz is fine as long as 60+, but max capable of performance is welcome.|

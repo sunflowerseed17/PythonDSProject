@@ -1,0 +1,8 @@
+Subreddit: Piracy
+Title: Autobrr is awesome for building ratio
+Author: SlapDashUser
+Score: 24
+Created UTC: 2025-01-21 10:31:22
+URL: https://www.reddit.com/r/Piracy/comments/1i6fpxe/autobrr_is_awesome_for_building_ratio/
+
+Thank you to whoever first got me to look into Autobrr. It's made my time building a ratio on a private server so much easier. Hooking it up to radarr and sonarr, I routinely get 3.0 to 8.0 ratios on every new download because I'm always very early on in the swarm for new releases.

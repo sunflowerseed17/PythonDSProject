@@ -1,0 +1,12 @@
+Subreddit: Piracy
+Title: Am I doing this right?
+Author: ALittleUseless
+Score: 29
+Created UTC: 2025-01-22 02:43:05
+URL: https://www.reddit.com/r/Piracy/comments/1i70sgf/am_i_doing_this_right/
+
+I've sailing the seas since long time. When I started 10-15 years back, I was in an Asian country, when it was all about just installing uTorrent and downloading whatever you want. No need of VPNs.
+
+Now I am in Canada, using SaskTel as my ISP. I bought Proton VPN Plus. Connect to Asian servers and always using Kill Switch feature of the VPN. Using qBittorrent. Bound VPN with it.
+
+Am I taking enough steps for safe torrenting?

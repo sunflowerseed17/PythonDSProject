@@ -1,0 +1,8 @@
+Subreddit: leagueoflegends
+Title: Need help opening the game.
+Author: ComradeFidel962
+Score: 2
+Created UTC: 2025-01-22 07:48:19
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i762qg/need_help_opening_the_game/
+
+Every time I try to load up the game I get hit with the message “There was an unexpected error, please try again.” Even though I’ve restarted my computer, and uninstalled and reinstalled the game I can’t get past the loading screen. Is this a well known problem with a common/easy solution, or is this a more unique problem I need to look into?

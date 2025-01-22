@@ -1,0 +1,14 @@
+Subreddit: Helldivers
+Title: How to Fire the Eruptor Twice as Fast
+Author: lilpeachboy
+Score: 8
+Created UTC: 2025-01-22 07:00:31
+URL: https://v.redd.it/qr64igneuhee1
+
+Tired of your grenade sniper only firing at a measly 25 rounds per minute? Using an animation-cancel technique, you can comfortably double that to 50, or even 55 with practice.
+
+Immediately after firing, switch to your secondary weapon, and then switch back to your Eruptor and immediately fire again. This method comes with a bit of a learning curve because there’s a hard limit on the gun’s maximum firing rate, and swapping back and forth too fast will cause the technique not to work. Ideally, you can practice doing the swap just quickly enough that you fire as fast as possible without hitting this limit. In my testing, it seems to be around 55 RPM.
+
+Many people mistakenly think that the Exploding Crossbow is better in every way, but the in-game stats don’t include shrapnel damage in the calculation, or the fact that the Eruptor’s explosive radius is 1m wider. The crossbow’s concentrated, high-damage explosion is better for armored targets like devastators, but while using the quick-fire technique, the Eruptor clears hordes of voteless unlike any primary in the game.
+
+Now go spread democracy!

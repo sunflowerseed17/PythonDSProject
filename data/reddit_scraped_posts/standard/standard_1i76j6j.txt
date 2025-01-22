@@ -1,0 +1,12 @@
+Subreddit: buildapc
+Title: 2TB vs 4TB OS drive?
+Author: Dr_CSS
+Score: 1
+Created UTC: 2025-01-22 08:23:12
+URL: https://www.reddit.com/r/buildapc/comments/1i76j6j/2tb_vs_4tb_os_drive/
+
+I have 3 drives, a 2TB SN770 Pro, 2TB 980 Pro, and 4TB Kioxia.
+
+The 770 is HMB, the other are SLC cache.
+
+Which drive should I put the OS on?

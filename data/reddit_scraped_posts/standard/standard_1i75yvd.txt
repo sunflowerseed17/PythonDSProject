@@ -1,0 +1,9 @@
+Subreddit: pcmasterrace
+Title: 3090 sh or 4080s or 5070ti
+Author: PhanthomeDancer
+Score: 1
+Created UTC: 2025-01-22 07:40:23
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i75yvd/3090_sh_or_4080s_or_5070ti/
+
+Hi,
+Should i get a 3090 sh for around 500$ or a brand new 4080s at around 1000$ or wait for the 5070ti when it comes out. Im planning to game with it, do some cad work, python, some gamedev. I have a 1000W 80+ gold psu and a 165hz 1440p monitor.

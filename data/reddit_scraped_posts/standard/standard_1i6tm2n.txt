@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5 how my phone is fast enough to get an accurate GPS location?
+Author: Palludane
+Score: 0
+Created UTC: 2025-01-21 21:18:29
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i6tm2n/eli5_how_my_phone_is_fast_enough_to_get_an/
+
+GPS satellites use atomic clocks to stay accurate, but how do my phone not get confused? I assume most computer calculations take in the order of milliseconds, which is each 300,000 meters of inaccuracy. How can my phone catch the signals fast enough to get the accurate position?

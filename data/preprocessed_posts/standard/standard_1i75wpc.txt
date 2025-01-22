@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: No Sign of Power in new Build
+Author: Fusion63
+Score: 1
+Created UTC: 2025-01-22 07:36:02
+URL: https://www.reddit.com/r/buildapc/comments/1i75wpc/no_sign_of_power_in_new_build/
+
+recent move homelab prebuilt pc custom built one noth happen plug press power button tri seemingli everyth worri might motherboard sinc order anoth countri could take replac tri paperclip test work assum psu use pcie power cabl gpu requir one afaik compon cpu ryzen motherboard asrock ram unknown unbuff ecc prebuilt ram kingston unbuff ecc gpu nvidia quadro psu quiet pure power w storag wd red hdd crucial ssd unknown nvme ssd prebuilt tri thing tri differ cpu model use ram stick unplug power cabl motherboard cpu plug back tri without gpu jump power button pin mayb reset cmo none thing work someth miss tri broken motherboard would worst sinc would take age replac lot thing homelab use daili basi

@@ -1,0 +1,13 @@
+Subreddit: pcmasterrace
+Title: AMD Expo issue
+Author: FOURTHIV498
+Score: 1
+Created UTC: 2025-01-22 09:38:50
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i77i31/amd_expo_issue/
+
+My PC doesn't boot up whenever AMD EXPO is enabled. Whenever I enable EXPO and manually select DRAM FREQ at 6000mhz, it only gets stuck on a black screen and needs to do CMOS. Do you guys have any idea what should I do?  
+  
+CPU: Ryzen 7 7700x  
+RAM: G.SKILL Trident Z5 NEO RGB 32GB 2 x 16GB DDR5 6400 CL32 AMD EXPO Desktop Memory F5-6400J3239G16GX2-TZ5NRW.   
+MOBO: MSI B650 Edge Wifi  
+BIOS version:  E7E10AMS.1E0

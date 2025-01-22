@@ -1,0 +1,28 @@
+Subreddit: soccer
+Title: Meta thread: X/Twitter content on /r/soccer
+Author: 2soccer2bot
+Score: 158
+Created UTC: 2025-01-22 09:01:32
+URL: https://www.reddit.com/r/soccer/comments/1i770z5/meta_thread_xtwitter_content_on_rsoccer/
+
+Hello r/soccer!
+
+For those who are unaware...
+
+Elon Musk, the owner of the social media platform X (formerly known as Twitter) and a policy advisor to Donald Trump's new US government, was[ alleged to have performed](https://www.theguardian.com/technology/2025/jan/20/trump-elon-musk-salute) two fascist salutes at Trump's inauguration ceremony on Monday, 20 January. Following this, and his frequent bigoted comments, the debate has been re-opened about how online communities such as r/soccer should approach content posted on this platform.
+
+Much football content - be it news stories, transfer rumours, or highlights - is hosted on the X/Twitter platform, and such it has been become a key facilitator of footballing discourse.
+
+Recent months have seen several clubs and outlets move away from X/Twitter to platforms such as Bluesky, as part of a stance against Elon Musk, and the administration of the site.
+
+We would like to ask the views of the r/soccer community, on how this matter should be addressed - with questions we would like to put to you including (but not limited to):
+
+1. Do you think we should ban direct links to X
+
+2. Do you think we should allow screenshots of X content, if direct links are banned?
+
+3. Are there are other measures you would like to see implemented, in regards to X?
+
+4. Other major sports subreddits are making similar moves to ban X. Should r/soccer join this movement?
+
+Thank you!

@@ -1,0 +1,14 @@
+Subreddit: leagueoflegends
+Title: LEC fantasy league where to play
+Author: ZealOnRats
+Score: 2
+Created UTC: 2025-01-22 08:02:14
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i769p5/lec_fantasy_league_where_to_play/
+
+What website do you guys use to play Fantasy League for LEC? 
+
+My friends and I have been trying out [lolfantasy.gg](http://lolfantasy.gg), but honestly, it’s not what we were expecting. Some of the issues we’ve run into: Player and team prices don’t change from week to week. When you sign new players, it updates their points as if you’ve had them since week 1. The scoring system feels off. For example, Atakhan doesn’t give points, among other stuff. Would love to hear your recommendations for a better platform.
+
+ What do you use, and what’s your experience been like?
+
+Thanks in advance!

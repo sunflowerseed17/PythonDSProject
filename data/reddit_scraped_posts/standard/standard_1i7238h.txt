@@ -1,0 +1,23 @@
+Subreddit: Palworld
+Title: Saving issues: Does anyone else experience this?
+Author: falcons3221
+Score: 2
+Created UTC: 2025-01-22 03:42:30
+URL: https://www.reddit.com/r/Palworld/comments/1i7238h/saving_issues_does_anyone_else_experience_this/
+
+For context.  My buddy got a server through Nitrado.  About a week into the server it had an issue with restarting where it restarted the server at day 0.  He gave me the login and through investigation I saw the server stopped saving about 6 hours prior.  I was able to revert to that save but we lost 6 hours of progress.  It was salvageable but annoying.
+
+  
+So with that I thought it was a Nitrado issue.  I researched it and it seemed like the site itself had issues and a fix was to upgrade the server itself.  We upgraded the server and it was all good for about a week, when the issue happened again.  This time we found another fix to turn off the daily auto restarts.  We tried that and a few days later it happened again.
+
+  
+At this point I was like F it.  I started a local server and had no issues.  Over the past month its been going well until about a week ago (Jan 16th.) I lost about 2 hours of work.  I researched it and saw that palworld saves when you sleep, log off, ect. so i figured maybe I didn't prompt a save.  I do have auto saves on but I didnt think too much on it and have been manually saving multiple times a session.
+
+  
+Fast forward to this morning (Jan 21st).  I have been playing daily and have no issues logging on to my file being where it was at.  This morning I got an error when logging on and noticed the day was at 0.  I finally realized through palworld "news" that the save issue was palworld specific, not Nitrado specific, and followed the steps to revert my backup.  I noticed my last backup was on the 16th, and the only saves I had past that were local saves, not world saves.  The steps shown in the Q and A Palworld provides shows you should have both, and yet I only had local saves.
+
+  
+What should I do?  Is my file gone?  How was my file able to boot without it saved anywhere on my PC?  I am truly dumbfounded as to how I continue to lose dozens to now hundreds of hours of play and have no idea how to fix it.  Does anyone have this issue?  Is this game even worth playing in this state?  This is probably my favorite survival game in the genre but I can't keep losing hours of progress lol.  Any feedback is welcomed!
+
+  
+I am on PC using steam.  Was using Nitrado now using a local save.

@@ -1,0 +1,24 @@
+Subreddit: wallstreetbets
+Title: I bought $300k worth of Intel stock today
+Author: MosskeepForest
+Score: 2956
+Created UTC: 2025-01-21 21:13:23
+URL: https://www.reddit.com/r/wallstreetbets/comments/1i6thls/i_bought_300k_worth_of_intel_stock_today/
+
+https://preview.redd.it/7r2aok3dxeee1.png?width=703&format=png&auto=webp&s=82bc2b33c7efb6a256a19b8180f5282a3e9acccd
+
+TLDR: Grandma died 8 years ago. Left me nothing. So I invested my own money. 
+
+Here's why I like Intel:
+
+* 2024 Q1 up 9% YOY
+* Intel has been heavily investing and restructuring by building out the domestic foundry business to manufacture semiconductor chips for third party companies.
+* With Intel 3 in production, leading-edge semiconductors are being manufactured in the US for the first time in a decade. Intel will regain process leadership as the Intel Foundry continues to grow.
+* I think the fact that Intel is positioning itself to be the largest semiconductor manufacturer in the US is massive. The US Gov is heavily prioritizing domestic semiconductor production and thus is heavily supporting Intel as a company with R&D funding.
+* If NVIDIA or AMD are ever forced to change manufacturers due to rising tensions/war between China & Taiwan, Intel will likely be a sole or largest manufacturer for NVIDIA and AMD
+* Intel has been heavily investing in R&D. 5.9B out of 12.7B of Q124 revenue was invested in R&D.
+* Intel is on track to exceed its forecast of 40 million AI PCs shipped by the end of 2024
+* The Intel Gaudi 3AI accelerator is projected to deliver 50% faster inference and 40% greater inference power efficiency than NVIDIA H100 on leading AI models.
+* Trading at Forward PE of 17.05
+* Geopolitical tensions will ultimately work in Intel's favor more than any other company in this industry
+* I like the stock and I think its really cheap rn :)

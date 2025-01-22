@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: What happened in the corporate culture at Microsoft that made them go off the reservation?
+Author: No-Experience3314
+Score: 4
+Created UTC: 2025-01-22 08:18:10
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i76gxg/what_happened_in_the_corporate_culture_at/
+
+You could feel it coming with Windows 8, and their decision to hide the world famous start key in favor of a poorly executed touchscreen UI. From there it just got worse. Subscription-based Microsoft Office, Win11 with its insane disrespect for privacy, its pushy updates, deceptive integrations, deplorable sunsetting schedule, the AI explosion nobody asked for, the rebranding orgy. They were never a particularly honorable outfit, but up until recently you could tell that they were at least conscious of the end user. Now it seems like they're consciously dedicated to serving their agenda at his expense. Does anyone know what's going on at HQ? Is the problem administrative? Executive? Are the departments communicating poorly? Has there been a brain drain or a talent draught? Has their work culture degenerated? Is it the combined ill will of a campus full of people who know they've been made culturally obsolete by Apple and iPhone culture?

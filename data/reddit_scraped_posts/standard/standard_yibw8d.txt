@@ -1,8 +1,0 @@
-Subreddit: audacity
-Title: Saving edits
-Author: tartanthing
-Score: 2
-Created UTC: 2022-10-31 13:16:54
-URL: https://www.reddit.com/r/audacity/comments/yibw8d/saving_edits/
-
-Is there any way to save sounds I edit out rather than just deleting them? EG a cheery 'Hello there' which I could use on other podcasts but it has been clipped from a much larger file I have already made other edits to?

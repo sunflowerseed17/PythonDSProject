@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5: How exactly does crossing over in chromosomes happen? Shouldn't it just lead to a whole bunch of dangerous mutations
+Author: HalfHeartedPhoton
+Score: 0
+Created UTC: 2025-01-21 17:34:14
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i6o3du/eli5_how_exactly_does_crossing_over_in/
+
+Basically how does the process of crossing over work and even if it is random (which is what ive been told), then shouldn't meiosis just be extremely dangerous because of the changes in the chromosomes that happen?

@@ -1,0 +1,10 @@
+Subreddit: buildapc
+Title: Upgrade from i7-8700k/Z370-A PRO/16gb ddr4
+Author: captain_RSKK
+Score: 1
+Created UTC: 2025-01-22 08:48:45
+URL: https://www.reddit.com/r/buildapc/comments/1i76utt/upgrade_from_i78700kz370a_pro16gb_ddr4/
+
+Hi, as the title says im looking to upgrade my rig but I haven't been following pc news/new releases for quite a while so i'm not too sure where to start? I will be using the pc generally only for gaming in 1440p. The things I would like to have are a motherboard that is ATX compatible and has two m.2 slots, ddr5 support and an cpu that is superior to the i7-8700k. 
+
+I am only looking to upgrade my cpu, motherboard and memory since I already have a 750w gold rated psu and rtx 4060. My budget is in the ballpark of 600ish Euros.

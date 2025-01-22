@@ -1,0 +1,12 @@
+Subreddit: DIY
+Title: How do I mount my TV to this slightly unconventional wall?
+Author: DustinBraddock
+Score: 19
+Created UTC: 2025-01-21 22:26:27
+URL: https://www.reddit.com/r/DIY/comments/1i6v8u7/how_do_i_mount_my_tv_to_this_slightly/
+
+I'm trying to mount a TV (50 lbs) to my den wall. It's a little tricky because of the construction of the wall. The wall is thin wood paneling attached to concrete block (garage on the other side) by what seems to be 2x4s "wide side out", i.e. 3.5 inches across by 1.5 inches deep. I don't know if they're fully framed out, I assume just being used like furring strips.  The block wall is 4 inches thick.
+
+The TV comes with 3 inch lag bolts. I'm not sure what the best solution is here. The 2x4s aren't deep enough to accommodate the length of the lag bolt and I don't know if they're strong enough. For concrete the manufacturer recommends this https://www.fischerfixingsusa.com/en-us/products/standard-fixings/plastic-fixings/universal-plug-ux/77872-ux-10-x-60-r. But because of the 2x4s I can't attach directly into the concrete. What's my best bet here? Tapcons that will screw into both the wood and the concrete? Wedge anchors? Sleeve anchors? What length and thickness? Not sure how to account for the standoff distance.
+
+Any ideas here would be great, thanks!

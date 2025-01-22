@@ -1,0 +1,10 @@
+Subreddit: pcmasterrace
+Title: PC noob here! Need build suggestions
+Author: abba_hummare
+Score: 0
+Created UTC: 2025-01-22 08:01:38
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i769c3/pc_noob_here_need_build_suggestions/
+
+I have Ryzen 5 5600x and Rtx 3060 OC rn and really wanna get the new rtx 5070ti, 
+Firstly will this cou bottleneck my new gpu
+Secondly, i have 650w psu rn, should i get a new psu? 

@@ -1,0 +1,20 @@
+Subreddit: DIY
+Title: Looking for suggestions on closure hardware/methods and also wiring for this 3d printer box I built
+Author: PubicEnemyNumber1
+Score: 2
+Created UTC: 2025-01-21 21:51:48
+URL: https://www.reddit.com/r/DIY/comments/1i6uexs/looking_for_suggestions_on_closure/
+
+[I built this enclosure](https://imgur.com/a/TIWRq8O) for my 3d printer and the wash and cure station. I've got the ventilation all ready to connect as well, but right now I'm stuck in analysis paralysis thinking about the "best" ways to secure the front and top panels, as well as how to get wires/cables into the box without creating gaps for resin-y air to escape.
+
+For the top plywood panel, there is a 3/8" foam seal on the top frame that, when compressed, creates a good enough seal for my needs. I just need to figure out how to actually keep the top panel secured snugly. I considered using magnets but nixed that idea. As you can see in one pic, I'm considering using hasps, but if anyone has any other suggestions for how to keep the top pressed down and secured but still capable of being removed, I would greatly appreciate it.
+
+A similar issue exists for the front plexiglass sheet. I've applied a foam seal around the edges, with the intention of having the plexiglass pressed against it to form a decent seal. But the issue is how do I hold the panel in place and also get it to press against the foam to maintain the seal. I've thought of something with wingnuts that could be tightened down maybe but I'm really not sure.
+
+The final issue I'm stuck on is how do I get cables in or out without permanently securing/sealing into the holes I would have to create in the box wall? There will be at least 4 devices inside that need to be plugged into outlets: the printer, the wash/cure, and then a small personal heater and the temperature controller it will be controlled by. Drilling holes into the box is easy enough but how the heck do I then create a seal in the remaining gap? I've looked at cable glands but they seem to be made for cables that don't have plugs on the ends, i.e., the full wire/cable need to be able to slide through the gland, but that can't be done with cords with plugs. I also don't want to permanently secure the cords by using caulk or other permanent seal around them. The best possible solution I've come up with is to have a power strip \*inside\* the box that all the devices are plugged into, but even then I don't love the idea of permanently installing one through the wall of the box.
+
+Any suggestions would be amazing!
+
+Thanks if you read this far and commented! Much appreciated!
+
+EDIT: second try adding an image to the post and nothing shows up?!? Not sure what's going on but I'm really sorry there is no image to see. I added a link in the first sentence of the post to Imgur

@@ -1,0 +1,32 @@
+Subreddit: buildapc
+Title: gpu Pcie running at 3.0 2x instead of 3.0 16x after 3 month of using
+Author: Mountain_Result7413
+Score: 1
+Created UTC: 2025-01-22 07:24:49
+URL: https://www.reddit.com/r/buildapc/comments/1i75r6c/gpu_pcie_running_at_30_2x_instead_of_30_16x_after/
+
+Edit: I try reseating my gpu and found out that latch at the back of the my pcie slot is broken and cannot not be press down all the way. after I sigh for 1 minute, I decided to just press the gpu towards the pcie slot with light force and put everything back together and its now sowing **pcie 3.0 x16**. **I don't know what to feel now.**
+
+I dont know what's going on with my life man, with this pcie speed I cant even play persona 5 royal at 60fps
+
+PC spec: Gtx 1660
+
+i5 9400f
+
+8x2 2666 mhz ram
+
+nvme m.2 gen 3 patriot p300 256gb as system drive (pcie 3.0 x4)
+
+toshiba hdwd110 1tb
+
+nvme m.2 gen 4 kingston kc3000 2tb (pcie 3.0 x1)
+
+asrock b360m pro 4
+
+I bought this computer back in december 2019, noticed performance decreased in apex legend in 2022 and 2023 but didn't know it was gpu pcie x2 problem.
+
+at 2024 october 13th I notice my gpu pcie running at 3.0 x2 instead of 3.0 x16 while playing persona 5 royal. after that, I sent my computer to local shop for repair, and it worked.
+
+but now after 3 month, it's running at x2 speed again right after I install japanese gal game and gta 4 complete editon.
+
+Is it possible that software can affect the speed of my gpu pcie speed?

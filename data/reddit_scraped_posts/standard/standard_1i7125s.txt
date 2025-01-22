@@ -1,0 +1,12 @@
+Subreddit: HonkaiStarRail
+Title: New upgrade in Genshin regarding custom Artifacts that should be in HSR
+Author: darkdill
+Score: 113
+Created UTC: 2025-01-22 02:55:19
+URL: https://www.reddit.com/r/HonkaiStarRail/comments/1i7125s/new_upgrade_in_genshin_regarding_custom_artifacts/
+
+[https://www.reddit.com/r/Genshin\_Impact/comments/1i70ilu/training\_guide\_upgraded\_again\_no\_more\_getting/](https://www.reddit.com/r/Genshin_Impact/comments/1i70ilu/training_guide_upgraded_again_no_more_getting/)
+
+Genshin is upgrading its Sanctifying Elixir mechanic in 5.5 so that when you level up an Artifact you created using Elixirs, at least two of your substat rolls will be into the minor affixes you picked. No more cases of creating a double-crit piece and having none of your substat rolls go into said crit stats. Sure, this won't guarantee that the other rolls won't go into the bad stats, but 2/5 substat rolls into crit is better than 0/5.
+
+Here's hoping that HSR will implement this sooner rather than later. For now, though, I'll be saving my Wishful Resins for when/if this gets added.

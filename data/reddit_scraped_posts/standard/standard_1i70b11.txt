@@ -1,0 +1,60 @@
+Subreddit: wallstreetbets
+Title: Intel will be the surprise overperformer in 2025, starting with the 1/30 ER.
+Author: Fun-Negotiation-9046
+Score: 302
+Created UTC: 2025-01-22 02:19:40
+URL: https://www.reddit.com/r/wallstreetbets/comments/1i70b11/intel_will_be_the_surprise_overperformer_in_2025/
+
+Before I start, I want to preface this by acknowledging the memes and negative connection between intel and the one guy who lost his grandma's funds, but I genuinely believe with how low st. expectations are, combined with intel's massive sell-off these few months, Intel will skyrocket leading up/during the ER @ 1/30/2025.
+
+# 1. Extremely heavy Investments in Manufacturing
+
+* **Tens of Billions Invested**: Intel has invested heavily in manufacturing expansion, aiming to regain technological leadership. These investments are expected to start bearing fruit by 2026 and 2027, positioning Intel as a key U.S.-based semiconductor manufacturer.
+   * Now I know ya'll are gonna complain, but that's 2026 and 2027, which is a long ways out! Here's the thing, as long as (they will) Intel acknowleges their progress towards manufacturing, and the expected returns of their investments, especially under the current administration, the upside will be more or less priced in within the report.
+* **Alignment with U.S. Government Priorities**: U.S. policy encourages domestic manufacturing of semiconductors, especially with the new Mango administration.
+   * It's pretty obvious that the current admin wants to become less dependent on foreign semiconductor manufacturing, and Intel's investments in the space PLUS mango being in power will undoubtedly be great for the stock, and I believe that's what Intel will lean into heavily during the upcoming earnings report with stellar guidance.
+
+# 2. Undervalued Stock Price
+
+* **Current Valuation**: Intel is trading at one of its lowest forward Price-to-Earnings (P/E) ratios of the year, at around 20.
+* **Intrinsic Value**: Updated discounted cash flow (DCF) valuation indicates an intrinsic value of $36 per share, significantly higher than the current trading price of $19.82. While there may be some other factors, this suggests Intel is trading on a pretty steep discount compared to its market value, way less than other big names.
+
+# 3. Advanced Developments
+
+* **Advanced Node Development**: Intel is investing in advanced manufacturing nodes to close the gap with competitors like TSMC and Samsung. Success in these nodes will make Intel competitive in high-margin markets.
+   * I'll admit, I'm not entirely familiar with the development process of these, but I can't imagine this not being bullish for the stock.
+* **Gaudi AI Chips**: The release of competitive AI chips (e.g., Gaudi 3) positions Intel to capture a share of the rapidly growing AI market.
+
+# 4. Reduced Competition in Dual Design-Manufacturing Model
+
+* **Unique Positioning**: Intel and Micron remain the only U.S.-based companies pursuing both design and manufacturing, while most competitors focus on design alone. This vertical integration could yield huge advantages as Intel scales.
+   * Again, I'm not familiar with the development of chips, but from what I could find, if Intel could pull this off in the long-run, it'll set itself in an extremely unique environment with both design and manufacturing WITHIN the United States. Would be huge for the nation-first agenda under the current administration.
+
+# 5. Support from Geopolitical Tailwinds
+
+* **CHIPS Act Benefits**: Intel is set to benefit from U.S. government incentives under the CHIPS Act, including grants and tax credits for domestic semiconductor manufacturing.
+   * Again, huge for a US-based company like Intel.
+
+# 6. Potential Leadership Turnaround
+
+* **CEO Transition**: A change in leadership could bring new strategic clarity and execution capability, particularly in aligning investment timelines with profitability goals.
+   * Though Pat was a pretty chill guy, if Intel could bring in someone with large amounts of industry experience, that's another huge upside potential for Intel. They may announce a new CEO during ER or somewhere near it, but I just can't imagine them settling with a mid-tier guy after what they've been through.
+
+# 7. Market Share Opportunities
+
+* **Competitor Weaknesses**: AMD and Nvidia focus on niche areas, leaving room for Intel to grow in data centers, personal computing, and automotive applications.
+   * Yes, this does mean that their areas would be very hard to break into, but we've already seen Intel turning around in some aspects, especially their newer desktop gaming GPUs which actually bring in surprising value for performance beyond AMD and Nvidia comparable cards.
+* **U.S. Government Contracts**: Intel’s U.S.-based manufacturing advantage makes it a preferred supplier for defense and other government projects, which is yet another large catalyst for the future.
+
+# 8. Focused Financial Discipline
+
+* **Cost Reductions**: Intel has paused dividends and reduced workforce to save over $10 billion by 2025, stabilizing its financial position during this investment-heavy period.
+   * I expect to see this being reflected upon in the upcoming 1/30 ER. With a bit more cash freed up and stabilizing finances, I'm pretty confident that it'll be far beyond what the market has been pricing in which is arguably a worst case doomsday scenario.
+
+# Conclusion
+
+Yes, Intel does have a decent amount of debt. Yes, nana's son did lose hundreds of thousands. But it's objectively true that INTC has been beaten down mercilessly these past few months, with a 56% drawdown since the start of 2024. It's entirely possible- likely even- that this is a far overreaction, especially with INTC taking steps to improve leadership, control debts, free up cash, and invest in what's needed. Combine that with the new administration that went into power yesterday, focusing on heavy domestic production, I believe Intel will be the surprise overperformer for this year.
+
+NFA. I hold around $10k in calls expiring next month after the ER, and I am planning on DCAing aggressively into shares to hold for a few years.
+
+[T](https://preview.redd.it/jmpxjozifgee1.png?width=556&format=png&auto=webp&s=15c4f3a652f7e8b44bdedaaf0a9075939f3cf952)

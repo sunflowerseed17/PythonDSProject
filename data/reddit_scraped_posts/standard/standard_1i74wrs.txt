@@ -1,0 +1,14 @@
+Subreddit: MapPorn
+Title: Very Detailed Map of Gravitational Anomaly …
+Author: Frangifer
+Score: 39
+Created UTC: 2025-01-22 06:25:42
+URL: https://i.redd.it/xvjzaql9ohee1.jpeg
+
+… by
+
+#####[European Space Agency](https://www.esa.int/ESA_Multimedia/Images/2015/04/Free_air_gravity_anomaly) .
+#####
+It's a bit vexing that they don't say what the scale of the colour coding is! … but it's almost certainly in __mGal (milligalileos: 1Gal = 1㎝/s^(2))__ , because that's the unit that gravitational anomaly is very often - or even usually - expressed in … so, since the mean gravitational acceleration is __~981Gal__ the values shown are close to the proportional variation in parts-per-million: _very_  slightly greater than it.
+
+But the resolution's reasonably decent: 1920×1266 … although a lot of _the vertical_  component of that is taken-up by the border. 'Bumpy sphere' maps of gravitational anomaly are often encountered … but in many ways I prefer to have a straightforward 'usual' projection of the map.

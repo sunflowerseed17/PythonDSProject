@@ -1,0 +1,9 @@
+Subreddit: leagueoflegends
+Title: Problem with league of legends full screen
+Author: DueResponsibility148
+Score: 2
+Created UTC: 2025-01-22 08:41:40
+URL: https://www.reddit.com/r/leagueoflegends/comments/1i76rjm/problem_with_league_of_legends_full_screen/
+
+
+Hi everyone, I'm here to explain my problem, I can't play League of Legends in full screen because the monitor fries and goes black, when I play in windowed mode the game goes smoothly and I can play it. I think it's a resolution problem, I tried changing both the game resolution and the PC resolution but nothing, if you have any advice they are welcome, thanks in advance

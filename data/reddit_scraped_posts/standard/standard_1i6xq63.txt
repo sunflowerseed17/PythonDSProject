@@ -1,0 +1,16 @@
+Subreddit: OutOfTheLoop
+Title: Why are people talking about BlueSky, specifically?
+Author: LatentBloomer
+Score: 1351
+Created UTC: 2025-01-22 00:15:59
+URL: https://www.reddit.com/r/OutOfTheLoop/comments/1i6xq63/why_are_people_talking_about_bluesky_specifically/
+
+Many people are upset by today’s landmark behavior of Meta, and this is of course part of a longer term dissatisfaction with privacy, moderation, censorship, and general ethics with the major social media companies, namely The Platform Formerly Known as Twitter, Meta, and TikTok. 
+  
+It appears that many people are flocking to BlueSky. What about BlueSky sets it apart, ethically, from the other notorious platforms? Why should I trust it more, or less, than its competitors?
+  
+Sources:   
+
+https://www.forbes.com/sites/esatdedezade/2025/01/21/meta-faces-backlash-as-democrat-related-terms-disappear-from-instagram/
+  
+https://bcounter.nat.vg/

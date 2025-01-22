@@ -1,0 +1,8 @@
+Subreddit: Steam
+Title: If I uninstall a game and reinstall it on a diff drive will it save progress?
+Author: InconsistentWisp
+Score: 0
+Created UTC: 2025-01-22 00:10:49
+URL: https://www.reddit.com/r/Steam/comments/1i6xllq/if_i_uninstall_a_game_and_reinstall_it_on_a_diff/
+
+Specifically the dark pictures anthology games, halfway through one rn but it’s not running smoothly on my external hard drive so wanted to move it to my local drive, however the “move” progress bar has been stuck in the same position for like an hour. Just wondering if it would be easier to uninstall then reinstall (if it saved my progress obv) 

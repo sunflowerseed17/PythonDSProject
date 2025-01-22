@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: Mystic light not working. RGB Case fans light no longer on when PC is on
+Author: zBlasterX
+Score: 1
+Created UTC: 2025-01-22 06:58:18
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i75dq8/mystic_light_not_working_rgb_case_fans_light_no/
+
+ Yesterday my RGB were working fine until I had to turn off my PC and go out with friends. I just came back to absolutely no light on my RGB fans except for my watercooling. I went to MSI Center and then Mystic Light to try to get them back on but it just asks me loads of updates and updates. Never had any problem since I had my PC except the fact that it was super laggy. It asked me to update MSI Center itself, then Mystic Light and then when I updated all of that, it asks me for a scan where I have to update the AMD Chipset Driver (for my CPU) and install their « Norton 360/MSI LED FW) and I did it all of that (except Norton) and still not working. I even download the AMD Chipset Driver from my MSI MB Support page and still nothing. My PC became laggy since I reinstalled the AMD Chipset Driver multiple times + updated my BIOS via Flash EZ (usb stick) and I consider doing a factory reset maybe. What can I do?

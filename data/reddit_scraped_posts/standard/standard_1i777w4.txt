@@ -1,0 +1,26 @@
+Subreddit: pcmasterrace
+Title: What is the best way to upgrade my current pc
+Author: Party_Pie_9859
+Score: 2
+Created UTC: 2025-01-22 09:16:13
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i777w4/what_is_the_best_way_to_upgrade_my_current_pc/
+
+I have an HP Omen prebuild from 5 years ago and looking to do upgrades to it.
+
+Intel core i7-9700k
+
+Nvidia GeForce RTX 2070 SUPER (8 GB)
+
+ddr4 2x16GB 3600mhz (but its locked at 2400 cuz prebuild pc)
+
+Some shady motherboard made by hp that doenst have any bios options.
+
+1TB SSD
+
+Internal PSU 750 W
+
+[https://support.hp.com/nz-en/document/c06487003](https://support.hp.com/nz-en/document/c06487003)
+
+I have 100%cpu usage sometimes whne playing games and having browser open at the same time and my fps lately has not been reaching the 240mark. Me and my friend were looking that i sohuld replace motherboard, cpu and ram. The graphics card should be good enough for the games i play but how do i even know what motherboard fits my case.
+
+ANY ADVICE IS GOOD ADVICE. If someone wants ot help me find good parts for this im willing to eve pay like 10€

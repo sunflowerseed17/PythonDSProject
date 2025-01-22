@@ -1,0 +1,22 @@
+Subreddit: BaldursGate3
+Title: Gortash Looping has stopped my Honor Mode run dead.
+Author: TheInfidel23
+Score: 2
+Created UTC: 2025-01-22 04:57:13
+URL: https://www.reddit.com/r/BaldursGate3/comments/1i73hfm/gortash_looping_has_stopped_my_honor_mode_run_dead/
+
+Edit: SOLVED! Fix posted at the end and in the comments,
+
+During my fight with Gortash, things were going normal. I had all the extra enemies dead, he was down to 119 hp prone on the floor in a sleet storm, even had all his ghosts gone and had removed a curse on my MC for his legendary action.
+
+Then I threw a hammer at him with Karlach and he stood up from prone and recast his ability Avatar of Tyranny. Which was weird. I threw another hammer and he, now standing, Cast it again. I spent the next 10-15 turns trying to break this loop and nothing worked. Every. Single. Interaction. Would cause him to recast this ability, granting him 150 Thp. I can't get higher than that. No combination I have can. Hitting, Pushing, Attacking, all trigger it. Additionally, Banishing didn't break the loop. Hold Person did take but as soon as he is hit, he breaks it and recasts.
+
+As the ability is listed in the wiki as a reaction, I have a feeling something broke that allows him to use a reaction endlessly.
+
+Anyway. This was my farthest run, and I hadn't done anything crazy. Completely vanilla, no mods, not a single exploitative reload, and this blows. I'm so close to those dice and this completely stopping me from getting them.
+
+Any suggestions?
+
+Update: Gortash is dead thanks to the suggestion pointed out by u/tiamatt44, push Gortash off the tower on the beach side killed him instantly. As for the other bugs surrounding fleeing combat, we'll have to see. But that suggestion that I missed on the wiki has fixed this combat for me. Many Thanks!
+
+Also for the record, a fall of that height results in.....1506 bludgeoning Damage. That's a new personal best for sure lol

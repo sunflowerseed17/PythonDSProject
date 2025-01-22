@@ -1,0 +1,19 @@
+Subreddit: Steam
+Title: Am I being Gaslit?
+Author: WandersWIthTrees
+Score: 0
+Created UTC: 2025-01-21 20:04:50
+URL: https://www.reddit.com/r/Steam/comments/1i6rtre/am_i_being_gaslit/
+
+so for a bit of background,
+
+I have been sharing an account with my brother since we were kids and used the same family computer. Both of us have thousands of dollars and hundreds of hours in the account. The account is hooked up to his email and the authenticator goes there too, I do not have access to that email, but have been getting by on having him text me auth codes on the rare occasions I get signed out of the account.
+
+  
+So last night, Im about to boot up a game when steam suddenly closes and asks me to log in again. This is weird to me since both of us were at a family event over the weekend and didnt bring our computers with us. I assume it was him forcing me to log out since we just had an argument and he had gotten home at about the time I was forced out of the account on my computer. I angrily text him about it and he claims to have also been logged out, but logged back in, authenticated, and changed the password after I accuse him of forcing me out.
+
+my question is, does steam force you to log out on some kind of interval? this is the first time this has happened and the timing just seems too coincidental. 
+
+He claimed to not have done it but since we had that argument, he doesn't want to let me back into the account and said he would pay me out for all the games I had bought on that account
+
+I feel like I'm being gaslit here?

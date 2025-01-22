@@ -1,0 +1,23 @@
+Subreddit: buildapc
+Title: WHAT WOULD YOU DO: Looking to upgrade my PC, what changes/customizations would you make?
+Author: ButtHolyGhost
+Score: 1
+Created UTC: 2025-01-22 08:23:20
+URL: https://www.reddit.com/r/buildapc/comments/1i76j8k/what_would_you_do_looking_to_upgrade_my_pc_what/
+
+How would you customize this PC to optimize its potential for gaming, audio and video production, and streaming? Budget options and expensive options welcome. Looking to make some additions/part swaps in the forseeable future just want a great PC. I'll be honest, I'm not experienced building PCs and don't really know what I'm talking about :) please help!
+
+ SPECS AS IS:  
+Processor AMD Ryzen™ 7 7700 Processor (3.80 GHz up to 5.30 GHz)  
+Graphic Card NVIDIA® GeForce RTX™ 4070 Ti SUPER 16GB GDDR6X  
+Memory 32 GB DDR5-5200MHz (UDIMM) - (2 x 16 GB)  
+Storage 1 TB SSD M.2 2280 PCIe Gen4 Performance TLC  
+Chipset AMD B650 chipset  
+
+
+Expansion Slots • 
+
+One PCIe® 4.0 x16   
+Four M.2 slots (one for WLAN, three for SSD)   
+One M.2 2280 PCIe® 4.0 x2 and two M.2 2280 PCIe® 4.0 x4)  
+One PCIe® 3.0 x4

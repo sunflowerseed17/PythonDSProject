@@ -1,0 +1,34 @@
+Subreddit: buildapc
+Title: No Sign of Power in new Build
+Author: Fusion63
+Score: 1
+Created UTC: 2025-01-22 07:36:02
+URL: https://www.reddit.com/r/buildapc/comments/1i75wpc/no_sign_of_power_in_new_build/
+
+I've recently moved my homelab out of the prebuilt pc into a custom built one, but nothing happens when I plug it in or press the power button. I tried seemingly everything and I'm worried it might be the motherboard, since I ordered it from another country and it could take a while to replace it.  
+I tried the paperclip test, which worked, so I assume it's not the psu.
+
+I didn't use the pcie power cable, because my GPU doesn't require one afaik.
+
+Components
+
+* CPU: Ryzen 7 5700x
+* Motherboard: Asrock x570 Pro4
+* RAM: 2 16gb Unknown, Unbuffered ecc 2666MHz from the prebuilt
+* RAM: 2 Kingston KSM26ED8/16HD, Unbuffered ecc 2666MHz
+* GPU: Nvidia Quadro P2000
+* PSU: be quiet! Pure Power 12 M (650 W)
+* Storage: 2 WD Red HDDs, 2 Crucial MX500 SSDs and 1 unknown nvme ssd from the prebuilt
+
+I tried these things:
+
+* Try 2 different CPUs of the same model
+* Only use 1 Ram stick
+* I unplugged the power cable for the motherboard and for the cpu and plugged them back in
+* Try without a GPU
+* Jump the power button pins
+* (Maybe) Reset the cmos
+
+But none of these things worked.  
+Is there something I missed or that I should try?  
+A broken Motherboard would be the worst, since it would take a ages to replace and I have a lot of thing on my homelab that I use on a daily basis.

@@ -1,0 +1,34 @@
+Subreddit: buildapc
+Title: Thoughts on this build? First time, any advice is appreciated
+Author: stunninglizard
+Score: 1
+Created UTC: 2025-01-22 07:36:58
+URL: https://www.reddit.com/r/buildapc/comments/1i75x5e/thoughts_on_this_build_first_time_any_advice_is/
+
+- soft 2k budget
+- don't like RGB 
+
+[PCPartPicker Part
+ List](https://de.pcpartpicker.com/list/LMNbkf)
+
+Type|Item|Price
+:----|:----|:----
+**CPU** | [Intel Core i7-14700K 3.4 GHz 20-Core Processor](https://de.pcpartpicker.com/product/BmWJ7P/intel-core-i7-14700k-34-ghz-20-core-processor-bx8071514700k) | €391.54 @ Amazon Deutschland 
+
+**CPU Cooler** | [ARCTIC Liquid Freezer III 360 56.3 CFM Liquid CPU Cooler](https://de.pcpartpicker.com/product/XgyH99/arctic-liquid-freezer-iii-360-563-cfm-liquid-cpu-cooler-acfre00136a) | €68.93 @ Aquatuning 
+
+**Motherboard** | [MSI PRO Z790-A MAX WIFI ATX LGA1700 Motherboard](https://de.pcpartpicker.com/product/CsvD4D/msi-pro-z790-a-max-wifi-atx-lga1700-motherboard-pro-z790-a-max-wifi) | €258.63 @ Proshop 
+
+**Memory** | [Corsair Vengeance 32 GB (2 x 16 GB) DDR5-6000 CL30 Memory](https://de.pcpartpicker.com/product/JkfxFT/corsair-vengeance-32-gb-2-x-16-gb-ddr5-6000-cl30-memory-cmk32gx5m2b6000c30) | €124.90 @ Galaxus 
+
+**Storage** | [Crucial P3 Plus 2 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive](https://de.pcpartpicker.com/product/yGZ9TW/crucial-p3-plus-2-tb-m2-2280-nvme-solid-state-drive-ct2000p3pssd8) | €120.27 @ Galaxus 
+
+**Video Card** | [ASRock Challenger OC Radeon RX 7900 GRE 16 GB Video Card](https://de.pcpartpicker.com/product/Ln4Zxr/asrock-challenger-oc-radeon-rx-7900-gre-16-gb-video-card-rx7900gre-cl-16go) | €593.72 @ Galaxus 
+
+**Case** | [Fractal Design North ATX Mid Tower Case](https://de.pcpartpicker.com/product/ybNxFT/fractal-design-north-atx-mid-tower-case-fd-c-nor1c-02) | €158.90 @ Amazon Deutschland 
+
+**Power Supply** | [Corsair RM750e (2023) 750 W 80+ Gold Certified Fully Modular ATX Power Supply](https://de.pcpartpicker.com/product/YRJp99/corsair-rm750e-2023-750-w-80-gold-certified-fully-modular-atx-power-supply-cp-9020262-na) | €108.90 @ Mindfactory
+
+
+ | *Prices include shipping, taxes, rebates, and discounts* |
+ | **Total** | **€1960.48**

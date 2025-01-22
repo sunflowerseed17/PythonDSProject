@@ -1,0 +1,19 @@
+Subreddit: HonkaiStarRail
+Title: HSR integrates gameplay and story poorly. What can be done to fix it?
+Author: Sadddude
+Score: 0
+Created UTC: 2025-01-22 06:59:31
+URL: https://www.reddit.com/r/HonkaiStarRail/comments/1i75ebn/hsr_integrates_gameplay_and_story_poorly_what_can/
+
+Among the various posts and comments I've seen criticizing aspects of HSR storytelling, there seems to be one aspect I haven't seen mentioned.
+
+**The integration of combat and progression into story sections.
+**
+
+Proper integration of combat and story can elevate both aspects significantly. Think of your favorite JRPGs and action adventure games. They deliver story at regular intervals, but the bulk of your playtime is combat. This helps pace the story better so you are not sitting there for hours listening to dialogue and cutscenes, while also giving you a lot of gameplay elements to play with (gear, party comps, leveling up, skill trees, strategizing in combat, etc.)
+
+By comparison, HSR combat in story sections is a complete afterthought. Enemies are just punching bags (at least for veteran players), and you're using the same pre-built team comps with the same gear you've already grinded for. There no strategy, no sense of progression, no diversity. In fact, Acheron is the dev-intended solution for you to skip this entirely. They know that these fights are mostly worthless, and you only get the fun parts during MoC, PF, and Apoc.
+
+Imo this is the main reason there are so many puzzles in the story runtime. The devs know the combat is no good, so they put puzzles in to spice up the gameplay. But HSR is built on turn-based combat. It feels like such a waste to throw that away for the story runtime.
+
+I don't have any great solutions for this. Maybe a fixed story team with story-specific gear/abilities would be fun, but would cost dev time to tune and get right. Some people also would want to use their own characters and just blast through the story. What do you guys think?

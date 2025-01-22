@@ -1,0 +1,11 @@
+Subreddit: Steam
+Title: Cover art should be disablable...
+Author: Least_Gear5810
+Score: 0
+Created UTC: 2025-01-21 22:06:56
+URL: https://www.reddit.com/r/Steam/comments/1i6us67/cover_art_should_be_disablable/
+
+When searching new games to buy,  
+I could litteraly search games 100 times faster if instead of showing a picture of the cover art, steam showed one picture of gameplay.
+
+For god sake, is there a web site where I can search and filter games by gameplay images instead of cover art?

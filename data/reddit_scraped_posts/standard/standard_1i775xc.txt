@@ -1,0 +1,20 @@
+Subreddit: Overwatch
+Title: Why do i lose rank when i have a leaver?
+Author: nedwabl
+Score: 1
+Created UTC: 2025-01-22 09:11:57
+URL: https://www.reddit.com/r/Overwatch/comments/1i775xc/why_do_i_lose_rank_when_i_have_a_leaver/
+
+all of the counterarguments i see seem really bad.
+
+"people would queue with friends and have one guy just tank the loss for the team" - Obviously just make everyone in the group lose elo, very simple solution.
+
+"even if they're ungrouped, people would still leave to tank the loss for the team" - I've seen this point thrown around a lot, but why would someone ever leave to prevent their random teammates from losing elo? that just isn't something the average player would ever do.
+
+"it would break ranking system due to elo inflation" - Well first off, we already have an instance currently in the game where only one person loses elo while nobody else gains any, this happens when someone leaves the game within the first minute and cancels the match. but somehow the ranking system isn't suffering from severe elo deflation or anything, so i'm not convinced it's that big of a deal.
+
+and secondly, even if it was a big deal, i don't see why we couldn't rank players just based off of their percentile rank instead, which seems like it would solve any elo inflation issues.
+
+"players would be toxic and try to get the worst player on the team to leave" - Just leave voice.
+
+if you think i'm wrong i'm happy to hear any counterarguments.

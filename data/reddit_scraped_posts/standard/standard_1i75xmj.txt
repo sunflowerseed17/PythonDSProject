@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Best budget gpu for 720p 60fps gaming
+Author: ItchyKnowledge9382
+Score: 1
+Created UTC: 2025-01-22 07:37:52
+URL: https://www.reddit.com/r/buildapc/comments/1i75xmj/best_budget_gpu_for_720p_60fps_gaming/
+
+I am not a big tech guy, as I am using an old 720p tv I've had for a while. However, the gpu that I am using as of now is intel UHD graphics 750, which apparently can handle nothing. What is the best budget gpu I can buy that suits my needs?

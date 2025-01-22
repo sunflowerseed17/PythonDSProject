@@ -1,0 +1,10 @@
+Subreddit: classicwow
+Title: Maximum avoidance in SOD
+Author: Longjumping-Nail4368
+Score: 0
+Created UTC: 2025-01-22 03:51:55
+URL: https://www.reddit.com/r/classicwow/comments/1i72al6/maximum_avoidance_in_sod/
+
+I recently came back to sod with some friends and wanted to try a bit of a meme-build... Hunter tank. The idea was getting my avoidance as high as possible while still dishing out enough damage to maintain threat. It surprisingly worked quite well even up to Mara. I had the damage and, according to my healer, was significantly easier to heal than the occasional proper tank we ran with. Now, as a fresh 60, i have just under 64% avoidance.
+
+Doing this brought a question to mind: What is the max amount of avoidance possible when accounting for stats, gear, and runes. Obviously, abilities like Evasion or Deterrence add 50%, but what can someone achieve without using abilities like those?

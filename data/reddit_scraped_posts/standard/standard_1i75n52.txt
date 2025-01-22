@@ -1,0 +1,15 @@
+Subreddit: pcmasterrace
+Title: Pc sort of freezes
+Author: Imaginary-Ad-6494
+Score: 1
+Created UTC: 2025-01-22 07:16:32
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i75n52/pc_sort_of_freezes/
+
+Hiyo, so I'm having problems with my pc a pretty long time, when ever I'm playing games my pc "freezes" sort of what happens is that I can't use my keyboard or mouse, the only thing I could do with my mouse is move it and not click on anything, a bit later applications start crashing and all. Whenever I try to start my pc sometimes on just a random day everything begins super bad whenever I log in, the apps start crashing instantly and I can't use anything such as keyboard and mouse. If anyone has a clue with this I could need some help it's not that it happens every day but just random days every week or more. (If you need more information lemme know please)
+
+These are my specs:
+
+AMD Ryzen 7 7800X3D
+Asus ROG Strix X670E-F Gaming WiFi
+Corsair CMK32GX5M2B6000Z30 16GBx2
+AMD Radeon RX 7800 XT  16GB

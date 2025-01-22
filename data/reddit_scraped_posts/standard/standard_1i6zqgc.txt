@@ -1,0 +1,15 @@
+Subreddit: Palworld
+Title: Elemental passives multiplicative bonus?
+Author: dwatso05
+Score: 3
+Created UTC: 2025-01-22 01:51:27
+URL: https://www.reddit.com/r/Palworld/comments/1i6zqgc/elemental_passives_multiplicative_bonus/
+
+So right now, I'm in the midst of breeding several end game pals like Bastigor, Selyne, Xenolord, etc. all of which have:
+
+Legend
+Musclehead
+Serenity
+Demon God
+
+Can someone explain to me (as if I'm a dummy) how the elemental passives are specifically better? From what I understand, they give some sort of multiplicative bonus as opposed to an additive one, but what exactly does that mean?

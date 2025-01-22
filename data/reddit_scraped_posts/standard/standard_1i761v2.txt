@@ -1,0 +1,17 @@
+Subreddit: Helldivers
+Title: Game freezing 3+ times a match, before losing connection entirely ~%75 of matches played.
+Author: Curious-Climate7233
+Score: 1
+Created UTC: 2025-01-22 07:46:34
+URL: https://www.reddit.com/r/Helldivers/comments/1i761v2/game_freezing_3_times_a_match_before_losing/
+
+During every single match I play, the game will seems to lag out and all enemies cycle their current animation as well as other Helldivers. The mission timer will also freeze. It stays in this "frozen" state for \~5 seconds, while I can still run around, before things rubberband to where they should be and everything is seemingly back to normal. That is until it happens again 5-10 mins later, and then again 5-10 mins after that. If i'm lucky I will maintain connection long enough to extract but even then it still loses connection to the squad %50 of the time going back to the ship during the loading screen. Its gotten to the point where im losing any interest to play because soooo much time has been wasted getting %90 of the way through a mission, just to either be booted back to the ship with a "connection error" or all 3 squadmates will suddenly all lose connection at the same time, scattering the samples across the map, effectively ruining any hope of extract or any gain from the mission should I manage a solo extract. 
+
+  
+I have gone through countless trouble-shooting guides, to no avail. Almost every post that I found pertaining to this issue was from \~10 months ago. And despite the problems described in those posts being nearly identical to mine, no solution mentioned did anything for me. I also did every network test listed in the number of responses, not once did they detect a drop in connection, let alone to the frequency it is happening to me in game. No other game I play has any connectivity issues, it is strictly with Hd2...
+
+  
+I have updated just about every imaginable thing to its up-to-date version, as well as basic modem setting changes. Unfortunately nearly every "solution" to this problem, has a comment responding to it explaining why the suggested solution is completely un-related to the problem and thus will not fix it. Or they suggest changeing quite technical settings on your computer or network. Neither of wich I feel comfortable doing as I am quite a computer layman. But I shouldnt need to be a network techincion to play the game I bought... I am ultimately very frustrated at the persitance of this issue, aswell as the maze of steps required to maybe/maybe not fix it. 
+
+  
+If anyone has any ideas as to what the source of the problem is I would be extremely appreciative.

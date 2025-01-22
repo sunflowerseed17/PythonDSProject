@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: 4080 super and 12VHPWR connector
+Author: no_va_det_mye
+Score: 1
+Created UTC: 2025-01-22 07:22:19
+URL: https://www.reddit.com/r/buildapc/comments/1i75pze/4080_super_and_12vhpwr_connector/
+
+I've recently bought a 4080 super and I see that it has a single 12 pin connection. The box came with a 3x8-12 pin adapter from nvidia. Do I have to use this adapter with 3x8pin cables, or will a single 12VHPWR cable work just as well?

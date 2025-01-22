@@ -1,0 +1,8 @@
+Subreddit: Steam
+Title: Hey. I went on my friend's steam account. He was playing a game, I pressed "Connect" to play the game and then he could control my mouse.
+Author: ParanoidCalculator
+Score: 0
+Created UTC: 2025-01-22 03:22:36
+URL: https://www.reddit.com/r/Steam/comments/1i71nz5/hey_i_went_on_my_friends_steam_account_he_was/
+
+I turned my pc off instantly. Is there a chance he can still control it? And could he only control the game? I'm not sure because I didn't have time to check. Could he control my entire pc? or only steam?  im assuming it was steam remote play. Could it have been something else? Can he still control it after i turned my pc off and back on? 

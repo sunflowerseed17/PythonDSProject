@@ -1,9 +1,0 @@
-Subreddit: GoogleMaps
-Title: Multiple user tracking
-Author: tartanthing
-Score: 4
-Created UTC: 2019-03-01 19:26:43
-URL: https://www.reddit.com/r/GoogleMaps/comments/aw8o09/multiple_user_tracking/
-
-I'm compiling a google map with multiple layers of different but related info. I'm wanting to track where multiple people walk to add into this. As an example 10 people leafleting a group of streets. Can anyone recommend a free app where the user then sends me their walk that's easy to import into google maps? For extra fun is there a way to fade the colour of a track in the layer over a period of weeks relating to when it was last walked?
-Cheers for any help!

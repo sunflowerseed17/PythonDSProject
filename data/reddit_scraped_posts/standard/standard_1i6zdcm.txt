@@ -1,0 +1,10 @@
+Subreddit: HonkaiStarRail
+Title: [SPOILER] Enemies that do sweeps do not care about taunt
+Author: NotSoProGamerR
+Score: 0
+Created UTC: 2025-01-22 01:33:23
+URL: https://v.redd.it/yf0vb9738gee1
+
+Sweeps are when enemies target right or left side of a team, and it seems to be regardless of taunt.
+
+This means Yunli's parry taunt, Boothill's standoff taunt and Preservation MC's taunt shield do not affect the outcome.

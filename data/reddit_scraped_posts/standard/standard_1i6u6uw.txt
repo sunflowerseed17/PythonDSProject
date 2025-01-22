@@ -1,0 +1,9 @@
+Subreddit: Steam
+Title: Can I make get requests in one of Workshop Mods?
+Author: hutber
+Score: 0
+Created UTC: 2025-01-21 21:42:24
+URL: https://www.reddit.com/r/Steam/comments/1i6u6uw/can_i_make_get_requests_in_one_of_workshop_mods/
+
+I would like to give my users a way to give me suggestions or report bugs.  
+Is it possible to allow this sort of thing or would it break the community guidelines?

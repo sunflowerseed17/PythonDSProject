@@ -1,0 +1,8 @@
+Subreddit: Minecraft
+Title: RTX texture pack for bedrock that will still let Console players join your world?
+Author: Dabadgley10
+Score: 1
+Created UTC: 2025-01-22 09:36:33
+URL: https://www.reddit.com/r/Minecraft/comments/1i77h1q/rtx_texture_pack_for_bedrock_that_will_still_let/
+
+I'm looking to add raytracing to my game because Minecraft is one of my favorite games to look at but every texture pack I've installed won't allow Console users to join, specifically ps5. Is there one that still let's them join? I know Minecraft on Console doesn't support it yet but I'm yet to find any that will work for just PC.

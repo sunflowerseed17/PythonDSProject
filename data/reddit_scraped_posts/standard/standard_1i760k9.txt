@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5: Why in USA there is an ISP Router often/always installed ?
+Author: No-Morning-8951
+Score: 5
+Created UTC: 2025-01-22 07:43:58
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i760k9/eli5_why_in_usa_there_is_an_isp_router/
+
+I live another country where a fiber GPON/XPON connection is most common, ISP only installs ONU Terminal for fiber cable connection, then connects it to your router and tells you the config for WAN that you need to apply (or applying configuration for you). With most ISP's I can even swap their ONU Terminal for my device (terminal or sfp ONU). If I need to replace my router - it takes up to 10 minutes, ISP need to replace a Mac address linked to my account. So why in a lot of cases in the US you can't replace the ISP router with your own device ?

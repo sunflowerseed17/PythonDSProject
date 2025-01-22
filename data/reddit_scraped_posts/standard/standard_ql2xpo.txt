@@ -1,8 +1,0 @@
-Subreddit: TpLink
-Title: Hosts file on AX50
-Author: tartanthing
-Score: 2
-Created UTC: 2021-11-02 12:19:34
-URL: https://www.reddit.com/r/TpLink/comments/ql2xpo/hosts_file_on_ax50/
-
-Hi, I'm looking at getting the AX50 router. Am I able to put a hosts file to block certain URL's on it?

@@ -1,0 +1,14 @@
+Subreddit: classicwow
+Title: Addons issues / Cata classic
+Author: Effective-Ad-6460
+Score: 2
+Created UTC: 2025-01-22 00:25:27
+URL: https://www.reddit.com/r/classicwow/comments/1i6xxkm/addons_issues_cata_classic/
+
+Trying to download addons via the curseclient to classic folder (Not classic era) for Cataclysm but it doesn't work.
+
+So i have downloaded a few manually directly to said folder without curseforge
+
+However Auctionator just wont extract to classic
+
+Anyone else having this issue ? or know a way around it?

@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5 how my phone is fast enough to get an accurate GPS location?
+Author: Palludane
+Score: 0
+Created UTC: 2025-01-21 21:18:29
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i6tm2n/eli5_how_my_phone_is_fast_enough_to_get_an/
+
+gp satellit use atom clock stay accur phone get confus assum comput calcul take order millisecond meter inaccuraci phone catch signal fast enough get accur posit

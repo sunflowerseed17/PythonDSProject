@@ -1,0 +1,12 @@
+Subreddit: OutOfTheLoop
+Title: What's going on with Old School RuneScape and Jagex?
+Author: influxion_
+Score: 185
+Created UTC: 2025-01-16 17:05:47
+URL: https://www.reddit.com/r/OutOfTheLoop/comments/1i2toon/whats_going_on_with_old_school_runescape_and_jagex/
+
+I haven't played OSRS for 3-4 years but I'll hop on and play the Leagues mode every so often. But recently there's been a huge surge of Jagex hate, comparing it to the past shitty decision they made to implement EOC, against the wishes of the player base. 
+
+https://www.reddit.com/r/2007scape/
+
+From what I can gather, Jagex has been or is going to be purchased by some venture capitalist group and the scare is that membership prices will be hiked up? RuneLite, a third party client, will be banned and plugins will be locked behind a subscription model?

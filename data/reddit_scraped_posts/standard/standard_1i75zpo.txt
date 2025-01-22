@@ -1,0 +1,22 @@
+Subreddit: buildapc
+Title: random restart
+Author: ComprehensiveKey1033
+Score: 1
+Created UTC: 2025-01-22 07:42:12
+URL: https://www.reddit.com/r/buildapc/comments/1i75zpo/random_restart/
+
+my pc when playing kingdoom come restart this happened to me twice 
+
+the first time last week and it happened toady my temp are normal all below 70 
+
+after the restart it run smoothly nothing happens 
+
+cpu;rayzen 7 5800x
+
+gpu rx6700xt 
+
+power supply :650
+
+ram:16 
+
+can someone help me 

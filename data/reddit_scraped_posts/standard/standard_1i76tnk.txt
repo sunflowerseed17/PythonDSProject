@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: Pc won’t boot
+Author: Asrh4x0r
+Score: 1
+Created UTC: 2025-01-22 08:46:21
+URL: https://i.redd.it/9zoudfwcdiee1.jpeg
+
+My pc hard bricked when I was in the middle of playing a game and it won’t boot up again. I’ve did system restore and a full reset but it either repeats the bios or I get this popup. Idk what’s wrong at all. 

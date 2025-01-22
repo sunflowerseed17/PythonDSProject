@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: Should I change my PSU?
+Author: turtlepenis6969
+Score: 1
+Created UTC: 2025-01-22 07:29:57
+URL: https://www.reddit.com/r/buildapc/comments/1i75tq3/should_i_change_my_psu/
+
+Right now I’m using RTX 3060 12GB and Bitfenix Whisper M 650w 80+ Gold. I’m planning to upgrade the GPU to 4070ti super. I heard that 40 series only support atx 3.0/3.1 PSU. Is it really mandatory or I could get away with using my PSU rn for a while? I checked using pcpartpicker and there are no problem but I just want to hear your opinion. Thanks!

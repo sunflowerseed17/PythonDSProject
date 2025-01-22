@@ -1,0 +1,16 @@
+Subreddit: Steam
+Title: What black magic is steam performing here?
+Author: Obvious-Falcon-2765
+Score: 64
+Created UTC: 2025-01-22 02:09:13
+URL: https://www.reddit.com/r/Steam/comments/1i703ep/what_black_magic_is_steam_performing_here/
+
+A little context:
+
+I’m stuck at work for the next 12 hours on standby - just waiting to see if SHTF. I have a work laptop that is definitely not meant for gaming (7th gen i5, integrated graphics), but I have full unfettered access to install whatever I want on it. So I figured I’d install steam and see if it will play *something* to pass the time. I’ve got the laptop tethered to my phone.
+
+I fire steam up and it gives me the option to stream everything I have installed on my home PC, which I thought was only possible on a local network. I figured I’d give that a shot anyways and of course it wants a 4-digit code punched into my home PC, which I obviously can’t do since I’m at work.
+
+So I go ahead and install Surviving Mars and hope it’ll play decent enough at the lowest graphics. After install, I hit play and Steam instead tells me that it’s going to stream it from my home PC instead. I hit “Ok” and the game fires up! The 3D play area is kinda blurry, but the UI is perfectly legible. And there’s zero latency!
+
+So my question is, how the hell is this working?!

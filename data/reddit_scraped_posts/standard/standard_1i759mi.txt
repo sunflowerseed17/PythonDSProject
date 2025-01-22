@@ -1,0 +1,10 @@
+Subreddit: Minecraft
+Title: Is there any texture pack that makes Minecraft Java look like the old MCPE?
+Author: FMATRIX
+Score: 2
+Created UTC: 2025-01-22 06:50:09
+URL: https://www.reddit.com/r/Minecraft/comments/1i759mi/is_there_any_texture_pack_that_makes_minecraft/
+
+These days I found myself looking for some resource pack that looked like the old MCPE texture from 2011/2012, but I ended up not finding it.
+
+I even found some that leave Minecraft with the old texture (Golden Days), but it looks more like the old Minecraft Java.

@@ -1,0 +1,8 @@
+Subreddit: buildapc
+Title: What should I know about PCI-E cards with USB ports?
+Author: a_Dzik
+Score: 1
+Created UTC: 2025-01-22 09:03:06
+URL: https://www.reddit.com/r/buildapc/comments/1i771rh/what_should_i_know_about_pcie_cards_with_usb_ports/
+
+need usb type usb type c port desktop go block whole slot prefer mani possibl seen product look okay howev card look wonder thing need know like mayb good bad control mayb chip need look

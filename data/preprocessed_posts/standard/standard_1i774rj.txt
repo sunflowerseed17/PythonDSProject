@@ -1,0 +1,8 @@
+Subreddit: pcmasterrace
+Title: Is HWinfo right about my NVMe abaout to fail?
+Author: MrRad_YT
+Score: 0
+Created UTC: 2025-01-22 09:09:28
+URL: https://www.reddit.com/r/pcmasterrace/comments/1i774rj/is_hwinfo_right_about_my_nvme_abaout_to_fail/
+
+hi everyon would like opinion someth open hwinfo saw main nvme drive toshiba boot window os file etc health also avail spare said even though like full sure weather trust say secondari ssd crucial health left appar fail still run game softwar aswel ob record fine also say written drive use written wonder true trust hwinfo read backup file softwar hp pc diagnost crucial storag execut said read smart data thank laptop model hp pavillion game

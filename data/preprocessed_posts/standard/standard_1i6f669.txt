@@ -1,0 +1,8 @@
+Subreddit: explainlikeimfive
+Title: ELI5: How does a dimmer regulate the brightness of a light?
+Author: Immediate-Risk-7569
+Score: 10
+Created UTC: 2025-01-21 09:50:44
+URL: https://www.reddit.com/r/explainlikeimfive/comments/1i6f669/eli5_how_does_a_dimmer_regulate_the_brightness_of/
+
+measur output voltag dimmer stay constant matter bright set plug incandesc light regul bright without issu dimmer also say need minimum otherwis work explain voltag chang without load

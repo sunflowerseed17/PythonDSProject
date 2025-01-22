@@ -1,0 +1,14 @@
+Subreddit: BaldursGate3
+Title: Game takes forever to load ingame objects and looks bad
+Author: AS-AB
+Score: 1
+Created UTC: 2025-01-22 03:03:54
+URL: https://www.reddit.com/r/BaldursGate3/comments/1i719d5/game_takes_forever_to_load_ingame_objects_and/
+
+I have every setting at low, running 2k with vsync double buffering at 60fps
+
+game runs at 30fps, takes long times to load, when it does load textures are unrendered and objects missing/polygonal. fixes itself after a long long time but not when actually playing things are always unloaded
+
+have slow hdd mode on too, running on directx11
+
+any suggestions on how to fix?

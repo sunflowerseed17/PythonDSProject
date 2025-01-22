@@ -1,0 +1,8 @@
+Subreddit: Piracy
+Title: GitHub Massgravel gone bad?
+Author: madmax435
+Score: 0
+Created UTC: 2025-01-21 20:48:16
+URL: https://www.reddit.com/r/Piracy/comments/1i6svhm/github_massgravel_gone_bad/
+
+Noticed when i went to use word and excel the other day i started getting pop ups again about i need to log in/pay for access.  Went to run the massgravel microsoft activation script again and now it throws an error.  Any suggestions?

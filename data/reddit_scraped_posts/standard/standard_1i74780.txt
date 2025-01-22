@@ -1,0 +1,8 @@
+Subreddit: Overwatch
+Title: Can’t log in
+Author: cr0wtherr
+Score: 2
+Created UTC: 2025-01-22 05:39:43
+URL: https://i.redd.it/uujxbm82ghee1.jpeg
+
+Hi there. Usually I can play overwatch fine, but tonight I haven’t been able to get on because it fails to connect me to the servers. When I go to the blizzard app, it says I’m playing now when I have overwatch closed. I tried task manager, but overwatch isn’t on there either, so I’m at my wits end :(

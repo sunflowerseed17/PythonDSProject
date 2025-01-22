@@ -1,0 +1,10 @@
+Subreddit: Steam
+Title: Dualsense 5: Back grip?
+Author: molligru
+Score: 1
+Created UTC: 2025-01-22 09:05:40
+URL: https://www.reddit.com/r/Steam/comments/1i772z2/dualsense_5_back_grip/
+
+Hiya!
+
+This might be a very silly question, but the steam input dialog for the DualSense 5 shows entries for two "Back Grip" buttons.  Are these actually on the controller anywhere?

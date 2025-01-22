@@ -1,0 +1,12 @@
+Subreddit: Overwatch
+Title: Game is Stuttering and laggin like crazy in Fullscreen mode
+Author: ArdaOneUi
+Score: 2
+Created UTC: 2025-01-22 07:30:13
+URL: https://www.reddit.com/r/Overwatch/comments/1i75tvh/game_is_stuttering_and_laggin_like_crazy_in/
+
+The update brought some new changes(can choose api and gpu in settings now) and i believe some have broken a few things. Windowed, Windowed(Fullscreen) work as normal but Fullscreen makes my game stutter like crazy, including sound and basically unplayable, also alt-tabbing becomes very slow and i constantely have the "Restar game to apply changes" banner in the bottom of the settings after rebooting many times. 
+
+I never had any of these issues before, does anyone have a solution?
+
+(7700XT Win11 Battlenet launcher)

@@ -1,0 +1,47 @@
+Subreddit: wallstreetbets
+Title: Decoding the leaked $XP Ponzi report.
+Author: NotBruceLehrmann
+Score: 10
+Created UTC: 2025-01-22 07:35:57
+URL: https://www.reddit.com/r/wallstreetbets/comments/1i75wnx/decoding_the_leaked_xp_ponzi_report/
+
+NEWS: Yesterday afternoon a Hindenburg research short report [leaked](https://www.investing.com/news/stock-market-news/xp-shares-tumble-on-rumored-hindenburg-short-report-93CH-3822991). This appears to have been a report that they initially intended to publish, but when they made the decision to close down, was instead shifted into SEC tip-off – referenced in his farewell address: “*As of the last Ponzi cases we just completed and are sharing with regulators, that day is today*.”
+
+However, in a major legal cock-up for Hindenburg, the images from the unpublished draft were available on cached versions of Hindenburg Research's Website, and from these 25 images we can see that one of those Ponzi cases was XP Inc, which is a Brazilian Investment Management company. 
+
+# The Case for a Ponzi Scheme
+
+**Returns are too good.** One of the best ways to look for fraud is to simply looking at who is making the best returns. Funds like Gladius FIM CP IE are posting **2,492% returns** over five years while benchmarks sit at 49%. Coliseu FIM CP IE shows a similar story with **693% returns**. Unrealistically high returns are usually a red flag—especially when paired with sharp drawdowns and extreme volatility in stress tests.
+
+https://preview.redd.it/0trki6a1zhee1.jpg?width=760&format=pjpg&auto=webp&s=8462702b4e7de331be6d6e58c81e52ed81b344c2
+
+
+
+**Auditors are being blocked.** KPMG has issued multiple qualified or abstained opinions for XP’s funds due to missing data. In one case, **92% of liquid assets** couldn’t be verified. Either XP has terrible bookkeeping, or they’re hiding something.
+
+https://preview.redd.it/ry2z7jl5zhee1.jpg?width=760&format=pjpg&auto=webp&s=e3efd05ed8067142687bb64d3afc6b71b819b372
+
+https://preview.redd.it/d9qugfn7zhee1.jpg?width=760&format=pjpg&auto=webp&s=731c128e1834aa162313a2b0a5b3116f60a846ec
+
+**Declining Inflows.** Net inflows are down **36% YoY**, and the company's reliance on market-making activity means it needs a steady stream of new money to keep the machine running. Sound familiar?
+
+https://preview.redd.it/s83rro1jzhee1.jpg?width=760&format=pjpg&auto=webp&s=5377527b89779bc4a40bf5377b894cb39ecb0d30
+
+
+
+**Stress scenarios** for funds like Gladius FIM CP IE show extreme volatility, with worst-case losses nearing -59%. This instability suggests that XP's model could collapse if investor sentiment turns or inflows dry up.
+
+https://preview.redd.it/u0ygbrxe0iee1.jpg?width=760&format=pjpg&auto=webp&s=e5506248aead2fa005a5e735f0a7ae4a3a29e980
+
+**Hindenburg’s track record** with Tingo and iLearningEngines speaks for itself, and clearly they were trying to make the connection in their unpublished piece. 
+
+https://preview.redd.it/43kma6oqzhee1.jpg?width=760&format=pjpg&auto=webp&s=e5d2574d379eeb58ff3e8a88a8392a23a996502f
+
+
+
+Position
+
+I snapped up cheap puts, all of which seem to now be gone. still a good short though
+
+https://preview.redd.it/0vmes7cl0iee1.png?width=578&format=png&auto=webp&s=5bfd59b56858ca866703d0b2769894f5f411100c
+

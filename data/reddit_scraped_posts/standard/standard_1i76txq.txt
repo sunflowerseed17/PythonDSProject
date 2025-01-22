@@ -1,0 +1,23 @@
+Subreddit: buildapc
+Title: Are there any suggestions to my PC Build plan? Happy to listen to any suggestions. (The prices are converted from pkr to usd)
+Author: Herobrinevips
+Score: 1
+Created UTC: 2025-01-22 08:46:59
+URL: https://www.reddit.com/r/buildapc/comments/1i76txq/are_there_any_suggestions_to_my_pc_build_plan/
+
+**Sapphire Nitro+** \- Rs. 85,000/- ≈ **$293.10**  
+**AMD RYZEN 5 5600X** \- Rs. 30,500/- ≈ **$105.17**  
+**GIGABYTE Aorus Elite B550M** \- Rs. 34,000/- ≈ **$117.24**  
+**EVGA 650 B5 PSU** \- Rs. 18,000/- ≈ **$62.07**  
+**DarkFlash DK431 Case** \- Rs. 17,000/- ≈ **$58.62**  
+**LEXAR 16GB (2\*8) RAM (3200MHz)** \- Rs. 9,500/- ≈ **$32.76**  
+**ID Cooling 214XT Cooler** \- Rs. 6,500/- ≈ **$22.41**  
+**LEXAR NM620 256GB M2 NVME SSD** \- Rs. 6,000/- ≈ **$20.69**  
+**1TB HDD** \- Rs. 4,500/- ≈ **$15.52**
+
+**PC** = Rs. 210,000 ≈ **$724.83**  
+**ViewSonic VX2479-HD-PRO Monitor** = Rs. 40,000 ≈ **$137.93**
+
+**Total** = Rs. 250,500 ≈ **$862.76**
+
+Everything brand new except gpu which is used with 2 months local  warranty
