@@ -1,3 +1,6 @@
+###############################################################################
+#  IMPORTS
+###############################################################################
 import os
 import re
 import time
@@ -7,7 +10,6 @@ import praw
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,7 +29,9 @@ from statsmodels.stats.multitest import multipletests
 from collections import defaultdict, Counter
 from tabulate import tabulate
 
-# Base Class
+###############################################################################
+#  BASE CLASS
+###############################################################################
 class FeatureExtractor:
     def __init__(self, output_folder="data/feature_extracted_data"):
         self.documents, self.labels = self.load_documents_and_labels()
@@ -113,8 +117,9 @@ class FeatureExtractor:
         else:
             print(f"File already exists at {file_path}.")
 
-
-# N-Gram Feature Extractor
+###############################################################################
+# N-GRAM FEATURE EXTRACTOR
+###############################################################################
 class NGramFeatureExtractor(FeatureExtractor):
     def __init__(self, output_folder="data/feature_extracted_data"):
         super().__init__(output_folder)
@@ -292,8 +297,10 @@ class NGramFeatureExtractor(FeatureExtractor):
             plt.close()  # Close the figure to avoid overlapping
             print(f"Saved word cloud: {file_path}")
 
+###############################################################################
+# EMPATH FEATURE-EXTRACTOR
+###############################################################################
 
-# Empath Feature Extractor
 class EmpathFeatureExtractor(FeatureExtractor):
     def __init__(self, output_folder="data/feature_extracted_data"):
         super().__init__(output_folder)
@@ -441,8 +448,9 @@ class EmpathFeatureExtractor(FeatureExtractor):
             else:
                 print(f"Correlation results file already exists at {correlation_file}.")
 
-
-# LDA Feature Extractor
+###############################################################################
+#  LDA FEATURE EXTRACTOR
+###############################################################################
 class LDAFeatureExtractor(FeatureExtractor):
     def __init__(self, num_topics=70, passes=15, output_folder="data/feature_extracted_data", random_state=42):
         super().__init__(output_folder)
@@ -611,6 +619,10 @@ class LDAFeatureExtractor(FeatureExtractor):
 
         print("LDA analysis pipeline complete.")
 
+
+###############################################################################
+#  SUMMARY / TABLE GENERATION FUNCTIONS
+###############################################################################
 
 # Creating a summary table for the number of features extracted
 def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, output_file="summary_table.png"):
