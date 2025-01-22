@@ -3,119 +3,110 @@
 ## Overview
 This project focuses on replicating Tadesse et al (2019) "Detection of Depression-Related Posts in Reddit Social Media Forum". We do this by performing feature extraction and classification using machine learning techniques. The text data is preprocessed to extract unigram and bigram features, using the Empath (instead of the LIWC) library and also performing an LDA analysis. Classifiers are trained to distinguish between depression-related and non-depression-related posts.
 
-Key functionalities include:
-- Text preprocessing
-- N-gram (unigram and bigram) feature extraction
-- Empath dictionary analysis
-- LDA
-- Training and evaluating 5 machine learning models with 6 different feature inputs (5x6 ML models)
+ # Detection of Depression-Related Posts in Reddit (Recreating Tadesse et al.)
 
-  
-## Features
-- **Data Preprocessing**: Includes tokenization, stopword removal, and TF-IDF vectorization.
-- **N-Gram Feature Extraction**: Extracts unigram and bigram features with TF-IDF scores.
-- **Feature Saving**: Saves feature matrices and labels into CSV files for reusability.
-- **Machine Learning**: Implements classifiers (e.g., SVM, Logistic Regression) to detect depression in text.
-- **Label Analysis and Debugging**: Validates labels to ensure they are correctly aligned with the data.
+This repository demonstrates a pipeline for **detecting depression-related posts in Reddit**—inspired by *Tadesse et al.*’s paper, “Detection of Depression-Related Posts in Reddit Social Media Forum.” The overall workflow includes:
 
-## Project Structure
+1. **Scraping Raw Data** from Reddit.  
+2. **Preprocessing** and cleaning text.  
+3. **Extracting Features** (N-grams, Empath categories, LDA topics).  
+4. **Analyzing** those features (word clouds, correlation tables, etc.).  
+5. **Training and Evaluating** ML models to distinguish depression posts from others.
 
-### Folders
-- `data/`
-  - `feature_analysis_outputs/`
-    - `breast_cancer_-_bigrams.png`
-    - `breast_cancer_-_unigrams.png`
-    - `depression_-_bigrams.png`
-    - `depression_-_unigrams.png`
-    - `Empath_Correlation_Table.csv`
-    - `standard_-_bigrams.png`
-    - `standard_-_unigrams.png`
-  - `feature_extracted_data/`
-    - **Run feature_extraction.py to output the necessary files here**
-  - `preprocessed_posts/`
-    - `breastcancer/`
-    - `depression/`
-    - `standard/`
-  - `reddit_scraped_posts/`
-    - `breastcancer/`
-    - `depression/`
-    - `standard/`
-- `feature_analysis/`
-  - `feature_analysis.py`
-- `feature_extraction/`
-  - `feature_extraction_func.py`
-  - `feature_extraction.py`
-- `model_training/`
-  - `model_training_func.py`
-  - `model_training.py`
-- `notebooks/`
-  - `data_preprocessing.ipynb`
-  - `feature_analysis.ipynb`
-  - `feature_extraction.ipynb`
-  - `model_training.ipynb`
--`README.md`
+---
 
-### Files 
+## Repository Structure
 
-**ADD LIST OF THE IMPORTANT FILES AND WHAT THEY DO HERE**
+```
+.
+├── data/
+│   ├── feature_analysis_output/
+│   │   ├── breast_cancer_-_bigrams.png
+│   │   ├── breast_cancer_-_unigrams.png
+│   │   ├── depression_-_bigrams.png
+│   │   ├── depression_-_unigrams.png
+│   │   ├── Empath_Correlation_Table.csv
+│   │   ├── standard_-_bigrams.png
+│   │   └── standard_-_unigrams.png
+│   ├── preprocessed_posts/
+│   │   ├── breastcancer/
+│   │   ├── depression/
+│   │   └── standard/
+│   ├── reddit_scraped_posts/
+│   │   ├── breastcancer/
+│   │   ├── depression/
+│   │   └── standard/
+│   └── data_preprocessing/
+│       └── data_preprocessing.py
+├── feature_analysis/
+│   └── feature_analysis.py
+├── feature_extraction/
+│   ├── feature_extraction.py
+│   └── feature_extraction_func.py
+├── model_training/
+│   └── model_training.py
+└── README.md
 
-## Setup
+```
 
-### Prerequisites
-- Python 3.7+
-- Recommended: A virtual environment
+### Main Folders
 
-### Installation
+- **`reddit_scraped_posts/`**: Raw text posts from Reddit.  
+- **`preprocessed_posts/`**: Cleaned/preprocessed text.  
+- **`data_preprocessing/`**: Contains `data_preprocessing.py`, the script for text cleaning.  
+- **`feature_extraction/`**: Scripts (`feature_extraction.py`, `feature_extraction_func.py`) to extract N-gram, LDA, and Empath features.  
+- **`feature_analysis/`**: Contains `feature_analysis.py` for visualizing data (e.g., word clouds, correlation tables).  
+- **`feature_analysis_output/`**: Where images (word clouds, correlation plots) and CSVs (e.g. Empath correlation) get saved.  
+- **`model_training/`**: Contains `model_training.py` to train/evaluate machine-learning models on extracted features.
 
-**INCLUDE WHAT THE DIFFERENT PROJECT FILES DO IN ORDER + ESTABLISHMENT OF VIRTUAL ENVIRONMENT**
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/depression-detection-ngram.git
-   cd depression-detection-ngram
-Install dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-Required Libraries
-pandas
-numpy
-scikit-learn
-matplotlib
-nltk
+## Goal: Recreating *Tadesse et al.*’s Approach
 
-### Usage
-1. Feature Extraction
-Run the feature_extraction.ipynb notebook to generate unigram and bigram feature matrices. This notebook will:
+*Tadesse et al.* introduced a multi-faceted approach for **detecting depression** in Reddit posts, using linguistic and topic-based features. This repository implements a similar pipeline:
 
-Load the text data from the data/preprocessed directories.
-Extract unigram and bigram features using TF-IDF. Extract features using the Empath dictionary. Extract features using LDA.
-Save the feature matrices and labels as CSV files in data/feature_extracted_data/.
+1. **Scrape** real Reddit data, focusing on `r/depression`, plus  control groups (`r/breastcancer`) and other random subreddits (labeled “standard”).  
+2. **Clean/Preprocess** the text (remove stopwords, usernames, etc.).  
+3. **Extract Features**:
+   - **N-grams** via TF-IDF  
+   - **Empath** for psycholinguistic features  
+   - **LDA** for topic modeling  
+4. **Train and Evaluate** classification models (e.g., SVM, Random Forest).  
+5. **Analyze** each model’s performance using accuracy, F1, precision, and recall.
 
-2. Training Machine Learning Models
-Use the model_training.ipynb notebook to train machine learning models. This notebook will:
+---
 
-Load the saved CSV files (e.g., unigram_features_with_labels.csv, bigram_features_with_labels.csv).
-Train classifiers such as SVM, Logistic Regression, MLP, Random Forest and ADABoost on the extracted features.
-Evaluate the models and print metrics (e.g., accuracy, precision, recall).
+## Usage
 
-3. Analysis
-Run the feature_analysis.ipynb notebook to:
+1. **Install Dependencies**  
+   - Python 3.9+ recommended.  
+   - `pip install -r requirements.txt` or manually install `praw`, `nltk`, `scikit-learn`, `matplotlib`, `pandas`, `empath`, `gensim`, etc.
 
-Analyze the extracted features (e.g., top unigrams and bigrams).
+2. **Scrape Data (Optional)**  
+   - If you wish to update or expand the raw data, edit/run the scraping script (not fully shown here) to populate `data/reddit_scraped_posts/` with `.txt` files.
 
+3. **Preprocess**  
+   - `python data_preprocessing/data_preprocessing.py`  
+   - Produces cleaned `.txt` files in `data/preprocessed_posts/`.
 
-### All workflows are demonstrated in the Jupyter notebooks:
+4. **Feature Extraction**  
+   - `python feature_extraction/feature_extraction.py`  
+   - Generates CSV files (e.g., `unigram_features_with_labels.csv`, `lda_topic_distributions_with_labels.csv`) in `data/feature_extracted_data/` (or wherever configured).
 
-data_preprocessing.ipynb: Preprocess raw text data.
-feature_extraction.ipynb: Extract features from text data.
-model_training.ipynb: Train and evaluate machine learning models.
-Results
-Model Accuracy: Achieved XX% accuracy on test data using [model name].
-Feature Importance: Identified key unigrams and bigrams associated with depression vs. non-depression posts.
-Key Files
-unigram_features_with_labels.csv: Contains unigram TF-IDF features and labels.
-bigram_features_with_labels.csv: Contains bigram TF-IDF features and labels.
-empath_features_with_labels.csv: Contains psycholinguistic features and labels.
-lda_topic_distributions_with_labels.csv: Contains LDA topic distributions and labels.
+5. **Feature Analysis**  
+   - `python feature_analysis/feature_analysis.py`  
+   - Saves images (like word clouds) in `data/feature_analysis_output/`.
 
+6. **Model Training**  
+   - `python model_training/model_training.py`  
+   - Loads one or more CSV feature sets, trains selected ML models, prints and saves evaluation metrics (accuracy, F1, etc.).
+
+---
+
+## References
+
+- **Paper**: M. M. Tadesse, H. Lin, B. Xu, and L. Yang, “Detection of Depression-Related Posts in Reddit Social Media Forum,” *IEEE Access*, vol. 7, pp. 44883–44893, 2019.  
+- **NLTK & scikit-learn** used heavily for text processing and classification.  
+- **Empath** for psycholinguistic feature extraction.  
+- **Gensim** for LDA topic modeling.
+---
