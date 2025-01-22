@@ -670,6 +670,7 @@ def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, out
 
     return summary_table
 
+# Creating a summary table for the correlations from the EMPATH features extracted
 def generate_empath_table(input_csv, output_file="empath_table.png"):
     # Load the Empath_Correlation_Table.csv file
     empath_df = pd.read_csv(input_csv)

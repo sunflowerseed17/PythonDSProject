@@ -6,7 +6,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../feature_extraction"))
 from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor, EmpathFeatureExtractor, generate_summary_table, generate_empath_table # type: ignore
 
-output_folder = "data/feature_analysis_output"
+output_folder = "outputs"
 os.makedirs(output_folder, exist_ok=True)
 
 # N-Gram Analysis
@@ -28,4 +28,4 @@ lda_extractor.run_analysis_pipeline()
 generate_summary_table(ngram_extractor, empath_extractor, lda_extractor)
 
 # Getting the output table for EMPATH feature correlations
-generate_empath_table("data/feature_analysis_output/Empath_Correlation_Table.csv")
+generate_empath_table("outputs/Empath_Correlation_Table.csv")

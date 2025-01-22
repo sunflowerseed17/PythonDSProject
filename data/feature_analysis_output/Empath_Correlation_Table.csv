@@ -1,9 +1,0 @@
-Empath Category,Example Word,Correlation,P-Value
-psychological_processes - affective,anger,0.19943187038602925,7.33146341842267e-28
-psychological_processes - affective,joy,0.08110732642832416,1.0234797789448733e-05
-personal_concerns,shopping,-0.0794211578412666,1.5593534110059523e-05
-psychological_processes - affective,negative_emotion,0.074409537251506,5.193574549642471e-05
-personal_concerns,money,-0.07419540579967482,5.4587683953313694e-05
-psychological_processes - affective,positive_emotion,0.04290588538293334,0.01973954273594239
-time_orientations,morning,0.03173464726104493,0.08472216959110858
-personal_concerns,work,0.0024659581779213203,0.8934621457113762
