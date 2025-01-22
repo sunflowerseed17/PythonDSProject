@@ -25,7 +25,7 @@ lda_extractor = LDAFeatureExtractor(num_topics=20)
 lda_extractor.run_analysis_pipeline()
 
 # Getting the output table for number of features found in every extraction
-generate_summary_table(ngram_extractor, empath_extractor, lda_extractor)
+generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, f"{output_folder}/summary_table")
 
 # Getting the output table for EMPATH feature correlations
-generate_empath_table("outputs/Empath_Correlation_Table.csv")
+generate_empath_table("outputs/Empath_Correlation_Table.csv", f"{output_folder}/empath_table")

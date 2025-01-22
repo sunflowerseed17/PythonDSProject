@@ -8,8 +8,6 @@ from datetime import datetime
 import random
 import praw
 import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,6 +26,10 @@ from scipy.stats import pearsonr
 from statsmodels.stats.multitest import multipletests
 from collections import defaultdict, Counter
 from tabulate import tabulate
+import matplotlib.pyplot as plt
+nltk.download('punkt')
+nltk.download('stopwords')
+
 
 ###############################################################################
 #  BASE CLASS
@@ -313,22 +315,84 @@ class EmpathFeatureExtractor(FeatureExtractor):
         self.categories = {
             "linguistic_features": [
                 "articles", "auxiliary_verbs", "adverbs", "conjunctions", 
-                # ...
+                "personal_pronouns", "impersonal_pronouns", "negations", 
+                "prepositions", "verbs", "nouns", "adjectives", 
+                "comparatives", "superlatives", "modifiers", "function_words", 
+                "filler_words", "verb_tense", "slang", "jargon", 
+                "formal_language", "casual_language", "exclamations", 
+                "contractions", "word_complexity", "sentiment_words"
             ],
-            "psychological_processes": {
+                "psychological_processes": {
                 "affective": [
-                    "positive_emotion", "negative_emotion", "joy", "anger",
-                    # ...
+                    "positive_emotion", "negative_emotion", "joy", "anger", 
+                    "sadness", "anxiety", "fear", "disgust", "love", 
+                    "hope", "trust", "excitement", "anticipation", 
+                    "relief", "sympathy", "gratitude", "shame", 
+                    "guilt", "envy", "pride", "contentment", "confusion",
+                    "boredom", "embarrassment", "longing", "nostalgia", 
+                    "embarrassment", "frustration", "surprise", "melancholy"
                 ],
-                # ...
+                "biological": [
+                    "body", "health", "illness", "pain", "hygiene", 
+                    "fitness", "exercise", "nutrition", "ingestion", 
+                    "physical_state", "medicine", "sleep", "sexual", 
+                    "aging", "disease", "injury", "hospital", "recovery", 
+                    "dieting", "mental_health", "drug_use", "headache", 
+                    "fatigue", "hormones", "appetite"
+                ],
+                "social": [
+                    "family", "friends", "relationships", "group_behavior", 
+                    "teamwork", "social_media", "communication", "community", 
+                    "peer_pressure", "leadership", "parenting", "mentorship", 
+                    "marriage", "divorce", "gender_roles", "social_identity", 
+                    "cultural_rituals", "networking", "altruism", "conflict", 
+                    "social_support", "dominance", "affiliation", "intimacy", 
+                    "supportiveness", "competition", "conflict_resolution", 
+                    "collaboration", "in-group", "out-group", "prejudice"
+                ],
+                "cognitive": [
+                    "certainty", "doubt", "insight", "cause", "discrepancy", 
+                    "problem_solving", "creativity", "self_reflection", "planning", 
+                    "memory", "perception", "attention", "reasoning", "thought_process", 
+                    "decision_making", "confusion", "learning", "metacognition", "adaptability", 
+                    "focus", "perspective", "problem_analysis", "evaluation", "interpretation",
+                    "logic", "intelligence", "rational_thought", "intuition", "conceptualization"
+                ],
+                "drives": [
+                    "achievement", "dominance", "affiliation", "control", 
+                    "self-esteem", "autonomy", "self-assertion", "power", 
+                    "ambition", "conformity", "subordination", "dependence", 
+                    "submission", "accomplishment", "independence", "order", 
+                    "control_seeking", "status", "prosocial_behavior"
+                ],
+                "spiritual": [
+                    "spirituality", "faith", "beliefs", "sacred", "religion", 
+                    "prayer", "meditation", "afterlife", "soul", "divine", 
+                    "god", "higher_power", "inspiration", "transcendence", 
+                    "morality", "ethics", "rituals", "holiness", "mindfulness"
+                ]
             },
             "personal_concerns": [
-                "work", "money", "wealth", "shopping",
-                # ...
+                "work", "money", "wealth", "shopping", "career", "travel", 
+                "home", "school", "education", "violence", "death", 
+                "retirement", "spirituality", "family_life", "hobbies", 
+                "volunteering", "pets", "entertainment", "parenting", 
+                "sports", "adventure", "politics", "environment", 
+                "safety", "technology", "materialism", "status", 
+                "self_improvement", "learning", "self_growth", "happiness", 
+                "life_purpose", "work_life_balance", "stress", "coping", 
+                "job_satisfaction", "ambition", "legacy", "job_search", 
+                "unemployment", "retirement_plans", "mental_health", "dating", 
+                "romantic_relationships", "divorce", "life_stressors", "transitions"
             ],
             "time_orientations": [
-                "present", "past", "future", "morning",
-                # ...
+                "present", "past", "future", "morning", 
+                "afternoon", "evening", "day", "night", 
+                "weekdays", "weekends", "seasons", "holidays", 
+                "lifespan", "long_term", "short_term", 
+                "routine", "historical", "epoch", "momentary", 
+                "timeliness", "timelessness", "urgency", 
+                "progression", "nostalgia", "anticipation"
             ]
         }
 
@@ -440,14 +504,6 @@ class EmpathFeatureExtractor(FeatureExtractor):
             else:
                 print(f"Empath features file already exists at {feature_file}.")
 
-        if self.correlation_results is not None:
-            correlation_file = os.path.join(self.output_folder, "empath_correlation_results.csv")
-            if overwrite or not os.path.exists(correlation_file):
-                self.correlation_results.to_csv(correlation_file, index=False)
-                print(f"Saved correlation results to {correlation_file}.")
-            else:
-                print(f"Correlation results file already exists at {correlation_file}.")
-
 ###############################################################################
 #  LDA FEATURE EXTRACTOR
 ###############################################################################
@@ -520,17 +576,30 @@ class LDAFeatureExtractor(FeatureExtractor):
         return tsne_results
 
     def visualize_tsne(self, tsne_results):
+        """
+        Visualize t-SNE results with only topic words displayed and save the plot.
+
+        Parameters:
+        - tsne_results: The 2D coordinates generated by t-SNE.
+        """
         clusters = KMeans(n_clusters=self.num_topics, random_state=42).fit_predict(self.topic_matrix)
 
+        # Create the output folder if it doesn't exist
+        output_folder = "outputs"
+        os.makedirs(output_folder, exist_ok=True)
+
+        # Create the plot
         plt.figure(figsize=(10, 8))
         for i in range(self.num_topics):
             indices = np.where(clusters == i)
             plt.scatter(tsne_results[indices, 0], tsne_results[indices, 1], label=f"Topic {i}", alpha=0.6)
 
         for i, topic in enumerate(self.lda_model.print_topics(num_topics=self.num_topics, num_words=1)):
-            plt.annotate(f"Topic {i}: {topic[1]}",
+            # Extract only the word from the topic string (removing any numbers/statistics)
+            word = topic[1].split('+')[0].strip().split('"')[1]
+            plt.annotate(word,
                          (np.mean(tsne_results[clusters == i, 0]), np.mean(tsne_results[clusters == i, 1])),
-                         fontsize=8,
+                         fontsize=10,
                          bbox=dict(boxstyle="round,pad=0.3", edgecolor='gray', facecolor='white', alpha=0.7))
 
         plt.title("t-SNE Visualization of LDA Topics")
@@ -538,6 +607,10 @@ class LDAFeatureExtractor(FeatureExtractor):
         plt.ylabel("t-SNE Dimension 2")
         plt.legend()
         plt.grid(True)
+
+        output_path = os.path.join(output_folder, "tsne_visualization.png")
+        plt.savefig(output_path, bbox_inches='tight', dpi=300)
+        print(f"t-SNE visualization saved to {output_path}")
         plt.show()
 
     def topic_distribution_to_matrix(self):
@@ -625,19 +698,7 @@ class LDAFeatureExtractor(FeatureExtractor):
 ###############################################################################
 
 # Creating a summary table for the number of features extracted
-def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, output_file="summary_table.png"):
-    """
-    Generate a summary table of selected features for different methods and save it as a PNG file.
-
-    Parameters:
-    - ngram_extractor: Instance of NGramFeatureExtractor
-    - empath_extractor: Instance of EmpathFeatureExtractor
-    - lda_extractor: Instance of LDAFeatureExtractor
-    - output_file: File path to save the table as a PNG.
-
-    Returns:
-    - summary_table: DataFrame with feature type, method, and number of selected features.
-    """
+def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, output_file=None):
     # Extract the number of features from each extractor
     unigram_count = len(ngram_extractor.unigram_feature_names)
     bigram_count = len(ngram_extractor.bigram_feature_names)
@@ -648,52 +709,79 @@ def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, out
     summary_data = [
         ["N-grams", "Unigram", unigram_count],
         ["N-grams", "Bigram", bigram_count],
-        ["Empath Features", "Empath", empath_feature_count],
+        ["Linguistic Dimensions", "Empath", empath_feature_count],
         ["Topic Modeling", "LDA", lda_feature_count]
     ]
 
     # Convert to a DataFrame
     summary_table = pd.DataFrame(summary_data, columns=["Feature Type", "Methods", "Number of Selected Features"])
 
-    # Print the table to the terminal
-    print(tabulate(summary_table, headers="keys", tablefmt="fancy_grid", showindex=False))
-
-    # Save or display the table as an image (optional)
+    # Plot the table
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.axis('tight')
     ax.axis('off')
-    table = ax.table(cellText=summary_table.values, colLabels=summary_table.columns, cellLoc='center', loc='center')
+    plt.title("Summary of Feature Extraction Methods", fontsize=16, fontweight='bold', pad=20)
+
+    # Create the table 
+    table = ax.table(cellText=summary_table.values, 
+                     colLabels=summary_table.columns, 
+                     cellLoc='center', 
+                     loc='center')
+
+    # Style adjustments
     table.auto_set_font_size(False)
     table.set_fontsize(10)
-    table.auto_set_column_width(col=list(range(len(summary_table.columns))))
+    table.auto_set_column_width([0, 1, 2])  
+    table.scale(1.2, 1.2)  
+    for (row, col), cell in table.get_celld().items():
+        if row == 0: 
+            cell.set_fontsize(12)
+            cell.set_text_props(weight="bold")
+            cell.set_linewidth(1.5)
+        if col == 0:  
+            cell.set_text_props(weight="bold")
+        if row > 0 and (row % 2 == 0):  
+            cell.set_facecolor("#f0f0f0")
+
+    plt.savefig(output_file, bbox_inches="tight", dpi=300)
+    print(f"Table saved to {output_file}")
     plt.show()
 
     return summary_table
 
 # Creating a summary table for the correlations from the EMPATH features extracted
-def generate_empath_table(input_csv, output_file="empath_table.png"):
-    # Load the Empath_Correlation_Table.csv file
+def generate_empath_table(input_csv, output_file=None):
     empath_df = pd.read_csv(input_csv)
 
-    # Sort by P-Value (ascending) and filter the top features for display
-    empath_df = empath_df.sort_values(by="P-Value")
-    empath_df = empath_df.head(10)  # Adjust this to include more or fewer features as needed
+    # Sort by p-value and filter the top features for display
+    empath_df["Empath Category"] = empath_df["Empath Category"].str.capitalize()
+    empath_df = empath_df.sort_values(by="P-Value").head(10).sort_values(by="Empath Category")
+    empath_df = empath_df.drop(columns=["Correlation"])
 
-    # Generate a styled figure
+    empath_df.rename(
+        columns={"Empath Category": "Category", "Example word": "Example Word", "P value": "P-Value"}, inplace=True
+    )
+
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.axis('tight')
     ax.axis('off')
-
-    # Format the table
     table = ax.table(
         cellText=empath_df.values,
         colLabels=empath_df.columns,
-        cellLoc='center',
-        loc='center'
+        cellLoc="center",
+        loc="center",
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(10)
+    table.set_fontsize(12)
     table.auto_set_column_width(col=list(range(len(empath_df.columns))))
+    for key, cell in table.get_celld().items():
+        row, col = key
+        if row == 0: 
+            cell.set_text_props(weight="bold")
+            cell.set_fontsize(14)
 
-    # Show or save the table as a PNG
+
+
+    plt.savefig(output_file, bbox_inches="tight", dpi=300)
+    print(f"Table saved to {output_file}")
     plt.show()
