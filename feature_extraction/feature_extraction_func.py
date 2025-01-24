@@ -27,6 +27,7 @@ from statsmodels.stats.multitest import multipletests
 from collections import defaultdict, Counter
 from tabulate import tabulate
 import matplotlib.pyplot as plt
+from threadpoolctl import threadpool_limits
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -595,16 +596,20 @@ class LDAFeatureExtractor(FeatureExtractor):
         lda_features_file = os.path.join(self.output_folder, "lda_topic_distributions_with_labels.csv")
         self.save_to_csv(lda_features_df, lda_features_file)
 
+
     def run_tsne(self):
         """
-        Apply t-SNE for dimensionality reduction on the topic matrix.
+        Apply t-SNE for dimensionality reduction on the topic matrix with thread control.
         """
         if not hasattr(self, 'topic_matrix') or self.topic_matrix is None:
             raise ValueError("Topic matrix has not been generated. Run the analysis pipeline to generate it.")
 
-        tsne = TSNE(n_components=2, random_state=self.random_state)
-        tsne_results = tsne.fit_transform(self.topic_matrix)
+        print(f"Running t-SNE on topic matrix with shape: {self.topic_matrix.shape}")
+        with threadpool_limits(limits=1, user_api="blas"):
+            tsne = TSNE(n_components=2, random_state=self.random_state)
+            tsne_results = tsne.fit_transform(self.topic_matrix)
         return tsne_results
+
 
     def generate_topic_table(self, output_file="outputs/topic_table_depressed.png"):
         """
@@ -642,33 +647,46 @@ class LDAFeatureExtractor(FeatureExtractor):
         print(f"Topic table for depressed posts saved to {output_file}")
         plt.show()
 
-    def visualize_tsne(self, tsne_results, output_file="outputs/tsne_visualization.png"):
+    def visualize_tsne(self, tsne_results, topic_matrix, num_topics, topic_categories, output_file="outputs/tsne_with_categories.png"):
         """
-        Visualize t-SNE results with only topic words displayed and save the plot.
+        Visualize t-SNE results with overarching category labels for each cluster.
         """
-        if not hasattr(self, 'topic_matrix') or self.topic_matrix is None:
-            raise ValueError("Topic matrix has not been generated. Run the analysis pipeline to generate it.")
+        if tsne_results is None or topic_matrix is None:
+            raise ValueError("t-SNE results and topic matrix must be provided.")
 
         # Cluster the topic matrix to group points by topic
-        clusters = KMeans(n_clusters=self.num_topics, random_state=self.random_state).fit_predict(self.topic_matrix)
+        clusters = KMeans(n_clusters=num_topics, random_state=42).fit_predict(topic_matrix)
 
         # Create figure
-        plt.figure(figsize=(10, 8))
+        plt.figure(figsize=(12, 10))
 
-        for i in range(self.num_topics):
+        for i in range(num_topics):
             indices = np.where(clusters == i)
             plt.scatter(tsne_results[indices, 0], tsne_results[indices, 1], label=f"Topic {i + 1}", alpha=0.6)
 
-        plt.title("t-SNE Visualization of LDA Topics for Depressed Posts")
+            # Add annotations for each cluster with overarching categories
+            cluster_center = tsne_results[indices].mean(axis=0)
+            category = topic_categories.get(i, f"Topic {i + 1}")  # Fallback to "Topic N" if no category is defined
+            plt.text(
+                cluster_center[0],
+                cluster_center[1],
+                category,
+                fontsize=10,
+                ha="center",
+                bbox=dict(boxstyle="round,pad=0.3", edgecolor="gray", facecolor="white", alpha=0.6),
+            )
+
+        plt.title("t-SNE Visualization of LDA Topics with Overarching Categories")
         plt.xlabel("t-SNE Dimension 1")
         plt.ylabel("t-SNE Dimension 2")
-        plt.legend()
+        plt.legend(loc="best", bbox_to_anchor=(1.05, 1), fontsize=9)
         plt.grid(True)
 
+        # Save the plot
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         plt.savefig(output_file, bbox_inches="tight", dpi=300)
-        print(f"t-SNE visualization saved to {output_file}")
-        plt.show()    
+        print(f"t-SNE visualization with categories saved to {output_file}")
+        plt.show()
 
     def run_feature_extraction(self):
         """
@@ -682,19 +700,62 @@ class LDAFeatureExtractor(FeatureExtractor):
 
     def run_feature_analysis(self):
         """
-        Pipeline for feature analysis: preprocess depressed posts, train LDA, generate t-SNE visualization, and topic table.
+        Pipeline for feature analysis: preprocess documents, train LDA, generate t-SNE visualization with overarching categories, and create topic table.
         """
+        # Filter documents for depression label (assuming label 1 corresponds to "depressed" posts)
         depressed_indices = [i for i, label in enumerate(self.labels) if label == 1]
         depressed_docs = [self.documents[i] for i in depressed_indices]
+
+        # Preprocess the subset of documents
         processed_docs = self.preprocess_documents_for_subset(depressed_docs)
+
+        # Train the LDA model
         self.train_lda(processed_docs)
+
+        # Extract topic distributions and compute topic matrix
         self.extract_topic_distributions()
         self.topic_matrix = self.topic_distribution_to_matrix()
-        self.tsne_results = self.run_tsne()
-        self.visualize_tsne(self.tsne_results)
-        self.generate_topic_table()
-        print("Feature analysis pipeline for depressed posts complete.")
 
+        # Apply t-SNE for dimensionality reduction
+        self.tsne_results = self.run_tsne()
+
+        # Overarching categories for topics
+        topic_categories = {
+            0: "Parenting and Family",
+            1: "Self-Improvement and Values",
+            2: "Finance and Banking",
+            3: "Planning and Relationships",
+            4: "Marriage and Family",
+            5: "Mental Health",
+            6: "Reflection and Motivation",
+            7: "Wishes and Connections",
+            8: "Curiosity and Interests",
+            9: "Fitness and Health",
+            10: "Help and Processes",
+            11: "Danish",
+            12: "Appearance and Perception",
+            13: "Action and Media",
+            14: "Life and Time",
+            15: "Time and Reflection",
+            16: "Jobs and Tasks",
+            17: "Anger and Love",
+            18: "Faith and Belief",
+            19: "Depression and Recovery",
+        }
+
+        # Visualize t-SNE with categories
+        self.visualize_tsne(
+            tsne_results=self.tsne_results,
+            topic_matrix=self.topic_matrix,
+            num_topics=self.num_topics,
+            topic_categories=topic_categories,
+            output_file="outputs/tsne_with_categories.png"
+        )
+
+        # Generate a topic table summarizing the top words for each topic
+        self.generate_topic_table(output_file="outputs/topic_table_depressed.png")
+
+        print("Feature analysis pipeline for depressed posts complete.")
 
 ###############################################################################
 #  SUMMARY / TABLE GENERATION FUNCTIONS
