@@ -2,11 +2,6 @@
 #  IMPORTS
 ###############################################################################
 import os
-import re
-import time
-from datetime import datetime
-import random
-import praw
 import nltk
 import pandas as pd
 import numpy as np
@@ -24,9 +19,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from scipy.stats import pearsonr
 from statsmodels.stats.multitest import multipletests
-from collections import defaultdict, Counter
-from tabulate import tabulate
-import matplotlib.pyplot as plt
+from collections import Counter
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -519,33 +512,17 @@ class LDAFeatureExtractor(FeatureExtractor):
         self.topic_distributions = None
         self.tsne_results = None
 
-    def preprocess_documents(self):
-        """
-        Preprocess documents: tokenize, remove stopwords, and stem.
-        """
+    def preprocess_documents(self, subset_documents=None):
         stop_words = set(stopwords.words('english'))
         stemmer = PorterStemmer()
-        processed_docs = [
-            [
-                stemmer.stem(word) for word in word_tokenize(doc.lower())
-                if word.isalpha() and word not in stop_words
-            ]
-            for doc in self.documents
-        ]
-        return processed_docs
+        documents_to_process = subset_documents if subset_documents is not None else self.documents
 
-    def preprocess_documents_for_subset(self, subset_documents):
-        """
-        Preprocess a subset of documents: tokenize, remove stopwords, and stem.
-        """
-        stop_words = set(stopwords.words('english'))
-        stemmer = PorterStemmer()
         processed_docs = [
             [
                 stemmer.stem(word) for word in word_tokenize(doc.lower())
                 if word.isalpha() and word not in stop_words
             ]
-            for doc in subset_documents
+            for doc in documents_to_process
         ]
         return processed_docs
 
@@ -686,7 +663,7 @@ class LDAFeatureExtractor(FeatureExtractor):
         """
         depressed_indices = [i for i, label in enumerate(self.labels) if label == 1]
         depressed_docs = [self.documents[i] for i in depressed_indices]
-        processed_docs = self.preprocess_documents_for_subset(depressed_docs)
+        processed_docs = self.preprocess_documents(depressed_docs)
         self.train_lda(processed_docs)
         self.extract_topic_distributions()
         self.topic_matrix = self.topic_distribution_to_matrix()

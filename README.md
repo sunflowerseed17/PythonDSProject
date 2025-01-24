@@ -44,7 +44,9 @@ This repository demonstrates a pipeline for **detecting depression-related posts
 │   ├── feature_extraction.py
 │   └── feature_extraction_func.py
 ├── model_training/
-│   └── model_training.py
+│   ├── model_training.py
+│   └── model_training_func.py
+├── outputs/
 └── README.md
 
 ```
@@ -56,7 +58,7 @@ This repository demonstrates a pipeline for **detecting depression-related posts
 - **`data_preprocessing/`**: Contains `data_preprocessing.py`, the script for text cleaning.  
 - **`feature_extraction/`**: Scripts (`feature_extraction.py`, `feature_extraction_func.py`) to extract N-gram, LDA, and Empath features.  
 - **`feature_analysis/`**: Contains `feature_analysis.py` for visualizing data (e.g., word clouds, correlation tables).  
-- **`feature_analysis_output/`**: Where images (word clouds, correlation plots) and CSVs (e.g. Empath correlation) get saved.  
+- **`outputs/`**: Where images (word clouds, correlation plots) and CSVs (e.g. Empath correlation) get saved.  
 - **`model_training/`**: Contains `model_training.py` to train/evaluate machine-learning models on extracted features.
 
 ---
@@ -95,7 +97,7 @@ This repository demonstrates a pipeline for **detecting depression-related posts
 
 5. **Feature Analysis**  
    - `python feature_analysis/feature_analysis.py`  
-   - Saves images (like word clouds) in `data/feature_analysis_output/`.
+   - Saves images (like word clouds) in `outputs/`.
 
 6. **Model Training**  
    - `python model_training/model_training.py`  
