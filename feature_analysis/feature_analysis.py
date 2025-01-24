@@ -4,28 +4,55 @@
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../feature_extraction"))
-from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor, EmpathFeatureExtractor, generate_summary_table, generate_empath_table # type: ignore
+from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor, EmpathFeatureExtractor, generate_summary_table, generate_empath_table  # type: ignore
+from threadpoolctl import threadpool_limits
 
+###############################################################################
+#  OUTPUT SETUP
+###############################################################################
 output_folder = "outputs"
 os.makedirs(output_folder, exist_ok=True)
 
+###############################################################################
+#  ANALYSIS PIPELINE
+###############################################################################
+
 # N-Gram Analysis
+print("Starting N-Gram Analysis...")
 ngram_extractor = NGramFeatureExtractor()
 ngram_extractor.extract_features()
 ngram_extractor.save_wordclouds(output_folder)
+print("N-Gram Analysis complete.\n")
 
 # Empath Analysis
+print("Starting Empath Analysis...")
 empath_extractor = EmpathFeatureExtractor()
 empath_extractor.extract_empath_features()
 empath_extractor.analyze_correlation()
 empath_extractor.save_correlation_table(output_folder)
+print("Empath Analysis complete.\n")
 
-# LDA Analysis
+# LDA Analysis with Enhanced t-SNE Visualization
+print("Starting LDA Analysis...")
 lda_extractor = LDAFeatureExtractor(num_topics=20)
 lda_extractor.run_feature_analysis()
+print("LDA Analysis complete.\n")
 
-# Getting the output table for number of features found in every extraction
-generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, f"{output_folder}/summary_table")
+# Generate Summary Table for All Features
+print("Generating summary table for feature extraction methods...")
+generate_summary_table(
+    ngram_extractor, empath_extractor, lda_extractor, f"{output_folder}/summary_table.png"
+)
+print("Summary table saved.\n")
 
-# Getting the output table for EMPATH feature correlations
-generate_empath_table("outputs/Empath_Correlation_Table.csv", f"{output_folder}/empath_table")
+# Generate Empath Correlation Table
+print("Generating Empath correlation table...")
+generate_empath_table(
+    f"{output_folder}/Empath_Correlation_Table.csv", f"{output_folder}/empath_table.png"
+)
+print("Empath correlation table saved.\n")
+
+###############################################################################
+#  COMPLETION MESSAGE
+###############################################################################
+print("All feature extraction and analysis steps are complete.")
