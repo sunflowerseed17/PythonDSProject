@@ -472,7 +472,7 @@ class EmpathFeatureExtractor(FeatureExtractor):
 
             # Look through each main category or subcategory
             for category, features in self.categories.items():
-                if isinstance(features, dict):  # e.g. "psychological_processes"
+                if isinstance(features, dict):  
                     for subcategory, subfeatures in features.items():
                         if feature in subfeatures:
                             results.append((f"{category} - {subcategory}", feature, correlation, p_value))
@@ -483,8 +483,6 @@ class EmpathFeatureExtractor(FeatureExtractor):
         return correlation_table
     
     def save_correlation_table(self, output_folder):
-        if self.correlation_results is None:
-            raise ValueError("Correlation results must be calculated before saving.")
         
         correlation_table = self.generate_correlation_table()
         file_path = os.path.join(output_folder, "Empath_Correlation_Table.csv")
@@ -684,7 +682,7 @@ class LDAFeatureExtractor(FeatureExtractor):
         # Filter documents for depression label (assuming label 1 corresponds to "depressed" posts)
         depressed_indices = [i for i, label in enumerate(self.labels) if label == 1]
         depressed_docs = [self.documents[i] for i in depressed_indices]
-        processed_docs = self.preprocess_documents_for_subset(depressed_docs)
+        processed_docs = self.preprocess_documents(depressed_docs)
         self.train_lda(processed_docs)
 
         # Extract topic distributions and compute topic matrix
@@ -791,17 +789,19 @@ def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, out
 # Creating a summary table for the correlations from the EMPATH features extracted
 def generate_empath_table(input_csv, output_file=None):
     empath_df = pd.read_csv(input_csv)
-
-    # Sort by p-value and filter the top features for display
     empath_df["Empath Category"] = empath_df["Empath Category"].str.capitalize()
     empath_df = empath_df.sort_values(by="P-Value").head(10).sort_values(by="Empath Category")
-    empath_df = empath_df.drop(columns=["Correlation"])
-
+    empath_df["P-Value"] = empath_df["P-Value"].apply(lambda x: f"{x:.3e}" if x < 0.001 else round(x, 3))
+    empath_df["Correlation"] = empath_df["Correlation"].round(3)
     empath_df.rename(
-        columns={"Empath Category": "Category", "Example word": "Example Word", "P value": "P-Value"}, inplace=True
+        columns={
+            "Empath Category": "Category",
+            "Example Word": "Example Word",
+        },
+        inplace=True,
     )
 
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(12, 6))
     ax.axis('tight')
     ax.axis('off')
     table = ax.table(
@@ -815,12 +815,12 @@ def generate_empath_table(input_csv, output_file=None):
     table.auto_set_column_width(col=list(range(len(empath_df.columns))))
     for key, cell in table.get_celld().items():
         row, col = key
-        if row == 0: 
+        if row == 0:  # Header row
             cell.set_text_props(weight="bold")
             cell.set_fontsize(14)
 
-
-
+ 
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     plt.savefig(output_file, bbox_inches="tight", dpi=300)
     print(f"Table saved to {output_file}")
     plt.show()

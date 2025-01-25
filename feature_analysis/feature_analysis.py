@@ -5,7 +5,6 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../feature_extraction"))
 from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor, EmpathFeatureExtractor, generate_summary_table, generate_empath_table  # type: ignore
-from threadpoolctl import threadpool_limits
 
 ###############################################################################
 #  OUTPUT SETUP
