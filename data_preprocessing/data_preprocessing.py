@@ -16,10 +16,11 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
 # Configure Reddit API credentials
+# Removed the credentials for pushing to github so my reddit account does not get hacked :(
 reddit = praw.Reddit(
-    client_id="ZaUY5qF9eLVVpD2OvHGEhg",
-    client_secret="djHnirfkPnZUNI7XNs4dKUflOKjmtQ",
-    user_agent="TextScraper by u/Jammberg",
+    client_id="", 
+    client_secret="",
+    user_agent="",
     check_for_async=False
 )
 
