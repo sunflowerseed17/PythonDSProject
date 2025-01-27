@@ -3,7 +3,7 @@
 ## Overview
 This project focuses on replicating Tadesse et al (2019) "Detection of Depression-Related Posts in Reddit Social Media Forum". We do this by performing feature extraction and classification using machine learning techniques. The text data is preprocessed to extract unigram and bigram features, using the Empath (instead of the LIWC) library and also performing an LDA analysis. Classifiers are trained to distinguish between depression-related and non-depression-related posts.
 
- # Detection of Depression-Related Posts in Reddit (Recreating Tadesse et al.)
+# Detection of Depression-Related Posts in Reddit (Recreating Tadesse et al.)
 
 This repository demonstrates a pipeline for **detecting depression-related posts in Reddit**—inspired by *Tadesse et al.*’s paper, “Detection of Depression-Related Posts in Reddit Social Media Forum.” The overall workflow includes:
 
@@ -14,9 +14,7 @@ This repository demonstrates a pipeline for **detecting depression-related posts
 5. **Training and Evaluating** ML models to distinguish depression posts from others.
 
 ---
-
 ## Repository Structure
-
 ```
 .
 ├── data/
@@ -55,12 +53,11 @@ This repository demonstrates a pipeline for **detecting depression-related posts
 
 - **`reddit_scraped_posts/`**: Raw text posts from Reddit.  
 - **`preprocessed_posts/`**: Cleaned/preprocessed text.  
-- **`data_preprocessing/`**: Contains `data_preprocessing.py`, the script for text cleaning.  
+- **`data_preprocessing/`**: Contains `data_preprocessing.py`, the script for text scraping and cleaning.  
 - **`feature_extraction/`**: Scripts (`feature_extraction.py`, `feature_extraction_func.py`) to extract N-gram, LDA, and Empath features.  
 - **`feature_analysis/`**: Contains `feature_analysis.py` for visualizing data (e.g., word clouds, correlation tables).  
 - **`outputs/`**: Where images (word clouds, correlation plots) and CSVs (e.g. Empath correlation) get saved.  
 - **`model_training/`**: Contains `model_training.py` to train/evaluate machine-learning models on extracted features.
-
 ---
 
 ## Goal: Recreating *Tadesse et al.*’s Approach
@@ -85,7 +82,7 @@ This repository demonstrates a pipeline for **detecting depression-related posts
    - `pip install -r requirements.txt` or manually install `praw`, `nltk`, `scikit-learn`, `matplotlib`, `pandas`, `empath`, `gensim`, etc.
 
 2. **Scrape Data (Optional)**  
-   - If you wish to update or expand the raw data, edit/run the scraping script (not fully shown here) to populate `data/reddit_scraped_posts/` with `.txt` files.
+   - If you wish to update or expand the raw data, edit/run the scraping script (not fully shown here) to populate `data/reddit_scraped_posts/` with `.txt` files. Though you will likely end up with a different dataset than if you scrape the data yourself.
 
 3. **Preprocess**  
    - `python data_preprocessing/data_preprocessing.py`  
@@ -101,7 +98,9 @@ This repository demonstrates a pipeline for **detecting depression-related posts
 
 6. **Model Training**  
    - `python model_training/model_training.py`  
-   - Loads one or more CSV feature sets, trains selected ML models, prints and saves evaluation metrics (accuracy, F1, etc.).
+   - Loads one or more CSV feature sets, trains selected ML models, prints and saves evaluation metrics (accuracy, F1, etc.).*
+
+Your results will then be saved in the outputs folder, the data folder, and the model_results image.
 
 ---
 
