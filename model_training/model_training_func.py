@@ -49,32 +49,28 @@ class ModelTrainer:
     #    - Uses 'label' from the first CSV (drops 'label' from subsequent ones)
     ###############################################################################
     def load_and_combine_data(self):
-        """
-        Loads CSV files, extracting labels from the first CSV, then merges
-        all feature columns side-by-side. Ensures row counts are consistent.
-        """
-        data_frames = [pd.read_csv(file) for file in self.csv_files]
+        try:
+            data_frames = [pd.read_csv(file) for file in self.csv_files]
+        except FileNotFoundError as e:
+            raise FileNotFoundError(f"One or more files could not be found: {e}")
+        except pd.errors.EmptyDataError as e:
+            raise ValueError(f"One or more CSV files are empty: {e}")
+        except Exception as e:
+            raise RuntimeError(f"Unexpected error while reading files: {e}")
 
-        # Ensure first CSV has label
         if 'label' not in data_frames[0].columns:
             raise ValueError("The first CSV must contain a 'label' column.")
 
-        # Extract label from the first CSV
         labels = data_frames[0]['label']
-
-        # Remove 'label' from subsequent CSVs
         for df in data_frames[1:]:
             if 'label' in df.columns:
                 df.drop(columns=['label'], inplace=True)
 
-        # Concatenate side-by-side
         combined_data = pd.concat(data_frames, axis=1)
 
-        # Sanity check
         if len(labels) != len(combined_data):
             raise ValueError("Mismatch between features and labels row counts.")
 
-        # Store final combined data with label appended
         self.data = combined_data
         self.data['label'] = labels
 
@@ -120,11 +116,16 @@ class ModelTrainer:
     # 3) Train the Model
     ###############################################################################
     def train_model(self):
-        """
-        Instantiate and train the scikit-learn model on the training set.
-        """
-        self.model = self.model_class(**self.model_params)
-        self.model.fit(self.X_train, self.y_train)
+        try:
+            self.model = self.model_class(**self.model_params)
+            self.model.fit(self.X_train, self.y_train)
+        except TypeError as e:
+            raise TypeError(f"Invalid model parameters: {e}")
+        except ValueError as e:
+            raise ValueError(f"Error during model training: {e}")
+        except Exception as e:
+            raise RuntimeError(f"Unexpected error during training: {e}")
+
 
     ###############################################################################
     # 4) Evaluate Model
@@ -132,29 +133,26 @@ class ModelTrainer:
     #    - Also compute 10-fold CV accuracy on the training set
     ###############################################################################
     def evaluate_model(self):
-        """
-        Predict on the test set, compute classification metrics, and
-        perform 10-fold cross-validation on the training set.
-        """
-        y_pred = self.model.predict(self.X_test)
+        try:
+            y_pred = self.model.predict(self.X_test)
+        except ValueError as e:
+            raise ValueError(f"Error during prediction: {e}")
 
-        # Compute standard metrics
-        accuracy = accuracy_score(self.y_test, y_pred)
-        f1 = f1_score(self.y_test, y_pred, average='weighted')
-        precision = precision_score(self.y_test, y_pred, average='weighted')
-        recall = recall_score(self.y_test, y_pred, average='weighted')
+        try:
+            accuracy = accuracy_score(self.y_test, y_pred)
+            f1 = f1_score(self.y_test, y_pred, average='weighted')
+            precision = precision_score(self.y_test, y_pred, average='weighted')
+            recall = recall_score(self.y_test, y_pred, average='weighted')
+        except ValueError as e:
+            raise ValueError(f"Error calculating metrics: {e}")
 
-        # 10-fold cross-validation (in parallel if possible)
-        cv_scores = cross_val_score(
-            self.model,
-            self.X_train,
-            self.y_train,
-            cv=10,
-            scoring='accuracy',
-            n_jobs=-1
-        )
+        try:
+            cv_scores = cross_val_score(
+                self.model, self.X_train, self.y_train, cv=10, scoring='accuracy', n_jobs=-1
+            )
+        except ValueError as e:
+            raise ValueError(f"Cross-validation error: {e}")
 
-        # Store all results
         self.metrics = {
             "Model": self.model_name,
             "Test Accuracy": accuracy,
