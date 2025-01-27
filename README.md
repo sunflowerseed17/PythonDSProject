@@ -3,6 +3,8 @@
 ## Overview
 This project focuses on replicating Tadesse et al (2019) "Detection of Depression-Related Posts in Reddit Social Media Forum". We do this by performing feature extraction and classification using machine learning techniques. The text data is preprocessed to extract unigram and bigram features, using the Empath (instead of the LIWC) library and also performing an LDA analysis. Classifiers are trained to distinguish between depression-related and non-depression-related posts.
 
+Our paper discussing the process of replication, similarities, and differences is in this repository as Replication of **Tadesse et al.pdf**
+
 # Detection of Depression-Related Posts in Reddit (Recreating Tadesse et al.)
 
 This repository demonstrates a pipeline for **detecting depression-related posts in Reddit**—inspired by *Tadesse et al.*’s paper, “Detection of Depression-Related Posts in Reddit Social Media Forum.” The overall workflow includes:
