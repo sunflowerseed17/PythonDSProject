@@ -2,12 +2,11 @@
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[project]
 [tool.poetry]
 name = "reddit-depression-detection"
 version = "0.1.0"
 description = "Replicating Tadesse et al. (2019) for detecting depression-related Reddit posts."
-authors = ["Your Name <your.email@example.com>"]
+authors = ["Natasza Siwinska natsiwinska@gmail.com, Jamie Bergen"]
 license = "MIT"
 readme = "README.md"
 
@@ -27,12 +26,27 @@ pytest = "^7.4"
 [tool.poetry.scripts]
 run-feature-extraction = "feature_extraction.feature_extraction:main"
 run-feature-analysis = "feature_analysis.feature_analysis:main"
-run-model-training = "model_training_func.model_training:main"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project]
+name = "reddit-depression-detection"
+version = "0.1.0"
+description = "Replicating Tadesse et al. (2019) for detecting depression-related Reddit posts."
+readme = "README.md"
+license = "MIT"
+authors = ["Natasza Siwinska natsiwinska@gmail.com, Jamie Bergen"]
+dependencies = [
+    "nltk >=3.8",
+    "pandas >=1.5",
+    "numpy >=1.24",
+    "matplotlib >=3.6",
+    "scikit-learn >=1.2",
+    "gensim >=4.3",
+    "wordcloud >=1.9",
+    "empath >=0.89",
+    "statsmodels >=0.14",
+    "pytest >=7.4"
+]
 
 [project.urls]
-"Source Code" = "https://github.com/yourusername/PythonDSProject"
+"Source Code" = "https://github.com/sunflowerseed17/PythonDSProject"
 "Paper Reference" = "https://ieeexplore.ieee.org/document/8710005"
