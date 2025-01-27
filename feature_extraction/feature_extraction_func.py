@@ -1,31 +1,34 @@
 ###############################################################################
 #  IMPORTS
 ###############################################################################
-import os
-import nltk
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from math import log
-from sklearn.conftest import threadpool_limits
-from wordcloud import WordCloud
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.manifold import TSNE
-from sklearn.cluster import KMeans
-from empath import Empath
-from gensim import corpora
-from gensim.models import LdaModel
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
-from scipy.stats import pearsonr
-from statsmodels.stats.multitest import multipletests
-from collections import defaultdict, Counter
-from tabulate import tabulate
-import matplotlib.pyplot as plt
-nltk.download('punkt')
-nltk.download('stopwords')
-
+try:
+    import os
+    import nltk
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from math import log
+    from sklearn.conftest import threadpool_limits
+    from wordcloud import WordCloud
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.manifold import TSNE
+    from sklearn.cluster import KMeans
+    from empath import Empath
+    from gensim import corpora
+    from gensim.models import LdaModel
+    from nltk.corpus import stopwords
+    from nltk.tokenize import word_tokenize
+    from nltk.stem import PorterStemmer
+    from scipy.stats import pearsonr
+    from statsmodels.stats.multitest import multipletests
+    from collections import defaultdict, Counter
+    from tabulate import tabulate
+    import matplotlib.pyplot as plt
+    nltk.download('punkt')
+    nltk.download('stopwords')
+except ImportError as e:
+    print(f"Error importing modules: {e}")
+    raise
 
 ###############################################################################
 #  BASE CLASS
@@ -37,12 +40,6 @@ class FeatureExtractor:
         os.makedirs(self.output_folder, exist_ok=True)
 
     def load_documents_and_labels(self):
-        """
-        Loads text files from depression, standard, and breastcancer folders.
-        *Important modification*: We skip the metadata (Subreddit, Title, Author, etc.)
-        by reading only from the first empty line onward, so that the word clouds
-        do NOT include those metadata strings.
-        """
         folders = {
             "depression": {"path": "data/preprocessed_posts/depression", "label": 1},
             "standard": {"path": "data/preprocessed_posts/standard", "label": 0},
@@ -54,31 +51,32 @@ class FeatureExtractor:
         for category, data in folders.items():
             folder_path = data["path"]
             if not os.path.exists(folder_path):
-                print(f"Warning: folder {folder_path} does not exist.")
+                print(f"Warning: Folder '{folder_path}' does not exist.")
                 continue
-            
+
             for file_name in os.listdir(folder_path):
                 file_path = os.path.join(folder_path, file_name)
                 if not file_path.lower().endswith(".txt"):
                     continue  # Skip any non-text files
 
-                with open(file_path, 'r', encoding='utf-8') as file:
-                    lines = file.readlines()
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        lines = file.readlines()
+                        content_start = next(
+                            (i + 1 for i, line in enumerate(lines) if not line.strip()), 0
+                        )
+                        post_content = ' '.join(lines[content_start:]).strip()
 
-                    # Find the first empty line (which separates metadata from actual post text).
-                    # We'll read from that point onwards.
-                    content_start = 0
-                    for i, line in enumerate(lines):
-                        if not line.strip():
-                            content_start = i + 1
-                            break
-
-                    # Now extract only the actual post content
-                    post_content = ' '.join(lines[content_start:]).strip()
-
-                    documents.append(post_content)
-                    labels.append(data["label"])
-                    total_loaded += 1
+                        if post_content:
+                            documents.append(post_content)
+                            labels.append(data["label"])
+                            total_loaded += 1
+                except FileNotFoundError:
+                    print(f"Error: File '{file_path}' not found.")
+                except PermissionError:
+                    print(f"Error: Permission denied for file '{file_path}'.")
+                except Exception as e:
+                    print(f"Unexpected error reading file '{file_path}': {e}")
 
         print(f"Loaded {total_loaded} documents (only the post content).")
         return documents, labels
@@ -528,15 +526,25 @@ class LDAFeatureExtractor(FeatureExtractor):
         return processed_docs
 
     def train_lda(self, processed_docs):
-        """
-        Train the LDA model.
-        """
-        self.dictionary = corpora.Dictionary(processed_docs)
-        self.corpus = [self.dictionary.doc2bow(doc) for doc in processed_docs]
-        self.lda_model = LdaModel(
-            self.corpus, num_topics=self.num_topics, id2word=self.dictionary, passes=self.passes,
-            random_state=self.random_state
-        )
+        if not processed_docs:
+            raise ValueError("Error: No documents provided for LDA training.")
+
+        try:
+            self.dictionary = corpora.Dictionary(processed_docs)
+            self.corpus = [self.dictionary.doc2bow(doc) for doc in processed_docs]
+            self.lda_model = LdaModel(
+                self.corpus,
+                num_topics=self.num_topics,
+                id2word=self.dictionary,
+                passes=self.passes,
+                random_state=self.random_state
+            )
+        except ValueError as e:
+            print(f"ValueError during LDA training: {e}")
+            raise
+        except Exception as e:
+            print(f"Unexpected error during LDA training: {e}")
+            raise
 
     def extract_topic_distributions(self):
         """
@@ -575,17 +583,24 @@ class LDAFeatureExtractor(FeatureExtractor):
 
 
     def run_tsne(self):
-        """
-        Apply t-SNE for dimensionality reduction on the topic matrix with thread control.
-        """
-        if not hasattr(self, 'topic_matrix') or self.topic_matrix is None:
-            raise ValueError("Topic matrix has not been generated. Run the analysis pipeline to generate it.")
+        if self.topic_distributions is None:
+            raise ValueError("Error: Topic distributions are not computed. Run `extract_topic_distributions()` first.")
 
-        print(f"Running t-SNE on topic matrix with shape: {self.topic_matrix.shape}")
-        with threadpool_limits(limits=1, user_api="blas"):
-            tsne = TSNE(n_components=2, random_state=self.random_state)
-            tsne_results = tsne.fit_transform(self.topic_matrix)
-        return tsne_results
+        try:
+            topic_matrix = self.topic_distribution_to_matrix()
+            with threadpool_limits(limits=1, user_api="blas"):
+                tsne = TSNE(n_components=2, random_state=self.random_state)
+                tsne_results = tsne.fit_transform(topic_matrix)
+            return tsne_results
+        except MemoryError:
+            print("Error: t-SNE computation exceeded memory limits. Try reducing the dataset size.")
+            raise
+        except ValueError as e:
+            print(f"ValueError during t-SNE computation: {e}")
+            raise
+        except Exception as e:
+            print(f"Unexpected error during t-SNE computation: {e}")
+            raise
 
 
     def generate_topic_table(self, output_file="outputs/topic_table_depressed.png"):
