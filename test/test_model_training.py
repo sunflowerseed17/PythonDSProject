@@ -1,0 +1,2 @@
+import pytest
+from model_training_func import ModelTrainer
