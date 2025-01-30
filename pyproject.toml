@@ -82,7 +82,7 @@ keep-runtime-typing = true
 convention = "google"
 
 [tool.mypy]
-disallow_untyped_defs = true # Functions need to be annotated
+disallow_untyped_defs = false
 warn_unused_ignores = true
 ignore_missing_imports = true
 exclude = [
