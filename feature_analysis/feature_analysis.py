@@ -4,7 +4,10 @@
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../feature_extraction"))
-from feature_extraction_func import NGramFeatureExtractor, LDAFeatureExtractor, EmpathFeatureExtractor, generate_summary_table, generate_empath_table  # type: ignore
+from ngram_feature_extraction_func import NGramFeatureExtractor
+from empath_feature_extraction_func import EmpathFeatureExtractor
+from lda_feature_extraction_func import LDAFeatureExtractor
+from base_feature_extraction_func import generate_empath_table, generate_summary_table
 
 ###############################################################################
 #  OUTPUT SETUP

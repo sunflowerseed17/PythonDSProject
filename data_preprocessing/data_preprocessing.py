@@ -11,9 +11,9 @@ import praw
 import nltk
 nltk.download('stopwords')
 nltk.download('punkt')
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords  # noqa: E402
+from nltk.tokenize import word_tokenize  # noqa: E402
+from nltk.stem import PorterStemmer  # noqa: E402
 
 # Configure Reddit API credentials
 # Removed the credentials for pushing to github so my reddit account does not get hacked :(
