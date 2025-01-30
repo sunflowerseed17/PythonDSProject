@@ -94,13 +94,23 @@ class ModelTrainer:
         # If requested, stratify by label so class distribution remains consistent
         stratify_target = y if self.use_stratify else None
 
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
-            X,
-            y,
-            test_size=test_size,
-            random_state=self.random_state,
-            stratify=stratify_target
-        )
+        try:
+            self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
+                X,
+                y,
+                test_size=test_size,
+                random_state=self.random_state,
+                stratify=stratify_target
+            )
+        except ValueError as e:
+            # Fallback to non-stratified split if stratification fails
+            print(f"Warning: Stratified split failed. Using non-stratified split. Error: {e}")
+            self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
+                X,
+                y,
+                test_size=test_size,
+                random_state=self.random_state
+            )
 
         # Scale features
         self.X_train = self.scaler.fit_transform(self.X_train)
@@ -111,6 +121,7 @@ class ModelTrainer:
             self.pca = PCA(n_components=pca_components, random_state=self.random_state)
             self.X_train = self.pca.fit_transform(self.X_train)
             self.X_test = self.pca.transform(self.X_test)
+
 
     ###############################################################################
     # 3) Train the Model
@@ -147,8 +158,14 @@ class ModelTrainer:
             raise ValueError(f"Error calculating metrics: {e}")
 
         try:
+            # Dynamically determine n_splits based on the smallest class size
+            min_class_size = min(self.y_train.value_counts().min(), len(self.X_train))
+            n_splits = min(10, min_class_size)
+            if n_splits < 2:
+                raise ValueError("Not enough data points for cross-validation (n_splits must be >= 2).")
+
             cv_scores = cross_val_score(
-                self.model, self.X_train, self.y_train, cv=10, scoring='accuracy', n_jobs=-1
+                self.model, self.X_train, self.y_train, cv=n_splits, scoring='accuracy', n_jobs=-1
             )
         except ValueError as e:
             raise ValueError(f"Cross-validation error: {e}")
@@ -159,8 +176,8 @@ class ModelTrainer:
             "F1 Score": f1,
             "Precision": precision,
             "Recall": recall,
-            "CV Mean Accuracy": cv_scores.mean(),
-            "CV Std Dev": cv_scores.std()
+            "CV Mean Accuracy": cv_scores.mean() if n_splits >= 2 else None,
+            "CV Std Dev": cv_scores.std() if n_splits >= 2 else None
         }
 
     ###############################################################################

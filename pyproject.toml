@@ -47,7 +47,6 @@ extend-exclude = [
     "conf.py",
 ]
 target-version = "py39"
-lint.select = ["ALL"]
 lint.ignore = [
     "COM812",   # Conflicts with the formatter
     "ISC001",   # Conflicts with the formatter

@@ -7,7 +7,7 @@ import pandas as pd
 from empath import Empath
 from scipy.stats import pearsonr
 from statsmodels.stats.multitest import multipletests
-from base_feature_extraction_func import FeatureExtractor
+from feature_extraction.base_feature_extraction_func import FeatureExtractor
 
 ###############################################################################
 # EMPATH FEATURE-EXTRACTOR

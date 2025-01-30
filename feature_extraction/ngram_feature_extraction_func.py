@@ -9,7 +9,7 @@ from collections import Counter
 from math import log
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-from base_feature_extraction_func import FeatureExtractor
+from feature_extraction.base_feature_extraction_func import FeatureExtractor
 
 ###############################################################################
 # N-GRAM FEATURE EXTRACTOR

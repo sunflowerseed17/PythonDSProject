@@ -14,7 +14,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from sklearn.conftest import threadpool_limits
 import matplotlib.pyplot as plt
-from base_feature_extraction_func  import FeatureExtractor
+from feature_extraction.base_feature_extraction_func import FeatureExtractor
 
 ###############################################################################
 #  LDA FEATURE EXTRACTOR
