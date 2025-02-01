@@ -37,8 +37,8 @@ dev = [
 ]
 
 [tool.poetry.scripts]
-run-feature-extraction = "feature_extraction.feature_extraction:main"
-run-feature-analysis = "feature_analysis.feature_analysis:main"
+run-feature-extraction = "feature_extraction.feature_extraction"
+run-feature-analysis = "feature_analysis.feature_analysis"
 
 [tool.ruff]
 line-length = 120
@@ -84,9 +84,3 @@ convention = "google"
 disallow_untyped_defs = false
 warn_unused_ignores = true
 ignore_missing_imports = true
-exclude = [
-    "my-project-\\d+", # Ignore temporary folder created by setuptools when building an sdist
-    "venv.*/",
-    "build/",
-    "dist/",
-]

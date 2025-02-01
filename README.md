@@ -1,115 +1,255 @@
-# Python Data Science Replicability Project
+# **Tadesse et al Data Science Replicability Project**
 
-## Overview
-This project focuses on replicating Tadesse et al (2019) "Detection of Depression-Related Posts in Reddit Social Media Forum". We do this by performing feature extraction and classification using machine learning techniques. The text data is preprocessed to extract unigram and bigram features, using the Empath (instead of the LIWC) library and also performing an LDA analysis. Classifiers are trained to distinguish between depression-related and non-depression-related posts.
+## **Overview**
+This project replicates the study by Tadesse et al. (2019), *“Detection of Depression-Related Posts in Reddit Social Media Forum.”* We aim to classify depression-related posts on Reddit using machine learning techniques. The process involves **feature extraction**, **analysis**, and **model training**, with different methods such as **Empath features**, **N-grams**, and **LDA**.
 
-Our paper discussing the process of replication, similarities, and differences is in this repository as Replication of **Tadesse et al.pdf**
-
-# Detection of Depression-Related Posts in Reddit (Recreating Tadesse et al.)
-
-This repository demonstrates a pipeline for **detecting depression-related posts in Reddit**—inspired by *Tadesse et al.*’s paper, “Detection of Depression-Related Posts in Reddit Social Media Forum.” The overall workflow includes:
-
-1. **Scraping Raw Data** from Reddit.  
-2. **Preprocessing** and cleaning text.  
-3. **Extracting Features** (N-grams, Empath categories, LDA topics).  
-4. **Analyzing** those features (word clouds, correlation tables, etc.).  
-5. **Training and Evaluating** ML models to distinguish depression posts from others.
+Our replication findings, including key similarities and differences from the original work, are detailed in the **"Replication of Tadesse et al."** PDF file in this repository.
 
 ---
-## Repository Structure
-```
+
+## **Project Workflow**
+The workflow includes the following key steps:
+
+1. **Data Preprocessing**:
+   - Raw posts are scraped from subreddits (`r/depression`, `r/breastcancer`, and others).
+   - Text is cleaned (e.g., removing usernames, special characters, stopwords).
+
+2. **Feature Extraction**:
+   - Three types of features are extracted:
+     - **N-grams**: Unigram and bigram frequency features.
+     - **Empath**: Psycholinguistic features using the Empath library.
+     - **LDA**: Latent Dirichlet Allocation (LDA) topic modeling.
+
+3. **Feature Analysis**:
+   - Visualizations and correlation analysis (e.g., word clouds, correlation tables).
+
+4. **Model Training**:
+   - Machine learning models (e.g., SVM, Random Forest) are trained on the extracted features.
+   - Model evaluation is performed using metrics such as **accuracy**, **F1 score**, **precision**, and **recall**.
+
+5. **Testing**:
+   - Unit tests are implemented for **data preprocessing**, **feature extraction**, and **model training**.
+
+---
+
+## **Repository Structure**
+```plaintext
 .
-├── data/
-│   ├── feature_analysis_output/
-│   │   ├── breast_cancer_-_bigrams.png
-│   │   ├── breast_cancer_-_unigrams.png
-│   │   ├── depression_-_bigrams.png
-│   │   ├── depression_-_unigrams.png
-│   │   ├── Empath_Correlation_Table.csv
-│   │   ├── standard_-_bigrams.png
-│   │   └── standard_-_unigrams.png
-│   ├── preprocessed_posts/
-│   │   ├── breastcancer/
-│   │   ├── depression/
-│   │   └── standard/
-│   ├── reddit_scraped_posts/
-│   │   ├── breastcancer/
-│   │   ├── depression/
-│   │   └── standard/
-│   └── data_preprocessing/
+├── data/                          # Stores raw, preprocessed, and extracted feature data
+│   ├── feature_analysis_output/    # Visuals and CSVs generated from feature analysis
+│   ├── preprocessed_posts/         # Cleaned and preprocessed Reddit posts
+│   ├── reddit_scraped_posts/       # Raw posts collected from various subreddits
+│   └── data_preprocessing/         # Scripts for scraping and cleaning data
 │       └── data_preprocessing.py
-├── feature_analysis/
+├── feature_extraction/             # Feature extraction methods
+│   ├── feature_extraction.py       # Main script for feature extraction
+│   ├── feature_extraction_func.py  # Defines functions for feature extraction
+│   ├── ngram_feature_extraction.py # N-gram extraction methods
+│   ├── lda_feature_extraction.py   # LDA topic modeling methods
+│   └── empath_feature_extraction.py # Empath feature extraction and analysis
+├── feature_analysis/               # Visualization and analysis scripts
 │   └── feature_analysis.py
-├── feature_extraction/
-│   ├── feature_extraction.py
-│   └── feature_extraction_func.py
-├── model_training/
-│   ├── model_training.py
-│   └── model_training_func.py
-├── outputs/
+├── model_training/                 # Model training and evaluation scripts
+│   ├── model_training.py           # Main model training script
+│   └── model_training_func.py      # Defines functions for training models
+├── test/                           # Unit tests for various components
+│   ├── test_data_preprocessing.py  # Tests for data preprocessing
+│   ├── test_feature_extraction.py  # Tests for feature extraction
+│   └── test_model_training.py      # Tests for model training
+├── outputs/                        # Outputs from analysis and model evaluation
+├── pyproject.toml                  # Defines build requirements, dependencies, linting, etc.
+├── tox.ini                         # Automates testing, linting, and builds
 └── README.md
 
-```
+### **Main Components**
 
-### Main Folders
+*   **data/**: Organized in stages (raw, preprocessed, feature-extracted data). Contains:
+    
+    *   **reddit\_scraped\_posts/**: Raw scraped data from Reddit.
+        
+    *   **preprocessed\_posts/**: Cleaned, preprocessed text.
+        
+    *   **data\_preprocessing/**: Scripts for scraping and preprocessing data.
+        
+*   **feature\_extraction/**: Implements multiple feature extraction methods:
+    
+    *   **ngram\_feature\_extraction.py**: Extracts unigrams, bigrams, and filters based on Pointwise Mutual Information (PMI).
+        
+    *   **lda\_feature\_extraction.py**: Prepares documents, trains LDA models, and generates topic distributions.
+        
+    *   **empath\_feature\_extraction.py**: Extracts psycholinguistic features and computes correlations.
+        
+*   **feature\_analysis/**: Analyzes extracted features, generating visualizations like word clouds and correlation tables.
+    
+*   **model\_training/**: Trains and evaluates ML models, saving performance metrics and results.
+    
+*   **test/**: Contains unit tests for:
+    
+    *   **test\_data\_preprocessing.py**: Tests preprocessing functions.
+        
+    *   **test\_feature\_extraction.py**: Tests N-gram, LDA, and Empath feature extraction.
+        
+    *   **test\_model\_training.py**: Tests model loading, training, and evaluation.
+        
 
-- **`reddit_scraped_posts/`**: Raw text posts from Reddit.  
-- **`preprocessed_posts/`**: Cleaned/preprocessed text.  
-- **`data_preprocessing/`**: Contains `data_preprocessing.py`, the script for text scraping and cleaning.  
-- **`feature_extraction/`**: Scripts (`feature_extraction.py`, `feature_extraction_func.py`) to extract N-gram, LDA, and Empath features.  
-- **`feature_analysis/`**: Contains `feature_analysis.py` for visualizing data (e.g., word clouds, correlation tables).  
-- **`outputs/`**: Where images (word clouds, correlation plots) and CSVs (e.g. Empath correlation) get saved.  
-- **`model_training/`**: Contains `model_training.py` to train/evaluate machine-learning models on extracted features.
----
+**Running the Project**
+-----------------------
 
-## Goal: Recreating *Tadesse et al.*’s Approach
+### **1\. Install Dependencies**
 
-*Tadesse et al.* introduced a multi-faceted approach for **detecting depression** in Reddit posts, using linguistic and topic-based features. This repository implements a similar pipeline:
+*   Ensure you have **Python 3.9+** installed.
+    
+*   bashCopyEditpip install -r requirements.txt
+    
 
-1. **Scrape** real Reddit data, focusing on `r/depression`, plus  control groups (`r/breastcancer`) and other random subreddits (labeled “standard”).  
-2. **Clean/Preprocess** the text (remove stopwords, usernames, etc.).  
-3. **Extract Features**:
-   - **N-grams** via TF-IDF  
-   - **Empath** for psycholinguistic features  
-   - **LDA** for topic modeling  
-4. **Train and Evaluate** classification models (e.g., SVM, Random Forest).  
-5. **Analyze** each model’s performance using accuracy, F1, precision, and recall.
+### **2\. Run Data Preprocessing**
 
----
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython data_preprocessing/data_preprocessing.py   `
 
-## Usage
+*   Processes raw Reddit posts and saves cleaned text to data/preprocessed\_posts/.
+    
 
-1. **Install Dependencies**  
-   - Python 3.9+ recommended.  
-   - `pip install -r requirements.txt` or manually install `praw`, `nltk`, `scikit-learn`, `matplotlib`, `pandas`, `empath`, `gensim`, etc.
+### **3\. Run Feature Extraction**
 
-2. **Scrape Data (Optional)**  
-   - If you wish to update or expand the raw data, edit/run the scraping script (not fully shown here) to populate `data/reddit_scraped_posts/` with `.txt` files. Though you will likely end up with a different dataset than if you scrape the data yourself.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython feature_extraction/feature_extraction.py   `
 
-3. **Preprocess**  
-   - `python data_preprocessing/data_preprocessing.py`  
-   - Produces cleaned `.txt` files in `data/preprocessed_posts/`.
+*   Extracts **N-gram**, **Empath**, and **LDA** features.
+    
+*   Outputs CSV files (e.g., unigram\_features\_with\_labels.csv) in the feature output folder.
+    
 
-4. **Feature Extraction**  
-   - `python feature_extraction/feature_extraction.py`  
-   - Generates CSV files (e.g., `unigram_features_with_labels.csv`, `lda_topic_distributions_with_labels.csv`) in `data/feature_extracted_data/` (or wherever configured).
+### **4\. Run Feature Analysis**
 
-5. **Feature Analysis**  
-   - `python feature_analysis/feature_analysis.py`  
-   - Saves images (like word clouds) in `outputs/`.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython feature_analysis/feature_analysis.py   `
 
-6. **Model Training**  
-   - `python model_training/model_training.py`  
-   - Loads one or more CSV feature sets, trains selected ML models, prints and saves evaluation metrics (accuracy, F1, etc.).*
+*   Generates visualizations like word clouds and saves them to outputs/.
+    
 
-Your results will then be saved in the outputs folder, the data folder, and the model_results image.
+### **5\. Train Machine Learning Models**
 
----
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython model_training/model_training.py   `
 
-## References
+*   Loads feature CSVs, trains models, and evaluates performance.
+    
+*   Saves accuracy, F1 scores, and confusion matrices to outputs/.
+    
 
-- **Paper**: M. M. Tadesse, H. Lin, B. Xu, and L. Yang, “Detection of Depression-Related Posts in Reddit Social Media Forum,” *IEEE Access*, vol. 7, pp. 44883–44893, 2019.  
-- **NLTK & scikit-learn** used heavily for text processing and classification.  
-- **Empath** for psycholinguistic feature extraction.  
-- **Gensim** for LDA topic modeling.
----
+### **6\. Run Tests**
+
+*   Use **tox** to automate testing and linting:
+    
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEdittox   `
+
+**References**
+--------------
+
+*   **Paper**: M. M. Tadesse, H. Lin, B. Xu, and L. Yang, “Detection of Depression-Related Posts in Reddit Social Media Forum,” _IEEE Access_, vol. 7, pp. 44883–44893, 2019.
+    
+*   **Dependencies**:
+    
+    *   **NLTK**, **scikit-learn**: Text processing and machine learning.
+        
+    *   **Empath**: Psycholinguistic feature extraction.
+        
+    *   **Gensim**: LDA topic modeling.
+        
+    *   **Pytest**: For unit testing.
+        
+    *   **Ruff** and **Mypy**: For linting and static type checks.
+### **Main Components**
+
+*   **data/**: Organized in stages (raw, preprocessed, feature-extracted data). Contains:
+    
+    *   **reddit\_scraped\_posts/**: Raw scraped data from Reddit.
+        
+    *   **preprocessed\_posts/**: Cleaned, preprocessed text.
+        
+    *   **data\_preprocessing/**: Scripts for scraping and preprocessing data.
+        
+*   **feature\_extraction/**: Implements multiple feature extraction methods:
+    
+    *   **ngram\_feature\_extraction.py**: Extracts unigrams, bigrams, and filters based on Pointwise Mutual Information (PMI).
+        
+    *   **lda\_feature\_extraction.py**: Prepares documents, trains LDA models, and generates topic distributions.
+        
+    *   **empath\_feature\_extraction.py**: Extracts psycholinguistic features and computes correlations.
+        
+*   **feature\_analysis/**: Analyzes extracted features, generating visualizations like word clouds and correlation tables.
+    
+*   **model\_training/**: Trains and evaluates ML models, saving performance metrics and results.
+    
+*   **test/**: Contains unit tests for:
+    
+    *   **test\_data\_preprocessing.py**: Tests preprocessing functions.
+        
+    *   **test\_feature\_extraction.py**: Tests N-gram, LDA, and Empath feature extraction.
+        
+    *   **test\_model\_training.py**: Tests model loading, training, and evaluation.
+        
+
+**Running the Project**
+-----------------------
+
+### **1\. Install Dependencies**
+
+*   Ensure you have **Python 3.9+** installed.
+    
+*   bashCopyEditpip install -r requirements.txt
+    
+
+### **2\. Run Data Preprocessing**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython data_preprocessing/data_preprocessing.py   `
+
+*   Processes raw Reddit posts and saves cleaned text to data/preprocessed\_posts/.
+    
+
+### **3\. Run Feature Extraction**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython feature_extraction/feature_extraction.py   `
+
+*   Extracts **N-gram**, **Empath**, and **LDA** features.
+    
+*   Outputs CSV files (e.g., unigram\_features\_with\_labels.csv) in the feature output folder.
+    
+
+### **4\. Run Feature Analysis**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython feature_analysis/feature_analysis.py   `
+
+*   Generates visualizations like word clouds and saves them to outputs/.
+    
+
+### **5\. Train Machine Learning Models**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditpython model_training/model_training.py   `
+
+*   Loads feature CSVs, trains models, and evaluates performance.
+    
+*   Saves accuracy, F1 scores, and confusion matrices to outputs/.
+    
+
+### **6\. Run Tests**
+
+*   Use **tox** to automate testing and linting:
+    
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEdittox   `
+
+**References**
+--------------
+
+*   **Paper**: M. M. Tadesse, H. Lin, B. Xu, and L. Yang, “Detection of Depression-Related Posts in Reddit Social Media Forum,” _IEEE Access_, vol. 7, pp. 44883–44893, 2019.
+    
+*   **Dependencies**:
+    
+    *   **NLTK**, **scikit-learn**: Text processing and machine learning.
+        
+    *   **Empath**: Psycholinguistic feature extraction.
+        
+    *   **Gensim**: LDA topic modeling.
+        
+    *   **Pytest**: For unit testing.
+        
+    *   **Ruff** and **Mypy**: For linting and static type checks
