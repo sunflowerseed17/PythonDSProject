@@ -37,30 +37,30 @@ The workflow includes the following key steps:
 ## **Repository Structure**
 ```plaintext
 .
-├── data/                          # Stores raw, preprocessed, and extracted feature data
-│   ├── feature_analysis_output/    # Visuals and CSVs generated from feature analysis
-│   ├── preprocessed_posts/         # Cleaned and preprocessed Reddit posts
-│   ├── reddit_scraped_posts/       # Raw posts collected from various subreddits
-│   └── data_preprocessing/         # Scripts for scraping and cleaning data
+├── data/                                 # Stores raw, preprocessed, and extracted feature data
+│   ├── feature_analysis_output/          # Visuals and CSVs generated from feature analysis
+│   ├── preprocessed_posts/               # Cleaned and preprocessed Reddit posts
+│   ├── reddit_scraped_posts/             # Raw posts collected from various subreddits
+│   └── data_preprocessing/               # Scripts for scraping and cleaning data
 │       └── data_preprocessing.py
-├── feature_extraction/             # Feature extraction methods
-│   ├── feature_extraction.py       # Main script for feature extraction
-│   ├── feature_extraction_func.py  # Defines functions for feature extraction
-│   ├── ngram_feature_extraction.py # N-gram extraction methods
-│   ├── lda_feature_extraction.py   # LDA topic modeling methods
-│   └── empath_feature_extraction.py # Empath feature extraction and analysis
-├── feature_analysis/               # Visualization and analysis scripts
+├── feature_extraction/                   # Feature extraction methods
+│   ├── feature_extraction.py             # Main script for feature extraction
+│   ├── feature_extraction_func.py        # Defines functions for feature extraction
+│   ├── ngram_feature_extraction_func.py  # N-gram extraction methods
+│   ├── lda_feature_extraction_func.py    # LDA topic modeling methods
+│   └── empath_feature_extraction_func.py # Empath feature extraction and analysis
+├── feature_analysis/                     # Visualization and analysis scripts
 │   └── feature_analysis.py
-├── model_training/                 # Model training and evaluation scripts
-│   ├── model_training.py           # Main model training script
-│   └── model_training_func.py      # Defines functions for training models
-├── test/                           # Unit tests for various components
-│   ├── test_data_preprocessing.py  # Tests for data preprocessing
-│   ├── test_feature_extraction.py  # Tests for feature extraction
-│   └── test_model_training.py      # Tests for model training
-├── outputs/                        # Outputs from analysis and model evaluation
-├── pyproject.toml                  # Defines build requirements, dependencies, linting, etc.
-├── tox.ini                         # Automates testing, linting, and builds
+├── model_training/                       # Model training and evaluation scripts
+│   ├── model_training.py                 # Main model training script
+│   └── model_training_func.py            # Defines functions for training models
+├── test/                                 # Unit tests for various components
+│   ├── test_data_preprocessing.py        # Tests for data preprocessing
+│   ├── test_feature_extraction.py        # Tests for feature extraction
+│   └── test_model_training.py            # Tests for model training
+├── outputs/                              # Outputs from analysis and model evaluation
+├── pyproject.toml                        # Defines build requirements, dependencies, linting, etc.
+├── tox.ini                               # Automates testing, linting, and builds
 └── README.md
 ```
 
