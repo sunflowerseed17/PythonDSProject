@@ -1,7 +1,6 @@
 ###############################################################################
 #  IMPORTS
 ###############################################################################
-
 import os
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -10,11 +9,35 @@ from math import log
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from feature_extraction.base_feature_extraction_func import FeatureExtractor
+import logging
+
+###############################################################################
+# CONFIGURATION CONSTANTS
+###############################################################################
+UNIGRAM_FEATURES_FILENAME = "unigram_features_with_labels.csv"
+BIGRAM_FEATURES_FILENAME = "bigram_features_with_labels.csv"
+DEFAULT_PMI_THRESHOLD = 2.0
+
+# WordCloud settings
+WORDCLOUD_WIDTH = 800
+WORDCLOUD_HEIGHT = 400
+WORDCLOUD_BG_COLOR = 'white'
+WORDCLOUD_DPI = 300
+WORDCLOUD_FIG_SIZE = (10, 6)
+WORDCLOUD_TITLE_FONT_SIZE = 16
+
+###############################################################################
+# LOGGER CONFIGURATION
+###############################################################################
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
 ###############################################################################
 # N-GRAM FEATURE EXTRACTOR
 ###############################################################################
-
 class NGramFeatureExtractor(FeatureExtractor):
     def __init__(self, *, output_folder="data/feature_extracted_data", folders=None):
         super().__init__(folders=folders, output_folder=output_folder)
@@ -34,20 +57,20 @@ class NGramFeatureExtractor(FeatureExtractor):
         """
         Extract unigram and bigram features using TF-IDF.
         """
-        print("Extracting unigrams...")
+        logger.info("Extracting unigrams...")
         self.unigram_matrix = self.vectorizer_unigram.fit_transform(self.documents)
         self.unigram_feature_names = self.vectorizer_unigram.get_feature_names_out()
-        print(f"Number of unigram features: {len(self.unigram_feature_names)}")
+        logger.info("Number of unigram features: %d", len(self.unigram_feature_names))
 
-        print("Extracting bigrams...")
+        logger.info("Extracting bigrams...")
         self.bigram_matrix = self.vectorizer_bigram.fit_transform(self.documents)
         self.bigram_feature_names = self.vectorizer_bigram.get_feature_names_out()
-        print(f"Number of bigram features: {len(self.bigram_feature_names)}")
+        logger.info("Number of bigram features: %d", len(self.bigram_feature_names))
 
-        print("Extracting combined unigrams and bigrams...")
+        logger.info("Extracting combined unigrams and bigrams...")
         self.combined_matrix = self.vectorizer_combined.fit_transform(self.documents)
         self.combined_feature_names = self.vectorizer_combined.get_feature_names_out()
-        print(f"Number of combined unigram and bigram features: {len(self.combined_feature_names)}")
+        logger.info("Number of combined unigram and bigram features: %d", len(self.combined_feature_names))
 
         return self.unigram_matrix, self.bigram_matrix, self.combined_matrix
 
@@ -58,11 +81,13 @@ class NGramFeatureExtractor(FeatureExtractor):
         p_word2 = unigram_counts[word2] / sum(total_unigrams.values())
         return log(p_bigram / (p_word1 * p_word2), 2)
 
-    def filter_bigrams_by_pmi(self, threshold=2.0):
+    def filter_bigrams_by_pmi(self, threshold=DEFAULT_PMI_THRESHOLD):
         unigram_counts = Counter(word for doc in self.documents for word in doc.split())
-        bigram_counts = Counter(f"{doc[i]}{doc[i+1]}" 
-                                for doc in [d.split() for d in self.documents]
-                                for i in range(len(doc)-1))
+        bigram_counts = Counter(
+            f"{doc[i]} {doc[i+1]}"  # Added a space between words for clarity
+            for doc in [d.split() for d in self.documents]
+            for i in range(len(doc) - 1)
+        )
         valid_bigrams = {
             bigram: self.compute_pmi(bigram, unigram_counts, bigram_counts, unigram_counts)
             for bigram in self.bigram_feature_names
@@ -81,34 +106,34 @@ class NGramFeatureExtractor(FeatureExtractor):
         """
         Save unigram and bigram features with labels as CSV files.
         """
-        unigram_file = os.path.join(self.output_folder, "unigram_features_with_labels.csv")
-        bigram_file = os.path.join(self.output_folder, "bigram_features_with_labels.csv")
+        unigram_file = os.path.join(self.output_folder, UNIGRAM_FEATURES_FILENAME)
+        bigram_file = os.path.join(self.output_folder, BIGRAM_FEATURES_FILENAME)
 
         if not os.path.exists(unigram_file):
             unigram_df = pd.DataFrame(self.unigram_matrix.toarray(), columns=self.unigram_feature_names)
             unigram_df['label'] = self.labels
             unigram_df.to_csv(unigram_file, index=False)
-            print(f"Saved unigram features to {unigram_file}.")
+            logger.info("Saved unigram features to %s.", unigram_file)
         else:
-            print(f"Unigram features file already exists at {unigram_file}.")
+            logger.info("Unigram features file already exists at %s.", unigram_file)
 
         if not os.path.exists(bigram_file):
             bigram_df = pd.DataFrame(self.bigram_matrix.toarray(), columns=self.bigram_feature_names)
             bigram_df['label'] = self.labels
             bigram_df.to_csv(bigram_file, index=False)
-            print(f"Saved bigram features to {bigram_file}.")
+            logger.info("Saved bigram features to %s.", bigram_file)
         else:
-            print(f"Bigram features file already exists at {bigram_file}.")
+            logger.info("Bigram features file already exists at %s.", bigram_file)
 
     def compute_frequencies(self, feature_type="unigram"):
         """
         Compute frequencies of unigrams or bigrams for depression, breastcancer, and standard posts.
 
         Parameters:
-        feature_type (str): Specify 'unigram' or 'bigram' to compute respective frequencies.
+            feature_type (str): Specify 'unigram' or 'bigram' to compute respective frequencies.
 
         Returns:
-        tuple: Three dictionaries containing frequencies for depression, breastcancer, and standard posts.
+            tuple: Three dictionaries containing frequencies for depression, breastcancer, and standard posts.
         """
         if feature_type == "unigram":
             matrix = self.unigram_matrix
@@ -166,11 +191,15 @@ class NGramFeatureExtractor(FeatureExtractor):
             # Clean up frequencies by removing invalid or zero entries
             cleaned_frequencies = {word: freq for word, freq in frequencies.items() if not pd.isna(freq) and freq > 0}
             if not cleaned_frequencies:
-                print(f"Skipping {title} due to empty or invalid frequency data.")
+                logger.warning("Skipping %s due to empty or invalid frequency data.", title)
                 continue
 
             # Generate word cloud
-            wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(cleaned_frequencies)
+            wordcloud = WordCloud(
+                width=WORDCLOUD_WIDTH,
+                height=WORDCLOUD_HEIGHT,
+                background_color=WORDCLOUD_BG_COLOR
+            ).generate_from_frequencies(cleaned_frequencies)
             generated_wordclouds[title] = wordcloud  # Store the word cloud object
 
         return generated_wordclouds
@@ -183,10 +212,10 @@ class NGramFeatureExtractor(FeatureExtractor):
             file_path = os.path.join(output_folder, file_name)
 
             # Save the word cloud image
-            plt.figure(figsize=(10, 6))
+            plt.figure(figsize=WORDCLOUD_FIG_SIZE)
             plt.imshow(wordcloud, interpolation='bilinear')
             plt.axis('off')
-            plt.title(title, fontsize=16)
-            plt.savefig(file_path, bbox_inches='tight', dpi=300)
+            plt.title(title, fontsize=WORDCLOUD_TITLE_FONT_SIZE)
+            plt.savefig(file_path, bbox_inches='tight', dpi=WORDCLOUD_DPI)
             plt.close()  # Close the figure to avoid overlapping
-            print(f"Saved word cloud: {file_path}")
+            logger.info("Saved word cloud: %s", file_path)

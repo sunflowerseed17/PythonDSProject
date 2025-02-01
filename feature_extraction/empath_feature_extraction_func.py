@@ -1,20 +1,32 @@
 ###############################################################################
 #  IMPORTS
 ###############################################################################
-
 import os
 import pandas as pd
+import logging
+
 from empath import Empath
 from scipy.stats import pearsonr
 from statsmodels.stats.multitest import multipletests
 from feature_extraction.base_feature_extraction_func import FeatureExtractor
 
 ###############################################################################
+# CONFIGURATION CONSTANTS
+###############################################################################
+DEFAULT_OUTPUT_FOLDER = os.path.join("data", "feature_extracted_data")
+EMP_CORR_FILENAME = "Empath_Correlation_Table.csv"
+EMP_FEATURES_FILENAME = "empath_features_with_labels.csv"
+
+###############################################################################
+# LOGGER CONFIGURATION
+###############################################################################
+logger = logging.getLogger(__name__)
+
+###############################################################################
 # EMPATH FEATURE-EXTRACTOR
 ###############################################################################
-
 class EmpathFeatureExtractor(FeatureExtractor):
-    def __init__(self, *, output_folder="data/feature_extracted_data", folders=None):
+    def __init__(self, *, output_folder=DEFAULT_OUTPUT_FOLDER, folders=None):
         super().__init__(folders=folders, output_folder=output_folder)
         self.lexicon = Empath()
         self.features = None
@@ -32,7 +44,7 @@ class EmpathFeatureExtractor(FeatureExtractor):
                 "formal_language", "casual_language", "exclamations", 
                 "contractions", "word_complexity", "sentiment_words"
             ],
-                "psychological_processes": {
+            "psychological_processes": {
                 "affective": [
                     "positive_emotion", "negative_emotion", "joy", "anger", 
                     "sadness", "anxiety", "fear", "disgust", "love", 
@@ -136,11 +148,11 @@ class EmpathFeatureExtractor(FeatureExtractor):
         # Add labels to the features DataFrame
         if len(self.features) == len(self.labels):
             self.features['label'] = self.labels
-            print("Added label column to the extracted features.")
+            logger.info("Added label column to the extracted features.")
         else:
             raise ValueError("Mismatch between the number of features and labels.")
 
-        print(f"Extracted Empath features with shape: {self.features.shape}")
+        logger.info("Extracted Empath features with shape: %s", self.features.shape)
 
     def analyze_correlation(self):
         if self.features is None:
@@ -149,7 +161,7 @@ class EmpathFeatureExtractor(FeatureExtractor):
         # Remove constant columns
         constant_columns = self.features.columns[self.features.nunique() == 1]
         self.features.drop(columns=constant_columns, inplace=True, errors='ignore')
-        print(f"Removed constant columns: {list(constant_columns)}")
+        logger.info("Removed constant columns: %s", list(constant_columns))
 
         # Validate labels
         if len(set(self.labels)) == 1:
@@ -197,17 +209,16 @@ class EmpathFeatureExtractor(FeatureExtractor):
         return correlation_table
     
     def save_correlation_table(self, output_folder):
-        
         correlation_table = self.generate_correlation_table()
-        file_path = os.path.join(output_folder, "Empath_Correlation_Table.csv")
+        file_path = os.path.join(output_folder, EMP_CORR_FILENAME)
         correlation_table.to_csv(file_path, index=False)
-        print(f"Saved Empath correlation table: {file_path}")
+        logger.info("Saved Empath correlation table: %s", file_path)
 
     def save_features_and_results(self, overwrite=False):
         if self.features is not None:
-            feature_file = os.path.join(self.output_folder, "empath_features_with_labels.csv")
+            feature_file = os.path.join(self.output_folder, EMP_FEATURES_FILENAME)
             if overwrite or not os.path.exists(feature_file):
                 self.features.to_csv(feature_file, index=False)
-                print(f"Saved empath features with labels to {feature_file}.")
+                logger.info("Saved empath features with labels to %s.", feature_file)
             else:
-                print(f"Empath features file already exists at {feature_file}.")
+                logger.info("Empath features file already exists at %s.", feature_file)

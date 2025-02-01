@@ -1,10 +1,10 @@
 ###############################################################################
 #  IMPORTS
 ###############################################################################
-
 import os
 import numpy as np
 import pandas as pd
+import logging
 from gensim import corpora
 from gensim.models import LdaModel
 from sklearn.manifold import TSNE
@@ -17,11 +17,36 @@ import matplotlib.pyplot as plt
 from feature_extraction.base_feature_extraction_func import FeatureExtractor
 
 ###############################################################################
+# CONFIGURATION CONSTANTS
+###############################################################################
+DEFAULT_NUM_TOPICS = 70
+DEFAULT_PASSES = 15
+DEFAULT_RANDOM_STATE = 42
+DEFAULT_OUTPUT_FOLDER = os.path.join("data", "feature_extracted_data")
+
+LDA_TOPIC_DISTRIBUTIONS_FILENAME = "lda_topic_distributions_with_labels.csv"
+DEFAULT_TOPIC_TABLE_OUTPUT = os.path.join("outputs", "topic_table_depressed.png")
+DEFAULT_TSNE_OUTPUT = os.path.join("outputs", "tsne_with_categories.png")
+DEFAULT_DPI = 300
+
+TSNE_N_COMPONENTS = 2
+
+###############################################################################
+# LOGGER CONFIGURATION
+###############################################################################
+logging.basicConfig(
+    level=logging.INFO,  # Adjust level as needed
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+###############################################################################
 #  LDA FEATURE EXTRACTOR
 ###############################################################################
  
 class LDAFeatureExtractor(FeatureExtractor):
-    def __init__(self, *, num_topics=70, passes=15, output_folder="data/feature_extracted_data", random_state=42, folders=None):
+    def __init__(self, *, num_topics=DEFAULT_NUM_TOPICS, passes=DEFAULT_PASSES, 
+                 output_folder=DEFAULT_OUTPUT_FOLDER, random_state=DEFAULT_RANDOM_STATE, folders=None):
         super().__init__(folders=folders, output_folder=output_folder)
         self.num_topics = num_topics
         self.passes = passes
@@ -49,7 +74,6 @@ class LDAFeatureExtractor(FeatureExtractor):
     def train_lda(self, processed_docs):
         if not processed_docs:
             raise ValueError("Error: No documents provided for LDA training.")
-
         try:
             self.dictionary = corpora.Dictionary(processed_docs)
             self.corpus = [self.dictionary.doc2bow(doc) for doc in processed_docs]
@@ -61,10 +85,10 @@ class LDAFeatureExtractor(FeatureExtractor):
                 random_state=self.random_state
             )
         except ValueError as e:
-            print(f"ValueError during LDA training: {e}")
+            logger.error("ValueError during LDA training: %s", e, exc_info=True)
             raise
         except Exception as e:
-            print(f"Unexpected error during LDA training: {e}")
+            logger.error("Unexpected error during LDA training: %s", e, exc_info=True)
             raise
 
     def extract_topic_distributions(self):
@@ -93,38 +117,35 @@ class LDAFeatureExtractor(FeatureExtractor):
         if not self.topic_distributions:
             raise ValueError("Topic distributions are not extracted.")
 
-
         topic_matrix = self.topic_distribution_to_matrix()
         labels_array = np.array(self.labels)
         lda_features_df = pd.DataFrame(topic_matrix)
         lda_features_df['label'] = labels_array
 
-        lda_features_file = os.path.join(self.output_folder, "lda_topic_distributions_with_labels.csv")
+        lda_features_file = os.path.join(self.output_folder, LDA_TOPIC_DISTRIBUTIONS_FILENAME)
         self.save_to_csv(lda_features_df, lda_features_file)
-
+        logger.info("LDA topic distributions saved to %s", lda_features_file)
 
     def run_tsne(self):
         if self.topic_distributions is None:
             raise ValueError("Error: Topic distributions are not computed. Run `extract_topic_distributions()` first.")
-
         try:
             topic_matrix = self.topic_distribution_to_matrix()
             with threadpool_limits(limits=1, user_api="blas"):
-                tsne = TSNE(n_components=2, random_state=self.random_state)
+                tsne = TSNE(n_components=TSNE_N_COMPONENTS, random_state=self.random_state)
                 tsne_results = tsne.fit_transform(topic_matrix)
             return tsne_results
         except MemoryError:
-            print("Error: t-SNE computation exceeded memory limits. Try reducing the dataset size.")
+            logger.error("t-SNE computation exceeded memory limits. Try reducing the dataset size.", exc_info=True)
             raise
         except ValueError as e:
-            print(f"ValueError during t-SNE computation: {e}")
+            logger.error("ValueError during t-SNE computation: %s", e, exc_info=True)
             raise
         except Exception as e:
-            print(f"Unexpected error during t-SNE computation: {e}")
+            logger.error("Unexpected error during t-SNE computation: %s", e, exc_info=True)
             raise
 
-
-    def generate_topic_table(self, output_file="outputs/topic_table_depressed.png"):
+    def generate_topic_table(self, output_file=DEFAULT_TOPIC_TABLE_OUTPUT):
         """
         Generate a table summarizing LDA topics with most representative words for depressed posts.
         """
@@ -135,6 +156,7 @@ class LDAFeatureExtractor(FeatureExtractor):
             topics.append((topic_id, words))
 
         topic_df = pd.DataFrame(topics, columns=["Topics", "Most Representative Words"])
+        # Dynamic figure height based on number of topics
         fig, ax = plt.subplots(figsize=(12, len(topics) * 0.5))
         ax.axis('tight')
         ax.axis('off')
@@ -156,11 +178,12 @@ class LDAFeatureExtractor(FeatureExtractor):
                 cell.set_fontsize(12)
 
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        plt.savefig(output_file, bbox_inches="tight", dpi=300)
-        print(f"Topic table for depressed posts saved to {output_file}")
+        plt.savefig(output_file, bbox_inches="tight", dpi=DEFAULT_DPI)
+        logger.info("Topic table for depressed posts saved to %s", output_file)
         plt.show()
 
-    def visualize_tsne(self, tsne_results, topic_matrix, num_topics, topic_categories, output_file="outputs/tsne_with_categories.png"):
+    def visualize_tsne(self, tsne_results, topic_matrix, num_topics, topic_categories, 
+                       output_file=DEFAULT_TSNE_OUTPUT):
         """
         Visualize t-SNE results with overarching category labels for each cluster.
         """
@@ -168,9 +191,8 @@ class LDAFeatureExtractor(FeatureExtractor):
             raise ValueError("t-SNE results and topic matrix must be provided.")
 
         # Cluster the topic matrix to group points by topic
-        clusters = KMeans(n_clusters=num_topics, random_state=42).fit_predict(topic_matrix)
+        clusters = KMeans(n_clusters=num_topics, random_state=self.random_state).fit_predict(topic_matrix)
 
-        # Create figure
         plt.figure(figsize=(12, 10))
 
         for i in range(num_topics):
@@ -179,7 +201,7 @@ class LDAFeatureExtractor(FeatureExtractor):
 
             # Add annotations for each cluster with overarching categories
             cluster_center = tsne_results[indices].mean(axis=0)
-            category = topic_categories.get(i, f"Topic {i + 1}")  # Fallback to "Topic N" if no category is defined
+            category = topic_categories.get(i, f"Topic {i + 1}")  # Fallback if no category is defined
             plt.text(
                 cluster_center[0],
                 cluster_center[1],
@@ -195,10 +217,9 @@ class LDAFeatureExtractor(FeatureExtractor):
         plt.legend(loc="best", bbox_to_anchor=(1.05, 1), fontsize=9)
         plt.grid(True)
 
-        # Save the plot
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        plt.savefig(output_file, bbox_inches="tight", dpi=300)
-        print(f"t-SNE visualization with categories saved to {output_file}")
+        plt.savefig(output_file, bbox_inches="tight", dpi=DEFAULT_DPI)
+        logger.info("t-SNE visualization with categories saved to %s", output_file)
         plt.show()
 
     def run_feature_extraction(self):
@@ -209,13 +230,13 @@ class LDAFeatureExtractor(FeatureExtractor):
         self.train_lda(processed_docs)
         self.extract_topic_distributions()
         self.save_features()
-        print("Feature extraction pipeline complete.")
+        logger.info("Feature extraction pipeline complete.")
 
     def run_feature_analysis(self):
         """
-        Pipeline for feature analysis: preprocess documents, train LDA, generate t-SNE visualization with overarching categories, and create topic table.
+        Pipeline for feature analysis: preprocess documents for depressed posts, train LDA, generate t-SNE visualization with overarching categories, and create topic table.
         """
-        # Filter documents for depression label (assuming label 1 corresponds to "depressed" posts)
+        # Filter documents for depression label (assuming label 1 corresponds to depressed posts)
         depressed_indices = [i for i, label in enumerate(self.labels) if label == 1]
         depressed_docs = [self.documents[i] for i in depressed_indices]
         processed_docs = self.preprocess_documents(depressed_docs)
@@ -228,7 +249,7 @@ class LDAFeatureExtractor(FeatureExtractor):
         # Apply t-SNE for dimensionality reduction
         self.tsne_results = self.run_tsne()
 
-        # Overarching categories for topics
+        # Overarching categories for topics (example mapping)
         topic_categories = {
             0: "Parenting and Family",
             1: "Self-Improvement and Values",
@@ -258,10 +279,10 @@ class LDAFeatureExtractor(FeatureExtractor):
             topic_matrix=self.topic_matrix,
             num_topics=self.num_topics,
             topic_categories=topic_categories,
-            output_file="outputs/tsne_with_categories.png"
+            output_file=DEFAULT_TSNE_OUTPUT
         )
 
         # Generate a topic table summarizing the top words for each topic
-        self.generate_topic_table(output_file="outputs/topic_table_depressed.png")
+        self.generate_topic_table(output_file=DEFAULT_TOPIC_TABLE_OUTPUT)
 
-        print("Feature analysis pipeline for depressed posts complete.")
+        logger.info("Feature analysis pipeline for depressed posts complete.")

@@ -4,6 +4,22 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+import logging
+
+###############################################################################
+# LOGGER CONFIGURATION
+###############################################################################
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+###############################################################################
+# CONFIGURATION CONSTANTS
+###############################################################################
+DEFAULT_TEST_SIZE = 0.2
+DEFAULT_PCA_COMPONENTS = 50
 
 ###############################################################################
 # ModelTrainer Class
@@ -45,8 +61,8 @@ class ModelTrainer:
 
     ###############################################################################
     # 1) Load & Combine Data
-    #    - Merges features from multiple CSVs side by side
-    #    - Uses 'label' from the first CSV (drops 'label' from subsequent ones)
+    #    - Merges features from multiple CSVs side by side.
+    #    - Uses 'label' from the first CSV (drops 'label' from subsequent ones).
     ###############################################################################
     def load_and_combine_data(self):
         try:
@@ -73,14 +89,15 @@ class ModelTrainer:
 
         self.data = combined_data
         self.data['label'] = labels
+        logger.info("Data loaded and combined successfully.")
 
     ###############################################################################
     # 2) Preprocess Data
-    #    - Splits into Train/Test
-    #    - Scales via StandardScaler
-    #    - Optionally applies PCA for dimensionality reduction
+    #    - Splits into Train/Test.
+    #    - Scales via StandardScaler.
+    #    - Optionally applies PCA for dimensionality reduction.
     ###############################################################################
-    def preprocess_data(self, test_size=0.2, pca_components=50):
+    def preprocess_data(self, test_size=DEFAULT_TEST_SIZE, pca_components=DEFAULT_PCA_COMPONENTS):
         """
         Splits data into train/test sets, then applies scaling and optional PCA.
 
@@ -91,7 +108,6 @@ class ModelTrainer:
         X = self.data.iloc[:, :-1]  # All columns except the last ('label')
         y = self.data['label']
 
-        # If requested, stratify by label so class distribution remains consistent
         stratify_target = y if self.use_stratify else None
 
         try:
@@ -103,8 +119,7 @@ class ModelTrainer:
                 stratify=stratify_target
             )
         except ValueError as e:
-            # Fallback to non-stratified split if stratification fails
-            print(f"Warning: Stratified split failed. Using non-stratified split. Error: {e}")
+            logger.warning("Stratified split failed. Using non-stratified split. Error: %s", e)
             self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
                 X,
                 y,
@@ -116,12 +131,12 @@ class ModelTrainer:
         self.X_train = self.scaler.fit_transform(self.X_train)
         self.X_test = self.scaler.transform(self.X_test)
 
-        # PCA dimensionality reduction if desired
+        # Apply PCA if requested
         if pca_components and pca_components > 0:
             self.pca = PCA(n_components=pca_components, random_state=self.random_state)
             self.X_train = self.pca.fit_transform(self.X_train)
             self.X_test = self.pca.transform(self.X_test)
-
+        logger.info("Data preprocessed successfully.")
 
     ###############################################################################
     # 3) Train the Model
@@ -130,6 +145,7 @@ class ModelTrainer:
         try:
             self.model = self.model_class(**self.model_params)
             self.model.fit(self.X_train, self.y_train)
+            logger.info("Model trained successfully.")
         except TypeError as e:
             raise TypeError(f"Invalid model parameters: {e}")
         except ValueError as e:
@@ -137,11 +153,10 @@ class ModelTrainer:
         except Exception as e:
             raise RuntimeError(f"Unexpected error during training: {e}")
 
-
     ###############################################################################
     # 4) Evaluate Model
-    #    - Predict on test data, compute accuracy/f1/precision/recall
-    #    - Also compute 10-fold CV accuracy on the training set
+    #    - Predict on test data, compute accuracy/f1/precision/recall.
+    #    - Also compute 10-fold CV accuracy on the training set.
     ###############################################################################
     def evaluate_model(self):
         try:
@@ -158,7 +173,7 @@ class ModelTrainer:
             raise ValueError(f"Error calculating metrics: {e}")
 
         try:
-            # Dynamically determine n_splits based on the smallest class size
+            # Determine n_splits based on the smallest class size
             min_class_size = min(self.y_train.value_counts().min(), len(self.X_train))
             n_splits = min(10, min_class_size)
             if n_splits < 2:
@@ -179,21 +194,22 @@ class ModelTrainer:
             "CV Mean Accuracy": cv_scores.mean() if n_splits >= 2 else None,
             "CV Std Dev": cv_scores.std() if n_splits >= 2 else None
         }
+        logger.info("Model evaluation complete. Metrics: %s", self.metrics)
 
     ###############################################################################
     # 5) Run the Entire Pipeline
-    #    - Load, preprocess, train, evaluate
-    #    - Returns main metrics in %
+    #    - Load, preprocess, train, evaluate.
+    #    - Returns main metrics in percentage form.
     ###############################################################################
     def run_pipeline(self, pca_components=None):
         """
         High-level method to load data, preprocess, train, and evaluate in sequence.
 
         Args:
-            pca_components (int or None): If provided, apply PCA to reduce feature dims.
+            pca_components (int or None): If provided, apply PCA to reduce feature dimensions.
 
         Returns:
-            dict: Contains main metrics in percentage form for quick viewing.
+            dict: Contains main metrics in percentage form.
         """
         self.load_and_combine_data()
         self.preprocess_data(pca_components=pca_components)
@@ -209,17 +225,10 @@ class ModelTrainer:
 
     ###############################################################################
     # Utility: Save Results as an Image
-    #    - Creates a DataFrame, plots as a table, saves as .png
+    #    - Creates a DataFrame, plots as a table, saves as a PNG.
     ###############################################################################
     @staticmethod
     def save_results_as_image(results, filename):
-        """
-        Render a list of dicts (rows) as a matplotlib table and save to a .png.
-
-        Args:
-            results (list[dict]): Each dict is one row of data to display.
-            filename (str): Where to save the table image.
-        """
         df = pd.DataFrame(results)
         fig, ax = plt.subplots(figsize=(10, 5))
         ax.axis('tight')
@@ -235,38 +244,26 @@ class ModelTrainer:
         table.auto_set_column_width(col=list(range(len(df.columns))))
         plt.savefig(filename, bbox_inches='tight')
         plt.close()
+        logger.info("Results saved as image to %s", filename)
 
     ###############################################################################
     # Utility: Run & Save Results for Multiple Feature Sets & Models
-    #    - feature_combinations: dict of {featureSetName: [list_of_csv_files]}
-    #    - models_config: dict of {modelName: {"model_class":..., "params":...}}
+    #    - feature_combinations: dict of {featureSetName: [list_of_csv_files]}.
+    #    - models_config: dict of {modelName: {"model_class":..., "params":...}}.
     #    - For each combination of feature set & model, trains & collects metrics.
-    #    - All results displayed & saved as a table image
+    #    - All results are displayed & saved as a table image.
     ###############################################################################
     @staticmethod
     def run_and_save_results(feature_combinations, models_config, output_filename,
                              pca_components=None, use_stratify=True):
-        """
-        Iterate over multiple feature sets and models, run the pipeline,
-        then save all results to a single table image.
-
-        Args:
-            feature_combinations (dict): 
-                Keys = feature set names, Values = list of CSV file paths.
-            models_config (dict):
-                Keys = model names, Values = {"model_class":..., "params":...}.
-            output_filename (str): Path of the .png file to store results table.
-            pca_components (int or None): If not None, apply PCA with that many components.
-            use_stratify (bool): Whether to stratify the train/test split for each run.
-        """
         results = []
 
         for feature_name, feature_files in feature_combinations.items():
-            print(f"\nTraining models for feature set: {feature_name}")
+            logger.info("Training models for feature set: %s", feature_name)
             feature_results = {"Feature": feature_name}
 
             for model_name, config in models_config.items():
-                print(f"  Training {model_name}...")
+                logger.info("  Training %s...", model_name)
                 trainer = ModelTrainer(
                     csv_files=feature_files,
                     model=config["model_class"],
@@ -276,7 +273,7 @@ class ModelTrainer:
                 )
                 metrics = trainer.run_pipeline(pca_components=pca_components)
 
-                # Concatenate Accuracy/F1/Precision/Recall in one string
+                # Concatenate Accuracy/F1/Precision/Recall into one string
                 feature_results[model_name] = (
                     f"{metrics['Accuracy']}%/"
                     f"{metrics['F1']}%/"
@@ -287,4 +284,4 @@ class ModelTrainer:
             results.append(feature_results)
 
         ModelTrainer.save_results_as_image(results, output_filename)
-        print(f"\nResults table saved as '{output_filename}'")
+        logger.info("Results table saved as '%s'", output_filename)

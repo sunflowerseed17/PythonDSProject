@@ -1,7 +1,6 @@
 ###############################################################################
 #  IMPORTS
 ###############################################################################
-
 import os
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -10,16 +9,44 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 ###############################################################################
-#  BASE CLASS
+#  CONFIGURATION CONSTANTS
 ###############################################################################
 
+# Default folders and labels for preprocessed posts
+DEFAULT_FOLDERS = {
+    "depression": {"path": os.path.join("data", "preprocessed_posts", "depression"), "label": 1},
+    "standard": {"path": os.path.join("data", "preprocessed_posts", "standard"), "label": 0},
+    "breastcancer": {"path": os.path.join("data", "preprocessed_posts", "breastcancer"), "label": 2},
+}
+
+# Default output folder for feature extraction data
+DEFAULT_OUTPUT_FOLDER = os.path.join("data", "feature_extracted_data")
+
+# File extension to consider for input files
+TXT_FILE_EXTENSION = ".txt"
+
+# Configuration for summary table plotting
+FIGSIZE_SUMMARY = (8, 4)
+SUMMARY_TITLE = "Summary of Feature Extraction Methods"
+SUMMARY_TITLE_FONT_SIZE = 16
+SUMMARY_TITLE_FONT_WEIGHT = "bold"
+SUMMARY_TITLE_PAD = 20
+SUMMARY_TABLE_COLUMN_INDICES = [0, 1, 2]
+TABLE_FONT_SIZE = 10
+TABLE_HEADER_FONT_SIZE = 12
+TABLE_SCALE_FACTOR = (1.2, 1.2)
+TABLE_DPI = 300
+
+# Configuration for Empath table plotting
+FIGSIZE_EMPATH = (12, 6)
+EMP_TABLE_HEADER_FONT_SIZE = 14
+
+###############################################################################
+#  BASE CLASS
+###############################################################################
 class FeatureExtractor:
-    def __init__(self, *, folders=None, output_folder="data/feature_extracted_data"):
-        self.folders = folders if folders else {
-            "depression": {"path": "data/preprocessed_posts/depression", "label": 1},
-            "standard": {"path": "data/preprocessed_posts/standard", "label": 0},
-            "breastcancer": {"path": "data/preprocessed_posts/breastcancer", "label": 2},
-        }
+    def __init__(self, *, folders=None, output_folder=DEFAULT_OUTPUT_FOLDER):
+        self.folders = folders if folders else DEFAULT_FOLDERS
         self.documents, self.labels = self.load_documents_and_labels()
         self.output_folder = output_folder
         os.makedirs(self.output_folder, exist_ok=True)
@@ -36,8 +63,8 @@ class FeatureExtractor:
 
             for file_name in os.listdir(folder_path):
                 file_path = os.path.join(folder_path, file_name)
-                if not file_path.lower().endswith(".txt"):
-                    continue  # Skip any non-text files
+                if not file_path.lower().endswith(TXT_FILE_EXTENSION):
+                    continue  # Skip non-text files
 
                 try:
                     with open(file_path, 'r', encoding='utf-8') as file:
@@ -80,7 +107,7 @@ class FeatureExtractor:
         else:
             file_path = filename
 
-        # Debugging: Print the path being used
+        # Debug: Print the path being used
         print(f"Saving file to: {file_path}")
 
         # Ensure the directory exists
@@ -98,8 +125,10 @@ class FeatureExtractor:
 #  SUMMARY / TABLE GENERATION FUNCTIONS
 ###############################################################################
 
-# Creating a summary table for the number of features extracted
 def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, output_file=None):
+    """
+    Create and save a summary table comparing feature extraction methods.
+    """
     # Extract the number of features from each extractor
     unigram_count = len(ngram_extractor.unigram_feature_names)
     bigram_count = len(ngram_extractor.bigram_feature_names)
@@ -118,40 +147,45 @@ def generate_summary_table(ngram_extractor, empath_extractor, lda_extractor, out
     summary_table = pd.DataFrame(summary_data, columns=["Feature Type", "Methods", "Number of Selected Features"])
 
     # Plot the table
-    fig, ax = plt.subplots(figsize=(8, 4))
+    fig, ax = plt.subplots(figsize=FIGSIZE_SUMMARY)
     ax.axis('tight')
     ax.axis('off')
-    plt.title("Summary of Feature Extraction Methods", fontsize=16, fontweight='bold', pad=20)
+    plt.title(SUMMARY_TITLE, fontsize=SUMMARY_TITLE_FONT_SIZE, fontweight=SUMMARY_TITLE_FONT_WEIGHT, pad=SUMMARY_TITLE_PAD)
 
     # Create the table 
-    table = ax.table(cellText=summary_table.values, 
-                     colLabels=summary_table.columns, 
-                     cellLoc='center', 
-                     loc='center')
+    table = ax.table(
+        cellText=summary_table.values, 
+        colLabels=summary_table.columns, 
+        cellLoc='center', 
+        loc='center'
+    )
 
     # Style adjustments
     table.auto_set_font_size(False)
-    table.set_fontsize(10)
-    table.auto_set_column_width([0, 1, 2])  
-    table.scale(1.2, 1.2)  
+    table.set_fontsize(TABLE_FONT_SIZE)
+    table.auto_set_column_width(SUMMARY_TABLE_COLUMN_INDICES)
+    table.scale(*TABLE_SCALE_FACTOR)
     for (row, col), cell in table.get_celld().items():
-        if row == 0: 
-            cell.set_fontsize(12)
+        if row == 0:
+            cell.set_fontsize(TABLE_HEADER_FONT_SIZE)
             cell.set_text_props(weight="bold")
             cell.set_linewidth(1.5)
-        if col == 0:  
+        if col == 0:
             cell.set_text_props(weight="bold")
-        if row > 0 and (row % 2 == 0):  
+        if row > 0 and (row % 2 == 0):
             cell.set_facecolor("#f0f0f0")
 
-    plt.savefig(output_file, bbox_inches="tight", dpi=300)
+    plt.savefig(output_file, bbox_inches="tight", dpi=TABLE_DPI)
     print(f"Table saved to {output_file}")
     plt.show()
 
     return summary_table
 
-# Creating a summary table for the correlations from the EMPATH features extracted
+
 def generate_empath_table(input_csv, output_file=None):
+    """
+    Create and save a correlation table for EMPATH features.
+    """
     empath_df = pd.read_csv(input_csv)
     empath_df["Empath Category"] = empath_df["Empath Category"].str.capitalize()
     empath_df = empath_df.sort_values(by="P-Value").head(10).sort_values(by="Empath Category")
@@ -165,26 +199,25 @@ def generate_empath_table(input_csv, output_file=None):
         inplace=True,
     )
 
-    fig, ax = plt.subplots(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=FIGSIZE_EMPATH)
     ax.axis('tight')
     ax.axis('off')
     table = ax.table(
         cellText=empath_df.values,
         colLabels=empath_df.columns,
         cellLoc="center",
-        loc="center",
+        loc="center"
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(12)
+    table.set_fontsize(TABLE_FONT_SIZE)
     table.auto_set_column_width(col=list(range(len(empath_df.columns))))
     for key, cell in table.get_celld().items():
         row, col = key
         if row == 0:  # Header row
             cell.set_text_props(weight="bold")
-            cell.set_fontsize(14)
+            cell.set_fontsize(EMP_TABLE_HEADER_FONT_SIZE)
 
- 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
-    plt.savefig(output_file, bbox_inches="tight", dpi=300)
+    plt.savefig(output_file, bbox_inches="tight", dpi=TABLE_DPI)
     print(f"Table saved to {output_file}")
     plt.show()
