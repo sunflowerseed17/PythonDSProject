@@ -5,6 +5,8 @@ This project replicates the study by Tadesse et al. (2019), *“Detection of Dep
 
 Our replication findings, including key similarities and differences from the original work, are detailed in the **"Replication of Tadesse et al."** PDF file in this repository.
 
+To see the specificities of the repository, please look into repo_structure.pdf, which details the functions used and the structure of the repo in general. 
+
 ---
 
 ## **Project Workflow**
