@@ -76,11 +76,11 @@ The workflow includes the following key steps:
         
 *   **feature\_extraction/**: Implements multiple feature extraction methods:
     
-    *   **ngram\_feature\_extraction.py**: Extracts unigrams, bigrams, and filters based on Pointwise Mutual Information (PMI).
+    *   **ngram\_feature\_extraction\_func.py**: Extracts unigrams, bigrams, and filters based on Pointwise Mutual Information (PMI).
         
-    *   **lda\_feature\_extraction.py**: Prepares documents, trains LDA models, and generates topic distributions.
+    *   **lda\_feature\_extraction\_func.py**: Prepares documents, trains LDA models, and generates topic distributions.
         
-    *   **empath\_feature\_extraction.py**: Extracts psycholinguistic features and computes correlations.
+    *   **empath\_feature\_extraction\_func.py**: Extracts psycholinguistic features and computes correlations.
         
 *   **feature\_analysis/**: Analyzes extracted features, generating visualizations like word clouds and correlation tables.
     
@@ -102,7 +102,7 @@ The workflow includes the following key steps:
 
 *   Ensure you have **Python 3.9+** installed.
     
-*   bashCopyEditpip install -r requirements.txt
+*   pip install -r requirements.txt
     
 
 ### **2\. Run Data Preprocessing**
@@ -198,7 +198,7 @@ The workflow includes the following key steps:
 
 *   Ensure you have **Python 3.9+** installed.
     
-*   bashCopyEditpip install -r requirements.txt
+*   pip install -r requirements.txt
     
 
 ### **2\. Run Data Preprocessing**
