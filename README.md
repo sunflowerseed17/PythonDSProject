@@ -41,8 +41,8 @@ The workflow includes the following key steps:
 │   ├── feature_analysis_output/          # Visuals and CSVs generated from feature analysis
 │   ├── preprocessed_posts/               # Cleaned and preprocessed Reddit posts
 │   ├── reddit_scraped_posts/             # Raw posts collected from various subreddits
-│   └── data_preprocessing/               # Scripts for scraping and cleaning data
-│       └── data_preprocessing.py
+├── data_preprocessing/               # Scripts for scraping and cleaning data
+│   └── data_preprocessing.py
 ├── feature_extraction/                   # Feature extraction methods
 │   ├── feature_extraction.py             # Main script for feature extraction
 │   ├── feature_extraction_func.py        # Defines functions for feature extraction
